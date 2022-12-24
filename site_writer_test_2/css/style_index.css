@@ -1,0 +1,134 @@
+@font-face {
+    font-family: LobsterRegular;
+    src: url('../fonts/Lobster-Regular.ttf') format("truetype");
+    src: url('../fonts/Lobster-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Lobster-Regular.ttf') format("woff");
+    src: url('../fonts/Lobster-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: MarckScriptRegular;
+    src: url('../fonts/MarckScript-Regular.ttf') format("truetype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("woff");
+    src: url('../fonts/MarckScript-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: PacificoRegular;
+    src: url('../fonts/Pacifico-Regular.ttf') format("truetype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("woff");
+    src: url('../fonts/Pacifico-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+:root {
+    --main-font-1: LobsterRegular;
+    --main-font-2: MarckScriptRegular;
+    --main-font-3: PacificoRegular;
+}
+
+
+/*общие*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
+}
+
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    color: white;
+    background-color: black;
+}
+
+h1 {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*прочее*/
+
+.bg_book {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 66%;
+    height: 66%;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+h2 {
+    margin: 2% auto;
+    font-size: 550%;
+    font-weight: 100;
+}
+
+.text_name {
+    margin: 3% auto;
+    font-size: 350%;
+    font-weight: 100;
+}
+
+.text_content {
+    font-size: 280%;
+    font-weight: 100;
+}
+
+
+/*блоки выбора версии сайта*/
+
+.interactive_wrapper {
+    display: block;
+    border: 2px solid red;
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    bottom: 4%;
+}
+
+.interactive_version_wrapper {
+    left: 5%;
+}
+
+.standart_version_wrapper {
+    right: 5%;
+}
+
+
+/*изображения в блоках*/
+
+.img_version_site {
+    width: 100%;
+    height: 50%;
+}
+
+
+/**/

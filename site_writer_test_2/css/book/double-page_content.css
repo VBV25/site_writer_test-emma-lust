@@ -1,0 +1,293 @@
+/*------------------------------------------------------------------------------------------------*/
+
+
+/*контент на страницах*/
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+.book_open_href {
+    display: none;
+}
+
+
+/*new книга*/
+
+.open_book_wrapper_new .cover_book_front {
+    background-image: url("../../pages/book_new/my_woman_2.jpg");
+}
+
+.open_book_wrapper_new .page_1 {
+    background-image: url("../../pages/book_new/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_2 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_3 {
+    background-image: url("../../pages/book_new/2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_4 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_5 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_6 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_new .page_7 {
+    background-image: unset;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*отображаем нужные ссылки и нужную картинку (обложку)*/
+
+.open_book_wrapper_new .book_open_href_new {
+    display: block;
+}
+
+.open_book_wrapper_new .img_cover_el {
+    background-image: url('../../pages/book_new/my_woman.jpg');
+}
+
+
+/*1 книга*/
+
+.open_book_wrapper_1 .cover_book_front {
+    background-image: url("../../pages/book_1/my_woman_2.jpg");
+}
+
+.open_book_wrapper_1 .page_1 {
+    background-image: url("../../pages/book_1/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_2 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_3 {
+    background-image: url("../../pages/book_1/2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_4 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_5 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_6 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_1 .page_7 {
+    background-image: unset;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*отображаем нужные ссылки и нужную картинку (обложку)*/
+
+.open_book_wrapper_1 .book_open_href_1 {
+    display: block;
+}
+
+.open_book_wrapper_1 .img_cover_el {
+    background-image: url('../../pages/book_1/my_woman.jpg');
+}
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/*2 книга*/
+
+.open_book_wrapper_2 .cover_book_front {
+    background-image: url("../../pages/book_2/demon_2.jpg");
+}
+
+.open_book_wrapper_2 .page_1 {
+    background-image: url("../../pages/book_2/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_2 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_3 {
+    background-image: url("../../pages/book_2/2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_4 {
+    background-image: url("../../pages/book_2/3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_5 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_6 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_2 .page_7 {
+    background-image: unset;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*отображаем нужные ссылки и нужную картинку (обложку)*/
+
+.open_book_wrapper_2 .book_open_href_2 {
+    display: block;
+}
+
+.open_book_wrapper_2 .img_cover_el {
+    background-image: url('../../pages/book_2/demon.jpg');
+}
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/*3 книга*/
+
+.open_book_wrapper_3 .cover_book_front {
+    background-image: url("../../pages/book_3/causing_love.jpg");
+}
+
+.open_book_wrapper_3 .page_1 {
+    background-image: url("../../pages/book_3/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_3 .page_2 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_3 .page_3 {
+    background-image: url("../../pages/book_3/2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_3 .page_4 {
+    background-image: url("../../pages/book_3/3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.open_book_wrapper_3 .page_5 {
+    background-image: url('../../pages/EL_black_logo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.open_book_wrapper_3 .page_6 {
+    background-image: url("../../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: none !important;
+    opacity: 0 !important;
+    display: none !important;
+    opacity: 0 !important;
+}
+
+.open_book_wrapper_2 .page_7 {
+    background-image: unset;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*отображаем нужные ссылки и нужную картинку (обложку)*/
+
+.open_book_wrapper_3 .book_open_href_3 {
+    display: block;
+}
+
+.open_book_wrapper_3 .img_cover_el {
+    background-image: url('../../pages/book_3/causing_love.jpg');
+}
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/**/
