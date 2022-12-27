@@ -38,6 +38,9 @@ yepnope({
     test: Modernizr.csstransforms,
     yep: ['js/lib/turn.min.js'],
     nope: ['js/lib/turn.html4.min.js'],
-    both: ['js/lib/scissor.min.js', 'css/book/double-page.css','css/book/double-page_adaptiv.css'],
+    both: [
+        'js/lib/scissor.min.js',
+        'css/book/double-page.css' /*,'css/book/double-page_adaptiv.css'*/ ,
+    ],
     complete: loadApp,
 });

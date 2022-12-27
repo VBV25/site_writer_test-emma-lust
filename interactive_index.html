@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="css/style_interactive.css" />
     <link rel="stylesheet" href="css/style_btn_book.css" />
-    <link rel="stylesheet" href="css/book/double-page_content.css" />
+
 
 
     <title>Название сайта и лого</title>
@@ -118,6 +118,15 @@
                 <div class="fireplace">
                     <img class="fireplace_img" src="img/fireplace.png" alt="fireplace" />
                 </div>
+                <!--Картины-->
+                <div class="painting painting_1"></div>
+                <div class="painting painting_2"></div>
+                <!--Карта на камине-->
+                <div class="map"></div>
+                <!--статуэтка на камине-->
+                <div class="statuette"></div>
+                <!--корабль на камине-->
+                <div class="vessel"></div>
                 <!--Стол-->
                 <div class="table">
                     <img class="table_img" src="img/table.png" alt="tablet" />
@@ -132,7 +141,9 @@
                     <div class="btn_book_spine btn_book_spine_new"></div>
                     <div class="btn_book_cover btn_book_cover_new"></div>
                 </div>
-
+                <!--Письмо на столе-->
+                <p class="envelope_label">Отправить отзыв</p>
+                <div class="envelope_room_table "></div>
                 <!--лист бумаги-->
                 <p class="contacts_label">Контакты</p>
                 <div class="paper">
@@ -150,7 +161,7 @@
                 <div class="open_closet_wrapper">
                     <div class="open_closet_bg_right"></div>
                     <div class="open_closet_bg">
-                        <button type="button" class="exit_btn">назад</button>
+                        <button type="button" class="exit_btn exit_btn_closet">назад</button>
 
                     </div>
 
@@ -222,11 +233,14 @@
 
 
             </section>
+            <!---->
+
+            <!--КНИГА-->
             <div class="open_book_wrapper all_class_not_active ">
-                <!---КНИГА 1-->
-                <!--<div class="cover_wrapper">-->
+
+                <!--<div class="open_book_wrapper all_class_not_active ">-->
                 <!--обложка-->
-                <button class="cover_book_front_btn">НАЗАД</button>
+                <button class="cover_book_front_btn">Вернуться <br> к выбору книг</button>
 
                 <div class="cover_card ">
                     <div class="cover_book_front">
@@ -241,8 +255,9 @@
                     <div class="container ">
                         <!--область случайного клика для отображения кнопки на стороне-->
 
-                        <!---->
-                        <button class='btn_close_book'>Вернуться <br> к выбору книг</button>
+
+
+                        <!--<button class='btn_close_book'>Вернуться <br> к выбору книг</button>-->
                         <div class="flipbook">
 
                             <!--1-->
@@ -256,62 +271,25 @@
                                 <div class="page_book_btn_wrapper 
                                 page_book_btn_wrapper_1
                                  page_book_btn_wrapper_1_2"></div>
+                                <!---->
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_1_author">emma lust</p>
+                                <div class="list_1_title_wrapper">
+                                    <p class="list_1_genre"></p>
+                                    <p class="list_1_title"></p>
+                                </div>
+                                <p class="list_1_year"></p>
                             </div>
                             <!--2-->
                             <div class="page page_2">
                                 <!--Вставляем обложку книги цветную-->
                                 <div class="img_cover_el"></div>
-                                <!--Делаем ссылки на внешние источники книги-->
-                                <!---->
-                                <!---->
-                                <!---->
-                                <!--ссылки на книгу моя женщина-->
-
-                                <div class="book_open_href book_open_href_1 ">
-                                    <a href="#">1 Ссылка на литресс</a>
-                                    <a href="#"> 1 Ссылка на 2 ресурс</a>
+                                <!--Вставляем через js ссылки на книги-->
+                                <div class="book_open_href ">
+                                    <a class="book_href_1" href="#" target="_blank"></a>
+                                    <a class="book_href_2" href="#" target="_blank"> </a>
+                                    <a class="book_href_3" href="#" target="_blank"> </a>
                                 </div>
-                                <!--2 ссылки 2 книги-->
-                                <div class="book_open_href book_open_href_2 ">
-                                    <a href="#">2Ссылка на литресс</a>
-                                    <a href="#"> 2Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--3 ссылки 3 книги-->
-                                <div class="book_open_href book_open_href_3 ">
-                                    <a href="#">3Ссылка на литресс</a>
-                                    <a href="#"> 3Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--4 ссылки 4 книги-->
-                                <div class="book_open_href book_open_href_4 ">
-                                    <a href="#">4Ссылка на литресс</a>
-                                    <a href="#"> 4Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--5 ссылки 5 книги-->
-                                <div class="book_open_href book_open_href_5 ">
-                                    <a href="#">5Ссылка на литресс</a>
-                                    <a href="#"> 5Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--6 ссылки 6 книги-->
-                                <div class="book_open_href book_open_href_6 ">
-                                    <a href="#">6Ссылка на литресс</a>
-                                    <a href="#"> 6Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--7 ссылки 7 книги-->
-                                <div class="book_open_href book_open_href_7 ">
-                                    <a href="#">7Ссылка на литресс</a>
-                                    <a href="#"> 7Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--8 ссылки 8 книги-->
-                                <div class="book_open_href book_open_href_8 ">
-                                    <a href="#">8Ссылка на литресс</a>
-                                    <a href="#"> 8Ссылка на 2 ресурс</a>
-                                </div>
-                                <!--9 ссылки 9 книги-->
-                                <div class="book_open_href book_open_href_9 ">
-                                    <a href="#">9Ссылка на литресс</a>
-                                    <a href="#"> 9Ссылка на 2 ресурс</a>
-                                </div>
-                                <!---->
                                 <!--ниже области на странице при клике на которые отображается кнопка закрытия-->
                                 <div class="page_book_btn_wrapper 
                                 page_book_btn_wrapper_2  page_book_btn_wrapper_2_1">
@@ -329,10 +307,16 @@
                                 <div class="page_book_btn_wrapper 
                                 page_book_btn_wrapper_1
                                  page_book_btn_wrapper_1_2"></div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_3_heading"></p>
+                                <p class="list_text list_3_text"></p>
                             </div>
                             <!--4-->
                             <div class="page page_4">
                                 <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_4_heading"></p>
+                                <p class="list_text list_4_text"></p>
                             </div>
                             <!--5-->
                             <div class="page page_5">
@@ -340,73 +324,99 @@
                                 page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
                                     <!--ЛЕЙБЛ навигации на странице -->
                                     <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
-                                </div>
-                                <div class="page_book_btn_wrapper 
+
+                                    <div class="page_book_btn_wrapper 
                                 page_book_btn_wrapper_1
                                  page_book_btn_wrapper_1_2"></div>
+
+
+                                </div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_5_heading"></p>
+                                <p class="list_text list_5_text"></p>
                             </div>
                             <!--6-->
                             <div class="page page_6">
                                 <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_6_heading"></p>
+                                <p class="list_text list_6_text"></p>
                             </div>
                             <!--7-->
                             <div class="page page_7">
-                                <div class="page_7_logo"></div>
+                                <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
+                                    <!--ЛЕЙБЛ навигации на странице -->
+                                    <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
+
+                                    <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1
+                                 page_book_btn_wrapper_1_2"></div>
+
+
+                                </div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_7_heading"></p>
+                                <p class="list_text list_7_text"></p>
+                            </div>
+                            <!--8-->
+                            <div class="page page_8">
+                                <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                                <!--делаем блоки для вноса контента на странице-->
+                                <p class="list_heading list_8_heading"></p>
+                                <p class="list_text list_8_text"></p>
+                            </div>
+
+                            <!--последняя не заполняемая-->
+                            <div class="page page_past">
+                                <div class="page_past_logo"></div>
                                 <div class='btn_book_page_nav btn_book_page_nav_next btn_book_page_nav_2'>Конец</div>
                             </div>
                         </div>
+                        <div class="section_close_cover_btn"></div>
+
                     </div>
                 </div>
                 <!--КОНЕЦ книги-->
             </div>
+
+            <!--КОНВЕРТ-->
+            <section class="envelope_wrapper ">
+                <button type="button" class="exit_btn exit_btn_envelope">назад</button>
+                <div class="envelope">
+                    <div class="envelope_body_back">
+                        <img src="img/envelope_2.png" alt="top">
+
+                    </div>
+                    <div class="envelope_top">
+                        <img src="img/envelope_3.png" alt="top">
+
+                    </div>
+                    <div class="envelope_paper">
+
+                        <div class="envelope_form_wrapper">
+                            <p> ПОДАРОК</p>
+                            <button class=" envelope_paper_btn" type="button">ОТПРАВИТЬ</button>
+                        </div>
+
+
+                    </div>
+                    <div class="envelope_body">
+                        <img src="img/envelope_1.png" alt="top">
+
+                    </div>
+                    <div class="envelope_print">
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
         </main>
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
-        <!--footer-->
 
-        <!--footer-->
-
-        <!---->
-        <!---->
-
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
         <!---->
         <!---->
         <!---->
@@ -419,9 +429,26 @@
 
 
         <!---->
-        <script src="js/book_js/book_open.js"></script>
+        <!---->
+        <!--ОСНОВНОЙ ФАЙЛ С ПЕРЕМЕННЫМИ-->
+        <!--в константу контент файла 1 вносим количество всех страниц для дальнейшего сравнения чтобы показать или скрыть кнопку закрытия книги-->
+        <script src="js/book_js/book_open_and_content_1.js"></script>
+        <!---->
+
+        <!---->
+        <script src="js/book_js/book_open_and_content_new.js"></script>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
         <script src="js/book_js/book_open_animate.js"></script>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
         <script src="js/book_js/book_script.js"></script>
+        <!---->
+        <!---->
         <!---->
 
 
