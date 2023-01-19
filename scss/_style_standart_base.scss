@@ -6,7 +6,9 @@ body {
     }
 }
 
-.wrapper-header {}
+.wrapper-header {
+    width: 10px;
+}
 
 .pc-header {
     &__logo {
