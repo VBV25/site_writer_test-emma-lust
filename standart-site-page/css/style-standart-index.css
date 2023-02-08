@@ -314,13 +314,11 @@ body {
   .tagline h1 {
     display: none; }
   .tagline__wrapper {
-    border: 2px solid red;
     width: var(--contentWidh);
     height: 100%;
     margin: auto;
     position: relative; }
     .tagline__wrapper::after {
-      border: 2px solid #e7e7e7;
       content: '';
       position: absolute;
       top: 0;
@@ -333,7 +331,6 @@ body {
       background-image: url("../img/girl-on-window.png");
       margin: auto; }
   .tagline__container {
-    border: 2px solid #d4ff00;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -373,7 +370,6 @@ body {
       width: var(--emmalustWi);
       height: auto; }
   .tagline__text {
-    border: 2px solid #00bbff;
     width: var(--taglineTextWi);
     height: -webkit-max-content;
     height: -moz-max-content;

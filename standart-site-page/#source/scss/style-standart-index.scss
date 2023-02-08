@@ -33,12 +33,10 @@ body {
     }
     //стили обертки с контентом
     &__wrapper {
-        border: 2px solid red;
         @include wiHe(var(--contentWidh));
         margin: auto;
         position: relative;
         &::after {
-            border: 2px solid rgb(231, 231, 231);
             content: '';
             position: absolute;
             @include leTo;
@@ -51,7 +49,6 @@ body {
     }
     //стили контейнера с заголовком и слоганом
     &__container {
-        border: 2px solid rgb(212, 255, 0);
         @include flCent;
         @include wiHe(min-content);
         z-index: 5;
@@ -70,7 +67,6 @@ body {
     }
     //текст слогана
     &__text {
-        border: 2px solid rgb(0, 187, 255);
         @include wiHe(var(--taglineTextWi),
         max-content);
         @include fontSizeH2;
