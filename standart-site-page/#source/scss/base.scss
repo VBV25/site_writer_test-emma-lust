@@ -1,46 +1,41 @@
-//------------шрифты--ПОДКЛЮЧЕНИЕ--------------------------------------
-@font-face {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
-    src: local('Poppins-Regular'), url('../fonts/Poppins-Regular.ttf') format('truetype');
-}
-
-//--------------------------------------------------------------------------------
-//-------------------------ПЕРЕМЕННЫЕ---------------------------------------------
+//------------------------ПЕРЕМЕННЫЕ---------------------------------------------
 //-цвета-
-$darkGray: #646464;
-$whiteColor: #ffffff;
-$blueColor: #3a4574;
-$blueColorOpacity: #3a457499;
-$blueColorOpacity08: #3a4574cc;
 $blackColor: #000000;
 $blackColorOpacity: #000000e6;
-$goldColor: #d3b47f;
-$goldColorOpacity: #d3b47fb3;
+$darkGrayColor: #646464;
 $grayColor: #808080;
 $smokeColor: #cccccc;
+$whiteColor: #ffffff;
+//
+$emeraldColor:#253229;
+$emeraldDarkColor:#1D241F;
+$DarkRedColor:#240E04;
+$yellowBrownColor: #885A34;
+$sandColor:#FFF3D2;
+$skinColor:#E2C68E;
+//
+//----------
 //-шрифты-
-$fontFamily1: Poppins,
-Arial,
+$fontFamily1: LobsterRegular,
+MarckScriptRegular,
+PacificoRegular,
 sans-serif;
 //-------------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----------------------------------------
 :root {
     //--------размеры шрифтов
-    --fsMenuHead: 16px; //размер шрифта в хедер
+    --fsMenuHeadBtn: 30px; //размер шрифта КНОПКИ МЕНЮ в хедер
+    --fsMenuHead: 32px; //размер шрифта в хедер
     --fsH2: 44px; //заголовки h2
     --fsH3: 36px; //Заголовки h3
     --fsH4: 24px; //Заголовки h4
     --fsH5: 18px; //Заголовки h5
     --fsP: 16px; //текст и блоки P
     //---------------
-    //-----хэдер
-    --heHeader: 165px; //высота хедера
-    --menuGapHead: 45px; //расстояние между пунктами меню в хедер
     //----контент
-    --contentWidh: 1168px; //блок контента
-    --logoHedWe: 269px; //ширина логотипа хедера
-    --logoHedHe: 55px; //высота логотипа хедера
+    --contentWidh: 95%; //блок контента
+    //-----хэдер
+    --menuGapHead: 80px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 100px; //высота логотипа хедера(ширина автоматическая)
     //------1блок
     --firstBlokHe: 901px; //высота первой секции
     --padTopText1Block: 99px; //число для калькуляции верхнего отступа текста от хедера
@@ -62,42 +57,34 @@ sans-serif;
 
 //-----------------------------------------------миксины----------------------------------------------
 //ширина и высота элемента
-@mixin wiHe($wi: 100%,
-$he: 100%) {
+@mixin wiHe($wi: 100%, $he: 100%) {
     width: $wi;
     height: $he;
 }
 
 //позиционирование
-@mixin leTo($top: 0,
-$left: 0) {
+@mixin leTo($top: 0, $left: 0) {
     top: $top;
     left: $left;
 }
 
-@mixin riTo($top: 0,
-$right: 0) {
+@mixin riTo($top: 0, $right: 0) {
     top: $top;
     right: $right;
 }
 
-@mixin riBo($bottom: 0,
-$right: 0) {
+@mixin riBo($bottom: 0, $right: 0) {
     bottom: $bottom;
     right: $right;
 }
 
-@mixin leBo($bottom: 0,
-$left: 0) {
+@mixin leBo($bottom: 0, $left: 0) {
     bottom: $bottom;
     left: $left;
 }
 
 //вставка изображения как фона(без ссылки на изображение)
-@mixin bgImg( $bgCol: $smokeColor,
-$bgImSize: 100% 100%,
-$bgPosition:center,
-$bgRepeat:no-repeat) {
+@mixin bgImg( $bgCol: $smokeColor, $bgImSize: 100% 100%, $bgPosition:center, $bgRepeat:no-repeat) {
     background-color: $bgCol;
     background-size: $bgImSize;
     background-position: $bgPosition;
@@ -105,40 +92,35 @@ $bgRepeat:no-repeat) {
 }
 
 //флекс элемент по центру
-@mixin flCent($jusCon: center,
-$alIt: center) {
+@mixin flCent($jusCon: center, $alIt: center) {
     display: flex;
     justify-content: $jusCon;
     align-items: $alIt;
 }
 
 //флекс элемент слева снизу
-@mixin flStCen($jusCon: start,
-$alIt: center) {
+@mixin flStartCen($jusCon: start, $alIt: center) {
     display: flex;
     justify-content: $jusCon;
     align-items: $alIt;
 }
 
 //флекс элемент: по вертикали центр, горизонтально - разнесено по краям
-@mixin flexAlJu($jusCon: space-between,
-$alIt: center) {
+@mixin flexSpBeCent($jusCon: space-between, $alIt: center) {
     display: flex;
     justify-content: $jusCon;
     align-items: $alIt;
 }
 
 //грид элемент: по вертикали центр, горизонтально - разнесено по краям
-@mixin gridAlJu($jusCon: space-between,
-$alIt: center) {
+@mixin gridSpBeCent($jusCon: space-between, $alIt: center) {
     display: grid;
     justify-content: $jusCon;
     align-items: $alIt;
 }
 
 //грид центр
-@mixin gridCent($jusCon: center,
-$alIt: center) {
+@mixin gridCent($jusCon: center, $alIt: center) {
     display: grid;
     justify-content: $jusCon;
     align-items: $alIt;
@@ -154,10 +136,7 @@ $alIt: center) {
 }
 
 //параметры шрифтов
-@mixin fontSizeBase($fs: 16px,
-$fWe: 400,
-$liHe: 24px,
-$color: $whiteColor) {
+@mixin fontSizeBase($fs: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor) {
     font-size: $fs;
     font-weight: $fWe;
     line-height: $liHe;
@@ -166,9 +145,7 @@ $color: $whiteColor) {
     font-family: $fontFamily1;
 }
 
-@mixin fontSizeP($fWe: 400,
-$liHe: calc(var(--fsP) * 1.5),
-$color: $blackColor) {
+@mixin fontSizeP($fWe: 400, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor) {
     font-size: var(--fsP);
     font-weight: $fWe;
     line-height: $liHe;
@@ -177,9 +154,7 @@ $color: $blackColor) {
     font-family: $fontFamily1;
 }
 
-@mixin fontSizeH5( $fWe: 500,
-$liHe: calc(var(--fsH5) * 1.5),
-$color: $blackColor) {
+@mixin fontSizeH5( $fWe: 500, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor) {
     font-size: var(--fsH5);
     font-weight: $fWe;
     line-height: $liHe;
@@ -188,9 +163,7 @@ $color: $blackColor) {
     font-family: $fontFamily1;
 }
 
-@mixin fontSizeH4( $fWe: 600,
-$liHe: calc(var(--fsH4) * 1.5),
-$color: $blackColor) {
+@mixin fontSizeH4( $fWe: 600, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor) {
     font-size: var(--fsH4);
     font-weight: $fWe;
     line-height: $liHe;
@@ -199,9 +172,7 @@ $color: $blackColor) {
     font-family: $fontFamily1;
 }
 
-@mixin fontSizeH3( $fWe: 700,
-$liHe: calc(var(--fsH3) * 1.5),
-$color: $blackColor) {
+@mixin fontSizeH3( $fWe: 700, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor) {
     font-size: var(--fsH3);
     font-weight: $fWe;
     line-height: $liHe;
@@ -210,9 +181,7 @@ $color: $blackColor) {
     font-family: $fontFamily1;
 }
 
-@mixin fontSizeH2($fWe: bold,
-$liHe: calc(var(--fsH2) * 1.5),
-$color: $blackColor) {
+@mixin fontSizeH2($fWe: bold, $liHe: calc(var(--fsH2) * 1.5), $color: $blackColor) {
     font-size: var(--fsH2);
     font-weight: $fWe;
     line-height: $liHe;

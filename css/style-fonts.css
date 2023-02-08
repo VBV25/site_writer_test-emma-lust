@@ -1,0 +1,29 @@
+@font-face {
+    font-family: LobsterRegular;
+    src: url('../fonts/Lobster-Regular.ttf') format("truetype");
+    src: url('../fonts/Lobster-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Lobster-Regular.ttf') format("woff");
+    src: url('../fonts/Lobster-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: MarckScriptRegular;
+    src: url('../fonts/MarckScript-Regular.ttf') format("truetype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("woff");
+    src: url('../fonts/MarckScript-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: PacificoRegular;
+    src: url('../fonts/Pacifico-Regular.ttf') format("truetype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("woff");
+    src: url('../fonts/Pacifico-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}

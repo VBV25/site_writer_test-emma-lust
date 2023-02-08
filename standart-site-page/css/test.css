@@ -1,0 +1,366 @@
+@charset "UTF-8";
+/* 
+header {
+    border: 2px solid red;
+    @include wiHe($he: max-content);
+    z-index: 50;
+    position: relative;
+    .container {
+        border: 2px solid rgb(0, 255, 51);
+        @include wiHe(var(--contentWidh));
+        @include flexSpBeCent;
+        margin: 0px auto;
+    }
+    //логотип
+    &__logo {
+        @include wiHe(var(--logoHedWe), var(--logoHedHe));
+        @include bgImg(none);
+        background-image: url('../img/svg/logo-head.svg');
+    }
+    //навигация
+    &__navigation ul {
+        display: flex;
+        gap: var(--menuGapHead);
+    }
+    //ссылки
+    &__link {
+        @include fontSizeBase(var(--fsMenuHead));
+        &:hover {
+            color: $goldColor;
+        }
+    }
+    //контактный телефон
+    &__phone {
+        @include flexAlJu(center);
+        img {
+            @include wiHe(24px,
+            24px);
+            margin-right: 11px;
+        }
+        p {
+            @include fontSizeBase(var(--fsMenuHead));
+        }
+    }
+    //бургер кнопка
+    &__burger {
+        display: none;
+    }
+}
+
+//скрытый попап телефона мобильной версии
+.header-popup__phone-wrapper {
+    display: none;
+}
+
+//скрытая картинка для вызова попап телефона мобильной версии
+#header__phone-img2 {
+    display: none;
+}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//
+//
+//
+//
+//
+//----------------------------------------------------------------
+//-----------------------------1024 PX----------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+@media (max-width: 1024px) {
+    .header {
+        background-color: $whiteColor;
+        position: fixed;
+        //логотип
+        &__logo {
+            background-image: url('../img/png/logo-black.png');
+        }
+        //навигация
+        &__navigation ul {
+            display: flex;
+        }
+        //ссылки
+        &__link {
+            @include fontSizeBase(var(--fsMenuHead),
+            500,
+            $color: $blackColor);
+        }
+        //контактный телефон
+        &__phone {
+            @include flexAlJu(center);
+            p {
+                @include fontSizeBase(var(--fsMenuHead),
+                $color: $blackColor);
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//-----------------------------900 PX-----------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+@media (max-width: 900px) {
+    .header {
+        //контактный телефон
+        &__phone {
+            img {
+                @include wiHe(20px,
+                20px);
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//-----------------------------767 PX-----------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+@media (max-width: 767px) {
+    //адаптив хедера 767
+    .header {
+        background-color: $whiteColor;
+        position: fixed;
+        .container {
+            @include flexAlJu;
+            margin: 0px auto;
+        }
+        //бургер кнопка
+        &__burger {
+            @include wiHe(50px,
+            30px);
+            display: block;
+            position: relative;
+            z-index: 3;
+            //средняя черта бургера
+            span {
+                @include wiHe(36px,
+                4px);
+                @include leTo(13px,
+                0px);
+                background-color: $blackColor;
+                position: absolute;
+                //
+                transition: all 0.3s ease 0s;
+            }
+            //верх и ниж черта бургера
+            &::before,
+            &::after {
+                @include wiHe(36px,
+                4px);
+                content: '';
+                background-color: $blackColor;
+                position: absolute;
+                left: 0;
+                //
+                transition: all 0.3s ease 0s;
+            }
+            &::before {
+                top: 3px;
+            }
+            &::after {
+                bottom: 3px;
+            }
+            //крестик из бургера
+            &.active::before {
+                top: 13px;
+                //
+                transform: rotate(45deg);
+            }
+            &.active::after {
+                bottom: 13px;
+                //
+                transform: rotate(-45deg);
+            }
+            &.active span {
+                transform: scale(0);
+            }
+        }
+        //навигация
+        &__navigation {
+            @include wiHe;
+            @include leTo(-100%,
+            0);
+            position: fixed;
+            background-color: $blueColor;
+            //
+            transition: all 0.4s ease 0s;
+            //добавить скролл меню для горизонталки
+            overflow: auto;
+            //----отображение мобильного меню
+            &.active {
+                top: var(--heHeader);
+            }
+        }
+        //навигация
+        &__navigation ul {
+            padding: 50px 10px 150px;
+            display: grid;
+        }
+        //ссылки
+        &__link {
+            @include fontSizeBase(32px,
+            700,
+            42px);
+            margin-left: 40px;
+            //наведение на ссылки в мобильном меню
+            &:hover {
+                @include textBorderGold;
+            }
+        }
+        //скрываем первое изображение, которое не вызывает попап
+        #header__phone-img1 {
+            display: none;
+        }
+        //отображаем ворое изображение, которое вызывает попап
+        #header__phone-img2 {
+            display: block;
+        }
+        //телефон
+        &__phone {
+            @include flexAlJu(center);
+            //лейбл телефон
+            img {
+                @include wiHe(36px,
+                36px);
+                margin-right: 0;
+                margin-left: 14px;
+            }
+            //скрываем телефон в меню
+            p {
+                display: none;
+            }
+        }
+    }
+    .header-popup__phone-wrapper {
+        display: block;
+    }
+    //попап с всплывающим номером телефона
+    .header-popup {
+        //фон
+        &__phone-wrapper {
+            @include wiHe;
+            top: -100%;
+            z-index: 100;
+            position: fixed;
+            background-color: $blackColorOpacity;
+            //
+            transition: all 0.4s ease 0s;
+            //добавить скролл меню для горизонталки
+            overflow: auto;
+        }
+        //телефон
+        &__phone-text {
+            @include wiHe(310px,
+            100px);
+            @include flCent;
+            @include fontSizeBase(34px,
+            800,
+            70px,
+            $whiteColor);
+            margin: 150px auto;
+            background-color: $blueColor;
+            text-shadow: 1.5px 2px 2px $goldColor;
+        }
+        //кнопка закрытия
+        &__btn-close-phone {
+            @include wiHe(50px,
+            50px);
+            @include riTo(15px,
+            15px);
+            position: absolute;
+            //крестик в кнопке
+            &::before,
+            &::after {
+                @include wiHe(30px,
+                3px);
+                content: '';
+                background-color: $whiteColor;
+                position: absolute;
+                left: 8px;
+            }
+            &::before {
+                top: 23px;
+                //
+                transform: rotate(45deg);
+            }
+            &::after {
+                bottom: 23px;
+                //
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//-----------------------------320 PX-----------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+@media (max-width: 320px) {
+    .header {
+        width: 100%;
+        overflow: hidden;
+        &__link {
+            margin-left: 3px;
+        }
+        &__burger {
+            @include wiHe(20px,
+            20px);
+            //средняя черта бургера
+            span {
+                @include wiHe(20px,
+                2px);
+                @include leTo(9px,
+                0px);
+            }
+            //верх и ниж черта бургера
+            &::before,
+            &::after {
+                @include wiHe(20px,
+                2px);
+            }
+            //крестик из бургера
+            &.active::before {
+                top: 9px;
+            }
+            &.active::after {
+                bottom: 9px;
+            }
+        }
+        img {
+            @include wiHe(25px,
+            25px);
+            margin-left: 0px;
+        }
+    }
+    .header-popup {
+        //телефон
+        &__phone-text {
+            @include wiHe(100%,
+            100px);
+            @include flCent;
+            @include fontSizeBase(22px,
+            bold,
+            70px,
+            $blackColor);
+            margin: 150px auto;
+            background-color: $goldColor;
+            text-shadow: 0px 5px 5px $darkGray;
+        }
+    }
+}
+*/

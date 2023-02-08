@@ -7,11 +7,15 @@
 //хедер 
 @import 'style-header';
 //футер
-@import 'style-footer';
+//@import 'style-footer';
 //POPUP
-@import 'style-elements-additional';
+//@import 'style-elements-additional';
 //-
 //--
 body {
-    background: $darkGray;
+    background: $darkGrayColor;
+}
+
+.lock {
+    overflow: hidden;
 }
