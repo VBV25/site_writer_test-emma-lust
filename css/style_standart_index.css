@@ -1,0 +1,22 @@
+body {
+  font-size: 20px;
+}
+body div {
+  font-size: 10px;
+  width: 10px;
+}
+
+.pc-header__logo {
+  width: 10px;
+}
+
+.mobile-header__menu {
+  width: 10px;
+}
+.mobile-header__logo {
+  width: 10px;
+}
+
+body {
+  color: gray;
+}

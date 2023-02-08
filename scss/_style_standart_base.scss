@@ -1,0 +1,26 @@
+body {
+    font-size: 20px;
+    div {
+        font-size: 10px;
+        width: 10px;
+    }
+}
+
+.wrapper-header {
+    width: 10px;
+}
+
+.pc-header {
+    &__logo {
+        width: 10px;
+    }
+}
+
+.mobile-header {
+    &__menu {
+        width: 10px;
+    }
+    &__logo {
+        width: 10px;
+    }
+}
