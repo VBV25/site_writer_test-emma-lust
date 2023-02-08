@@ -178,6 +178,12 @@ h6 {
   .header__btn-navigation-menu {
     display: none; }
 
+.active-menu {
+  color: #646464 !important; }
+  .active-menu:hover {
+    color: unset;
+    cursor: no-drop; }
+
 @media (max-width: 630px) {
   .header .container {
     margin: 0px;
@@ -205,7 +211,7 @@ h6 {
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    top: -200%;
+    top: -1000%;
     left: 0;
     position: absolute;
     background-color: #253229;
