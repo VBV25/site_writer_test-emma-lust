@@ -1,0 +1,224 @@
+//------------шрифты--ПОДКЛЮЧЕНИЕ--------------------------------------
+@font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Poppins-Regular'), url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+//--------------------------------------------------------------------------------
+//-------------------------ПЕРЕМЕННЫЕ---------------------------------------------
+//-цвета-
+$darkGray: #646464;
+$whiteColor: #ffffff;
+$blueColor: #3a4574;
+$blueColorOpacity: #3a457499;
+$blueColorOpacity08: #3a4574cc;
+$blackColor: #000000;
+$blackColorOpacity: #000000e6;
+$goldColor: #d3b47f;
+$goldColorOpacity: #d3b47fb3;
+$grayColor: #808080;
+$smokeColor: #cccccc;
+//-шрифты-
+$fontFamily1: Poppins,
+Arial,
+sans-serif;
+//-------------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----------------------------------------
+:root {
+    //--------размеры шрифтов
+    --fsMenuHead: 16px; //размер шрифта в хедер
+    --fsH2: 44px; //заголовки h2
+    --fsH3: 36px; //Заголовки h3
+    --fsH4: 24px; //Заголовки h4
+    --fsH5: 18px; //Заголовки h5
+    --fsP: 16px; //текст и блоки P
+    //---------------
+    //-----хэдер
+    --heHeader: 165px; //высота хедера
+    --menuGapHead: 45px; //расстояние между пунктами меню в хедер
+    //----контент
+    --contentWidh: 1168px; //блок контента
+    --logoHedWe: 269px; //ширина логотипа хедера
+    --logoHedHe: 55px; //высота логотипа хедера
+    //------1блок
+    --firstBlokHe: 901px; //высота первой секции
+    --padTopText1Block: 99px; //число для калькуляции верхнего отступа текста от хедера
+    --firstBlockBtnWi: 270px; //Ширина кнопки первой секции
+    --firstBlockBtnHe: 100px; //высота кнопки первой секции
+    //------2блок
+    --timetableHe: 808px; //высота второй секции
+    --squareWi: 471px; //ширина рамочного квадрата во втором блоке
+    --squareHe: 501px; //Высота рамочного квадрата во втором блоке
+    --photoSquareWi: 323px; //ширина фото в квадрате во втором блоке
+    --photoSquareHe: 486px; //высота фото в квадрате во втором блоке(1.51)
+    //----5блок
+    --botPadSect5: 235px; //нижний паддинг синей части 5 секции
+    --galleryImgHe: 646px; //высота изображений в галерее
+    --galleryImgWi: calc( var(--galleryImgHe) * 1.5); //Ширина изображений в галерее
+    //----6блок
+    --padTop6Block: 101px; //число для калькуляции верхнего отступа 6 блока формы из за смещения галлереи
+}
+
+//-----------------------------------------------миксины----------------------------------------------
+//ширина и высота элемента
+@mixin wiHe($wi: 100%,
+$he: 100%) {
+    width: $wi;
+    height: $he;
+}
+
+//позиционирование
+@mixin leTo($top: 0,
+$left: 0) {
+    top: $top;
+    left: $left;
+}
+
+@mixin riTo($top: 0,
+$right: 0) {
+    top: $top;
+    right: $right;
+}
+
+@mixin riBo($bottom: 0,
+$right: 0) {
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin leBo($bottom: 0,
+$left: 0) {
+    bottom: $bottom;
+    left: $left;
+}
+
+//вставка изображения как фона(без ссылки на изображение)
+@mixin bgImg( $bgCol: $smokeColor,
+$bgImSize: 100% 100%,
+$bgPosition:center,
+$bgRepeat:no-repeat) {
+    background-color: $bgCol;
+    background-size: $bgImSize;
+    background-position: $bgPosition;
+    background-repeat: $bgRepeat;
+}
+
+//флекс элемент по центру
+@mixin flCent($jusCon: center,
+$alIt: center) {
+    display: flex;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//флекс элемент слева снизу
+@mixin flStCen($jusCon: start,
+$alIt: center) {
+    display: flex;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//флекс элемент: по вертикали центр, горизонтально - разнесено по краям
+@mixin flexAlJu($jusCon: space-between,
+$alIt: center) {
+    display: flex;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//грид элемент: по вертикали центр, горизонтально - разнесено по краям
+@mixin gridAlJu($jusCon: space-between,
+$alIt: center) {
+    display: grid;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//грид центр
+@mixin gridCent($jusCon: center,
+$alIt: center) {
+    display: grid;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//обводка текста
+@mixin textBorderGold {
+    text-shadow: -0 -1px 4px $goldColor, 0 -1px 4px $goldColor, -0 1px 4px $goldColor, 0 1px 4px $goldColor, -1px -0 4px $goldColor, 1px -0 4px $goldColor, -1px 0 4px $goldColor, 1px 0 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor;
+}
+
+@mixin textBorderBlack {
+    text-shadow: -0 -1px 1px $blackColor, 0 -1px 1px $blackColor, -0 1px 1px $blackColor, 0 1px 1px $blackColor, -1px -0 1px $blackColor, 1px -0 1px $blackColor, -1px 0 1px $blackColor, 1px 0 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor;
+}
+
+//параметры шрифтов
+@mixin fontSizeBase($fs: 16px,
+$fWe: 400,
+$liHe: 24px,
+$color: $whiteColor) {
+    font-size: $fs;
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeP($fWe: 400,
+$liHe: calc(var(--fsP) * 1.5),
+$color: $blackColor) {
+    font-size: var(--fsP);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH5( $fWe: 500,
+$liHe: calc(var(--fsH5) * 1.5),
+$color: $blackColor) {
+    font-size: var(--fsH5);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH4( $fWe: 600,
+$liHe: calc(var(--fsH4) * 1.5),
+$color: $blackColor) {
+    font-size: var(--fsH4);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH3( $fWe: 700,
+$liHe: calc(var(--fsH3) * 1.5),
+$color: $blackColor) {
+    font-size: var(--fsH3);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH2($fWe: bold,
+$liHe: calc(var(--fsH2) * 1.5),
+$color: $blackColor) {
+    font-size: var(--fsH2);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+//----------------------------------------------------------------------------------------------------
