@@ -21,6 +21,34 @@ body {
     overflow: hidden;
 }
 
+//стилизация кнопок перехода
+.content-btn {
+    @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+    z-index: 4;
+    position: relative;
+    left: 50%;
+    margin-top: var(--marginTopBtnSect2);
+    margin-left: calc(var(--btnSect2Wi)/-2);
+    background-color: $grayColor;
+    border-radius: 10px;
+    &::after {
+        @include fontSizeH5($color: $whiteColor);
+        @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+        @include leTo(-4px);
+        @include flCent;
+        z-index: 5;
+        position: absolute;
+        background-color: $DarkRedColor;
+        border-radius: 10px;
+    }
+    &:hover::after {
+        color: $skinColor
+    }
+    &:active::after {
+        @include leTo(0);
+    }
+}
+
 //----------------------------------------------------------------------------------------------
 //---------------------------------------ПЕРВАЯ-СЕКЦИЯ----------------------------------------
 .tagline {
@@ -87,9 +115,12 @@ body {
         &__wrapper {
             @include flCent;
             &::after {
-                @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: center);
+                @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: top 20px center);
                 opacity: 0.15;
             }
+        }
+        &__title {
+            margin: 40px auto 5px;
         }
     }
 }
@@ -176,45 +207,21 @@ body {
     }
     //-----заголовок книги
     &__title {
-        @include fontSizeH3( $color: $blackColor);
+        @include fontSizeH3( $color: $blackColor, $fontFamily: $fontFamily1);
     }
     //-----подзаголовок книги
     &__subtitle {
-        @include fontSizeH4( $color: $blackColor);
+        @include fontSizeH4( $color: $blackColor, $fontFamily: $fontFamily1);
     }
     //------текст
     &__text {
-        @include fontSizeP( $color: $blackColor);
+        @include fontSizeP( $color: $blackColor, $fontFamily: $fontFamily1);
         text-align: start;
     }
     //-------кнопка перехода 
     &__btn {
-        @include wiHe(var(--btnSect2Wi),
-        var(--btnSect2He));
-        z-index: 4;
-        position: relative;
-        left: 50%;
-        margin-top: var(--marginTopBtnSect2);
-        margin-left: calc(var(--btnSect2Wi)/-2);
-        background-color: $grayColor;
-        border-radius: 10px;
         &::after {
-            @include fontSizeH5($color: $whiteColor);
-            @include wiHe(var(--btnSect2Wi),
-            var(--btnSect2He));
-            @include leTo(-4px);
-            @include flCent;
-            z-index: 5;
             content: 'Перейти к книге >';
-            position: absolute;
-            background-color: $blackColor;
-            border-radius: 10px;
-        }
-        &:hover::after {
-            color: $skinColor
-        }
-        &:active::after {
-            @include leTo(0);
         }
     }
     //------контейнер с книгой
@@ -300,6 +307,24 @@ body {
 //
 //
 //----------------------------------------------------------------
+//-----------------------------530 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 530px) {
+    .in-work {
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(34%,
+                1%);
+            }
+        }
+    }
+}
+
+//
+//
+//----------------------------------------------------------------
 //-----------------------------375 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 375px) {
@@ -307,7 +332,7 @@ body {
         @include wiHe($he: max-content);
         //----Заголовок блока
         &__base-title {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         //------контейнер с книгой
         &__book-container {
@@ -346,6 +371,140 @@ body {
         //-------обложка
         &__cover {
             transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//---------------------------------------ТРЕТЬЯ-СЕКЦИЯ----------------------------------------
+.biography {
+    @include wiHe($he: max-content);
+    position: relative;
+    padding: var(--paddingSect3TopBot) 0;
+    background-color: $emeraldDarkColor;
+    overflow: hidden;
+    //-----обертка блока
+    &__wrapper {
+        @include wiHe(var(--contentWidh),
+        max-content
+        /*max-content*/
+        );
+        @include flCent;
+        flex-direction: column;
+        //
+        margin: auto;
+    }
+    //----Заголовок блока
+    &__base-title {
+        @include wiHe($he: max-content);
+        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
+        margin-bottom: 100px;
+        text-align: center;
+    }
+    //контейнер с контентом
+    &__container {
+        @include wiHe($he: max-content);
+        @include flexSpBeCent;
+    }
+    //Изображение
+    &__photo {
+        @include wiHe(max-content,
+        max-content);
+        z-index: 5;
+        position: relative;
+        margin-left: var(--marginLeftPhotoSect3);
+        filter: sepia(50%);
+        img {
+            @include wiHe(var(--photoSect3Wi),
+            auto);
+        }
+        &::after {
+            @include wiHe(var(--bgPhotoSect3Wi),
+            var(--bgPhotoSect3He));
+            @include leTo(-20px,
+            calc(var(--photoSect3Wi)/-3.5)); //calc(var( --bgPhotoSect3Hei)/-1.5)
+            @include bgImg;
+            z-index: -1;
+            content: '';
+            position: absolute;
+            background-image: url('../img/bg-photo.png')
+        }
+    }
+    //контейнер с текстом
+    &__text-container {
+        @include wiHe(50%,
+        max-content)
+    }
+    //заголовки
+    &__title {
+        @include fontSizeH3($color: $whiteColor);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    //текст
+    &__text {
+        @include fontSizeP($color: $whiteColor)
+    }
+    //линия
+    &__line {
+        @include wiHe(var(--lineSect3Wi),
+        4px);
+        background-color: $skinColor;
+        margin: 20px 0;
+    }
+    //-------кнопка перехода 
+    &__btn {
+        background-color: $skinColor;
+        &::after {
+            content: 'Подробнее >';
+        }
+    }
+}
+
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//
+//
+//----------------------------------------------------------------
+//-----------------------------770 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 770px) {
+    .biography {
+        //----Заголовок блока
+        &__base-title {
+            margin-bottom: 70px;
+        }
+        //контейнер с контентом
+        &__container {
+            @include flCent;
+            flex-direction: column;
+        }
+        //Изображение
+        &__photo {
+            margin-left: 0;
+            margin-bottom: calc(var(--photoSect3Wi)/4);
+        }
+        //контейнер с текстом
+        &__text-container {
+            @include wiHe(90%,
+            max-content)
+        }
+        //линия
+        &__line {
+            @include wiHe(var(--lineSect3Wi),
+            4px);
+            background-color: $skinColor;
+            margin: 30px auto 20px;
         }
     }
 }

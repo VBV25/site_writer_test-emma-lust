@@ -16,7 +16,9 @@ $skinColor:#E2C68E;
 //
 //----------
 //-шрифты-
-$fontFamily1: LobsterRegular,
+$fontFamily1: Georgia,
+sans-serif;
+$fontFamily2: LobsterRegular,
 MarckScriptRegular,
 PacificoRegular,
 sans-serif;
@@ -32,8 +34,9 @@ sans-serif;
     --fsP: 22px; //текст и блоки P
     //----------------------------------------------------
     //----------------------------------------------------
-    //----контент
+    //----контент общий
     --contentWidh: 95%; //блок контента
+    --marginTopBtnSect2: 100px; //внешний отступ кнопки 2,3 секции верхний
     //----------------------------------------------------
     //----------------------------------------------------
     //-----хэдер
@@ -55,7 +58,6 @@ sans-serif;
     //текст
     --containerText2sectWi: 45%; // контейнера с текстом 2 секции ширина
     --marginTextCont2sect: 30px; //нижние отступы в текстовом блоке 2 секции
-    --marginTopBtnSect2: 100px; //внешний отступ кнопки 2 секции верхний
     //книга
     --rigtBookShift: 50px; //отступ книги от правого края
     --containerBook2sectWi: 323px; // контейнера с книгой 2 секции и книги ширина
@@ -66,12 +68,15 @@ sans-serif;
     --btnSect2He: 50px; //кнопка второй секции высота
     //----------------------------------------------------
     //----------------------------------------------------
-    //----5блок
-    --botPadSect5: 235px; //нижний паддинг синей части 5 секции
-    --galleryImgHe: 646px; //высота изображений в галерее
-    --galleryImgWi: calc( var(--galleryImgHe) * 1.5); //Ширина изображений в галерее
-    //----6блок
-    --padTop6Block: 101px; //число для калькуляции верхнего отступа 6 блока формы из за смещения галлереи
+    //----3блок
+    --paddingSect3TopBot: 100px; //внутренний отступ 3 секции верх и низ
+    //фото
+    --photoSect3Wi: 300px; //размер фото 3 секции ширина
+    --marginLeftPhotoSect3: 80px; //отступ фото левый внешний 3 секция
+    --bgPhotoSect3Wi: calc(var(--photoSect3Wi)*1.5); //фон Фото ширина 3 секц
+    --bgPhotoSect3He: calc(var(--photoSect3Wi)*1.65); //Фон фото 3 секц высота
+    //текст
+    --lineSect3Wi: 300px; //длинна линии 3 секция
 }
 
 //-----------------------------------------------миксины----------------------------------------------
@@ -154,58 +159,58 @@ sans-serif;
 }
 
 //параметры шрифтов
-@mixin fontSizeBase($fs: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor) {
+@mixin fontSizeBase($fs: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor, $fontFamily:$fontFamily1) {
     font-size: $fs;
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
-@mixin fontSizeP($fWe: 100, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor) {
+@mixin fontSizeP($fWe: 100, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsP);
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
-@mixin fontSizeH5( $fWe: 200, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor) {
+@mixin fontSizeH5( $fWe: 200, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH5);
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
-@mixin fontSizeH4( $fWe: 300, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor) {
+@mixin fontSizeH4( $fWe: 300, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH4);
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
-@mixin fontSizeH3( $fWe: 400, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor) {
+@mixin fontSizeH3( $fWe: 400, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH3);
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
-@mixin fontSizeH2($fWe: 500, $liHe: calc(var(--fsH2) * 1.5), $color: $whiteColor, $fsH2: var(--fsH2), ) {
+@mixin fontSizeH2($fWe: 500, $liHe: calc(var(--fsH2) * 1.5), $color: $whiteColor, $fsH2: var(--fsH2), $fontFamily:$fontFamily1) {
     font-size: $fsH2;
     font-weight: $fWe;
     line-height: $liHe;
     color: $color;
     font-style: normal;
-    font-family: $fontFamily1;
+    font-family: $fontFamily;
 }
 
 //----------------------------------------------------------------------------------------------------
