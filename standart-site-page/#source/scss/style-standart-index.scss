@@ -97,7 +97,7 @@ body {
 //
 //
 //----------------------------------------------------------------
-//-----------------------------630 PX-----------------------------
+//-----------------------------495 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 495px) {
     .tagline {
@@ -107,4 +107,245 @@ body {
 }
 
 //----------------------------------------------------------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //---------------------------------------ВТОРАЯ-СЕКЦИЯ----------------------------------------
+.in-work {
+    @include wiHe($he: max-content);
+    z-index: 1;
+    position: relative;
+    padding: 0px;
+    padding-top: var(--section2PaddingTB);
+    padding-bottom: calc(var(--section2PaddingTB)/2);
+    overflow: hidden;
+    //фоны
+    &::after,
+    &::before {
+        @include wiHe; //($he: max-content);
+        @include leTo;
+        content: '';
+        position: absolute;
+    }
+    //фон лист бумаги
+    &::after {
+        @include bgImg;
+        z-index: 1;
+        background-image: url('../img/sepia-list-bg.png');
+    }
+    //фон цвет
+    &::before {
+        z-index: -1;
+        background-color: $DarkRedColor;
+    }
+    //----Заголовок блока
+    &__base-title {
+        z-index: 5;
+        position: relative;
+        @include wiHe($he: max-content);
+        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    //-----обертка блока
+    &__wrapper {
+        @include wiHe(var(--contentWidh),
+        max-content);
+        @include flexSpBeCent($jusCon: space-around);
+        //
+        z-index: 5;
+        position: relative;
+        margin: auto;
+    }
+    //-------контейнер с текстовыми блоками
+    &__text-container {
+        @include wiHe(var(--containerText2sectWi));
+    }
+    //-----
+    &__title,
+    &__subtitle,
+    &__text {
+        margin-bottom: var(--marginTextCont2sect);
+        text-align: center;
+    }
+    //-----заголовок книги
+    &__title {
+        @include fontSizeH3( $color: $blackColor);
+    }
+    //-----подзаголовок книги
+    &__subtitle {
+        @include fontSizeH4( $color: $blackColor);
+    }
+    //------текст
+    &__text {
+        @include fontSizeP( $color: $blackColor);
+        text-align: start;
+    }
+    //-------кнопка перехода 
+    &__btn {
+        @include wiHe(var(--btnSect2Wi),
+        var(--btnSect2He));
+        z-index: 4;
+        position: relative;
+        left: 50%;
+        margin-top: var(--marginTopBtnSect2);
+        margin-left: calc(var(--btnSect2Wi)/-2);
+        background-color: $grayColor;
+        border-radius: 10px;
+        &::after {
+            @include fontSizeH5($color: $whiteColor);
+            @include wiHe(var(--btnSect2Wi),
+            var(--btnSect2He));
+            @include leTo(-4px);
+            @include flCent;
+            z-index: 5;
+            content: 'Перейти к книге >';
+            position: absolute;
+            background-color: $blackColor;
+            border-radius: 10px;
+        }
+        &:hover::after {
+            color: $skinColor
+        }
+        &:active::after {
+            @include leTo(0);
+        }
+    }
+    //------контейнер с книгой
+    &__book-container {
+        @include wiHe(var(--containerBook2sectWi),
+        var(--containerBook2sectHe));
+        position: relative;
+        right: var(--rigtBookShift);
+        //тень за книгой
+        &::after {
+            @include wiHe(var(--containerBook2sectWi),
+            var(--containerBook2sectHe));
+            @include leTo(34%,
+            11%);
+            content: '';
+            position: absolute;
+            box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+            background-color: $blackColorOpacity;
+            transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.6, 1.5, 0, 3, 7, 6);
+        }
+    }
+    //-------обложка
+    &__cover {
+        @include wiHe(var(--coverBook2sectWi),
+        var(--coverBook2sectHe));
+        @include leTo;
+        z-index: 5;
+        position: absolute;
+        //
+        clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
+        transform-origin: right;
+        transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
+        /*
+       
+        
+        //rotateY(30deg) skew(10deg, 0deg);*/
+        img {
+            @include wiHe;
+        }
+    }
+    //-------книга
+    &__book {
+        @include wiHe(98%,
+        98%);
+        @include leTo(1%,
+        1%);
+        z-index: 3;
+        position: absolute;
+        img {
+            @include wiHe;
+        }
+    }
+}
+
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//
+//
+//----------------------------------------------------------------
+//-----------------------------770 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 770px) {
+    .in-work {
+        //-----обертка блока
+        &__wrapper {
+            @include flCent;
+            flex-direction: column;
+        }
+        //-------контейнер с текстовыми блоками
+        &__text-container {
+            @include wiHe(90%);
+            order: 2
+        }
+        //---тексты--
+        //------контейнер с книгой
+        &__book-container {
+            order: 1;
+        }
+    }
+}
+
+//
+//
+//----------------------------------------------------------------
+//-----------------------------375 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 375px) {
+    .in-work {
+        @include wiHe($he: max-content);
+        //----Заголовок блока
+        &__base-title {
+            margin-bottom: 20px;
+        }
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(34%,
+                2%);
+                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+                transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.46, 1.5, 0, 3, 0, 6);
+            }
+        }
+        //-------обложка
+        &__cover {
+            transform: matrix(1.15, 0.2, 0, 1, 2, 4) rotateY(30deg);
+        }
+    }
+}
+
+//
+//
+//----------------------------------------------------------------
+//-----------------------------320 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 320px) {
+    .in-work {
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(32%,
+                -4%);
+                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+                transform: rotateX(87deg) rotateY(0deg) rotateZ(3deg) matrix(0.35, 1.5, 0, 2.8, 0, 6);
+            }
+        }
+        //-------обложка
+        &__cover {
+            transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
+        }
+    }
+}
