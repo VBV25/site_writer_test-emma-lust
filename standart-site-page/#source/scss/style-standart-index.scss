@@ -415,6 +415,12 @@ body {
         @include wiHe($he: max-content);
         @include flexSpBeCent;
     }
+    //обертка фото
+    &__photo-wrapper {
+        @include wiHe(50%,
+        max-content);
+        @include flCent;
+    }
     //Изображение
     &__photo {
         @include wiHe(max-content,
@@ -430,7 +436,7 @@ body {
         &::after {
             @include wiHe(var(--bgPhotoSect3Wi),
             var(--bgPhotoSect3He));
-            @include leTo(-20px,
+            @include leTo(-30px,
             calc(var(--photoSect3Wi)/-3.5)); //calc(var( --bgPhotoSect3Hei)/-1.5)
             @include bgImg;
             z-index: -1;

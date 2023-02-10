@@ -161,6 +161,16 @@ header {
     background-size: 100% 100%;
 }
 
+.btn_standart_page:hover,
+.call_header_form:hover {
+    color: #E2C68E;
+}
+
+.btn_standart_page:active,
+.call_header_form:active {
+    color: #885A34;
+}
+
 .header-logo {
     z-index: 11;
     position: absolute;
@@ -181,6 +191,10 @@ header {
     width: 70%;
     height: 45%;
     margin-top: 5%;
+}
+
+.header_logo_label:hover {
+    filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
 }
 
 

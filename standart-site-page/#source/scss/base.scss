@@ -168,7 +168,7 @@ sans-serif;
     font-family: $fontFamily;
 }
 
-@mixin fontSizeP($fWe: 100, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
+@mixin fontSizeP($fWe: 300, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsP);
     font-weight: $fWe;
     line-height: $liHe;
@@ -177,7 +177,7 @@ sans-serif;
     font-family: $fontFamily;
 }
 
-@mixin fontSizeH5( $fWe: 200, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
+@mixin fontSizeH5( $fWe: 300, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH5);
     font-weight: $fWe;
     line-height: $liHe;
@@ -186,7 +186,7 @@ sans-serif;
     font-family: $fontFamily;
 }
 
-@mixin fontSizeH4( $fWe: 300, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
+@mixin fontSizeH4( $fWe: 600, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH4);
     font-weight: $fWe;
     line-height: $liHe;
@@ -195,7 +195,7 @@ sans-serif;
     font-family: $fontFamily;
 }
 
-@mixin fontSizeH3( $fWe: 400, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
+@mixin fontSizeH3( $fWe: 600, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor, $fontFamily:$fontFamily1) {
     font-size: var(--fsH3);
     font-weight: $fWe;
     line-height: $liHe;
@@ -204,7 +204,7 @@ sans-serif;
     font-family: $fontFamily;
 }
 
-@mixin fontSizeH2($fWe: 500, $liHe: calc(var(--fsH2) * 1.5), $color: $whiteColor, $fsH2: var(--fsH2), $fontFamily:$fontFamily1) {
+@mixin fontSizeH2($fWe: 600, $liHe: calc(var(--fsH2) * 1.5), $color: $whiteColor, $fsH2: var(--fsH2), $fontFamily:$fontFamily1) {
     font-size: $fsH2;
     font-weight: $fWe;
     line-height: $liHe;

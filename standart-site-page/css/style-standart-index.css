@@ -139,7 +139,7 @@ h6 {
     --menuGapHead: 20px;
     --logoHedHe: 40px;
     --emmalustWi: 47vw;
-    --section2PaddingTB: 100px;
+    --section2PaddingTB: 130px;
     --fs2sectTitle: 56px;
     --containerBook2sectWi: 250px;
     --paddingSect3TopBot: 70px;
@@ -185,7 +185,6 @@ h6 {
     --fsP: 16px;
     --marginTopBtnSect2: 40px;
     --firstBlockHe: 60vw;
-    --section2PaddingTB: 100px;
     --fs2sectTitle: 42px;
     --marginTextCont2sect: 10px;
     --containerBook2sectWi: 120px;
@@ -202,7 +201,7 @@ h6 {
     --fsH5: 18px;
     --fsP: 14px;
     --firstBlockHe: 60vw;
-    --section2PaddingTB: 70px;
+    --section2PaddingTB: 90px;
     --fs2sectTitle: 32px;
     --marginTextCont2sect: 5px;
     --containerBook2sectWi: 80px;
@@ -376,7 +375,7 @@ body {
   border-radius: 10px; }
   .content-btn::after {
     font-size: var(--fsH5);
-    font-weight: 200;
+    font-weight: 300;
     line-height: calc(var(--fsH5) * 1.5);
     color: #ffffff;
     font-style: normal;
@@ -473,7 +472,7 @@ body {
     height: -moz-max-content;
     height: max-content;
     font-size: var(--fsH2);
-    font-weight: 500;
+    font-weight: 600;
     line-height: calc(var(--fsH2) * 1.5);
     color: #ffffff;
     font-style: normal;
@@ -538,7 +537,7 @@ body {
     height: -moz-max-content;
     height: max-content;
     font-size: var(--fs2sectTitle);
-    font-weight: 500;
+    font-weight: 600;
     line-height: calc(var(--fsH2) * 1.5);
     color: #000000;
     font-style: normal;
@@ -569,21 +568,21 @@ body {
     text-align: center; }
   .in-work__title {
     font-size: var(--fsH3);
-    font-weight: 400;
+    font-weight: 600;
     line-height: calc(var(--fsH3) * 1.5);
     color: #000000;
     font-style: normal;
     font-family: Georgia, sans-serif; }
   .in-work__subtitle {
     font-size: var(--fsH4);
-    font-weight: 300;
+    font-weight: 600;
     line-height: calc(var(--fsH4) * 1.5);
     color: #000000;
     font-style: normal;
     font-family: Georgia, sans-serif; }
   .in-work__text {
     font-size: var(--fsP);
-    font-weight: 100;
+    font-weight: 300;
     line-height: calc(var(--fsP) * 1.5);
     color: #000000;
     font-style: normal;
@@ -736,7 +735,7 @@ body {
     height: -moz-max-content;
     height: max-content;
     font-size: var(--fs2sectTitle);
-    font-weight: 500;
+    font-weight: 600;
     line-height: calc(var(--fsH2) * 1.5);
     color: #ffffff;
     font-style: normal;
@@ -754,6 +753,20 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .biography__photo-wrapper {
+    width: 50%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
@@ -775,7 +788,7 @@ body {
     .biography__photo::after {
       width: var(--bgPhotoSect3Wi);
       height: var(--bgPhotoSect3He);
-      top: -20px;
+      top: -30px;
       left: calc(var(--photoSect3Wi)/-3.5);
       background-size: 100% 100%;
       background-position: center;
@@ -791,7 +804,7 @@ body {
     height: max-content; }
   .biography__title {
     font-size: var(--fsH3);
-    font-weight: 400;
+    font-weight: 600;
     line-height: calc(var(--fsH3) * 1.5);
     color: #ffffff;
     font-style: normal;
@@ -800,7 +813,7 @@ body {
     text-align: center; }
   .biography__text {
     font-size: var(--fsP);
-    font-weight: 100;
+    font-weight: 300;
     line-height: calc(var(--fsP) * 1.5);
     color: #ffffff;
     font-style: normal;

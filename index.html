@@ -20,22 +20,30 @@
     <title>Название сайта и лого</title>
 
     <body>
-        <div class="bg_book">
-            <img src="img/open_book_2.png" alt="book">
-        </div>
         <section class="wrapper">
-            <h1> emma lust писатель романы</h1>
-            <h2>Добро пожаловать!</h2>
-            <p class="text_name">Меня зовут Emma Lust</p>
-            <p class="text_content"> Я приветствую вас на моем сайте. <br> Здесь вы можете ознакомиться с моим творчеством и погрузиться в увлекательный мир поэзии. <br>Вашему вниманию представлено на выбор два варианта сайта:</p>
-            <a href="interactive_index.html" class="interactive_wrapper interactive_version_wrapper">
-                <p class="interactive_text">Интерактивная версия</p>
-
-            </a>
-            <a href="standart-site-page/standart-index.html" class=" interactive_wrapper standart_version_wrapper">
-                <p class="standart_text">Стандартная версия<br>(страница в разработке)</p>
-
-            </a>
+            <div class="text-wrapper">
+                <h1> emma lust писатель романы</h1>
+                <h2>Добро пожаловать!</h2>
+                <h3 class="text-name">Меня зовут Emma Lust</h3>
+                <p class="text-content"> Я приветствую вас на моем сайте. <br> Здесь вы можете ознакомиться с моим творчеством и погрузиться в увлекательный мир поэзии.</p>
+                <p class="text-content">Вашему вниманию представлено на выбор два варианта просмотра сайта:</p>
+            </div>
+            <!--'Ссылка на стандартную страницу'-->
+            <div class="version-wrapper">
+                <div class="container standart-container">
+                    <h4>Стандартная версия</h4>
+                    <h5>Упращенная версия сайта.<br>Вы слегкостью найдете необходимую вам информацию.</h5>
+                    <a href="standart-site-page/standart-index.html" class=" link  standart-link">
+                    </a>
+                </div>
+                <!--'Ссылка на интерактивную версию'-->
+                <div class="container interactive-container">
+                    <h4>Интерактивная версия</h4>
+                    <h5>Вы погрузитесь в атмосферу некой игры, где можете полистать книги и насладиться уютной атмосферой сайта.</h5>
+                    <a href="interactive_index.html" class="link interactive-link">
+                    </a>
+                </div>
+            </div>
         </section>
     </body>
 
