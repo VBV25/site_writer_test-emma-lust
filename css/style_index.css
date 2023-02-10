@@ -1,535 +1,488 @@
-/*Обнуление стилей*/
-
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
-*::after,
-*::before {
-    box-sizing: border-box;
-}
-
-:focus,
-:active {
-    outline: none;
-}
-
-a,
-a:hover,
-a:visited,
-a:active,
-a:focus {
-    text-decoration: none;
-}
-
-input,
-button,
-textarea {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    background-color: none;
-}
-
-ul li {
-    list-style: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
-}
-
-
-/*-----*/
-
-:root {
-    --main-font-1: LobsterRegular;
-    --main-font-2: MarckScriptRegular;
-    --main-font-3: PacificoRegular;
-    /*--Цвет--*/
-    --bgColor: #257537;
-    --bgColorOpacity: #09140c;
-    /*--Числовые переменные--*/
-    /*----шрифты----*/
-    /*H2*/
-    --fsH2: 100px;
-    --fwH2: calc(var(--fsH2)*1.1);
-    /*H3*/
-    --fsH3: 66px;
-    --fwH3: calc(var(--fsH3)*1.1);
-    /*H4*/
-    --fsH4: 44px;
-    --fwH4: calc(var(--fsH4)*1.1);
-    /*H5*/
-    --fsH5: 28px;
-    --fwH5: calc(var(--fsH5)*1.1);
-    /*P*/
-    --fsP: 38px;
-    --fwP: calc(var(--fsP)*1.1);
-    /*----размеры----*/
-    --padWrapperTB: 50px;
-    --padWrapperLR: 50px;
-    --margBotH2: 35px;
-    --margBotH3: 35px;
-    --margBotH4: 10px;
-    --margBotH5: 15px;
-    --margBotP: 10px;
-    /*--высота текстового блока над ссылками H4--*/
-    --heightVersionH4: calc(var(--fsH4)*1.5);
-    /*--высота текстового блока над ссылками H5--*/
-    --heightVersionH5: 120px;
-    /*-зазмеры изображений в ссылках-*/
-    --imgLinkWi: 350px;
-    --imgLinkHe: 210px;
-}
-
-
-/*общие*/
-
-* {
-    box-sizing: border-box !important;
-    margin: 0;
-    padding: 0;
-    font-family: Georgia, LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    font-size: 100%;
-    position: relative;
-    text-align: center;
-    color: white;
-    background-color: black;
-}
-
-h1 {
-    display: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/*прочее*/
-
-.wrapper {
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    align-content: space-around;
-    padding: var(--padWrapperTB) var(--padWrapperLR);
-}
-
-.wrapper::after {
-    z-index: 0;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bgColor);
-    background-image: url('../img/open_book_2.png');
-    background-repeat: no-repeat;
-    background-size: 80% auto;
-    background-position: center;
-    opacity: 0.12;
-}
-
-.text-wrapper {
-    z-index: 100;
-    position: relative;
-    width: 100%;
-    height: max-content;
-}
-
-.text-wrapper h2 {
-    margin-bottom: var(--margBotH2);
-    font-size: var(--fsH2);
-    font-weight: var(--fwH2);
-}
-
-.text-name {
-    margin-bottom: var(--margBotH3);
-    font-size: var(--fsH3);
-    font-weight: var(--fwH3);
-}
-
-.text-content {
-    margin-bottom: var(--margBotP);
-    font-size: var(--fsP);
-    font-weight: var(--fwP);
-}
-
-
-/*блоки выбора версии сайта*/
-
-.version-wrapper {
-    z-index: 100;
-    position: relative;
-    width: 100%;
-    height: max-content;
-    display: flex;
-    justify-content: space-between;
-}
-
-.container {
-    width: 48%;
-}
-
-.container h4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: var(--heightVersionH4);
-    margin-bottom: var(--margBotH4);
-    font-size: var(--fsH4);
-    font-weight: var(--fwH4);
-}
-
-.container h5 {
-    height: var(--heightVersionH5);
-    margin-bottom: var(--margBotH5);
-    font-size: var(--fsH5);
-    font-weight: var(--fwH5);
-}
-
-.link {
-    display: block;
-    color: white;
-    font-size: 200%;
-    width: var(--imgLinkWi);
-    height: var(--imgLinkHe);
-    margin: auto;
-    border: 1px solid rgba(180, 179, 179, 0.26);
-    box-shadow: 0 0 15px 10px rgb(0, 0, 0) inset;
-    border-radius: 20px;
-    /**/
-    text-shadow: -0 -3px 0 #000000, 0 -3px 0 #000000, -0 3px 0 #000000, 0 3px 0 #000000, -3px -0 0 #000000, 3px -0 0 #000000, -3px 0 0 #000000, 3px 0 0 #000000, -1px -3px 0 #000000, 1px -3px 0 #000000, -1px 3px 0 #000000, 1px 3px 0 #000000, -3px -1px 0 #000000, 3px -1px 0 #000000, -3px 1px 0 #000000, 3px 1px 0 #000000, -2px -3px 0 #000000, 2px -3px 0 #000000, -2px 3px 0 #000000, 2px 3px 0 #000000, -3px -2px 0 #000000, 3px -2px 0 #000000, -3px 2px 0 #000000, 3px 2px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
-}
-
-.link:hover {
-    box-shadow: 0 0 30px 2px rgba(255, 255, 255, 0.523);
-}
-
-
-/*---------------Стандартная версия-----------*/
-
-.standart-link {
-    background-image: url("../img/standart-version-site.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-
-/*--------------------------------------------*/
-
-
-/*---------------Интерактивная версия-----------*/
-
-.interactive-link {
-    background-image: url("../img/bg_room_min.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-
-/*--------------------------------------------*/
-
-
-/*изображения в блоках*/
-
-.img-version-site {
-    width: 100%;
-    height: auto;
-}
-
-
-/*--------------МЕДИА ЗАПРОСЫ-------------*/
-
-@media (max-width:1260px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 70px;
-        /*H3*/
-        --fsH3: 55px;
-        /*H4*/
-        --fsH4: 38px;
-        /*H5*/
-        --fsH5: 22px;
-        /*P*/
-        --fsP: 38px;
-        /*----размеры----*/
-        --padWrapperTB: 50px;
-        --padWrapperLR: 20px;
-        --margBotH2: 50px;
-        --margBotH3: 40px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 310px;
-        --imgLinkHe: 190px;
+    /*Обнуление стилей*/
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
     }
-}
-
-@media (max-width:900px) {
+    
+    * {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+    
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+    
+     :focus,
+     :active {
+        outline: none;
+    }
+    
+    a,
+    a:hover,
+    a:visited,
+    a:active,
+    a:focus {
+        text-decoration: none;
+    }
+    /*-----*/
+    
      :root {
+        --main-font-1: LobsterRegular;
+        --main-font-2: MarckScriptRegular;
+        --main-font-3: PacificoRegular;
+        /*--Цвет--*/
+        --bgColor: #257537;
+        --bgColorOpacity: #09140c;
+        /*--Числовые переменные--*/
         /*----шрифты----*/
         /*H2*/
-        --fsH2: 70px;
+        --fsH2: 100px;
         --fwH2: calc(var(--fsH2)*1.1);
         /*H3*/
-        --fsH3: 55px;
+        --fsH3: 66px;
         --fwH3: calc(var(--fsH3)*1.1);
         /*H4*/
-        --fsH4: 34px;
+        --fsH4: 44px;
         --fwH4: calc(var(--fsH4)*1.1);
         /*H5*/
-        --fsH5: 20px;
+        --fsH5: 28px;
         --fwH5: calc(var(--fsH5)*1.1);
         /*P*/
-        --fsP: 34px;
+        --fsP: 38px;
         --fwP: calc(var(--fsP)*1.1);
         /*----размеры----*/
-        --padWrapperTB: 30px;
-        --padWrapperLR: 20px;
-        --margBotH2: 40px;
-        --margBotH3: 40px;
+        --padWrapperTB: 50px;
+        --padWrapperLR: 50px;
+        --margBotH2: 35px;
+        --margBotH3: 35px;
         --margBotH4: 10px;
         --margBotH5: 15px;
-        --margBotP: 5px;
+        --margBotP: 10px;
         /*--высота текстового блока над ссылками H4--*/
-        --heightVersionH4: calc(var(--fsH4)*2.5);
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 280px;
-        --imgLinkHe: 150px;
-    }
-}
-
-@media (max-width:780px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 64px;
-        /*H3*/
-        --fsH3: 48px;
-        /*H4*/
-        --fsH4: 34px;
-        /*H5*/
-        --fsH5: 24px;
-        /*P*/
-        --fsP: 28px;
-        /*----размеры----*/
-        --padWrapperTB: 20px;
-        --padWrapperLR: 10px;
-        --margBotH2: 40px;
-        --margBotH3: 40px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
-        /*--высота текстового блока над ссылками H4--*/
-        --heightVersionH4: max-content;
+        --heightVersionH4: calc(var(--fsH4)*1.5);
         /*--высота текстового блока над ссылками H5--*/
-        --heightVersionH5: max-content;
+        --heightVersionH5: 120px;
         /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 280px;
-        --imgLinkHe: 150px;
+        --imgLinkWi: 350px;
+        --imgLinkHe: 210px;
     }
+    /*общие*/
+    
+    * {
+        font-family: Georgia, LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
+    }
+    
+    body {
+        background-color: black;
+    }
+    
+    h1 {
+        display: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    /*прочее*/
+    
+    .wrapper {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-row: auto;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        align-content: space-around;
+        padding: var(--padWrapperTB) var(--padWrapperLR);
+    }
+    
+    .wrapper::after {
+        z-index: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bgColor);
+        background-image: url('../img/open_book_2.png');
+        background-repeat: no-repeat;
+        background-size: 80% auto;
+        background-position: center;
+        opacity: 0.12;
+    }
+    
     .text-wrapper {
+        z-index: 100;
+        position: relative;
         width: 100%;
+        height: max-content;
     }
+    
+    .text-wrapper h2 {
+        margin-bottom: var(--margBotH2);
+        font-size: var(--fsH2);
+        font-weight: var(--fwH2);
+    }
+    
+    .text-name {
+        margin-bottom: var(--margBotH3);
+        font-size: var(--fsH3);
+        font-weight: var(--fwH3);
+    }
+    
+    .text-content {
+        margin-bottom: var(--margBotP);
+        font-size: var(--fsP);
+        font-weight: var(--fwP);
+    }
+    
+    .text-content {
+        z-index: 100;
+        position: relative;
+        margin-top: 20px;
+    }
+    /*блоки выбора версии сайта*/
+    
     .version-wrapper {
+        z-index: 100;
+        position: relative;
         width: 100%;
-        flex-direction: column;
+        height: max-content;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .container {
+        width: 48%;
+    }
+    
+    .container h4 {
+        display: flex;
         justify-content: center;
         align-items: center;
-        row-gap: 40px;
-        margin-top: 40px;
+        height: var(--heightVersionH4);
+        margin-bottom: var(--margBotH4);
+        font-size: var(--fsH4);
+        font-weight: var(--fwH4);
     }
-    .container {
+    
+    .container h5 {
+        height: var(--heightVersionH5);
+        margin-bottom: var(--margBotH5);
+        font-size: var(--fsH5);
+        font-weight: var(--fwH5);
+    }
+    
+    .link {
+        display: block;
+        color: white;
+        font-size: 200%;
+        width: var(--imgLinkWi);
+        height: var(--imgLinkHe);
+        margin: auto;
+        border: 1px solid rgba(180, 179, 179, 0.26);
+        box-shadow: 0 0 15px 10px rgb(0, 0, 0) inset;
+        border-radius: 20px;
+        /**/
+        text-shadow: -0 -3px 0 #000000, 0 -3px 0 #000000, -0 3px 0 #000000, 0 3px 0 #000000, -3px -0 0 #000000, 3px -0 0 #000000, -3px 0 0 #000000, 3px 0 0 #000000, -1px -3px 0 #000000, 1px -3px 0 #000000, -1px 3px 0 #000000, 1px 3px 0 #000000, -3px -1px 0 #000000, 3px -1px 0 #000000, -3px 1px 0 #000000, 3px 1px 0 #000000, -2px -3px 0 #000000, 2px -3px 0 #000000, -2px 3px 0 #000000, 2px 3px 0 #000000, -3px -2px 0 #000000, 3px -2px 0 #000000, -3px 2px 0 #000000, 3px 2px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
+    }
+    
+    .link:hover {
+        box-shadow: 0 0 30px 2px rgba(255, 255, 255, 0.523);
+    }
+    /*---------------Стандартная версия-----------*/
+    
+    .standart-link {
+        background-image: url("../img/standart-version-site.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    /*--------------------------------------------*/
+    /*---------------Интерактивная версия-----------*/
+    
+    .interactive-link {
+        background-image: url("../img/bg_room_min.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    /*--------------------------------------------*/
+    /*изображения в блоках*/
+    
+    .img-version-site {
         width: 100%;
+        height: auto;
     }
-}
-
-@media (max-width:630px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 44px;
-        /*H3*/
-        --fsH3: 34px;
-        /*H4*/
-        --fsH4: 34px;
-        /*H5*/
-        --fsH5: 20px;
-        /*P*/
-        --fsP: 24px;
-        /*----размеры----*/
-        --margBotH2: 40px;
-        --margBotH3: 40px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
+    /*--------------МЕДИА ЗАПРОСЫ-------------*/
+    
+    @media screen and (orientation: portrait) {
+        @media (max-width: 1260px) {
+             :root {
+                /*----шрифты----*/
+                /*H2*/
+                --fsH2: 70px;
+                /*H3*/
+                --fsH3: 55px;
+                /*H4*/
+                --fsH4: 38px;
+                /*H5*/
+                --fsH5: 22px;
+                /*P*/
+                --fsP: 38px;
+                /*----размеры----*/
+                --padWrapperTB: 50px;
+                --padWrapperLR: 20px;
+                --margBotH2: 50px;
+                --margBotH3: 40px;
+                --margBotH4: 10px;
+                --margBotH5: 15px;
+                --margBotP: 5px;
+                /*-зазмеры изображений в ссылках-*/
+                --imgLinkWi: 310px;
+                --imgLinkHe: 190px;
+            }
+        }
+        @media (max-width:900px) {
+             :root {
+                /*----шрифты----*/
+                /*H4*/
+                --fsH4: 34px;
+                /*H5*/
+                --fsH5: 20px;
+                /*P*/
+                --fsP: 34px;
+                /*----размеры----*/
+                --padWrapperTB: 30px;
+                --margBotH2: 40px;
+                /*--высота текстового блока над ссылками H4--*/
+                --heightVersionH4: calc(var(--fsH4)*2.5);
+                /*-зазмеры изображений в ссылках-*/
+                --imgLinkWi: 280px;
+                --imgLinkHe: 150px;
+            }
+        }
+        @media (max-width:780px) {
+             :root {
+                /*----шрифты----*/
+                /*H2*/
+                --fsH2: 64px;
+                /*H3*/
+                --fsH3: 48px;
+                /*H5*/
+                --fsH5: 24px;
+                /*P*/
+                --fsP: 28px;
+                /*----размеры----*/
+                --padWrapperTB: 20px;
+                --padWrapperLR: 10px;
+                --margBotH2: 30px;
+                --margBotH3: 30px;
+                /*--высота текстового блока над ссылками H4--*/
+                --heightVersionH4: max-content;
+                /*--высота текстового блока над ссылками H5--*/
+                --heightVersionH5: max-content;
+            }
+            .text-wrapper {
+                width: 100%;
+            }
+            .version-wrapper {
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 25px;
+                margin-top: 25px;
+            }
+            .container {
+                width: 100%;
+            }
+        }
+        @media(max-width:700px) {
+            html,
+            body {
+                height: max-content;
+            }
+        }
+        @media (max-width:630px) {
+             :root {
+                /*----шрифты----*/
+                /*H2*/
+                --fsH2: 44px;
+                /*H3*/
+                --fsH3: 34px;
+                /*H4*/
+                --fsH4: 34px;
+                /*H5*/
+                --fsH5: 20px;
+                /*P*/
+                --fsP: 24px;
+                /*----размеры----*/
+                --padWrapperTB: 40px;
+                --margBotH4: 15px;
+            }
+        }
+        @media (max-width:480px) {
+             :root {
+                /*----шрифты----*/
+                /*H2*/
+                --fsH2: 34px;
+                /*H3*/
+                --fsH3: 26px;
+                /*H4*/
+                --fsH4: 26px;
+                /*H5*/
+                --fsH5: 16px;
+                /*P*/
+                --fsP: 18px;
+                /*----размеры----*/
+                --margBotH4: 10px;
+                --margBotP: 10px;
+            }
+            @media (max-height:1700px) {
+                html,
+                body {
+                    height: 100%;
+                }
+            }
+            @media (max-height:890px) {
+                html,
+                body {
+                    height: max-content;
+                }
+            }
+        }
+        @media (max-width:380px) {
+             :root {
+                /*----шрифты----*/
+                /*H2*/
+                --fsH2: 32px;
+                /*H3*/
+                --fsH3: 22px;
+                /*H4*/
+                --fsH4: 22px;
+                /*H5*/
+                --fsH5: 16px;
+                /*P*/
+                --fsP: 16px;
+                /*----размеры----*/
+                /*-зазмеры изображений в ссылках-*/
+                --imgLinkWi: 180px;
+                --imgLinkHe: 100px;
+            }
+        }
+        /* @media (max-width:250px) {
+             :root {
+               
+                --padWrapperTB: 15px;
+                --padWrapperLR: 5px;
+                
+                --imgLinkWi: 130px;
+                --imgLinkHe: 80px;
+            }
+        }*/
     }
-}
-
-@media (max-width:480px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 34px;
-        /*H3*/
-        --fsH3: 26px;
-        /*H4*/
-        --fsH4: 26px;
-        /*H5*/
-        --fsH5: 16px;
-        /*P*/
-        --fsP: 18px;
-        /*----размеры----*/
-        --margBotH2: 30px;
-        --margBotH3: 30px;
-        --margBotH4: 5px;
-        --margBotH5: 10px;
-        --margBotP: 5px;
+    
+    @media screen and (orientation: landscape) {
+        .wrapper {
+            align-content: space-between;
+        }
+        @media (max-height: 950px) {
+             :root {
+                --fsH2: 70px;
+                --fsH3: 52px;
+                --fsH4: 32px;
+                --fsH5: 23px;
+                --fsP: 32px;
+                --padWrapperTB: 30px;
+                --padWrapperLR: 20px;
+                --margBotH2: 50px;
+                --margBotH3: 40px;
+                --margBotH4: 10px;
+                --margBotH5: 15px;
+                --margBotP: 5px;
+                --imgLinkWi: 270px;
+                --imgLinkHe: 150px;
+                /*--высота текстового блока над ссылками H4--*/
+                --heightVersionH4: max-content;
+                /*--высота текстового блока над ссылками H5--*/
+                --heightVersionH5: max-content;
+            }
+        }
+        @media (max-height:800px) {
+             :root {
+                --padWrapperTB: 50px;
+                --padWrapperLR: 20px;
+                --margBotH2: 20px;
+                --margBotH3: 20px;
+                --margBotH4: 10px;
+                --margBotH5: 15px;
+                --margBotP: 5px;
+                --imgLinkWi: 250px;
+                --imgLinkHe: 130px;
+            }
+        }
+        @media(max-width:700px) {
+            html,
+            body {
+                height: max-content;
+            }
+             :root {
+                --padWrapperTB: 20px;
+            }
+        }
+        @media (max-height:650px) {
+            html,
+            body {
+                height: max-content;
+            }
+             :root {
+                --fsH2: 46px;
+                --fsH3: 32px;
+                --fsP: 20px;
+                --fsH4: 26px;
+                --fsH5: 20px;
+                --padWrapperTB: 30px;
+                --padWrapperLR: 20px;
+                --margBotH2: 30px;
+                --margBotH3: 20px;
+                --margBotH4: 10px;
+                --margBotH5: 20px;
+                --margBotP: 20px;
+                --imgLinkWi: 270px;
+                --imgLinkHe: 150px;
+            }
+        }
+        @media (max-height:420px) {
+            html,
+            body {
+                height: max-content;
+            }
+             :root {
+                --padWrapperTB: 50px;
+                --heightVersionH4: max-content;
+                --heightVersionH5: max-content;
+            }
+            .text-wrapper {
+                width: 100%;
+            }
+            .version-wrapper {
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                row-gap: 40px;
+                margin-top: 40px;
+            }
+            .container {
+                width: 100%;
+            }
+        }
     }
-}
-
-@media (max-width:395px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 32px;
-        /*H3*/
-        --fsH3: 22px;
-        /*H4*/
-        --fsH4: 22px;
-        /*H5*/
-        --fsH5: 16px;
-        /*P*/
-        --fsP: 16px;
-        /*----размеры----*/
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 180px;
-        --imgLinkHe: 100px;
-    }
-}
-
-@media (max-width:250px) {
-     :root {
-        /*----размеры----*/
-        --padWrapperTB: 15px;
-        --padWrapperLR: 5px;
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 130px;
-        --imgLinkHe: 80px;
-    }
-}
-
-@media (max-height:825px) {
-     :root {
-        --fsH2: 70px;
-        --fsH3: 52px;
-        --fsH4: 32px;
-        --fsH5: 23px;
-        --fsP: 32px;
-        --padWrapperTB: 30px;
-        --padWrapperLR: 20px;
-        --margBotH2: 50px;
-        --margBotH3: 40px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
-        --imgLinkWi: 270px;
-        --imgLinkHe: 150px;
-    }
-}
-
-@media (max-height:800px) {
-     :root {
-        /*----размеры----*/
-        --padWrapperTB: 20px;
-        --padWrapperLR: 20px;
-        --margBotH2: 20px;
-        --margBotH3: 20px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 250px;
-        --imgLinkHe: 130px;
-    }
-}
-
-@media (max-height:650px) {
-     :root {
-        /*----шрифты----*/
-        /*H2*/
-        --fsH2: 52px;
-        /*H3*/
-        --fsH3: 38px;
-        /*H4*/
-        --fsH4: 26px;
-        /*H5*/
-        --fsH5: 20px;
-        /*P*/
-        --fsP: 24px;
-        /*----размеры----*/
-        --padWrapperTB: 10px;
-        --padWrapperLR: 20px;
-        --margBotH2: 20px;
-        --margBotH3: 15px;
-        --margBotH4: 10px;
-        --margBotH5: 15px;
-        --margBotP: 5px;
-        /*-зазмеры изображений в ссылках-*/
-        --imgLinkWi: 270px;
-        --imgLinkHe: 150px;
-    }
-}
-
-@media (max-height:400px) {
-     :root {
-        /*--высота текстового блока над ссылками H4--*/
-        --heightVersionH4: max-content;
-        /*--высота текстового блока над ссылками H5--*/
-        --heightVersionH5: max-content;
-    }
-    .text-wrapper {
-        width: 100%;
-    }
-    .version-wrapper {
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        row-gap: 40px;
-        margin-top: 40px;
-    }
-    .container {
-        width: 100%;
-    }
-}
