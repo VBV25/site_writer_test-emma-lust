@@ -290,6 +290,9 @@
                 /*--высота текстового блока над ссылками H5--*/
                 --heightVersionH5: max-content;
             }
+            .wrapper::after {
+                position: fixed;
+            }
             .text-wrapper {
                 width: 100%;
             }
@@ -396,15 +399,15 @@
         }
         @media (max-height: 950px) {
              :root {
-                --fsH2: 70px;
-                --fsH3: 52px;
+                --fsH2: 64px;
+                --fsH3: 48px;
                 --fsH4: 32px;
                 --fsH5: 23px;
-                --fsP: 32px;
-                --padWrapperTB: 30px;
+                --fsP: 30px;
+                --padWrapperTB: 20px;
                 --padWrapperLR: 20px;
-                --margBotH2: 50px;
-                --margBotH3: 40px;
+                --margBotH2: 30px;
+                --margBotH3: 20px;
                 --margBotH4: 10px;
                 --margBotH5: 15px;
                 --margBotP: 5px;
@@ -437,11 +440,17 @@
              :root {
                 --padWrapperTB: 20px;
             }
+            .wrapper::after {
+                position: fixed;
+            }
         }
         @media (max-height:650px) {
             html,
             body {
                 height: max-content;
+            }
+            .wrapper::after {
+                position: fixed;
             }
              :root {
                 --fsH2: 46px;
