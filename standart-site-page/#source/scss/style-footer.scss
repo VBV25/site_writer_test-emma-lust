@@ -1,5 +1,16 @@
 /*---------------FOOTER-----------------*/
 
+.btn-test {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    margin: 100px;
+}
+
+
+/*
 .footer {
     @include wiHe($he: max-content);
     @include flexAlJu(center);
@@ -130,6 +141,7 @@
         }
     }
 }
+*/
 
 
 /*-----------------------------*/

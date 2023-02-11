@@ -1,0 +1,108 @@
+/*-----*/
+
+html {
+    box-sizing: border-box;
+    border: 2px solid rgb(240, 3, 3);
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 163, 48);
+    position: relative;
+}
+
+body {
+    box-sizing: border-box;
+    border: 2px solid rgb(8, 0, 255);
+    width: 98%;
+    height: 98%;
+    color: white;
+}
+
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: 98%;
+    height: 98%;
+    border: 2px solid rgb(213, 81, 233);
+}
+
+.wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/bg_room_2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+:root {
+    --wiBg: 896px;
+    --heBg: 414px;
+}
+
+.first {
+    z-index: 100;
+    position: relative;
+    font-size: 24px;
+    border: 2px solid red;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    height: 100px;
+    background-color: rgb(254, 254, 254);
+}
+
+.sec {
+    display: none;
+}
+
+
+/*
+html {
+    box-sizing: border-box;
+    border: 2px solid rgb(250, 250, 250);
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+}
+
+body {
+    border: 2px solid rgb(251, 0, 255);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+     transform: rotate(90deg);
+    position: relative;
+    right: 16.8%;
+    top: 12.5%;
+    width: 133.5%;
+    height: 75.2%;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 179, 255);
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first {
+    font-size: 38px;
+    border: 2px solid red;
+    width: 400px;
+    height: 100px;
+    background-color: wheat;
+}
+
+.sec {
+    width: 100px;
+    height: 350px;
+    background-color: rgb(33, 92, 36);
+}*/
