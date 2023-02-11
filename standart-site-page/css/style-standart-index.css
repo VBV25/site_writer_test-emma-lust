@@ -512,7 +512,7 @@ body {
   position: relative;
   left: 50%;
   margin-top: var(--marginTopBtnSect2);
-  margin-left: calc(var(--btnSect2Wi)/-2);
+  margin-left: calc(var(--btnSect2Wi) / -2);
   background-color: #808080;
   border-radius: 10px; }
   .content-btn::after {
@@ -653,7 +653,7 @@ body {
   position: relative;
   padding: 0px;
   padding-top: var(--section2PaddingTB);
-  padding-bottom: calc(var(--section2PaddingTB)/2);
+  padding-bottom: calc(var(--section2PaddingTB) / 2);
   overflow: hidden; }
   .in-work::after, .in-work::before {
     width: 100%;
@@ -931,7 +931,7 @@ body {
       width: var(--bgPhotoSect3Wi);
       height: var(--bgPhotoSect3He);
       top: -30px;
-      left: calc(var(--photoSect3Wi)/-3.5);
+      left: calc(var(--photoSect3Wi) / -3.5);
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
@@ -989,7 +989,7 @@ body {
     flex-direction: column; }
   .biography__photo {
     margin-left: 0;
-    margin-bottom: calc(var(--photoSect3Wi)/4); }
+    margin-bottom: calc(var(--photoSect3Wi) / 4); }
   .biography__text-container {
     width: 90%;
     height: -webkit-max-content;

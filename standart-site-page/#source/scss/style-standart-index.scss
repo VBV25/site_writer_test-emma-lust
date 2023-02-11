@@ -4,7 +4,7 @@
 @import 'base';
 // медиа адаптив из размерных переменных
 @import 'media-variables';
-//хедер 
+//хедер
 @import 'style-header';
 //футер
 @import 'style-footer';
@@ -16,7 +16,7 @@ body {
     background: $DarkRedColor;
 }
 
-//стиль блокировки прокрутки 
+//стиль блокировки прокрутки
 .lock {
     overflow: hidden;
 }
@@ -28,7 +28,7 @@ body {
     position: relative;
     left: 50%;
     margin-top: var(--marginTopBtnSect2);
-    margin-left: calc(var(--btnSect2Wi)/-2);
+    margin-left: calc(var(--btnSect2Wi) / -2);
     background-color: $grayColor;
     border-radius: 10px;
     &::after {
@@ -42,7 +42,7 @@ body {
         border-radius: 10px;
     }
     &:hover::after {
-        color: $skinColor
+        color: $skinColor;
     }
     &:active::after {
         @include leTo(0);
@@ -154,7 +154,7 @@ body {
     position: relative;
     padding: 0px;
     padding-top: var(--section2PaddingTB);
-    padding-bottom: calc(var(--section2PaddingTB)/2);
+    padding-bottom: calc(var(--section2PaddingTB) / 2);
     overflow: hidden;
     //фоны
     &::after,
@@ -207,18 +207,18 @@ body {
     }
     //-----заголовок книги
     &__title {
-        @include fontSizeH3( $color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
     }
     //-----подзаголовок книги
     &__subtitle {
-        @include fontSizeH4( $color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
     }
     //------текст
     &__text {
-        @include fontSizeP( $color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
         text-align: start;
     }
-    //-------кнопка перехода 
+    //-------кнопка перехода
     &__btn {
         &::after {
             content: 'Перейти к книге >';
@@ -294,7 +294,7 @@ body {
         //-------контейнер с текстовыми блоками
         &__text-container {
             @include wiHe(90%);
-            order: 2
+            order: 2;
         }
         //---тексты--
         //------контейнер с книгой
@@ -395,8 +395,7 @@ body {
     //-----обертка блока
     &__wrapper {
         @include wiHe(var(--contentWidh),
-        max-content
-        /*max-content*/
+        max-content/*max-content*/
         );
         @include flCent;
         flex-direction: column;
@@ -436,19 +435,19 @@ body {
         &::after {
             @include wiHe(var(--bgPhotoSect3Wi),
             var(--bgPhotoSect3He));
-            @include leTo(-30px,
-            calc(var(--photoSect3Wi)/-3.5)); //calc(var( --bgPhotoSect3Hei)/-1.5)
+            @include leTo( -30px,
+            calc(var(--photoSect3Wi) / -3.5)); //calc(var( --bgPhotoSect3Hei)/-1.5)
             @include bgImg;
             z-index: -1;
             content: '';
             position: absolute;
-            background-image: url('../img/bg-photo.png')
+            background-image: url('../img/bg-photo.png');
         }
     }
     //контейнер с текстом
     &__text-container {
         @include wiHe(50%,
-        max-content)
+        max-content);
     }
     //заголовки
     &__title {
@@ -458,7 +457,7 @@ body {
     }
     //текст
     &__text {
-        @include fontSizeP($color: $whiteColor)
+        @include fontSizeP($color: $whiteColor);
     }
     //линия
     &__line {
@@ -467,7 +466,7 @@ body {
         background-color: $skinColor;
         margin: 20px 0;
     }
-    //-------кнопка перехода 
+    //-------кнопка перехода
     &__btn {
         background-color: $skinColor;
         &::after {
@@ -498,12 +497,12 @@ body {
         //Изображение
         &__photo {
             margin-left: 0;
-            margin-bottom: calc(var(--photoSect3Wi)/4);
+            margin-bottom: calc(var(--photoSect3Wi) / 4);
         }
         //контейнер с текстом
         &__text-container {
             @include wiHe(90%,
-            max-content)
+            max-content);
         }
         //линия
         &__line {
