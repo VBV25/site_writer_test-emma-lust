@@ -13,93 +13,93 @@
 //-
 //-------------------общие стили----------------
 body {
-    background: $DarkRedColor;
+  background: $DarkRedColor;
 }
 
 //стиль блокировки прокрутки
 .lock {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 //стилизация кнопок перехода
 .content-btn {
+  @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtnSect2);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: $grayColor;
+  border-radius: 10px;
+  &::after {
+    @include fontSizeH5($color: $whiteColor);
     @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-    z-index: 4;
-    position: relative;
-    left: 50%;
-    margin-top: var(--marginTopBtnSect2);
-    margin-left: calc(var(--btnSect2Wi) / -2);
-    background-color: $grayColor;
+    @include leTo(-4px);
+    @include flCent;
+    z-index: 5;
+    position: absolute;
+    background-color: $DarkRedColor;
     border-radius: 10px;
-    &::after {
-        @include fontSizeH5($color: $whiteColor);
-        @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-        @include leTo(-4px);
-        @include flCent;
-        z-index: 5;
-        position: absolute;
-        background-color: $DarkRedColor;
-        border-radius: 10px;
-    }
-    &:hover::after {
-        color: $skinColor;
-    }
-    &:active::after {
-        @include leTo(0);
-    }
+  }
+  &:hover::after {
+    color: $skinColor;
+  }
+  &:active::after {
+    @include leTo(0);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 //---------------------------------------ПЕРВАЯ-СЕКЦИЯ----------------------------------------
 .tagline {
-    //стили всего блока
-    @include wiHe($he: var(--firstBlockHe));
-    background-color: $DarkRedColor;
-    padding: var(--firstBlockPaddingTB) 0;
-    h1 {
-        display: none;
+  //стили всего блока
+  @include wiHe($he: var(--firstBlockHe));
+  background-color: $DarkRedColor;
+  padding: var(--firstBlockPaddingTB) 0;
+  h1 {
+    display: none;
+  }
+  //стили обертки с контентом
+  &__wrapper {
+    @include wiHe(var(--contentWidh));
+    margin: auto;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      @include leTo;
+      @include wiHe;
+      @include bgImg(
+        $bgImSize: var(--bgWondowWi) auto,
+        $bgPosition: center right 0
+      );
+      //
+      background-image: url('../img/girl-on-window.png');
+      margin: auto;
     }
-    //стили обертки с контентом
-    &__wrapper {
-        @include wiHe(var(--contentWidh));
-        margin: auto;
-        position: relative;
-        &::after {
-            content: '';
-            position: absolute;
-            @include leTo;
-            @include wiHe;
-            @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: center right 0);
-            //
-            background-image: url('../img/girl-on-window.png');
-            margin: auto;
-        }
+  }
+  //стили контейнера с заголовком и слоганом
+  &__container {
+    @include flCent;
+    @include wiHe(min-content);
+    z-index: 5;
+    position: relative;
+    flex-direction: column;
+  }
+  //стили заголовка Emma Lust
+  &__title {
+    @include wiHe(max-content, max-content);
+    @include flCent;
+    img {
+      @include wiHe(var(--emmalustWi), auto);
     }
-    //стили контейнера с заголовком и слоганом
-    &__container {
-        @include flCent;
-        @include wiHe(min-content);
-        z-index: 5;
-        position: relative;
-        flex-direction: column;
-    }
-    //стили заголовка Emma Lust
-    &__title {
-        @include wiHe(max-content,
-        max-content);
-        @include flCent;
-        img {
-            @include wiHe(var(--emmalustWi),
-            auto);
-        }
-    }
-    //текст слогана
-    &__text {
-        @include wiHe(var(--taglineTextWi),
-        max-content);
-        @include fontSizeH2;
-        text-align: center;
-    }
+  }
+  //текст слогана
+  &__text {
+    @include wiHe(var(--taglineTextWi), max-content);
+    @include fontSizeH2;
+    text-align: center;
+  }
 }
 
 //----------------------------------------------------------------
@@ -111,18 +111,21 @@ body {
 //-----------------------------630 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 630px) {
-    .tagline {
-        &__wrapper {
-            @include flCent;
-            &::after {
-                @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: top 20px center);
-                opacity: 0.15;
-            }
-        }
-        &__title {
-            margin: 40px auto 5px;
-        }
+  .tagline {
+    &__wrapper {
+      @include flCent;
+      &::after {
+        @include bgImg(
+          $bgImSize: var(--bgWondowWi) auto,
+          $bgPosition: top 20px center
+        );
+        opacity: 0.15;
+      }
     }
+    &__title {
+      margin: 40px auto 5px;
+    }
+  }
 }
 
 //
@@ -131,10 +134,10 @@ body {
 //-----------------------------495 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 495px) {
-    .tagline {
-        //стили всего блока
-        padding: var(--firstBlockPaddingTB) 5%;
-    }
+  .tagline {
+    //стили всего блока
+    padding: var(--firstBlockPaddingTB) 5%;
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -149,131 +152,125 @@ body {
 //
 //---------------------------------------ВТОРАЯ-СЕКЦИЯ----------------------------------------
 .in-work {
-    @include wiHe($he: max-content);
+  @include wiHe($he: max-content);
+  z-index: 1;
+  position: relative;
+  padding: 0px;
+  padding-top: var(--section2PaddingTB);
+  padding-bottom: calc(var(--section2PaddingTB) / 2);
+  overflow: hidden;
+  //фоны
+  &::after,
+  &::before {
+    @include wiHe; //($he: max-content);
+    @include leTo;
+    content: '';
+    position: absolute;
+  }
+  //фон лист бумаги
+  &::after {
+    @include bgImg;
     z-index: 1;
+    background-image: url('../img/sepia-list-bg.png');
+  }
+  //фон цвет
+  &::before {
+    z-index: -1;
+    background-color: $DarkRedColor;
+  }
+  //----Заголовок блока
+  &__base-title {
+    z-index: 5;
     position: relative;
-    padding: 0px;
-    padding-top: var(--section2PaddingTB);
-    padding-bottom: calc(var(--section2PaddingTB) / 2);
-    overflow: hidden;
-    //фоны
-    &::after,
-    &::before {
-        @include wiHe; //($he: max-content);
-        @include leTo;
-        content: '';
-        position: absolute;
-    }
-    //фон лист бумаги
+    @include wiHe($he: max-content);
+    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
+    margin-bottom: var(--titleMarginBottom);
+    text-align: center;
+  }
+  //-----обертка блока
+  &__wrapper {
+    @include wiHe(var(--contentWidh), max-content);
+    @include flexSpBeCent($jusCon: space-around);
+    //
+    z-index: 5;
+    position: relative;
+    margin: auto;
+  }
+  //-------контейнер с текстовыми блоками
+  &__text-container {
+    @include wiHe(var(--containerText2sectWi));
+  }
+  //-----
+  &__title,
+  &__subtitle,
+  &__text {
+    margin-bottom: var(--marginTextCont2sect);
+    text-align: center;
+  }
+  //-----заголовок книги
+  &__title {
+    @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
+  }
+  //-----подзаголовок книги
+  &__subtitle {
+    @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
+  }
+  //------текст
+  &__text {
+    @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
+    text-align: start;
+  }
+  //-------кнопка перехода
+  &__btn {
     &::after {
-        @include bgImg;
-        z-index: 1;
-        background-image: url('../img/sepia-list-bg.png');
+      content: 'Перейти к книге >';
     }
-    //фон цвет
-    &::before {
-        z-index: -1;
-        background-color: $DarkRedColor;
+  }
+  //------контейнер с книгой
+  &__book-container {
+    @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
+    position: relative;
+    right: var(--rigtBookShift);
+    //тень за книгой
+    &::after {
+      @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
+      @include leTo(34%, 11%);
+      content: '';
+      position: absolute;
+      box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+      background-color: $blackColorOpacity;
+      transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg)
+        matrix(0.6, 1.5, 0, 3, 7, 6);
     }
-    //----Заголовок блока
-    &__base-title {
-        z-index: 5;
-        position: relative;
-        @include wiHe($he: max-content);
-        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    //-----обертка блока
-    &__wrapper {
-        @include wiHe(var(--contentWidh),
-        max-content);
-        @include flexSpBeCent($jusCon: space-around);
-        //
-        z-index: 5;
-        position: relative;
-        margin: auto;
-    }
-    //-------контейнер с текстовыми блоками
-    &__text-container {
-        @include wiHe(var(--containerText2sectWi));
-    }
-    //-----
-    &__title,
-    &__subtitle,
-    &__text {
-        margin-bottom: var(--marginTextCont2sect);
-        text-align: center;
-    }
-    //-----заголовок книги
-    &__title {
-        @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
-    }
-    //-----подзаголовок книги
-    &__subtitle {
-        @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
-    }
-    //------текст
-    &__text {
-        @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
-        text-align: start;
-    }
-    //-------кнопка перехода
-    &__btn {
-        &::after {
-            content: 'Перейти к книге >';
-        }
-    }
-    //------контейнер с книгой
-    &__book-container {
-        @include wiHe(var(--containerBook2sectWi),
-        var(--containerBook2sectHe));
-        position: relative;
-        right: var(--rigtBookShift);
-        //тень за книгой
-        &::after {
-            @include wiHe(var(--containerBook2sectWi),
-            var(--containerBook2sectHe));
-            @include leTo(34%,
-            11%);
-            content: '';
-            position: absolute;
-            box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-            background-color: $blackColorOpacity;
-            transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.6, 1.5, 0, 3, 7, 6);
-        }
-    }
-    //-------обложка
-    &__cover {
-        @include wiHe(var(--coverBook2sectWi),
-        var(--coverBook2sectHe));
-        @include leTo;
-        z-index: 5;
-        position: absolute;
-        //
-        clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
-        transform-origin: right;
-        transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
-        /*
+  }
+  //-------обложка
+  &__cover {
+    @include wiHe(var(--coverBook2sectWi), var(--coverBook2sectHe));
+    @include leTo;
+    z-index: 5;
+    position: absolute;
+    //
+    clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
+    transform-origin: right;
+    transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
+    /*
        
         
         //rotateY(30deg) skew(10deg, 0deg);*/
-        img {
-            @include wiHe;
-        }
+    img {
+      @include wiHe;
     }
-    //-------книга
-    &__book {
-        @include wiHe(98%,
-        98%);
-        @include leTo(1%,
-        1%);
-        z-index: 3;
-        position: absolute;
-        img {
-            @include wiHe;
-        }
+  }
+  //-------книга
+  &__book {
+    @include wiHe(98%, 98%);
+    @include leTo(1%, 1%);
+    z-index: 3;
+    position: absolute;
+    img {
+      @include wiHe;
     }
+  }
 }
 
 //----------------------------------------------------------------
@@ -285,23 +282,23 @@ body {
 //-----------------------------770 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 770px) {
-    .in-work {
-        //-----обертка блока
-        &__wrapper {
-            @include flCent;
-            flex-direction: column;
-        }
-        //-------контейнер с текстовыми блоками
-        &__text-container {
-            @include wiHe(90%);
-            order: 2;
-        }
-        //---тексты--
-        //------контейнер с книгой
-        &__book-container {
-            order: 1;
-        }
+  .in-work {
+    //-----обертка блока
+    &__wrapper {
+      @include flCent;
+      flex-direction: column;
     }
+    //-------контейнер с текстовыми блоками
+    &__text-container {
+      @include wiHe(90%);
+      order: 2;
+    }
+    //---тексты--
+    //------контейнер с книгой
+    &__book-container {
+      order: 1;
+    }
+  }
 }
 
 //
@@ -310,16 +307,15 @@ body {
 //-----------------------------530 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 530px) {
-    .in-work {
-        //------контейнер с книгой
-        &__book-container {
-            //тень за книгой
-            &::after {
-                @include leTo(34%,
-                1%);
-            }
-        }
+  .in-work {
+    //------контейнер с книгой
+    &__book-container {
+      //тень за книгой
+      &::after {
+        @include leTo(34%, 1%);
+      }
     }
+  }
 }
 
 //
@@ -328,27 +324,27 @@ body {
 //-----------------------------375 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 375px) {
-    .in-work {
-        @include wiHe($he: max-content);
-        //----Заголовок блока
-        &__base-title {
-            margin-bottom: 30px;
-        }
-        //------контейнер с книгой
-        &__book-container {
-            //тень за книгой
-            &::after {
-                @include leTo(34%,
-                2%);
-                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-                transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.46, 1.5, 0, 3, 0, 6);
-            }
-        }
-        //-------обложка
-        &__cover {
-            transform: matrix(1.15, 0.2, 0, 1, 2, 4) rotateY(30deg);
-        }
+  .in-work {
+    @include wiHe($he: max-content);
+    //----Заголовок блока
+    /*&__base-title {
+      margin-bottom: 30px;
+    }*/
+    //------контейнер с книгой
+    &__book-container {
+      //тень за книгой
+      &::after {
+        @include leTo(34%, 2%);
+        box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+        transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg)
+          matrix(0.46, 1.5, 0, 3, 0, 6);
+      }
     }
+    //-------обложка
+    &__cover {
+      transform: matrix(1.15, 0.2, 0, 1, 2, 4) rotateY(30deg);
+    }
+  }
 }
 
 //
@@ -357,22 +353,22 @@ body {
 //-----------------------------320 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 320px) {
-    .in-work {
-        //------контейнер с книгой
-        &__book-container {
-            //тень за книгой
-            &::after {
-                @include leTo(32%,
-                -4%);
-                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-                transform: rotateX(87deg) rotateY(0deg) rotateZ(3deg) matrix(0.35, 1.5, 0, 2.8, 0, 6);
-            }
-        }
-        //-------обложка
-        &__cover {
-            transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
-        }
+  .in-work {
+    //------контейнер с книгой
+    &__book-container {
+      //тень за книгой
+      &::after {
+        @include leTo(32%, -4%);
+        box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+        transform: rotateX(87deg) rotateY(0deg) rotateZ(3deg)
+          matrix(0.35, 1.5, 0, 2.8, 0, 6);
+      }
     }
+    //-------обложка
+    &__cover {
+      transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
+    }
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -387,92 +383,86 @@ body {
 //
 //---------------------------------------ТРЕТЬЯ-СЕКЦИЯ----------------------------------------
 .biography {
+  @include wiHe($he: max-content);
+  position: relative;
+  padding: var(--paddingSect3TopBot) 0;
+  background-color: $emeraldDarkColor;
+  overflow: hidden;
+  //-----обертка блока
+  &__wrapper {
+    @include wiHe(var(--contentWidh), max-content /*max-content*/);
+    @include flCent;
+    flex-direction: column;
+    //
+    margin: auto;
+  }
+  //----Заголовок блока
+  &__base-title {
     @include wiHe($he: max-content);
+    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
+    margin-bottom: var(--titleMarginBottom);
+    text-align: center;
+  }
+  //контейнер с контентом
+  &__container {
+    @include wiHe($he: max-content);
+    @include flexSpBeCent;
+  }
+  //обертка фото
+  &__photo-wrapper {
+    @include wiHe(50%, max-content);
+    @include flCent;
+  }
+  //Изображение
+  &__photo {
+    @include wiHe(max-content, max-content);
+    z-index: 5;
     position: relative;
-    padding: var(--paddingSect3TopBot) 0;
-    background-color: $emeraldDarkColor;
-    overflow: hidden;
-    //-----обертка блока
-    &__wrapper {
-        @include wiHe(var(--contentWidh),
-        max-content/*max-content*/
-        );
-        @include flCent;
-        flex-direction: column;
-        //
-        margin: auto;
+    margin-left: var(--marginLeftPhotoSect3);
+    filter: sepia(50%);
+    img {
+      @include wiHe(var(--photoSect3Wi), auto);
     }
-    //----Заголовок блока
-    &__base-title {
-        @include wiHe($he: max-content);
-        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
-        margin-bottom: 100px;
-        text-align: center;
+    &::after {
+      @include wiHe(var(--bgPhotoSect3Wi), var(--bgPhotoSect3He));
+      @include leTo(
+        -30px,
+        calc(var(--photoSect3Wi) / -3.5)
+      ); //calc(var( --bgPhotoSect3Hei)/-1.5)
+      @include bgImg;
+      z-index: -1;
+      content: '';
+      position: absolute;
+      background-image: url('../img/bg-photo.png');
     }
-    //контейнер с контентом
-    &__container {
-        @include wiHe($he: max-content);
-        @include flexSpBeCent;
+  }
+  //контейнер с текстом
+  &__text-container {
+    @include wiHe(50%, max-content);
+  }
+  //заголовки
+  &__title {
+    @include fontSizeH3($color: $whiteColor);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  //текст
+  &__text {
+    @include fontSizeP($color: $whiteColor);
+  }
+  //линия
+  &__line {
+    @include wiHe(var(--lineSect3Wi), 4px);
+    background-color: $skinColor;
+    margin: 20px 0;
+  }
+  //-------кнопка перехода
+  &__btn {
+    background-color: $skinColor;
+    &::after {
+      content: 'Подробнее >';
     }
-    //обертка фото
-    &__photo-wrapper {
-        @include wiHe(50%,
-        max-content);
-        @include flCent;
-    }
-    //Изображение
-    &__photo {
-        @include wiHe(max-content,
-        max-content);
-        z-index: 5;
-        position: relative;
-        margin-left: var(--marginLeftPhotoSect3);
-        filter: sepia(50%);
-        img {
-            @include wiHe(var(--photoSect3Wi),
-            auto);
-        }
-        &::after {
-            @include wiHe(var(--bgPhotoSect3Wi),
-            var(--bgPhotoSect3He));
-            @include leTo( -30px,
-            calc(var(--photoSect3Wi) / -3.5)); //calc(var( --bgPhotoSect3Hei)/-1.5)
-            @include bgImg;
-            z-index: -1;
-            content: '';
-            position: absolute;
-            background-image: url('../img/bg-photo.png');
-        }
-    }
-    //контейнер с текстом
-    &__text-container {
-        @include wiHe(50%,
-        max-content);
-    }
-    //заголовки
-    &__title {
-        @include fontSizeH3($color: $whiteColor);
-        margin-bottom: 10px;
-        text-align: center;
-    }
-    //текст
-    &__text {
-        @include fontSizeP($color: $whiteColor);
-    }
-    //линия
-    &__line {
-        @include wiHe(var(--lineSect3Wi),
-        4px);
-        background-color: $skinColor;
-        margin: 20px 0;
-    }
-    //-------кнопка перехода
-    &__btn {
-        background-color: $skinColor;
-        &::after {
-            content: 'Подробнее >';
-        }
-    }
+  }
 }
 
 //----------------------------------------------------------------
@@ -484,32 +474,127 @@ body {
 //-----------------------------770 PX-----------------------------
 //----------------------------------------------------------------
 @media (max-width: 770px) {
-    .biography {
-        //----Заголовок блока
-        &__base-title {
-            margin-bottom: 70px;
-        }
-        //контейнер с контентом
-        &__container {
-            @include flCent;
-            flex-direction: column;
-        }
-        //Изображение
-        &__photo {
-            margin-left: 0;
-            margin-bottom: calc(var(--photoSect3Wi) / 4);
-        }
-        //контейнер с текстом
-        &__text-container {
-            @include wiHe(90%,
-            max-content);
-        }
-        //линия
-        &__line {
-            @include wiHe(var(--lineSect3Wi),
-            4px);
-            background-color: $skinColor;
-            margin: 30px auto 20px;
-        }
+  .biography {
+    //----Заголовок блока
+    /* &__base-title {
+      margin-bottom: 70px;
+    }*/
+    //контейнер с контентом
+    &__container {
+      @include flCent;
+      flex-direction: column;
     }
+    //Изображение
+    &__photo {
+      margin-left: 0;
+      margin-bottom: calc(var(--photoSect3Wi) / 4);
+    }
+    //контейнер с текстом
+    &__text-container {
+      @include wiHe(90%, max-content);
+    }
+    //линия
+    &__line {
+      @include wiHe(var(--lineSect3Wi), 4px);
+      background-color: $skinColor;
+      margin: 30px auto 20px;
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//---------------------------------------Четвертая -СЕКЦИЯ----Слайдер------------------------------------
+.wrapper-slider {
+  padding: var(--paddingSect3TopBot) 0;
+  min-height: 100%;
+  background-color: $sandColor;
+  //заголовок слайдера
+  .slider__base-title {
+    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
+    margin-bottom: var(--titleMarginBottom);
+    text-align: center;
+  }
+  .image-slider {
+    @include wiHe(var(--contentWidh), max-content);
+    padding: 0px 0px 70px 0px;
+    //слайд
+    &__slide {
+      @include fontSizeH4($color: $emeraldDarkColor);
+      @include flCent;
+      flex-direction: column;
+    }
+    //изображения в слайдах
+    &__image {
+      text-align: center;
+      min-width: var(--sliderImgWi) !important;
+      img {
+        max-width: 100%;
+      }
+    }
+    //Сдайды не активные
+    .swiper-slide-next,
+    .swiper-slide-prev {
+      opacity: 0.7;
+    }
+    .swiper-slide-active:hover > h4 {
+      @include textBorderSmokeColor;
+      color: $blackColor;
+    }
+  }
+}
+
+/*стрелки*/
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: $emeraldColor;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: $DarkRedColor;
+  @include textBorderSmokeColor;
+}
+
+/*БУЛЛЕТЫ*/
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px !important;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: $emeraldColor;
+}
+
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//
+//
+//----------------------------------------------------------------
+//-----------------------------840 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 840px) {
+  .wrapper-slider .image-slider {
+    padding: 0px 0px 30px 0px;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @include textBorderWhite;
+  }
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    @include textBorderWhite;
+  }
 }
