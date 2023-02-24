@@ -1,73 +1,68 @@
 /*---------------FOOTER-----------------*/
 
-.btn-test {
-    width: 200px;
-    height: 50px;
-    background-color: white;
-    color: black;
-    font-size: 18px;
-    margin: 100px;
-}
-
-
-/*
 .footer {
     @include wiHe($he: max-content);
-    @include flexAlJu(center);
-    background-color: $whiteColor;
-    padding: 20px 0px 526px;
+    @include flCent;
+    flex-direction: column;
+    background-color: $emeraldColor;
+    padding: 40px 0px 0px;
     //обертка строки футера
     &__row {
         box-sizing: border-box;
         @include wiHe(var(--contentWidh), max-content);
-        @include flexAlJu;
+        @include flexSpBeCent;
     }
     //логотип
     &__logo {
         box-sizing: border-box;
-        @include wiHe(var(--logoHedWe), var(--logoHedHe));
+        @include wiHe(var(--logoFootWi), var(--logoFootHe));
         img {
             @include wiHe;
         }
     }
+    //копирайт
+    &__copyright {
+        @include fontSizeP($color: $whiteColor);
+    }
     //группа ссылок
     &__sotial-link-group {
+        @include wiHe(var(--logoFootWi), var(--logoFootHe));
         display: flex;
-        gap: 25px;
+        justify-content: space-between;
+        align-items: center;
     }
     //ссылки на соцсети
     &__link {
-        @include wiHe(48px, 48px);
-        @include bgImg(unset);
+        @include wiHe(60px, 60px);
+        @include bgImg;
         border-radius: 50%;
         &:hover {
-            box-shadow: 0 0 5px 2px $goldColor;
-            background-color: $blueColorOpacity08;
-        }
-    }
-    &__fb {
-        background-image: url('../img/svg/fb-lable-black.svg');
-        &:hover {
-            background-image: url('../img/svg/fb-lable-white.svg');
+            box-shadow: 0 0 5px 2px $whiteColor;
         }
     }
     &__ig {
-        background-image: url('../img/svg/ig-lable-black.svg');
+        background-image: url('../img/ig-lable-white.svg');
         &:hover {
-            background-image: url('../img/svg/ig-lable-white.svg');
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
         }
     }
-    &__tw {
-        background-image: url('../img/svg/tw-lable-black.svg');
+    &__vk {
+        background-image: url('../img/vk-lable-white.svg');
         &:hover {
-            background-image: url('../img/svg/tw-lable-white.svg');
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
         }
     }
     &__yt {
-        background-image: url('../img/svg/yt-lable-black.svg');
+        background-image: url('../img/yt-lable-white.svg');
         &:hover {
-            background-image: url('../img/svg/yt-lable-white.svg');
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
         }
+    }
+    &__policy {
+        width: 95%;
+        font-size: 12px;
+        color: $darkGrayColor;
+        margin: 50px auto;
     }
 }
 
@@ -141,7 +136,6 @@
         }
     }
 }
-*/
 
 
 /*-----------------------------*/

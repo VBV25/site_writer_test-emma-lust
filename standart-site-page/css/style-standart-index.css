@@ -86,7 +86,9 @@ h6 {
   --bgPhotoSect3Wi: calc(var(--photoSect3Wi) * 1.5);
   --bgPhotoSect3He: calc(var(--photoSect3Wi) * 1.65);
   --lineSect3Wi: 300px;
-  --sliderImgWi: 500px; }
+  --sliderImgWi: 500px;
+  --logoFootWi: 400px;
+  --logoFootHe: 100px; }
 
 @media (max-width: 1430px) {
   :root {
@@ -377,146 +379,133 @@ h6 {
       width: 90%; } }
 
 /*---------------FOOTER-----------------*/
-.btn-test {
-  width: 200px;
-  height: 50px;
-  background-color: white;
-  color: black;
-  font-size: 18px;
-  margin: 100px; }
-
-/*
 .footer {
-    @include wiHe($he: max-content);
-    @include flexAlJu(center);
-    background-color: $whiteColor;
-    padding: 20px 0px 526px;
-    //обертка строки футера
-    &__row {
-        box-sizing: border-box;
-        @include wiHe(var(--contentWidh), max-content);
-        @include flexAlJu;
-    }
-    //логотип
-    &__logo {
-        box-sizing: border-box;
-        @include wiHe(var(--logoHedWe), var(--logoHedHe));
-        img {
-            @include wiHe;
-        }
-    }
-    //группа ссылок
-    &__sotial-link-group {
-        display: flex;
-        gap: 25px;
-    }
-    //ссылки на соцсети
-    &__link {
-        @include wiHe(48px, 48px);
-        @include bgImg(unset);
-        border-radius: 50%;
-        &:hover {
-            box-shadow: 0 0 5px 2px $goldColor;
-            background-color: $blueColorOpacity08;
-        }
-    }
-    &__fb {
-        background-image: url('../img/svg/fb-lable-black.svg');
-        &:hover {
-            background-image: url('../img/svg/fb-lable-white.svg');
-        }
-    }
-    &__ig {
-        background-image: url('../img/svg/ig-lable-black.svg');
-        &:hover {
-            background-image: url('../img/svg/ig-lable-white.svg');
-        }
-    }
-    &__tw {
-        background-image: url('../img/svg/tw-lable-black.svg');
-        &:hover {
-            background-image: url('../img/svg/tw-lable-white.svg');
-        }
-    }
-    &__yt {
-        background-image: url('../img/svg/yt-lable-black.svg');
-        &:hover {
-            background-image: url('../img/svg/yt-lable-white.svg');
-        }
-    }
-}
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #253229;
+  padding: 40px 0px 0px; }
+  .footer__row {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: var(--contentWidh);
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .footer__logo {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: var(--logoFootWi);
+    height: var(--logoFootHe); }
+    .footer__logo img {
+      width: 100%;
+      height: 100%; }
+  .footer__copyright {
+    font-size: var(--fsP);
+    font-weight: 300;
+    line-height: calc(var(--fsP) * 1.5);
+    color: #ffffff;
+    font-style: normal;
+    font-family: Georgia, sans-serif; }
+  .footer__sotial-link-group {
+    width: var(--logoFootWi);
+    height: var(--logoFootHe);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .footer__link {
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%; }
+    .footer__link:hover {
+      -webkit-box-shadow: 0 0 5px 2px #ffffff;
+      box-shadow: 0 0 5px 2px #ffffff; }
+  .footer__ig {
+    background-image: url("../img/ig-lable-white.svg"); }
+    .footer__ig:hover {
+      -webkit-filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%); }
+  .footer__vk {
+    background-image: url("../img/vk-lable-white.svg"); }
+    .footer__vk:hover {
+      -webkit-filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%); }
+  .footer__yt {
+    background-image: url("../img/yt-lable-white.svg"); }
+    .footer__yt:hover {
+      -webkit-filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%); }
+  .footer__policy {
+    width: 95%;
+    font-size: 12px;
+    color: #646464;
+    margin: 50px auto; }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-------------------------МЕДИА ЗАПРОСЫ--------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//
-//
-//
-//
-//
-//----------------------------------------------------------------
-//-----------------------------1024 PX----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
 @media (max-width: 1024px) {
-    .footer {
-        &__link {
-            @include wiHe(35px,
-            35px);
-        }
-    }
-}
+  .footer__link {
+    width: 35px;
+    height: 35px; } }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------900 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
 @media (max-width: 900px) {
-    .footer {
-        padding-bottom: 200px;
-        &__logo {
-            @include wiHe(170px,
-            32px);
-        }
-    }
-}
+  .footer {
+    padding-bottom: 200px; }
+    .footer__logo {
+      width: 170px;
+      height: 32px; } }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------480 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
 @media (max-width: 480px) {
-    .footer__row {
-        @include flCent;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-}
+  .footer__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 20px; } }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------320 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
 @media (max-width: 320px) {
-    .footer {
-        overflow: hidden;
-        //группа ссылок
-        &__sotial-link-group {
-            gap: 10px;
-        }
-    }
-}
-*/
+  .footer {
+    overflow: hidden; }
+    .footer__sotial-link-group {
+      gap: 10px; } }
+
 /*-----------------------------*/
 body {
   background: #240e04; }
