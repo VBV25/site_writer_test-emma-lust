@@ -1,0 +1,66 @@
+<!--POP-UP-question-->
+<section class="popup-form__wrapper">
+  <div class="popup-form__container">
+    <!--'Кнопка закрытия'-->
+    <div class="popup-form__btn-close " id="popup-form__btn-close">
+    </div>
+    <!--'Заголовок'-->
+    <h3 class="popup-form__title">Отправить отзыв</h3>
+    <!--'Форма'-->
+    <form class="popup-form__form form__body" action="#" id="form">
+
+      <!--'Имя'-->
+      <div class="popup-form__name-container">
+        <label for="popup-form__name">Имя*</label>
+        <input type="text" name="popup-form__name" id="popup-form__name" placeholder="Имя*" />
+        <div class="popup-form__fail-message" id="fail-name"></div>
+      </div>
+
+      <!--'Фамилия'-->
+      <div class="popup-form__surname-container">
+        <label for="popup-form__surname">Фамилия*</label>
+        <input type="text" name="popup-form__surname" id="popup-form__surname" placeholder="Фамилия*" />
+        <div class="popup-form__fail-message" id="fail-surname"></div>
+      </div>
+
+      <!--'Email'-->
+      <div class="popup-form__email-container">
+        <label for="popup-form__email">Email*</label>
+        <input type="email" name="popup-form" id="popup-form__email" placeholder="Email*" />
+        <div class="popup-form__fail-message" id="fail-email"></div>
+      </div>
+
+      <!--'Комментарии'-->
+      <div class="popup-form__comments-container">
+        <label for="popup-form__comments">
+          Комментарий*</label>
+        <textarea name="popup-form__comments" id="popup-form__comments" maxlength="1000"
+          placeholder="Комментарий*"></textarea>
+        <div class="popup-form__fail-message" id="fail-message"></div>
+      </div>
+      <!--'чекбокс'-->
+      <div class="popup-form__policy">
+        <div class="checkbox">
+          <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input">
+          <label for="formAgreement" class="checkbox__label">
+            <span>Я даю свое согласие на обработку
+              персональных данных в соответствии с <a href="#">Условиями</a>*
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!--'Кнопка отправки'-->
+      <div class="popup-form__btn-container">
+        <button type="submit" class="popup-form__btn" id="popup-form__btn">Отправить</button>
+        <div class="popup-form__fail-message" id="fail-form"></div>
+      </div>
+    </form>
+
+
+    <!--'ПОМЕТКА поля для заполнения'-->
+
+    <div class="popup-form__text-mandatory-filling">Поля отмеченные * обязательны для заполнения</div>
+
+  </div>
+</section>

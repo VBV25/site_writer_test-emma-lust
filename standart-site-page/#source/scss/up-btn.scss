@@ -1,0 +1,72 @@
+/*-----кнопка прокрутки------*/
+
+.up-btn {
+  z-index: 100;
+  position: fixed;
+  width: max-content;
+  height: max-content;
+  padding: 5px;
+  bottom: 15px;
+  right: 10px;
+  opacity: 0.4;
+  &:hover {
+    opacity: 1;
+    .up-btn__img {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
+    }
+    .up-btn__text {
+      color: $skinColor;
+    }
+  }
+  //-обертка кнопки вверх
+  &__wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    display: block;
+    padding-bottom: 12px;
+    background-color: $emeraldDarkColor;
+    border-radius: 10px;
+    transition: 2s;
+  }
+  //-значок стрелки
+  &__img {
+    width: 50px;
+    height: 50px;
+  }
+  //текст кнопки
+  &__text {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    @include fontSizeP($fontSize: 12px, $color: $whiteColor);
+    text-transform: uppercase;
+  }
+}
+
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//
+//
+//----------------------------------------------------------------
+//-----------------------------770 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 350px) {
+  .up-btn {
+    &__wrapper {
+      padding-bottom: 10px;
+    }
+    //-значок стрелки
+    &__img {
+      width: 40px;
+      height: 30px;
+    }
+    //текст кнопки
+    &__text {
+      @include fontSizeP($fontSize: 9px, $color: $whiteColor);
+    }
+  }
+}
