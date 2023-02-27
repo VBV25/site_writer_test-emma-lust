@@ -1013,7 +1013,7 @@ h6 {
   .popup-form__policy .checkbox__label a {
     color: #646464 !important; }
   .popup-form__policy .checkbox__label.error::before {
-    border: 1px solid red; }
+    border: 2px solid red; }
 
 @media (max-width: 800px) {
   .popup-form__container {
