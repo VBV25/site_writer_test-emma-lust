@@ -1,69 +1,82 @@
 /*---------------FOOTER-----------------*/
 
 .footer {
-    @include wiHe($he: max-content);
+  @include wiHe($he: max-content);
+  @include flCent;
+  flex-direction: column;
+  background-color: $emeraldColor;
+  padding: 40px 0px 0px;
+  //обертка строки футера
+  &__row {
+    box-sizing: border-box;
+    @include wiHe(var(--contentWidh), max-content);
+    @include flexSpBeCent;
+  }
+  //логотип
+  &__logo {
+    box-sizing: border-box;
+    @include wiHe(var(--logoFootWi), var(--logoFootHe));
+    img {
+      @include wiHe;
+    }
+  }
+  //копирайт контейнер
+  &__copyright-container {
     @include flCent;
     flex-direction: column;
-    background-color: $emeraldColor;
-    padding: 40px 0px 0px;
-    //обертка строки футера
-    &__row {
-        box-sizing: border-box;
-        @include wiHe(var(--contentWidh), max-content);
-        @include flexSpBeCent;
+  }
+  //копирайт
+  &__copyright {
+    @include fontSizeP($color: $whiteColor);
+    margin-bottom: 10px;
+  }
+  //разработано
+  &__developed {
+    @include fontSizeP($fontSize: calc(var(--fsP) - 6px), $color: $whiteColor);
+  }
+  //группа ссылок
+  &__sotial-link-group {
+    @include wiHe(var(--logoFootWi), var(--logoFootHe));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  //ссылки на соцсети
+  &__link {
+    @include wiHe(var(--socialLogoWi), var(--socialLogoWi));
+    @include bgImg;
+    border-radius: 50%;
+    &:hover {
+      box-shadow: 0 0 5px 2px $whiteColor;
     }
-    //логотип
-    &__logo {
-        box-sizing: border-box;
-        @include wiHe(var(--logoFootWi), var(--logoFootHe));
-        img {
-            @include wiHe;
-        }
+  }
+  &__ig {
+    background-image: url('../img/ig-lable-white.svg');
+    &:hover {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
-    //копирайт
-    &__copyright {
-        @include fontSizeP($color: $whiteColor);
+  }
+  &__vk {
+    background-image: url('../img/vk-lable-white.svg');
+    &:hover {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
-    //группа ссылок
-    &__sotial-link-group {
-        @include wiHe(var(--logoFootWi), var(--logoFootHe));
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  }
+  &__yt {
+    background-image: url('../img/yt-lable-white.svg');
+    &:hover {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
-    //ссылки на соцсети
-    &__link {
-        @include wiHe(60px, 60px);
-        @include bgImg;
-        border-radius: 50%;
-        &:hover {
-            box-shadow: 0 0 5px 2px $whiteColor;
-        }
-    }
-    &__ig {
-        background-image: url('../img/ig-lable-white.svg');
-        &:hover {
-            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
-    }
-    &__vk {
-        background-image: url('../img/vk-lable-white.svg');
-        &:hover {
-            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
-    }
-    &__yt {
-        background-image: url('../img/yt-lable-white.svg');
-        &:hover {
-            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
-    }
-    &__policy {
-        width: 95%;
-        font-size: 12px;
-        color: $darkGrayColor;
-        margin: 50px auto;
-    }
+  }
+  &__policy {
+    width: 95%;
+    font-size: var(--fsPolicy);
+    color: $darkGrayColor;
+    margin: 50px auto;
+  }
 }
 
 //----------------------------------------------------------------
@@ -81,32 +94,38 @@
 //
 //
 //
+//
+//-----------------------------930 PX-----------------------------
 //----------------------------------------------------------------
-//-----------------------------1024 PX----------------------------
 //----------------------------------------------------------------
-//----------------------------------------------------------------
-@media (max-width: 1024px) {
-    .footer {
-        &__link {
-            @include wiHe(35px,
-            35px);
-        }
+@media (max-width: 930px) {
+  .footer {
+    //обертка строки футера
+    &__row {
+      @include flCent;
+      flex-direction: column;
+      gap: 35px;
     }
-}
-
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------900 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-@media (max-width: 900px) {
-    .footer {
-        padding-bottom: 200px;
-        &__logo {
-            @include wiHe(170px,
-            32px);
-        }
+    //логотип
+    &__logo {
+      order: 2;
     }
+    //копирайт контейнер
+    &__copyright-container {
+      order: 3;
+    }
+    //группа ссылок
+    &__sotial-link-group {
+      @include wiHe;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      order: 1;
+    }
+    &__policy {
+      margin: 30px auto;
+    }
+  }
 }
 
 //----------------------------------------------------------------
@@ -115,11 +134,14 @@
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 @media (max-width: 480px) {
-    .footer__row {
-        @include flCent;
-        flex-wrap: wrap;
-        gap: 20px;
+  .footer {
+    &__row {
+      gap: 25px;
     }
+    &__policy {
+      margin: 10px auto;
+    }
+  }
 }
 
 //----------------------------------------------------------------
@@ -127,15 +149,13 @@
 //-----------------------------320 PX-----------------------------
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-@media (max-width: 320px) {
-    .footer {
-        overflow: hidden;
-        //группа ссылок
-        &__sotial-link-group {
-            gap: 10px;
-        }
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 0px 0px;
+    &__row {
+      gap: 15px;
     }
+  }
 }
-
 
 /*-----------------------------*/
