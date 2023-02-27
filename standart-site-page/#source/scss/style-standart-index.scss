@@ -393,35 +393,40 @@ body {
   //-----обертка блока
   &__wrapper {
     @include wiHe(var(--contentWidh), max-content /*max-content*/);
-    @include flCent;
-    flex-direction: column;
     //
     margin: auto;
   }
   //----Заголовок блока
   &__base-title {
+    display: grid;
+    width: 100%;
     @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
   }
   //контейнер с контентом
   &__container {
+    box-sizing: border-box;
     @include wiHe($he: max-content);
-    @include flexSpBeCent;
+    @include gridCent($jusCon: space-around);
+    grid-template-areas: 'photo text1' 'nul btn';
+    grid-template-columns: var(--photoSect3Wi) max-content;
+    grid-template-rows: max-content;
+    row-gap: 20px;
+    column-gap: auto;
   }
   //обертка фото
   &__photo-wrapper {
-    @include wiHe(50%, max-content);
-    @include flCent;
+    @include wiHe;
+    @include gridCent;
+    grid-area: photo;
   }
   //Изображение
   &__photo {
     @include wiHe(max-content, max-content);
-    z-index: 5;
-    position: relative;
-    margin-left: var(--marginLeftPhotoSect3);
     filter: sepia(50%);
     img {
       @include wiHe(var(--photoSect3Wi), auto);
     }
+    /*
     &::after {
       @include wiHe(var(--bgPhotoSect3Wi), var(--bgPhotoSect3He));
       @include leTo(
@@ -433,11 +438,13 @@ body {
       content: '';
       position: absolute;
       background-image: url('../img/bg-photo.png');
-    }
+    }*/
   }
   //контейнер с текстом
   &__text-container {
-    @include wiHe(50%, max-content);
+    @include wiHe(50vw, max-content);
+    display: grid;
+    grid-area: text1;
   }
   //заголовки
   &__title {
@@ -457,6 +464,8 @@ body {
   }
   //-------кнопка перехода
   &__btn {
+    display: grid;
+    grid-area: btn;
     background-color: $skinColor;
     &::after {
       content: 'Подробнее';
@@ -476,17 +485,22 @@ body {
   .biography {
     //контейнер с контентом
     &__container {
-      @include flCent;
-      flex-direction: column;
+      @include gridCent;
+      grid-template-areas: 'photo' 'text1' 'btn';
+      grid-template-columns: 90vw;
+      grid-template-rows: max-content max-content max-content;
+      row-gap: 0px;
     }
     //Изображение
+    &__photo-wrapper {
+      @include wiHe(90vw, max-content);
+    }
     &__photo {
-      margin-left: 0;
       margin-bottom: calc(var(--photoSect3Wi) / 4);
     }
     //контейнер с текстом
     &__text-container {
-      @include wiHe(90%, max-content);
+      @include wiHe(90vw, max-content);
     }
     //линия
     &__line {
