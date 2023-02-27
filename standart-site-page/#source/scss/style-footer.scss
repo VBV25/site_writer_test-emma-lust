@@ -33,6 +33,9 @@
   //разработано
   &__developed {
     @include fontSizeP($fontSize: calc(var(--fsP) - 6px), $color: $whiteColor);
+    &:hover {
+      color: $skinColor;
+    }
   }
   //группа ссылок
   &__sotial-link-group {
