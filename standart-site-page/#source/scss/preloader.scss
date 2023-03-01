@@ -1,0 +1,83 @@
+//---------------------ПРЕЛОАДЕР--------------------
+//класс невидимости
+.preloader-none {
+  display: none;
+}
+
+.preloader-visible {
+  display: flex;
+}
+
+//прелоадер
+.preloader {
+  @include leTo;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 200;
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background-color: $blackColorOpacity2;
+  //изображение
+  &__image {
+    @include wiHe(80vw, auto);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    img {
+      @include wiHe;
+    }
+  }
+  //Заголовок прелоадера
+  &__title {
+    @include fontSizeP($color: $skinColor);
+    margin-bottom: 10px;
+  }
+  //----------Индикатор загрузки-------
+  /* Взято с ресурса https://techrocks.ru/2022/01/18/loader-in-pure-css/
+*/
+  &__loader {
+    --b: 10px;
+    /* толщина черточек */
+    --n: 6;
+    /* количество черточек*/
+    --g: 30deg;
+    /* промежутки между черточками(т.к. круговой в градусах)*/
+    --c: rgb(226, 198, 142);
+    /* цвет */
+    width: 30px;
+    /* размер */
+    //
+    //
+    //
+    /**/
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    /*избавиться от плохих очертаний */
+    background: conic-gradient(#0000, var(--c)) content-box;
+    //
+    /**/
+    /*мы используем +/-1 градус между цветами, чтобы избежать зубчатых краев*/
+    --_m: repeating-conic-gradient(
+        #0000 0deg,
+        #000 1deg calc(360deg / var(--n) - var(--g) - 1deg),
+        #0000 calc(360deg / var(--n) - var(--g)) calc(360deg / var(--n))
+      ),
+      radial-gradient(
+        farthest-side,
+        #0000 calc(98% - var(--b)),
+        #000 calc(100% - var(--b))
+      );
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: load 1s infinite steps(var(--n));
+  }
+  @keyframes load {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}

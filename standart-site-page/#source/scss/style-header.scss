@@ -1,162 +1,193 @@
+//--------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----
+:root {
+  //-----хэдер
+  --menuGapHead: 80px; //расстояние между пунктами меню в хедер
+  --logoHedHe: 100px; //высота логотипа хедера(ширина автоматическая)
+}
+
+//
+//
+//
+
 /*----HEADER-----*/
 
 .header {
-    @include wiHe($he: max-content);
-    z-index: 50;
+  @include wiHe($he: max-content);
+  z-index: 50;
+  position: relative;
+  background-color: $emeraldColor;
+  padding: 10px 0;
+  .container {
+    @include wiHe(var(--contentWidh));
+    @include flexSpBeCent;
+    margin: 0px auto;
     position: relative;
-    background-color: $emeraldColor;
-    padding: 10px 0;
-    .container {
-        @include wiHe(var(--contentWidh));
-        @include flexSpBeCent;
-        margin: 0px auto;
-        position: relative;
+  }
+  //логотип
+  &__logo {
+    @include wiHe(max-content, max-content);
+    img {
+      // @include wiHe(var(--logoHedWi), auto)
+      @include wiHe(auto, var(--logoHedHe));
     }
-    //логотип
-    &__logo {
-        @include wiHe( max-content, max-content);
-        img {
-            // @include wiHe(var(--logoHedWi), auto)
-            @include wiHe( auto, var(--logoHedHe))
-        }
-        &:hover img {
-            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
+    &:hover img {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
-    //навигация
-    &__menu {
-        ul {
-            @include wiHe( 100%, var(--logoHedHe));
-            @include flCent;
-            gap: var(--menuGapHead);
-        }
+  }
+  //навигация
+  &__menu {
+    ul {
+      @include wiHe(100%, var(--logoHedHe));
+      @include flCent;
+      gap: var(--menuGapHead);
     }
-    //ссылки
-    &__link {
-        @include fontSizeBase(var(--fsMenuHead));
-        &:hover {
-            color: $skinColor;
-        }
+  }
+  //ссылки
+  &__link {
+    @include fontSizeBase(var(--fsMenuHead));
+    &:hover {
+      color: $skinColor;
     }
-    //контактный телефон
-    &__form {
-        img {
-            @include wiHe(auto, var(--logoHedHe))
-        }
-        &:hover img {
-            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
+  }
+  //контактный телефон
+  &__form {
+    img {
+      @include wiHe(auto, var(--logoHedHe));
     }
-    // кнопка мобильного меню
-    &__btn-navigation-menu {
-        display: none;
+    &:hover img {
+      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
+  }
+  // кнопка мобильного меню
+  &__btn-navigation-menu {
+    display: none;
+  }
 }
 
 //----------АКТИВНЫЙ ПУНКТ МЕНЮ-------
 .active-menu {
-    color: $darkGrayColor !important;
-    &:hover {
-        color: unset;
-        cursor: no-drop;
-    }
+  color: $darkGrayColor !important;
+  &:hover {
+    color: unset;
+    cursor: no-drop;
+  }
 }
 
 //------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-------------------------МЕДИА ЗАПРОСЫ--------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
+//------------------------------------------
+//-----------------МЕДИА-ЗАПРОСЫ--------------------------
+//
+//
+//--------------------1430-PX---------------------
+@media (max-width: 1430px) {
+  :root {
+    --menuGapHead: 50px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 70px; //высота логотипа хедера(ширина автоматическая)
+  }
+}
+
+//
+//
+//--------------------1255-PX---------------------
+@media (max-width: 1255px) {
+  :root {
+    --fsMenuHead: 26px; //размер шрифта в хедер
+    --menuGapHead: 40px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 60px; //высота логотипа хедера(ширина автоматическая)
+  }
+}
+
+//
+//
+//--------------------1024-PX---------------------
+@media (max-width: 1024px) {
+  :root {
+    --fsMenuHead: 20px; //размер шрифта в хедер
+    --menuGapHead: 30px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 50px; //высота логотипа хедера(ширина автоматическая)
+  }
+}
+
+//
+//
+//--------------------770-PX---------------------
+@media (max-width: 770px) {
+  :root {
+    --fsMenuHead: 17px; //размер шрифта в хедер
+    --menuGapHead: 20px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 40px; //высота логотипа хедера(ширина автоматическая)
+  }
+}
+
 //
 //
 //
-//
-//
-//----------------------------------------------------------------
-//-----------------------------630 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
+//--------------------630-PX---------------------
 @media (max-width: 630px) {
-    .header {
-        .container {
-            margin: 0px;
-            padding: 0 5%;
-        }
-        // кнопка мобильного меню
-        &__btn-navigation-menu {
-            @include flCent;
-            @include fontSizeBase(var(--fsMenuHeadBtn));
-            &:hover {
-                color: $skinColor;
-            }
-        }
-        //навигация
-        &__menu {
-            @include wiHe( 100%, max-content);
-            @include leTo(-1000%, 0);
-            position: absolute;
-            background-color: $emeraldColor;
-            //
-            transition: all 0.4s ease 0s;
-            //----отображение мобильного меню
-            &.active-block-menu {
-                top: 110%;
-            }
-            ul {
-                height: var(--logoHedHe);
-                margin: 10px 0px;
-            }
-        }
+  :root {
+    --fsMenuHead: 16px; //размер шрифта в хедер
+    --menuGapHead: 30px; //расстояние между пунктами меню в хедер
+    --logoHedHe: 40px; //высота логотипа хедера(ширина автоматическая)
+  }
+  .header {
+    .container {
+      margin: 0px;
+      padding: 0 5%;
     }
+    // кнопка мобильного меню
+    &__btn-navigation-menu {
+      @include flCent;
+      @include fontSizeBase(var(--fsMenuHeadBtn));
+      &:hover {
+        color: $skinColor;
+      }
+    }
+    //навигация
+    &__menu {
+      @include wiHe(100%, max-content);
+      @include leTo(-1000%, 0);
+      position: absolute;
+      background-color: $emeraldColor;
+      //
+      transition: all 0.4s ease 0s;
+      //----отображение мобильного меню
+      &.active-block-menu {
+        top: 110% !important;
+      }
+      ul {
+        height: var(--logoHedHe);
+        margin: 10px 0px;
+      }
+    }
+  }
 }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------530 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
+//
+//
+//--------------------530-PX---------------------
 @media (max-width: 530px) {
-    .header {
-        //навигация
-        &__menu {
-            //  flex-wrap: wrap;
-            ul {
-                @include flexSpBeCent($jusCon: space-around);
-                height: max-content;
-                flex-wrap: wrap;
-                row-gap: 20px;
-                .link {
-                    text-align: center;
-                    width: 28%;
-                }
-            }
+  :root {
+    --fsMenuHead: 18px; //размер шрифта в хедер
+    --logoHedHe: 40px; //высота логотипа хедера(ширина автоматическая)
+  }
+  .header {
+    //навигация
+    &__menu {
+      //  flex-wrap: wrap;
+      ul {
+        @include flexSpBeCent($jusCon: space-around);
+        height: max-content;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        .link {
+          text-align: center;
+          width: 90%;
         }
+      }
     }
+  }
 }
 
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-//-----------------------------270 PX-----------------------------
-//----------------------------------------------------------------
-//----------------------------------------------------------------
-@media (max-width: 530px) {
-    .header {
-        //навигация
-        &__menu {
-            //  flex-wrap: wrap;
-            ul {
-                row-gap: 20px;
-                .link {
-                    text-align: center;
-                    width: 90%;
-                }
-            }
-        }
-    }
-}
+//

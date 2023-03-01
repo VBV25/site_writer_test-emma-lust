@@ -1,0 +1,341 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+// медиа адаптив из размерных переменных ОБЩИЙ
+@import 'base-media-variables';
+//хедер
+@import 'style-header';
+//футер
+@import 'style-footer';
+//стрелка вверх
+@import 'up-btn';
+//POPUP
+@import 'style-elements-additional';
+//preloader
+@import 'preloader';
+//-
+//-------------------общие стили----------------
+body {
+  background: $emeraldDarkColor;
+  position: relative;
+}
+
+h1 {
+  @include leTo;
+  @include wiHe(1px, 1px);
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-size: 1px !important;
+}
+
+//стиль блокировки прокрутки
+.lock {
+  overflow: hidden;
+}
+
+//стилизация кнопок перехода
+.content-btn {
+  @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtnSect2);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: $grayColor;
+  border-radius: 10px;
+  &::after {
+    @include fontSizeH5($color: $whiteColor);
+    @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+    @include leTo(-4px);
+    @include flCent;
+    z-index: 5;
+    position: absolute;
+    background-color: $DarkRedColor;
+    border-radius: 10px;
+  }
+  &:hover::after {
+    color: $skinColor;
+  }
+  &:active::after {
+    @include leTo(0);
+  }
+}
+
+//стилизация заголовков каждого блока
+.base-title {
+  z-index: 5;
+  @include wiHe($he: max-content);
+  @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
+  margin-bottom: var(--titleMarginBottom);
+  text-align: center;
+}
+
+//--------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//------------ПЕРЕМЕННЫЕ-ROOT---------------
+
+/*:root {
+  //-!!!---1-БЛОК---!!!-
+  --bgWondowWi: 550px; //Ширина изображения окна
+  --firstBlockPaddingTB: 70px; //внутренние отступы 1 секции сверху и снизу
+  --firstBlockHe: 700px; //высота первого блока
+  --emmalustWi: 53vw; //Ширина надписи Emma Lust
+  --taglineTextWi: 74%; //Ширина текста слогана
+  //----------------------------------
+  //-!!!---2-БЛОК---!!!-
+  //
+  //-----------------------------------
+  //-!!!---3-БЛОК---!!!-
+  //
+  //----------------------------------
+  //-!!!---4-БЛОК---!!!-
+  //
+}*/
+
+//-!!!--МЕДИА-ЗАПРОСЫ-ПЕРЕМЕННЫХ--В-КОНЦЕ--!!!-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//-------------ПЕРВАЯ-СЕКЦИЯ--------------------
+:root {
+  //-!!!---1-БЛОК---!!!-
+  --bgWondowWi: 550px; //Ширина ФОТОГРАФИИ
+  --firstBlockPaddingTB: 0px; //внутренние отступы 1 секции сверху и снизу
+  --firstBlockHe: 700px; //высота первого блока
+  --emmalustWi: 40vw; //Ширина надписи Emma Lust
+  --taglineTextWi: 90%; //Ширина текста слогана
+  --firstSectTextMargin: 150px; //отступ слева у текста
+}
+
+.tagline {
+  //стили всего блока
+  @include wiHe($he: var(--firstBlockHe));
+  @include bgImg;
+  background-image: url('../img/first-sect-bg.jpg');
+  background-color: $emeraldDarkColor;
+  padding: var(--firstBlockPaddingTB) 0;
+  //стили обертки с контентом
+  &__wrapper {
+    @include wiHe(var(--contentWidh));
+    margin: auto;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      @include leTo;
+      @include wiHe;
+      @include bgImg(
+        $bgImSize: var(--bgWondowWi) auto,
+        $bgPosition: bottom 0 right 100px
+      );
+      //
+      background-image: url('../img/photo2.png');
+      margin: auto;
+    }
+  }
+  //стили контейнера с заголовком и слоганом
+  &__container {
+    @include flCent;
+    @include wiHe(min-content);
+    z-index: 5;
+    position: relative;
+    flex-direction: column;
+    margin-left: var(--firstSectTextMargin);
+  }
+  //стили заголовка Emma Lust
+  &__title {
+    @include wiHe(max-content, max-content);
+    @include flCent;
+    img {
+      @include wiHe(var(--emmalustWi), auto);
+      filter: sepia(30%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
+    }
+  }
+  //текст слогана
+  &__text {
+    @include wiHe(var(--taglineTextWi), max-content);
+    @include fontSizeH4($fontSize: calc(var(--fsH4) + 4px), $color: $skinColor);
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------630-PX-----------
+@media (max-width: 630px) {
+}
+
+//
+//-------495-PX-----------
+@media (max-width: 495px) {
+}
+
+//-----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//----------------ВТОРАЯ-СЕКЦИЯ---------------------
+.book-block {
+  //стили всего блока
+  @include wiHe($he: var(--firstBlockHe));
+  background-color: $emeraldDarkColor;
+  padding: var(--firstBlockPaddingTB) 0;
+  //стили обертки с контентом
+  &__wrapper {
+    @include wiHe(var(--contentWidh));
+  }
+  &__base-title {
+  }
+  &__container {
+  }
+}
+
+.base-title {
+}
+
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------930-PX-----------
+@media (max-width: 930px) {
+}
+
+//
+//-------530-PX-----------
+@media (max-width: 530px) {
+}
+
+//
+//-------375-PX-----------
+@media (max-width: 375px) {
+}
+
+//
+//-------320-PX-----------
+@media (max-width: 320px) {
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//----------------ТРЕТЬЯ-СЕКЦИЯ--------------------
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------770-PX-----------
+@media (max-width: 770px) {
+}
+
+//
+//-------270-PX-----------
+@media (max-width: 270px) {
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//------------Четвертая-СЕКЦИЯ----Слайдер-----------
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------840-PX-----------
+@media (max-width: 840px) {
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//------------ПЯТАЯ-СЕКЦИЯ---------------
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------1250-PX-----------
+@media (max-width: 1250px) {
+}
+
+//
+//-------700-PX-----------
+@media (max-width: 700px) {
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//------------ПЕРЕМЕННЫЕ-ROOT---------------
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//---------ПОПАПЫ-И-ДОП-ЭЛЕМЕНТЫ-------
+//

@@ -1,6 +1,19 @@
 $(document).ready(function () {
+  //---------ВЫДЕЛЕНИЕ ПУНКТА МЕНЮ ИСХОДЯ ИЗ АДРЕСНОЙ СТРОКИ НА КОТОРОЙ СЕЙЧАС НАХОДИМСЯ-------
+  //
+
+  if (location.toString().indexOf('standart-book') !== -1) {
+    $('.header__link ').removeClass('active-menu');
+    $('.link-book ').addClass('active-menu');
+  }
+  //
+  //
+  //
+  //
+  //
   /*----------------прелоадер----------------*/
   //скрытие прелоадера
+
   if ($(window).on('load')) {
     setTimeout(function () {
       // $('#wrap_preloader').delay(2000).fadeToggle(300);
@@ -12,6 +25,16 @@ $(document).ready(function () {
   //
   //
   //
+  //
+  //
+  //
+  //---ОТКРЫТИЕ МЕНЮ ХЕАДЕР
+  $('.header__btn-navigation-menu').click(function () {
+    $('.header__menu').toggleClass('active-block-menu');
+  });
+  $('main').click(function () {
+    $('.header__menu').removeClass('active-block-menu');
+  });
   //
   //
   //
@@ -35,14 +58,6 @@ $(document).ready(function () {
   });
   //
   //
-  //
-  //---ОТКРЫТИЕ МЕНЮ ХЕАДЕР
-  $('.header__btn-navigation-menu').click(function () {
-    $('.header__menu').toggleClass('active-block-menu');
-  });
-  $('main').click(function () {
-    $('.header__menu').removeClass('active-block-menu');
-  });
   //
   //
   //
