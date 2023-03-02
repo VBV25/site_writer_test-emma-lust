@@ -41,7 +41,7 @@ h1 {
   z-index: 4;
   position: relative;
   left: 50%;
-  margin-top: var(--marginTopBtnSect2);
+  margin-top: var(--marginTopBtn);
   margin-left: calc(var(--btnSect2Wi) / -2);
   background-color: $grayColor;
   border-radius: 10px;
@@ -99,7 +99,7 @@ h1 {
   //текст
   --containerText2sectWi: 45%; // контейнера с текстом 2 секции ширина
   --marginTextCont2sect: 30px; //нижние отступы в текстовом блоке 2 секции
-  //книга
+  //-----------книга-----------
   --rigtBookShift: 50px; //отступ книги от правого края
   --containerBook2sectWi: 323px; // контейнера с книгой 2 секции и книги ширина
   --containerBook2sectHe: calc(
@@ -111,8 +111,6 @@ h1 {
   --coverBook2sectHe: calc(
     var(--coverBook2sectWi) * 1.7
   ); //475px обложки книги 2 секции высота
-  --btnSect2Wi: 300px; //кнопка второй секции ширина
-  --btnSect2He: 50px; //кнопка второй секции высота
   //-----------------------------------
   //--------3блок-------
   --paddingSect3TopBot: 80px; //внутренний отступ 3 секции верх и низ
@@ -299,7 +297,7 @@ h1 {
   //-------кнопка перехода
   &__btn {
     &::after {
-      content: 'Перейти к книге';
+      content: 'Приобрести книгу';
     }
   }
   //------контейнер с книгой
@@ -826,7 +824,6 @@ h1 {
     --marginTextCont2sect: 15px; //нижние отступы в текстовом блоке 2 секции
     //книга
     --containerBook2sectWi: 280px; // контейнера с книгой 2 секции и книги ширина
-    --btnSect2Wi: 250px; //кнопка второй секции ширина
     //------------------------------------
     //----4блок------
     --sliderImgWi: 350px; //Ширина Изображения слайдера
@@ -932,8 +929,6 @@ h1 {
     --coverBook2sectWi: calc(
       var(--containerBook2sectWi) * 0.872
     ); // обложки книги 2 секции ширина
-    --btnSect2Wi: 180px; //кнопка второй секции ширина
-    --btnSect2He: 50px; //кнопка второй секции высота
   }
 }
 

@@ -7,9 +7,11 @@ $darkGrayColor: #646464;
 $grayColor: #808080;
 $smokeColor: #cccccc;
 $whiteColor: #ffffff;
+$redColor: red;
 //
 $emeraldColor: #253229;
 $emeraldDarkColor: #1d241f;
+$emeraldDarkColor2: #041308;
 $DarkRedColor: #240e04;
 $yellowBrownColor: #885a34;
 $sandColor: #fff3d2;
@@ -34,7 +36,11 @@ $fontFamily2: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
   //----------------------------------------------------
   //----контент общий
   --contentWidh: 95vw; //блок контента
-  --marginTopBtnSect2: 100px; //внешний отступ кнопки 2,3 секции верхний
+  //кнопка
+  --marginTopBtn: 100px; //внешний отступ кнопки
+  --btnSect2Wi: 300px; //кнопка  ширина
+  --btnSect2He: 50px; //кнопка  высота
+  //
   --titleMarginBottom: 80px; //отступ нижний заголовка блока
   --fs2sectTitle: 72px; //размер шрифта заголовка блока
   //----------------------------------------------------
@@ -240,3 +246,63 @@ $fontFamily2: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
 }
 
 //----------------------------------------------------------------------------------------------------
+//-------------------общие стили----------------
+body {
+  background: $emeraldDarkColor2;
+  position: relative;
+}
+
+h1 {
+  @include leTo;
+  @include wiHe(1px, 1px);
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-size: 1px !important;
+}
+
+//стиль блокировки прокрутки
+.lock {
+  overflow: hidden;
+}
+
+.not-visible {
+  display: none;
+}
+
+//стилизация кнопок перехода
+.content-btn {
+  @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtn);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: $grayColor;
+  border-radius: 10px;
+  &::after {
+    @include fontSizeH5($color: $whiteColor);
+    @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+    @include leTo(-4px);
+    @include flCent;
+    z-index: 5;
+    position: absolute;
+    background-color: $DarkRedColor;
+    border-radius: 10px;
+  }
+  &:hover::after {
+    color: $skinColor;
+  }
+  &:active::after {
+    @include leTo(0);
+  }
+}
+
+//стилизация заголовков каждого блока
+.base-title {
+  z-index: 5;
+  @include wiHe($he: max-content);
+  @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldDarkColor);
+  margin-bottom: var(--titleMarginBottom);
+  text-align: center;
+}

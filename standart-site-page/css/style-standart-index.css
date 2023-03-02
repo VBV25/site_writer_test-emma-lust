@@ -52,9 +52,86 @@ ul li {
   --fsP: 22px;
   --fsPolicy: 12px;
   --contentWidh: 95vw;
-  --marginTopBtnSect2: 100px;
+  --marginTopBtn: 100px;
+  --btnSect2Wi: 300px;
+  --btnSect2He: 50px;
   --titleMarginBottom: 80px;
   --fs2sectTitle: 72px; }
+
+body {
+  background: #041308;
+  position: relative; }
+
+h1 {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-size: 1px !important; }
+
+.lock {
+  overflow: hidden; }
+
+.not-visible {
+  display: none; }
+
+.content-btn {
+  width: var(--btnSect2Wi);
+  height: var(--btnSect2He);
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtn);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: #808080;
+  border-radius: 10px; }
+  .content-btn::after {
+    font-size: var(--fsH5);
+    font-weight: 300;
+    line-height: calc(var(--fsH5) * 1.5);
+    color: #ffffff;
+    font-style: normal;
+    font-family: Georgia, sans-serif;
+    width: var(--btnSect2Wi);
+    height: var(--btnSect2He);
+    top: -4px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    background-color: #240e04;
+    border-radius: 10px; }
+  .content-btn:hover::after {
+    color: #e2c68e; }
+  .content-btn:active::after {
+    top: 0;
+    left: 0; }
+
+.base-title {
+  z-index: 5;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: var(--fs2sectTitle);
+  font-weight: 600;
+  line-height: calc(var(--fsH2) * 1.5);
+  color: #1d241f;
+  font-style: normal;
+  font-family: Georgia, sans-serif;
+  margin-bottom: var(--titleMarginBottom);
+  text-align: center; }
 
 @media (max-width: 1255px) {
   :root {
@@ -66,6 +143,7 @@ ul li {
     --fsP: 20px;
     --fsPolicy: 9px;
     --marginTopBtnSect2: 50px;
+    --btnSect2Wi: 250px;
     --fs2sectTitle: 62px; } }
 
 @media (max-width: 840px) {
@@ -112,7 +190,9 @@ ul li {
     --fsH4: 19px;
     --fsH5: 18px;
     --fsP: 14px;
-    --fs2sectTitle: 32px; } }
+    --fs2sectTitle: 32px;
+    --btnSect2Wi: 180px;
+    --btnSect2He: 50px; } }
 
 @media (max-width: 270px) {
   :root {
@@ -1142,7 +1222,7 @@ h1 {
   z-index: 4;
   position: relative;
   left: 50%;
-  margin-top: var(--marginTopBtnSect2);
+  margin-top: var(--marginTopBtn);
   margin-left: calc(var(--btnSect2Wi) / -2);
   background-color: #808080;
   border-radius: 10px; }
@@ -1211,8 +1291,6 @@ h1 {
   --coverBook2sectHe: calc(
     var(--coverBook2sectWi) * 1.7
   );
-  --btnSect2Wi: 300px;
-  --btnSect2He: 50px;
   --paddingSect3TopBot: 80px;
   --photoSect3Wi: 300px;
   --marginLeftPhotoSect3: 80px;
@@ -1392,7 +1470,7 @@ h1 {
     font-family: Georgia, sans-serif;
     text-align: start; }
   .in-work__btn::after {
-    content: 'Перейти к книге'; }
+    content: 'Приобрести книгу'; }
   .in-work__book-container {
     width: var(--containerBook2sectWi);
     height: var(--containerBook2sectHe);
@@ -1922,7 +2000,6 @@ h1 {
     --section2PaddingTB: 150px;
     --marginTextCont2sect: 15px;
     --containerBook2sectWi: 280px;
-    --btnSect2Wi: 250px;
     --sliderImgWi: 350px; } }
 
 @media (max-width: 840px) {
@@ -1979,9 +2056,7 @@ h1 {
     --containerBook2sectWi: 80px;
     --coverBook2sectWi: calc(
       var(--containerBook2sectWi) * 0.872
-    );
-    --btnSect2Wi: 180px;
-    --btnSect2He: 50px; } }
+    ); } }
 
 @media (max-width: 270px) {
   :root {
