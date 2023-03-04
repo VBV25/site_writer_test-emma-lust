@@ -1223,7 +1223,7 @@ main {
   --emmalustWi: 850px;
   --taglineTextWi: 505px;
   --firstSectTextMargin: 5vw;
-  --rightMarginPhoto: 4.7vw; }
+  --rightMarginPhoto: 5.3vw; }
 
 .tagline {
   width: 100%;
@@ -1331,7 +1331,7 @@ main {
     --emmalustWi: 500px;
     --taglineTextWi: 350px;
     --firstSectTextMargin: 9vw;
-    --rightMarginPhoto: 4.5vw; }
+    --rightMarginPhoto: 4.8vw; }
   .tagline__text-wrapper p {
     font-size: var(--fsH4);
     font-weight: 600;
@@ -1459,21 +1459,16 @@ main {
 
 :root {
   --block2He: max-content;
+  --wrapper2SectPaddingButtom: 50px;
   --titleBgWi: 78%;
   --topTitleBg: -30px;
   --marginTopBtn: 30px;
   /*---------*/
   --rigtBookShift: 20px;
   --containerBook2sectWi: 223px;
-  --containerBook2sectHe: calc(
-    var(--containerBook2sectWi) * 1.51
-  );
-  --coverBook2sectWi: calc(
-    var(--containerBook2sectWi) * 0.8669
-  );
-  --coverBook2sectHe: calc(
-    var(--coverBook2sectWi) * 1.7
-  ); }
+  --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
+  --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
+  --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
 
 .book-block {
   width: 100%;
@@ -1505,20 +1500,39 @@ main {
     position: relative;
     color: white;
     padding-top: 110px;
-    padding-bottom: 50px; }
+    padding-bottom: var(--wrapper2SectPaddingButtom); }
   .book-block__bg-title {
     width: var(--titleBgWi);
     height: 120%;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
     top: var(--topTitleBg);
     left: 50%;
     margin-left: calc(var(--titleBgWi) / -2);
-    padding-top: calc(var(--topTitleBg) * -1);
-    background-image: url("../img/paper.jpg");
+    background-color: #e2c68e;
     position: absolute;
-    border-radius: 5px; }
+    border-radius: 10px; }
+  .book-block__bg-title-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: calc(var(--topTitleBg) * -1); }
+    .book-block__bg-title-wrap::before, .book-block__bg-title-wrap::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url("../img/corner1.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center; }
+    .book-block__bg-title-wrap::before {
+      top: 0;
+      left: 20px; }
+    .book-block__bg-title-wrap::after {
+      top: 0;
+      right: 20px;
+      -webkit-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+      transform: scale(-1, 1); }
   .book-block__container {
     width: 100%;
     height: -webkit-max-content;
@@ -1561,10 +1575,14 @@ main {
   .book-block__line {
     position: relative;
     z-index: 21;
-    width: 70%;
-    height: 2px;
-    background-color: #000000;
+    width: 60%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     margin: auto; }
+    .book-block__line img {
+      width: 100%;
+      height: auto; }
   .book-block__link-group {
     width: 70%;
     height: -webkit-max-content;
@@ -1596,6 +1614,32 @@ main {
     .book-block__link:hover {
       text-shadow: 0 -1px 1px #000000, 0 -1px 1px #000000, 0 1px 1px #000000, 0 1px 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
       color: #ffffff; }
+  .book-block .line-auxiliary {
+    width: var(--titleBgWi);
+    height: 2px;
+    position: relative;
+    margin: auto; }
+    .book-block .line-auxiliary::before, .book-block .line-auxiliary::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url("../img/corner1.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center; }
+    .book-block .line-auxiliary::before {
+      bottom: calc(var(--wrapper2SectPaddingButtom) * -1);
+      left: 20px;
+      -webkit-transform: scale(1, -1);
+      -ms-transform: scale(1, -1);
+      transform: scale(1, -1); }
+    .book-block .line-auxiliary::after {
+      bottom: calc(var(--wrapper2SectPaddingButtom) * -1);
+      right: 20px;
+      -webkit-transform: scale(-1, -1);
+      -ms-transform: scale(-1, -1);
+      transform: scale(-1, -1); }
 
 /*----контейнер с ОПИСАНИЕМ КНИГИ--*/
 .book {
@@ -1741,15 +1785,9 @@ main {
   :root {
     --rigtBookShift: 0px;
     --containerBook2sectWi: 103px;
-    --containerBook2sectHe: calc(
-      var(--containerBook2sectWi) * 1.51
-    );
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.8669
-    );
-    --coverBook2sectHe: calc(
-      var(--coverBook2sectWi) * 1.7
-    ); }
+    --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
+    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
+    --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
   .book-block__genre, .book-block__data {
     font-size: calc(var(--fsP) - 3px);
     font-weight: 300;
@@ -1824,8 +1862,7 @@ main {
     /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
     /*----*/ }
     .book-block__wrapper {
-      padding-top: 80px;
-      padding-bottom: 50px; }
+      padding-top: 80px; }
     .book-block__container {
       width: 100%;
       height: -webkit-max-content;
@@ -1873,8 +1910,7 @@ main {
   .book-block {
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/ }
     .book-block__wrapper {
-      padding-top: 50px;
-      padding-bottom: 50px; }
+      padding-top: 50px; }
     .book-block__bg-title {
       width: var(--titleBgWi);
       height: 102%;
@@ -1936,5 +1972,10 @@ main {
   -webkit-box-ordinal-group: 6;
   -ms-flex-order: 5;
   order: 5; }
+
+.line-auxiliary {
+  -webkit-box-ordinal-group: 1001;
+  -ms-flex-order: 1000;
+  order: 1000; }
 
 /*----*/
