@@ -14,7 +14,8 @@
 @import 'style-elements-additional';
 //preloader
 @import 'preloader';
-//-
+//ПЕРВАЯ СЕКЦИЯ
+@import 'tagline-writer-photo';
 //--------------------------------------------
 //
 //
@@ -81,255 +82,14 @@ main {
 //
 //
 //
-//-------------ПЕРВАЯ-СЕКЦИЯ--------------------
-:root {
-    //-!!!---1-БЛОК---!!!-
-    --bgWondowWi: 520px; //Ширина ФОТОГРАФИИ
-    --firstBlockHe: 700px; //высота первого блока
-    --emmalustWi: 850px; //Ширина надписи Emma Lust
-    --taglineTextWi: 505px; //Ширина текста слогана
-    --firstSectTextMargin: 5vw; //отступ слева у текста
-    --rightMarginPhoto: 5.3vw; //отступ справа у фото
-}
-
-.tagline {
-    //стили всего блока
-    @include wiHe($he: var(--firstBlockHe));
-    @include bgImg($bgImSize: 100% auto);
-    background-image: url('../img/first-sect-bg1.jpg');
-    //стили обертки с контентом
-    &__wrapper {
-        @include wiHe(var(--contentWidh));
-        margin: auto;
-        position: relative;
-        &::after {
-            content: '';
-            position: absolute;
-            @include leTo;
-            @include wiHe;
-            @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: bottom 0 right var(--rightMarginPhoto));
-            //
-            background-image: url('../img/photo2.png');
-            margin: auto;
-        }
-    }
-    //стили контейнера с заголовком и слоганом
-    &__container {
-        @include flCent;
-        @include wiHe(min-content);
-        z-index: 5;
-        position: relative;
-        flex-direction: column;
-        margin-left: var(--firstSectTextMargin);
-    }
-    //стили заголовка Emma Lust
-    &__title {
-        @include wiHe(max-content,
-        max-content);
-        @include flCent;
-        img {
-            @include wiHe(var(--emmalustWi),
-            auto);
-            filter: sepia(30%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
-        }
-    }
-    //текст слогана
-    &__text-wrapper {
-        @include wiHe(100%,
-        max-content);
-        margin-top: 20px;
-        p {
-            @include fontSizeH4( $fontSize: calc(var(--fsH4) + 4px), $color: $skinColor);
-            @include wiHe(var(--taglineTextWi),
-            max-content);
-            margin: auto;
-            text-align: center;
-            word-spacing: 5px;
-        }
-    }
-}
-
-//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
-//
-//
-//-------1600-PX-----------
-@media (max-width: 1600px) {
-     :root {
-        //-!!!---1-БЛОК---!!!-
-        --bgWondowWi: 450px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 650px; //высота первого блока
-        --emmalustWi: 750px; //Ширина надписи Emma Lust
-    }
-}
-
-//
-//-------1300-PX-----------
-@media (max-width: 1310px) {
-     :root {
-        //-!!!---1-БЛОК---!!!-
-        --bgWondowWi: 400px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 550px; //высота первого блока
-        --emmalustWi: 650px; //Ширина надписи Emma Lust
-    }
-}
-
-//
-//-------1150-PX-----------
-@media (max-width: 1150px) {
-     :root {
-        //-!!!---1-БЛОК---!!!-
-        --bgWondowWi: 300px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 450px; //высота первого блока
-        --emmalustWi: 500px; //Ширина надписи Emma Lust
-        --taglineTextWi: 350px; //Ширина текста слогана
-        --firstSectTextMargin: 9vw; //отступ слева у текста
-        --rightMarginPhoto: 4.8vw; //отступ справа у фото
-    }
-    .tagline {
-        //текст слогана
-        &__text-wrapper {
-            p {
-                @include fontSizeH4($color: $skinColor);
-            }
-        }
-    }
-}
-
-//
-//-------900-PX-----------
-@media (max-width: 900px) {
-     :root {
-        --paddingTextConttop: 30px; //отступ текста сверху
-    }
-    .tagline {
-        //стили всего блока
-        @include bgImg($bgImSize: 130% auto);
-        //стили контейнера с заголовком и слоганом
-        &__container {
-            @include wiHe;
-            align-items: flex-start;
-            justify-content: flex-start;
-            margin-left: 0;
-            padding: var(--paddingTextConttop) 20px 0;
-        }
-        //стили заголовка Emma Lust
-        &__title {
-            @include wiHe(100%,
-            max-content);
-        }
-        //текст слогана
-        &__text-wrapper {
-            @include wiHe(50%);
-            @include flCent;
-        }
-    }
-}
-
-//
-//-------770-PX-----------
-@media (max-width: 770px) {
-     :root {
-        //-!!!---1-БЛОК---!!!-
-        --bgWondowWi: 250px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 450px; //высота первого блока
-        --emmalustWi: 80vw; //Ширина надписи Emma Lust
-        --taglineTextWi: 250px; //Ширина текста слогана
-        --firstSectTextMargin: 0vw; //отступ слева у текста
-        --rightMarginPhoto: 0vw; //отступ справа у фото
-    }
-}
-
-//
-//-------650-PX-----------
-@media (max-width: 650px) {
-     :root {
-        //-!!!---1-БЛОК---!!!-
-        --bgWondowWi: 230px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 400px; //высота первого блока
-        --taglineTextWi: 250px; //Ширина текста слогана
-    }
-    .tagline {
-        //стили всего блока
-        @include bgImg($bgImSize: 150% auto);
-    }
-}
-
-//
-//-------495-PX-----------
-@media (max-width: 495px) {
-     :root {
-        --bgWondowWi: 190px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 315px; //высота первого блока
-        --taglineTextWi: 250px; //Ширина текста слогана
-    }
-}
-
-//
-//-------375-PX-----------
-@media (max-width: 375px) {
-     :root {
-        --bgWondowWi: 150px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 240px; //высота первого блока
-        --taglineTextWi: 250px; //Ширина текста слогана
-    }
-    .tagline {
-        //контейнер
-        &__container {
-            padding-top: 15px;
-        }
-    }
-}
-
-//
-//-------320-PX-----------
-@media (max-width: 320px) {
-     :root {
-        --bgWondowWi: 130px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 210px; //высота первого блока
-        --taglineTextWi: 100px; //Ширина текста слогана
-    }
-    .tagline {
-        //стили всего блока
-        @include bgImg($bgImSize: 180% auto);
-        //текст слогана
-        &__text-wrapper {
-            @include wiHe(55%);
-            @include flCent;
-            P {
-                @include flCent;
-                @include wiHe;
-                margin: 0;
-            }
-        }
-    }
-}
-
-//
-//-------260-PX-----------
-@media (max-width: 260px) {
-     :root {
-        --bgWondowWi: 100px; //Ширина ФОТОГРАФИИ
-        --firstBlockHe: 170px; //высота первого блока
-        --taglineTextWi: 100px; //Ширина текста слогана
-    }
-    .tagline {
-        //стили всего блока
-        @include bgImg($bgImSize: 180% auto);
-        //текст слогана
-        &__text-wrapper {
-            margin-top: 10px;
-            padding-bottom: 20px;
-        }
-    }
-}
-
 //-----------------------------------------------
 //
 //
 //
 //
 //
-//
+//-------------ПЕРВАЯ-СЕКЦИЯ--------------------
+//--добавляется через импорт
 //
 //
 //
@@ -372,10 +132,8 @@ main {
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/
     //фон лист бумаги
     &__bg-title {
-        @include wiHe(var(--titleBgWi),
-        120%);
-        @include leTo(var(--topTitleBg),
-        50%);
+        @include wiHe(var(--titleBgWi), 120%);
+        @include leTo(var(--topTitleBg), 50%);
         margin-left: calc(var(--titleBgWi) / -2);
         background-color: $skinColor;
         position: absolute;

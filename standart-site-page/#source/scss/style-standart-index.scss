@@ -92,7 +92,7 @@ h1 {
 :root {
     //------1блок-----
     --bgWondowWi: 550px; //Ширина изображения окна
-    --firstBlockPaddingTB: 70px; //внутренние отступы 1 секции сверху и снизу
+    --firstBlockPaddingTB: 70px; //внутренние отступы 1 секции сверху и снизу(как маргин у текстов)
     --firstBlockHe: 700px; //высота первого блока
     --emmalustWi: 53vw; //Ширина надписи Emma Lust
     --taglineTextWi: 74%; //Ширина текста слогана
@@ -102,11 +102,14 @@ h1 {
 .tagline {
     //стили всего блока
     @include wiHe($he: var(--firstBlockHe));
-    background-color: $DarkRedColor;
-    padding: var(--firstBlockPaddingTB) 0;
+    //background-color: $DarkRedColor;
+    //padding: var(--firstBlockPaddingTB) 0;
+    @include bgImg($bgImSize: 100% 100%);
+    background-image: url('../img/first-sect-bg2.jpg');
     //стили обертки с контентом
     &__wrapper {
         @include wiHe(var(--contentWidh));
+        @include flStartCen;
         margin: auto;
         position: relative;
         &::after {
@@ -123,10 +126,12 @@ h1 {
     //стили контейнера с заголовком и слоганом
     &__container {
         @include flCent;
-        @include wiHe(min-content);
+        @include wiHe(min-content,
+        max-content);
         z-index: 5;
         position: relative;
         flex-direction: column;
+        margin: var(--firstBlockPaddingTB) 0;
     }
     //стили заголовка Emma Lust
     &__title {
@@ -154,7 +159,7 @@ h1 {
         &__wrapper {
             @include flCent;
             &::after {
-                @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: top 20px center);
+                @include bgImg($bgImSize: var(--bgWondowWi) auto, $bgPosition: center);
                 opacity: 0.15;
             }
         }
@@ -205,7 +210,8 @@ h1 {
     //-----------------------------------
 }
 
-.in-work {
+.in-work,
+.release {
     @include wiHe($he: max-content);
     z-index: 1;
     position: relative;
@@ -250,6 +256,17 @@ h1 {
             transform: scale(-1, -1);
         }
     }
+    /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
+    &__line {
+        @include wiHe(70%,
+        max-content);
+        margin: 30px auto;
+        img {
+            @include wiHe(100%,
+            auto);
+        }
+    }
+    /*----*/
     //фоны
     /*&::after,
     &::before {
@@ -296,15 +313,20 @@ h1 {
     }
     //-----заголовок книги
     &__title {
-        @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeH3($color: $blackColor);
     }
     //-----подзаголовок книги
     &__subtitle {
-        @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeH4($color: $blackColor);
+    }
+    &__subtitle-link {
+        text-align: center;
+        margin-top: 30px;
+        @include fontSizeH4($color: $emeraldColor);
     }
     //------текст
     &__text {
-        @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
+        @include fontSizeP($color: $blackColor);
         text-align: start;
     }
     //-------кнопка перехода
@@ -363,13 +385,33 @@ h1 {
             @include wiHe;
         }
     }
+    //-----ССЫЛКИ----
+    &__link-group {
+        @include wiHe(70%,
+        max-content);
+        @include flCent;
+        position: relative;
+        z-index: 21;
+        flex-wrap: wrap;
+        margin: 20px auto;
+        gap: 4vw;
+    }
+    &__link {
+        @include textBorderSmokeColor;
+        @include fontSizeP( $fWe: 800, $color: $blackColor, $fontSize: calc(var(--fsP) + 2px));
+        &:hover {
+            @include textBorderBlack;
+            color: $whiteColor;
+        }
+    }
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------930-PX-----------
 @media (max-width: 930px) {
-    .in-work {
+    .in-work,
+    .release {
         //-----обертка блока
         &__wrapper {
             @include flCent;
@@ -392,7 +434,8 @@ h1 {
 //
 //-------530-PX-----------
 @media (max-width: 530px) {
-    .in-work {
+    .in-work,
+    .release {
         //вензеля вверху по углам
         &::before,
         &::after,
@@ -430,7 +473,8 @@ h1 {
 //
 //-------375-PX-----------
 @media (max-width: 375px) {
-    .in-work {
+    .in-work,
+    .release {
         @include wiHe($he: max-content);
         //------контейнер с книгой
         &__book-container {
@@ -452,7 +496,8 @@ h1 {
 //
 //-------320-PX-----------
 @media (max-width: 320px) {
-    .in-work {
+    .in-work,
+    .release {
         //вензеля вверху по углам
         &::before,
         &::after,
@@ -586,8 +631,12 @@ h1 {
             }
         }
     }
-    &__text-3 {
+    &__text-3,
+    &__text-2 {
         text-align: center;
+    }
+    &__text-3 {
+        margin-top: 10px;
     }
     //линия
     &__line {
