@@ -1,10 +1,8 @@
 //--------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----
 :root {
-  --logoFootWi: 400px; //расстояние между пунктами меню в хедер
-  --logoFootHe: calc(
-    var(--logoFootWi) / 4
-  ); //высота логотипа хедера(ширина автоматическая)
-  --socialLogoWi: 60px; //размер иконок соц сети
+    --logoFootWi: 400px; //расстояние между пунктами меню в хедер
+    --logoFootHe: calc( var(--logoFootWi) / 4); //высота логотипа хедера(ширина автоматическая)
+    --socialLogoWi: 60px; //размер иконок соц сети
 }
 
 //
@@ -14,85 +12,92 @@
 /*---------------FOOTER-----------------*/
 
 .footer {
-  @include wiHe($he: max-content);
-  @include flCent;
-  flex-direction: column;
-  background-color: $emeraldColor;
-  padding: 40px 0px 0px;
-  //обертка строки футера
-  &__row {
-    box-sizing: border-box;
-    @include wiHe(var(--contentWidh), max-content);
-    @include flexSpBeCent;
-  }
-  //логотип
-  &__logo {
-    box-sizing: border-box;
-    @include wiHe(var(--logoFootWi), var(--logoFootHe));
-    img {
-      @include wiHe;
-    }
-  }
-  //копирайт контейнер
-  &__copyright-container {
+    @include wiHe($he: max-content);
     @include flCent;
     flex-direction: column;
-  }
-  //копирайт
-  &__copyright {
-    @include fontSizeP($color: $whiteColor);
-    margin-bottom: 10px;
-  }
-  //разработано
-  &__developed {
-    @include fontSizeP($fontSize: calc(var(--fsP) - 6px), $color: $whiteColor);
-    &:hover {
-      color: $skinColor;
+    background-color: $emeraldColor;
+    padding: 40px 0px 0px;
+    //обертка строки футера
+    &__row {
+        box-sizing: border-box;
+        @include wiHe(var(--contentWidh), max-content);
+        @include flexSpBeCent;
     }
-  }
-  //группа ссылок
-  &__sotial-link-group {
-    @include wiHe(var(--logoFootWi), var(--logoFootHe));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  //ссылки на соцсети
-  &__link {
-    @include wiHe(var(--socialLogoWi), var(--socialLogoWi));
-    @include bgImg;
-    border-radius: 50%;
-    &:hover {
-      box-shadow: 0 0 5px 2px $whiteColor;
+    //логотип
+    &__logo {
+        box-sizing: border-box;
+        @include wiHe(var(--logoFootWi), var(--logoFootHe));
+        img {
+            @include wiHe;
+        }
     }
-  }
-  &__ig {
-    background-image: url('../img/ig-lable-white.svg');
-    &:hover {
-      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
-        contrast(85%);
+    //копирайт контейнер
+    &__copyright-container {
+        @include flCent;
+        flex-direction: column;
     }
-  }
-  &__vk {
-    background-image: url('../img/vk-lable-white.svg');
-    &:hover {
-      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
-        contrast(85%);
+    //копирайт
+    &__copyright {
+        @include fontSizeP($color: $whiteColor);
+        margin-bottom: 10px;
     }
-  }
-  &__yt {
-    background-image: url('../img/yt-lable-white.svg');
-    &:hover {
-      filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
-        contrast(85%);
+    //разработано
+    &__developed {
+        @include wiHe(max-content, max-content);
+        @include flCent;
+        @include fontSizeP($fontSize: calc(var(--fsP) - 6px), $color: $whiteColor);
+        flex-direction: column;
+        text-align: center;
+        img {
+            @include wiHe(50px, auto);
+        }
+        &:hover {
+            color: $skinColor;
+            img {
+                filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+            }
+        }
     }
-  }
-  &__policy {
-    width: 95%;
-    font-size: var(--fsPolicy);
-    color: $darkGrayColor;
-    margin: 50px auto;
-  }
+    //группа ссылок
+    &__sotial-link-group {
+        @include wiHe(var(--logoFootWi), var(--logoFootHe));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    //ссылки на соцсети
+    &__link {
+        @include wiHe(var(--socialLogoWi), var(--socialLogoWi));
+        @include bgImg;
+        border-radius: 50%;
+        &:hover {
+            box-shadow: 0 0 5px 2px $whiteColor;
+        }
+    }
+    &__ig {
+        background-image: url('../img/ig-lable-white.svg');
+        &:hover {
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+        }
+    }
+    &__vk {
+        background-image: url('../img/vk-lable-white.svg');
+        &:hover {
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+        }
+    }
+    &__yt {
+        background-image: url('../img/yt-lable-white.svg');
+        &:hover {
+            filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+        }
+    }
+    &__policy {
+        width: 95%;
+        font-size: var(--fsPolicy);
+        color: $darkGrayColor;
+        margin: 50px auto;
+    }
 }
 
 //---------------------------------------
@@ -110,126 +115,127 @@
 //
 //-------1430-PX-----------
 @media (max-width: 1430px) {
-  :root {
-    --logoFootWi: 350px; //логотип фуутер
-  }
+     :root {
+        --logoFootWi: 350px; //логотип фуутер
+    }
 }
 
 //
 //
 //-------1255-PX-----------
 @media (max-width: 1255px) {
-  :root {
-    --logoFootWi: 300px; //логотип фуутер
-    --socialLogoWi: 48px; //размер иконок соц сети
-  }
+     :root {
+        --logoFootWi: 300px; //логотип фуутер
+        --socialLogoWi: 48px; //размер иконок соц сети
+    }
 }
 
 //
 //
 //-------1024-PX-----------
 @media (max-width: 1024px) {
-  :root {
-    --logoFootWi: 250px; //логотип фуутер
-    --socialLogoWi: 42px; //размер иконок соц сети
-  }
+     :root {
+        --logoFootWi: 250px; //логотип фуутер
+        --socialLogoWi: 42px; //размер иконок соц сети
+    }
 }
 
 //
 //
 //-------930-PX-----------
 @media (max-width: 930px) {
-  :root {
-    --logoFootWi: 400px; //логотип фуутер
-    --socialLogoWi: 48px; //размер иконок соц сети
-  }
-  //--
-  .footer {
-    //обертка строки футера
-    &__row {
-      @include flCent;
-      flex-direction: column;
-      gap: 35px;
+     :root {
+        --logoFootWi: 400px; //логотип фуутер
+        --socialLogoWi: 48px; //размер иконок соц сети
     }
-    //логотип
-    &__logo {
-      order: 2;
+    //--
+    .footer {
+        //обертка строки футера
+        &__row {
+            @include flCent;
+            flex-direction: column;
+            gap: 35px;
+        }
+        //логотип
+        &__logo {
+            order: 2;
+        }
+        //копирайт контейнер
+        &__copyright-container {
+            order: 3;
+        }
+        //группа ссылок
+        &__sotial-link-group {
+            @include wiHe;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            order: 1;
+        }
+        &__policy {
+            margin: 30px auto;
+        }
     }
-    //копирайт контейнер
-    &__copyright-container {
-      order: 3;
-    }
-    //группа ссылок
-    &__sotial-link-group {
-      @include wiHe;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      order: 1;
-    }
-    &__policy {
-      margin: 30px auto;
-    }
-  }
 }
 
 //
 //
 //-------630-PX-----------
 @media (max-width: 630px) {
-  :root {
-    --logoFootWi: 350px; //логотип фуутер
-  }
+     :root {
+        --logoFootWi: 350px; //логотип фуутер
+    }
 }
 
 //
 //
 //-------495-PX-----------
 @media (max-width: 495px) {
-  :root {
-    --logoFootWi: 300px; //логотип фуутер
-    --socialLogoWi: 38px; //размер иконок соц сети
-  }
-  .footer {
-    &__row {
-      gap: 25px;
+     :root {
+        --logoFootWi: 300px; //логотип фуутер
+        --socialLogoWi: 38px; //размер иконок соц сети
     }
-    &__policy {
-      margin: 10px auto;
+    .footer {
+        &__row {
+            gap: 25px;
+        }
+        &__policy {
+            margin: 10px auto;
+        }
     }
-  }
 }
 
 //
 //
 //-------480-PX-----------
 @media (max-width: 480px) {
-  .footer {
-    padding: 20px 0px 0px;
-    &__row {
-      gap: 15px;
+    .footer {
+        padding: 20px 0px 0px;
+        &__row {
+            gap: 15px;
+        }
     }
-  }
 }
 
 //
 //
 //-------320-PX-----------
 @media (max-width: 320px) {
-  :root {
-    --logoFootWi: 250px; //логотип фуутер
-    --socialLogoWi: 35px; //размер иконок соц сети
-  }
+     :root {
+        --logoFootWi: 250px; //логотип фуутер
+        --socialLogoWi: 35px; //размер иконок соц сети
+    }
 }
 
 //
 //
 //-------270-PX-----------
 @media (max-width: 270px) {
-  :root {
-    --logoFootWi: 80%; //расстояние между пунктами меню в хедер
-    --socialLogoWi: 30px; //размер иконок соц сети
-  }
+     :root {
+        --logoFootWi: 80%; //расстояние между пунктами меню в хедер
+        --socialLogoWi: 30px; //размер иконок соц сети
+    }
 }
+
 
 /*-----------------------------*/

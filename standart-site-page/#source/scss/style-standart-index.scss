@@ -17,121 +17,70 @@
 //-
 //-------------------общие стили----------------
 body {
-  position: relative;
-  background: $DarkRedColor;
+    position: relative;
+    background: $DarkRedColor;
 }
 
 h1 {
-  @include leTo;
-  @include wiHe(1px, 1px);
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  font-size: 1px !important;
+    @include leTo;
+    @include wiHe(1px, 1px);
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    font-size: 1px !important;
 }
 
 //стиль блокировки прокрутки
 .lock {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 //стилизация кнопок перехода
 .content-btn {
-  @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-  z-index: 4;
-  position: relative;
-  left: 50%;
-  margin-top: var(--marginTopBtn);
-  margin-left: calc(var(--btnSect2Wi) / -2);
-  background-color: $grayColor;
-  border-radius: 10px;
-  &::after {
-    @include fontSizeH5($color: $whiteColor);
     @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-    @include leTo(-4px);
-    @include flCent;
-    z-index: 5;
-    position: absolute;
-    background-color: $DarkRedColor;
+    z-index: 4;
+    position: relative;
+    left: 50%;
+    margin-top: var(--marginTopBtn);
+    margin-left: calc(var(--btnSect2Wi) / -2);
+    background-color: $grayColor;
     border-radius: 10px;
-  }
-  &:hover::after {
-    color: $skinColor;
-  }
-  &:active::after {
-    @include leTo(0);
-  }
+    &::after {
+        @include fontSizeH5($color: $whiteColor);
+        @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+        @include leTo(-4px);
+        @include flCent;
+        z-index: 5;
+        position: absolute;
+        background-color: $DarkRedColor;
+        border-radius: 10px;
+    }
+    &:hover::after {
+        color: $skinColor;
+    }
+    &:active::after {
+        @include leTo(0);
+    }
 }
 
 //стилизация заголовков каждого блока
 .base-title {
-  z-index: 5;
-  @include wiHe($he: max-content);
-  @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
-  margin-bottom: var(--titleMarginBottom);
-  text-align: center;
+    z-index: 5;
+    @include wiHe($he: max-content);
+    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $blackColor);
+    margin-bottom: var(--titleMarginBottom);
+    text-align: center;
 }
 
 //--------------------------------------------
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//------------ПЕРЕМЕННЫЕ-ROOT---------------
 :root {
-  //------1блок-----
-  --bgWondowWi: 550px; //Ширина изображения окна
-  --firstBlockPaddingTB: 70px; //внутренние отступы 1 секции сверху и снизу
-  --firstBlockHe: 700px; //высота первого блока
-  --emmalustWi: 53vw; //Ширина надписи Emma Lust
-  --taglineTextWi: 74%; //Ширина текста слогана
-  //----------------------------------
-  //------2блок--------
-  --section2PaddingTB: 200px; //внутренние отступы 2 секции сверху и снизу
-  //текст
-  --containerText2sectWi: 45%; // контейнера с текстом 2 секции ширина
-  --marginTextCont2sect: 30px; //нижние отступы в текстовом блоке 2 секции
-  //-----------книга-----------
-  --rigtBookShift: 50px; //отступ книги от правого края
-  --containerBook2sectWi: 323px; // контейнера с книгой 2 секции и книги ширина
-  --containerBook2sectHe: calc(
-    var(--containerBook2sectWi) * 1.51
-  ); //486px; контенера с книгой 2 секции и книги высота
-  --coverBook2sectWi: calc(
-    var(--containerBook2sectWi) * 0.8669
-  ); //280px обложки книги 2 секции ширина
-  --coverBook2sectHe: calc(
-    var(--coverBook2sectWi) * 1.7
-  ); //475px обложки книги 2 секции высота
-  //-----------------------------------
-  //--------3блок-------
-  --paddingSect3TopBot: 80px; //внутренний отступ 3 секции верх и низ
-  //фото
-  --photoSect3Wi: 300px; //размер фото 3 секции ширина
-  --marginLeftPhotoSect3: 80px; //отступ фото левый внешний 3 секция
-  --bgPhotoSect3Wi: calc(var(--photoSect3Wi) * 1.5); //фон Фото ширина 3 секц
-  --bgPhotoSect3He: calc(var(--photoSect3Wi) * 1.65); //Фон фото 3 секц высота
-  //текст
-  --lineSect3Wi: 300px; //длинна линии 3 секция
-  //----------------------------------
-  //--------4блок---------
-  --sliderImgWi: 500px; //Ширина Изображения слайдера
+    --paddingSectBaseTopBot: 80px; //внутренний отступ 3 секции верх и низ
+    //фото
 }
 
-//-!!!--МЕДИА-ЗАПРОСЫ-ПЕРЕМЕННЫХ--В-КОНЦЕ--!!!-
-//
-//
-//
-//
-//
 //
 //
 //
@@ -140,81 +89,92 @@ h1 {
 //
 //
 //-------------------ПЕРВАЯ-СЕКЦИЯ------------------------
+:root {
+    //------1блок-----
+    --bgWondowWi: 550px; //Ширина изображения окна
+    --firstBlockPaddingTB: 70px; //внутренние отступы 1 секции сверху и снизу
+    --firstBlockHe: 700px; //высота первого блока
+    --emmalustWi: 53vw; //Ширина надписи Emma Lust
+    --taglineTextWi: 74%; //Ширина текста слогана
+    //----------------------------------
+}
+
 .tagline {
-  //стили всего блока
-  @include wiHe($he: var(--firstBlockHe));
-  background-color: $DarkRedColor;
-  padding: var(--firstBlockPaddingTB) 0;
-  //стили обертки с контентом
-  &__wrapper {
-    @include wiHe(var(--contentWidh));
-    margin: auto;
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      @include leTo;
-      @include wiHe;
-      @include bgImg(
-        $bgImSize: var(--bgWondowWi) auto,
-        $bgPosition: center right 0
-      );
-      //
-      background-image: url('../img/girl-on-window.png');
-      margin: auto;
+    //стили всего блока
+    @include wiHe($he: var(--firstBlockHe));
+    background-color: $DarkRedColor;
+    padding: var(--firstBlockPaddingTB) 0;
+    //стили обертки с контентом
+    &__wrapper {
+        @include wiHe(var(--contentWidh));
+        margin: auto;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            @include leTo;
+            @include wiHe;
+            @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: center right 0);
+            //
+            background-image: url('../img/girl-on-window.png');
+            margin: auto;
+        }
     }
-  }
-  //стили контейнера с заголовком и слоганом
-  &__container {
-    @include flCent;
-    @include wiHe(min-content);
-    z-index: 5;
-    position: relative;
-    flex-direction: column;
-  }
-  //стили заголовка Emma Lust
-  &__title {
-    @include wiHe(max-content, max-content);
-    @include flCent;
-    img {
-      @include wiHe(var(--emmalustWi), auto);
+    //стили контейнера с заголовком и слоганом
+    &__container {
+        @include flCent;
+        @include wiHe(min-content);
+        z-index: 5;
+        position: relative;
+        flex-direction: column;
     }
-  }
-  //текст слогана
-  &__text {
-    @include wiHe(var(--taglineTextWi), max-content);
-    @include fontSizeH2;
-    text-align: center;
-  }
+    //стили заголовка Emma Lust
+    &__title {
+        @include wiHe(max-content,
+        max-content);
+        @include flCent;
+        img {
+            @include wiHe(var(--emmalustWi),
+            auto);
+        }
+    }
+    //текст слогана
+    &__text {
+        @include wiHe(var(--taglineTextWi),
+        max-content);
+        @include fontSizeH2;
+        text-align: center;
+    }
 }
 
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------630-PX-----------
 @media (max-width: 630px) {
-  .tagline {
-    &__wrapper {
-      @include flCent;
-      &::after {
-        @include bgImg(
-          $bgImSize: var(--bgWondowWi) auto,
-          $bgPosition: top 20px center
-        );
-        opacity: 0.15;
-      }
+    .tagline {
+        &__wrapper {
+            @include flCent;
+            &::after {
+                @include bgImg( $bgImSize: var(--bgWondowWi) auto, $bgPosition: top 20px center);
+                opacity: 0.15;
+            }
+        }
+        &__title {
+            margin: 40px auto 5px;
+        }
     }
-    &__title {
-      margin: 40px auto 5px;
-    }
-  }
 }
 
 //
 //-------495-PX-----------
 @media (max-width: 495px) {
-  .tagline {
-    //стили всего блока
-    padding: var(--firstBlockPaddingTB) 5%;
-  }
+    .tagline {
+        @include wiHe($he: max-content);
+        //стили всего блока
+        padding: var(--firstBlockPaddingTB) 5%;
+        &__text {
+            @include fontSizeH2($fsH2: calc(var(--fsH2) - 5px));
+        }
+    }
 }
 
 //-----------------------------------------------
@@ -230,202 +190,292 @@ h1 {
 //
 //
 //----------------ВТОРАЯ-СЕКЦИЯ---------------------
+:root {
+    //------2блок--------
+    --paddingSectBaseTopBot: 80px; //внутренние отступы 2 секции сверху и снизу
+    //текст
+    --containerText2sectWi: 45%; // контейнера с текстом 2 секции ширина
+    --marginTextCont2sect: 30px; //нижние отступы в текстовом блоке 2 секции
+    //-----------книга-----------
+    --rigtBookShift: 50px; //отступ книги от правого края
+    --containerBook2sectWi: 323px; // контейнера с книгой 2 секции и книги ширина
+    --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51); //486px; контенера с книгой 2 секции и книги высота
+    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669); //280px обложки книги 2 секции ширина
+    --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); //475px обложки книги 2 секции высота
+    //-----------------------------------
+}
+
 .in-work {
-  @include wiHe($he: max-content);
-  z-index: 1;
-  position: relative;
-  padding: 0px;
-  padding-top: var(--section2PaddingTB);
-  padding-bottom: calc(var(--section2PaddingTB) / 2);
-  overflow: hidden;
-  //фоны
-  &::after,
-  &::before {
-    @include wiHe; //($he: max-content);
-    @include leTo;
-    content: '';
-    position: absolute;
-  }
-  //фон лист бумаги
-  &::after {
-    @include bgImg;
+    @include wiHe($he: max-content);
     z-index: 1;
-    background-image: url('../img/sepia-list-bg.png');
-  }
-  //фон цвет
-  &::before {
-    z-index: -1;
-    background-color: $DarkRedColor;
-  }
-  //----Заголовок блока
-  &__base-title {
     position: relative;
-  }
-  //-----обертка блока
-  &__wrapper {
-    @include wiHe(var(--contentWidh), max-content);
-    @include flexSpBeCent($jusCon: space-around);
-    //
-    z-index: 5;
-    position: relative;
-    margin: auto;
-  }
-  //-------контейнер с текстовыми блоками
-  &__text-container {
-    @include wiHe(var(--containerText2sectWi));
-  }
-  //-----
-  &__title,
-  &__subtitle,
-  &__text {
-    margin-bottom: var(--marginTextCont2sect);
-    text-align: center;
-  }
-  //-----заголовок книги
-  &__title {
-    @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
-  }
-  //-----подзаголовок книги
-  &__subtitle {
-    @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
-  }
-  //------текст
-  &__text {
-    @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
-    text-align: start;
-  }
-  //-------кнопка перехода
-  &__btn {
-    &::after {
-      content: 'Приобрести книгу';
+    padding: var(--paddingSectBaseTopBot) 0px;
+    overflow: hidden;
+    background-color: $sandColor;
+    //вензеля вверху по углам
+    &::before,
+    &::after,
+    .line-auxiliary::before,
+    .line-auxiliary::after {
+        @include wiHe(200px,
+        200px);
+        @include bgImg;
+        content: '';
+        position: absolute;
+        background-image: url('../img/corner1.svg');
     }
-  }
-  //------контейнер с книгой
-  &__book-container {
-    @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
-    position: relative;
-    right: var(--rigtBookShift);
-    //тень за книгой
-    &::after {
-      @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
-      @include leTo(34%, 11%);
-      content: '';
-      position: absolute;
-      box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-      background-color: $blackColorOpacity;
-      transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg)
-        matrix(0.6, 1.5, 0, 3, 7, 6);
+    &::before {
+        top: 0;
+        left: 20px;
     }
-  }
-  //-------обложка
-  &__cover {
-    @include wiHe(var(--coverBook2sectWi), var(--coverBook2sectHe));
-    @include leTo;
-    z-index: 5;
-    position: absolute;
-    //
-    clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
-    transform-origin: right;
-    transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
-    /*
+    &::after {
+        top: 0;
+        right: 20px;
+        transform: scale(-1, 1);
+    }
+    //Вспомогательная линия с вензелями по углам снизу
+    .line-auxiliary {
+        @include wiHe(100%,
+        2px);
+        position: relative;
+        margin: auto;
+        &::before {
+            bottom: calc(var(--paddingSectBaseTopBot) * -1);
+            left: 20px;
+            transform: scale(1, -1);
+        }
+        &::after {
+            bottom: calc(var(--paddingSectBaseTopBot) * -1);
+            right: 20px;
+            transform: scale(-1, -1);
+        }
+    }
+    //фоны
+    /*&::after,
+    &::before {
+        @include wiHe; //($he: max-content);
+        @include leTo;
+        content: '';
+        position: absolute;
+    }
+    //фон лист бумаги
+    &::after {
+        @include bgImg($bgImSize: auto 100%, $bgPosition: center);
+        z-index: 1;
+        background-image: url('../img/sepia-list-bg.png');
+    }
+    //фон цвет
+    &::before {
+        z-index: -1;
+        background-color: $DarkRedColor;
+    }*/
+    //----Заголовок блока
+    &__base-title {
+        position: relative;
+    }
+    //-----обертка блока
+    &__wrapper {
+        @include wiHe(var(--contentWidh),
+        max-content);
+        @include flexSpBeCent($jusCon: space-around);
+        //
+        z-index: 5;
+        position: relative;
+        margin: auto;
+    }
+    //-------контейнер с текстовыми блоками
+    &__text-container {
+        @include wiHe(var(--containerText2sectWi));
+    }
+    //-----
+    &__title,
+    &__subtitle,
+    &__text {
+        margin-bottom: var(--marginTextCont2sect);
+        text-align: center;
+    }
+    //-----заголовок книги
+    &__title {
+        @include fontSizeH3($color: $blackColor, $fontFamily: $fontFamily1);
+    }
+    //-----подзаголовок книги
+    &__subtitle {
+        @include fontSizeH4($color: $blackColor, $fontFamily: $fontFamily1);
+    }
+    //------текст
+    &__text {
+        @include fontSizeP($color: $blackColor, $fontFamily: $fontFamily1);
+        text-align: start;
+    }
+    //-------кнопка перехода
+    &__btn {
+        &::after {
+            content: 'Приобрести книгу';
+        }
+    }
+    //------контейнер с книгой
+    &__book-container {
+        @include wiHe(var(--containerBook2sectWi),
+        var(--containerBook2sectHe));
+        position: relative;
+        right: var(--rigtBookShift);
+        //тень за книгой
+        &::after {
+            @include wiHe(var(--containerBook2sectWi),
+            var(--containerBook2sectHe));
+            @include leTo(34%,
+            11%);
+            content: '';
+            position: absolute;
+            box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+            background-color: $blackColorOpacity;
+            transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.6, 1.5, 0, 3, 7, 6);
+        }
+    }
+    //-------обложка
+    &__cover {
+        @include wiHe(var(--coverBook2sectWi),
+        var(--coverBook2sectHe));
+        @include leTo;
+        z-index: 5;
+        position: absolute;
+        //
+        clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
+        transform-origin: right;
+        transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
+        /*
        
         
         //rotateY(30deg) skew(10deg, 0deg);*/
-    img {
-      @include wiHe;
+        img {
+            @include wiHe;
+        }
     }
-  }
-  //-------книга
-  &__book {
-    @include wiHe(98%, 98%);
-    @include leTo(1%, 1%);
-    z-index: 3;
-    position: absolute;
-    img {
-      @include wiHe;
+    //-------книга
+    &__book {
+        @include wiHe(98%,
+        98%);
+        @include leTo(1%,
+        1%);
+        z-index: 3;
+        position: absolute;
+        img {
+            @include wiHe;
+        }
     }
-  }
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------930-PX-----------
 @media (max-width: 930px) {
-  .in-work {
-    //-----обертка блока
-    &__wrapper {
-      @include flCent;
-      flex-direction: column;
+    .in-work {
+        //-----обертка блока
+        &__wrapper {
+            @include flCent;
+            flex-direction: column;
+        }
+        //-------контейнер с текстовыми блоками
+        &__text-container {
+            @include wiHe(90%);
+            order: 2;
+        }
+        //---тексты--
+        //------контейнер с книгой
+        &__book-container {
+            right: unset;
+            order: 1;
+        }
     }
-    //-------контейнер с текстовыми блоками
-    &__text-container {
-      @include wiHe(90%);
-      order: 2;
-    }
-    //---тексты--
-    //------контейнер с книгой
-    &__book-container {
-      right: unset;
-      order: 1;
-    }
-  }
 }
 
 //
 //-------530-PX-----------
 @media (max-width: 530px) {
-  .in-work {
-    //------контейнер с книгой
-    &__book-container {
-      //тень за книгой
-      &::after {
-        @include leTo(34%, 1%);
-      }
+    .in-work {
+        //вензеля вверху по углам
+        &::before,
+        &::after,
+        .line-auxiliary::before,
+        .line-auxiliary::after {
+            @include wiHe(150px,
+            150px);
+        }
+        &::before {
+            left: 5px;
+        }
+        &::after {
+            right: 5px;
+        }
+        //Вспомогательная линия с вензелями по углам снизу
+        .line-auxiliary {
+            &::before {
+                left: 5px;
+            }
+            &::after {
+                right: 5px;
+            }
+        }
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(34%,
+                1%);
+            }
+        }
     }
-  }
 }
 
 //
 //-------375-PX-----------
 @media (max-width: 375px) {
-  .in-work {
-    @include wiHe($he: max-content);
-    //------контейнер с книгой
-    &__book-container {
-      //тень за книгой
-      &::after {
-        @include leTo(34%, 2%);
-        box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-        transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg)
-          matrix(0.46, 1.5, 0, 3, 0, 6);
-      }
+    .in-work {
+        @include wiHe($he: max-content);
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(34%,
+                2%);
+                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+                transform: rotateX(87deg) rotateY(0deg) rotateZ(5deg) matrix(0.46, 1.5, 0, 3, 0, 6);
+            }
+        }
+        //-------обложка
+        &__cover {
+            transform: matrix(1.15, 0.2, 0, 1, 2, 4) rotateY(30deg);
+        }
     }
-    //-------обложка
-    &__cover {
-      transform: matrix(1.15, 0.2, 0, 1, 2, 4) rotateY(30deg);
-    }
-  }
 }
 
 //
 //-------320-PX-----------
 @media (max-width: 320px) {
-  .in-work {
-    //------контейнер с книгой
-    &__book-container {
-      //тень за книгой
-      &::after {
-        @include leTo(32%, -4%);
-        box-shadow: 50px -100px 50px 90px $blackColorOpacity;
-        transform: rotateX(87deg) rotateY(0deg) rotateZ(3deg)
-          matrix(0.35, 1.5, 0, 2.8, 0, 6);
-      }
+    .in-work {
+        //вензеля вверху по углам
+        &::before,
+        &::after,
+        .line-auxiliary::before,
+        .line-auxiliary::after {
+            @include wiHe(100px,
+            100px);
+        }
+        //------контейнер с книгой
+        &__book-container {
+            //тень за книгой
+            &::after {
+                @include leTo(32%,
+                -4%);
+                box-shadow: 50px -100px 50px 90px $blackColorOpacity;
+                transform: rotateX(87deg) rotateY(0deg) rotateZ(3deg) matrix(0.35, 1.5, 0, 2.8, 0, 6);
+            }
+        }
+        //-------обложка
+        &__cover {
+            transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
+        }
     }
-    //-------обложка
-    &__cover {
-      transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg);
-    }
-  }
 }
 
 //----------------------------------------------
@@ -441,49 +491,64 @@ h1 {
 //
 //
 //----------------ТРЕТЬЯ-СЕКЦИЯ--------------------
+:root {
+    //--------3блок-------
+    --photoSect3Wi: 300px; //размер фото 3 секции ширина
+    --marginLeftPhotoSect3: 80px; //отступ фото левый внешний 3 секция
+    --bgPhotoSect3Wi: calc(var(--photoSect3Wi) * 1.5); //фон Фото ширина 3 секц
+    --bgPhotoSect3He: calc(var(--photoSect3Wi) * 1.65); //Фон фото 3 секц высота
+    //текст
+    --lineSect3Wi: 300px; //длинна линии 3 секция
+    //----------------------------------
+}
+
 .biography {
-  @include wiHe($he: max-content);
-  position: relative;
-  padding: var(--paddingSect3TopBot) 0;
-  background-color: $emeraldDarkColor;
-  overflow: hidden;
-  //-----обертка блока
-  &__wrapper {
-    @include wiHe(var(--contentWidh), max-content /*max-content*/);
-    //
-    margin: auto;
-  }
-  //----Заголовок блока
-  &__base-title {
-    display: grid;
-    width: 100%;
-    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
-  }
-  //контейнер с контентом
-  &__container {
-    box-sizing: border-box;
     @include wiHe($he: max-content);
-    @include gridCent($jusCon: space-around);
-    grid-template-areas: 'photo text1' 'nul btn';
-    grid-template-columns: var(--photoSect3Wi) max-content;
-    grid-template-rows: max-content;
-    row-gap: 20px;
-    column-gap: auto;
-  }
-  //обертка фото
-  &__photo-wrapper {
-    @include wiHe;
-    @include gridCent;
-    grid-area: photo;
-  }
-  //Изображение
-  &__photo {
-    @include wiHe(max-content, max-content);
-    filter: sepia(50%);
-    img {
-      @include wiHe(var(--photoSect3Wi), auto);
+    position: relative;
+    padding: var(--paddingSectBaseTopBot) 0;
+    background-color: $emeraldDarkColor;
+    overflow: hidden;
+    //-----обертка блока
+    &__wrapper {
+        @include wiHe(var(--contentWidh),
+        max-content/*max-content*/
+        );
+        //
+        margin: auto;
     }
-    /*
+    //----Заголовок блока
+    &__base-title {
+        display: grid;
+        width: 100%;
+        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
+    }
+    //контейнер с контентом
+    &__container {
+        box-sizing: border-box;
+        @include wiHe($he: max-content);
+        @include gridCent($jusCon: space-around);
+        grid-template-areas: 'photo text1' 'nul btn';
+        grid-template-columns: var(--photoSect3Wi) max-content;
+        grid-template-rows: max-content;
+        row-gap: 0px;
+        column-gap: auto;
+    }
+    //обертка фото
+    &__photo-wrapper {
+        @include wiHe;
+        @include gridCent;
+        grid-area: photo;
+    }
+    //Изображение
+    &__photo {
+        @include wiHe(max-content,
+        max-content);
+        filter: sepia(50%);
+        img {
+            @include wiHe(var(--photoSect3Wi),
+            auto);
+        }
+        /*
     &::after {
       @include wiHe(var(--bgPhotoSect3Wi), var(--bgPhotoSect3He));
       @include leTo(
@@ -496,84 +561,99 @@ h1 {
       position: absolute;
       background-image: url('../img/bg-photo.png');
     }*/
-  }
-  //контейнер с текстом
-  &__text-container {
-    @include wiHe(50vw, max-content);
-    display: grid;
-    grid-area: text1;
-  }
-  //заголовки
-  &__title {
-    @include fontSizeH3($color: $whiteColor);
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  //текст
-  &__text {
-    @include fontSizeP($color: $whiteColor);
-  }
-  //линия
-  &__line {
-    @include wiHe(var(--lineSect3Wi), 4px);
-    background-color: $skinColor;
-    margin: 20px 0;
-  }
-  //-------кнопка перехода
-  &__btn {
-    display: grid;
-    grid-area: btn;
-    background-color: $skinColor;
-    &::after {
-      content: 'Подробнее';
     }
-  }
+    //контейнер с текстом
+    &__text-container {
+        @include wiHe(50vw,
+        max-content);
+        display: grid;
+        grid-area: text1;
+    }
+    //заголовки
+    &__title {
+        @include fontSizeH5($color: $whiteColor);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    //текст
+    &__text {
+        @include fontSizeP($color: $whiteColor);
+        a {
+            color: $skinColor;
+            &:hover {
+                @include textBorderBlacGoldkMix;
+                color: $whiteColor;
+            }
+        }
+    }
+    &__text-3 {
+        text-align: center;
+    }
+    //линия
+    &__line {
+        @include wiHe(var(--lineSect3Wi),
+        4px);
+        background-color: $skinColor;
+        margin: 20px 0;
+    }
+    //-------кнопка перехода
+    &__btn {
+        display: grid;
+        grid-area: btn;
+        background-color: $skinColor;
+        &::after {
+            content: 'Библиография';
+        }
+    }
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------770-PX-----------
 @media (max-width: 770px) {
-  .biography {
-    //контейнер с контентом
-    &__container {
-      @include gridCent;
-      grid-template-areas: 'photo' 'text1' 'btn';
-      grid-template-columns: 90vw;
-      grid-template-rows: max-content max-content max-content;
-      row-gap: 0px;
+    .biography {
+        //контейнер с контентом
+        &__container {
+            @include gridCent;
+            grid-template-areas: 'photo' 'text1' 'btn';
+            grid-template-columns: 90vw;
+            grid-template-rows: max-content max-content max-content;
+        }
+        //Изображение
+        &__photo-wrapper {
+            @include wiHe(90vw,
+            max-content);
+        }
+        &__photo {
+            margin-bottom: calc(var(--photoSect3Wi) / 4);
+        }
+        //контейнер с текстом
+        &__text-container {
+            @include wiHe(90vw,
+            max-content);
+        }
+        //линия
+        &__line {
+            @include wiHe(var(--lineSect3Wi),
+            4px);
+            background-color: $skinColor;
+            margin: 30px auto 20px;
+        }
     }
-    //Изображение
-    &__photo-wrapper {
-      @include wiHe(90vw, max-content);
-    }
-    &__photo {
-      margin-bottom: calc(var(--photoSect3Wi) / 4);
-    }
-    //контейнер с текстом
-    &__text-container {
-      @include wiHe(90vw, max-content);
-    }
-    //линия
-    &__line {
-      @include wiHe(var(--lineSect3Wi), 4px);
-      background-color: $skinColor;
-      margin: 30px auto 20px;
-    }
-  }
 }
 
 //
 //-------270-PX-----------
 @media (max-width: 270px) {
-  .biography {
-    //Изображение
-    &__photo {
-      &::after {
-        @include leTo(-15px, calc(var(--photoSect3Wi) / -3.5));
-      }
+    .biography {
+        //Изображение
+        &__photo {
+            &::after {
+                @include leTo(-15px,
+                calc(var(--photoSect3Wi) / -3.5));
+            }
+        }
     }
-  }
 }
 
 //----------------------------------------------
@@ -589,82 +669,90 @@ h1 {
 //
 //
 //------------Четвертая-СЕКЦИЯ----Слайдер-----------
-.wrapper-slider {
-  padding: var(--paddingSect3TopBot) 0;
-  min-height: 100%;
-  background-color: $sandColor;
-  .image-slider {
-    @include wiHe(var(--contentWidh), max-content);
-    padding: 0px 0px 70px 0px;
-    //слайд
-    &__slide {
-      @include flCent;
-      flex-direction: column;
-      .slide-title {
-        @include fontSizeH4($color: $emeraldDarkColor);
-      }
-    }
-    //изображения в слайдах
-    &__image {
-      text-align: center;
-      min-width: var(--sliderImgWi) !important;
-      img {
-        max-width: 100%;
-      }
-    }
-    //Сдайды не активные
-    .swiper-slide-next,
-    .swiper-slide-prev {
-      opacity: 0.7;
-    }
-    .swiper-slide-active:hover > .slide-title {
-      @include textBorderSmokeColor;
-      color: $blackColor;
-    }
-  }
+:root {
+    //--------4блок---------
+    --sliderImgWi: 500px; //Ширина Изображения слайдера
 }
+
+.wrapper-slider {
+    padding: var(--paddingSectBaseTopBot) 0;
+    min-height: 100%;
+    background-color: $sandColor;
+    .image-slider {
+        @include wiHe(var(--contentWidh),
+        max-content);
+        padding: 0px 0px 70px 0px;
+        //слайд
+        &__slide {
+            @include flCent;
+            flex-direction: column;
+            .slide-title {
+                @include fontSizeH4($color: $emeraldDarkColor);
+            }
+        }
+        //изображения в слайдах
+        &__image {
+            text-align: center;
+            min-width: var(--sliderImgWi) !important;
+            img {
+                max-width: 100%;
+            }
+        }
+        //Сдайды не активные
+        .swiper-slide-next,
+        .swiper-slide-prev {
+            opacity: 0.7;
+        }
+        .swiper-slide-active:hover>.slide-title {
+            @include textBorderSmokeColor;
+            color: $blackColor;
+        }
+    }
+}
+
 
 /*стрелки*/
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  color: $emeraldColor;
-  font-size: 50px;
-  font-weight: bold;
+    color: $emeraldColor;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  color: $DarkRedColor;
-  @include textBorderSmokeColor;
+    color: $DarkRedColor;
+    @include textBorderSmokeColor;
 }
+
 
 /*БУЛЛЕТЫ*/
 
 .swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  margin: 0 10px !important;
-  line-height: 20px;
-  font-size: 14px;
-  background-color: $emeraldColor;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px !important;
+    line-height: 20px;
+    font-size: 14px;
+    background-color: $emeraldColor;
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------840-PX-----------
 @media (max-width: 840px) {
-  .wrapper-slider .image-slider {
-    padding: 0px 0px 30px 0px;
-  }
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    @include textBorderWhite;
-  }
-  .swiper-button-prev:hover::after,
-  .swiper-button-next:hover::after {
-    @include textBorderWhite;
-  }
+    .wrapper-slider .image-slider {
+        padding: 0px 0px 30px 0px;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        @include textBorderWhite;
+    }
+    .swiper-button-prev:hover::after,
+    .swiper-button-next:hover::after {
+        @include textBorderWhite;
+    }
 }
 
 //----------------------------------------------
@@ -681,99 +769,100 @@ h1 {
 //
 //------------ПЯТАЯ-СЕКЦИЯ---------------
 .blog {
-  padding: var(--paddingSect3TopBot) 0;
-  min-height: 100%;
-  background-color: $DarkRedColor;
-  //общий блок
-  //обертка всего контента
-  &__wrapper {
-    box-sizing: border-box;
-    @include wiHe(var(--contentWidh), max-content);
-    @include flCent;
-    flex-direction: column;
-    margin: auto;
-  }
-  //----Заголовок блока
-  &__base-title {
-    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
-  }
-  //контейнер с постами
-  &__container-content {
-    @include wiHe;
-    @include flexSpBeCent($jusCon: space-around);
-    flex-wrap: wrap;
-    align-items: stretch;
-  }
-  //обертка каздого поста
-  &__post {
-    @include bgImg;
-    box-sizing: content-box;
-    position: relative;
-    background-image: url('../../img/paper.jpg');
-    display: flex;
-    flex-direction: column;
-    min-width: 250px;
-    width: 25vw;
-    min-height: max-content;
-    margin: 0px 10px 70px 10px;
-    padding: 25px 15px 80px 35px;
-    border-radius: 2px 7px 7px 2px;
-    box-shadow: 0px 0 40px 10px $blackColor;
-  }
+    padding: var(--paddingSectBaseTopBot) 0;
+    min-height: 100%;
+    background-color: $DarkRedColor;
+    //общий блок
+    //обертка всего контента
+    &__wrapper {
+        box-sizing: border-box;
+        @include wiHe(var(--contentWidh),
+        max-content);
+        @include flCent;
+        flex-direction: column;
+        margin: auto;
+    }
+    //----Заголовок блока
+    &__base-title {
+        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $whiteColor);
+    }
+    //контейнер с постами
+    &__container-content {
+        @include wiHe;
+        @include flexSpBeCent($jusCon: space-around);
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    //обертка каздого поста
+    &__post {
+        @include bgImg;
+        box-sizing: content-box;
+        position: relative;
+        background-image: url('../../img/paper.jpg');
+        display: flex;
+        flex-direction: column;
+        min-width: 250px;
+        width: 25vw;
+        min-height: max-content;
+        margin: 0px 10px 70px 10px;
+        padding: 25px 15px 80px 35px;
+        border-radius: 2px 7px 7px 2px;
+        box-shadow: 0px 0 40px 10px $blackColor;
+    }
 }
 
 .post {
-  //заголовок поста
-  &__title {
-    height: max-content;
-    @include fontSizeH4($color: $emeraldColor);
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  //текст поста
-  &__text {
-    display: flex;
-    @include fontSizeP($fontSize: calc(var(--fsP) * 1.1));
-    min-height: 50%;
-  }
-  //дата поста
-  &__data {
-    position: absolute;
-    right: 15px;
-    bottom: 20px;
-    height: max-content;
-    @include fontSizeP($color: $emeraldColor);
-    text-align: end;
-  }
+    //заголовок поста
+    &__title {
+        height: max-content;
+        @include fontSizeH4($color: $emeraldColor);
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    //текст поста
+    &__text {
+        display: flex;
+        @include fontSizeP($fontSize: calc(var(--fsP) * 1.1));
+        min-height: 50%;
+    }
+    //дата поста
+    &__data {
+        position: absolute;
+        right: 15px;
+        bottom: 20px;
+        height: max-content;
+        @include fontSizeP($color: $emeraldColor);
+        text-align: end;
+    }
 }
 
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------1250-PX-----------
 @media (max-width: 1250px) {
-  .blog {
-    //обертка каздого поста
-    &__post {
-      width: 35vw;
+    .blog {
+        //обертка каздого поста
+        &__post {
+            width: 35vw;
+        }
     }
-  }
-  .post-3 {
-    width: 55vw;
-  }
+    .post-3 {
+        width: 55vw;
+    }
 }
 
 //
 //-------700-PX-----------
 @media (max-width: 700px) {
-  .blog {
-    //обертка каздого поста
-    &__post {
-      min-width: 120px;
-      width: 90%;
-      height: max-content;
-      margin: 0px 20px 30px 20px;
-      padding: 20px 15px 80px 15px;
+    .blog {
+        //обертка каздого поста
+        &__post {
+            min-width: 120px;
+            width: 90%;
+            height: max-content;
+            margin: 0px 20px 30px 20px;
+            padding: 20px 15px 80px 15px;
+        }
     }
-  }
 }
 
 //----------------------------------------------
@@ -791,159 +880,147 @@ h1 {
 //------------ПЕРЕМЕННЫЕ-ROOT---------------
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 @media (max-width: 1430px) {
-  :root {
-    //------1блок
-    --emmalustWi: 600px; //Ширина надписи Emma Lust
-    --taglineTextWi: 100%; //Ширина текста слогана
-  }
+     :root {
+        //------1блок
+        --emmalustWi: 600px; //Ширина надписи Emma Lust
+        --taglineTextWi: 100%; //Ширина текста слогана
+    }
 }
 
 @media (max-width: 1255px) {
-  :root {
-    //------1блок------
-    --bgWondowWi: 40vw; //Ширина изображения окна
-    --firstBlockPaddingTB: 0px; //внутренние отступы 1 секции сверху и снизу
-    --firstBlockHe: 50vw; //высота первого блока
-    --emmalustWi: 47vw; //Ширина надписи Emma Lust
-    //------------------------------------
-    //----4блок------
-    --sliderImgWi: 430px; //Ширина Изображения слайдера
-  }
+     :root {
+        //------1блок------
+        --bgWondowWi: 40vw; //Ширина изображения окна
+        --firstBlockPaddingTB: 20px; //внутренние отступы 1 секции сверху и снизу
+        --firstBlockHe: 50vw; //высота первого блока
+        --emmalustWi: 47vw; //Ширина надписи Emma Lust
+        //------------------------------------
+        //----4блок------
+        --sliderImgWi: 430px; //Ширина Изображения слайдера
+    }
 }
 
 @media (max-width: 1024px) {
-  :root {
-    //------1блок------
-    --bgWondowWi: 35vw; //Ширина изображения окна
-    --firstBlockHe: 44vw; //высота первого блока
-    --emmalustWi: 50vw; //Ширина надписи Emma Lust
-    //-------------------------------------
-    //------2блок------
-    --section2PaddingTB: 150px; //внутренние отступы 2 секции сверху и снизу
-    //текст
-    --marginTextCont2sect: 15px; //нижние отступы в текстовом блоке 2 секции
-    //книга
-    --containerBook2sectWi: 280px; // контейнера с книгой 2 секции и книги ширина
-    //------------------------------------
-    //----4блок------
-    --sliderImgWi: 350px; //Ширина Изображения слайдера
-  }
+     :root {
+        //------1блок------
+        --bgWondowWi: 35vw; //Ширина изображения окна
+        --firstBlockHe: 44vw; //высота первого блока
+        --emmalustWi: 50vw; //Ширина надписи Emma Lust
+        //-------------------------------------
+        //------2блок------
+        --marginTextCont2sect: 15px; //нижние отступы в текстовом блоке 2 секции
+        //книга
+        --containerBook2sectWi: 280px; // контейнера с книгой 2 секции и книги ширина
+        //------------------------------------
+        //----4блок------
+        --sliderImgWi: 350px; //Ширина Изображения слайдера
+    }
 }
 
 @media (max-width: 840px) {
-  :root {
-    //----4блок------
-    --sliderImgWi: 450px; //Ширина Изображения слайдера
-  }
+     :root {
+        //----4блок------
+        --sliderImgWi: 450px; //Ширина Изображения слайдера
+    }
 }
 
 @media (max-width: 770px) {
-  :root {
-    //------1блок------
-    --emmalustWi: 47vw; //Ширина надписи Emma Lust
-    //--------------------------------
-    //------2блок------
-    --section2PaddingTB: 130px; //внутренние отступы 2 секции сверху и снизу
-    //текст
-    //книга
-    --containerBook2sectWi: 250px; // контейнера с книгой 2 секции и книги ширина
-    //---------------------------------------
-    //----3блок------
-    --paddingSect3TopBot: 70px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 240px; //размер фото 3 секции ширина
-    --marginLeftPhotoSect3: 60px; //отступ фото левый внешний 3 секция
-    --lineSect3Wi: 200px; //длинна линии 3 секция
-  }
+     :root {
+        //------1блок------
+        --emmalustWi: 47vw; //Ширина надписи Emma Lust
+        //--------------------------------
+        //------2блок------
+        //книга
+        --containerBook2sectWi: 250px; // контейнера с книгой 2 секции и книги ширина
+        //---------------------------------------
+        //----3блок------
+        --paddingSectBaseTopBot: 70px; //внутренний отступ 3 секции верх и низ
+        --photoSect3Wi: 240px; //размер фото 3 секции ширина
+        --marginLeftPhotoSect3: 60px; //отступ фото левый внешний 3 секция
+        --lineSect3Wi: 200px; //длинна линии 3 секция
+    }
 }
 
 @media (max-width: 630px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 55vw; //высота первого блока
-    --bgWondowWi: 60vw; //Ширина изображения окна
-    --emmalustWi: 80vw; //Ширина надписи Emma Lust
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 55vw; //высота первого блока
+        --bgWondowWi: 60vw; //Ширина изображения окна
+        --emmalustWi: 80vw; //Ширина надписи Emma Lust
+    }
 }
 
 @media (max-width: 530px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 57vw; //высота первого блока
-    //---------------------------------
-    //------2блок------
-    //текст
-    //книга
-    --containerBook2sectWi: 200px; // контейнера с книгой 2 секции и книги ширина
-    //
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.855
-    ); // обложки книги 2 секции ширина
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 57vw; //высота первого блока
+        //---------------------------------
+        //------2блок------
+        //текст
+        //книга
+        --containerBook2sectWi: 200px; // контейнера с книгой 2 секции и книги ширина
+        //
+        --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855); // обложки книги 2 секции ширина
+    }
 }
 
 @media (max-width: 495px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 60vw; //высота первого блока
-    --emmalustWi: 90vw; //Ширина надписи Emma Lust
-    //---------------------------------------
-    //----4блок------
-    --sliderImgWi: 300px; //Ширина Изображения слайдера
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 60vw; //высота первого блока
+        --emmalustWi: 90vw; //Ширина надписи Emma Lust
+        //---------------------------------------
+        //----4блок------
+        --sliderImgWi: 300px; //Ширина Изображения слайдера
+    }
 }
 
 @media (max-width: 375px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 60vw; //высота первого блока
-    //----------------------------
-    //------2блок------
-    //текст
-    --marginTextCont2sect: 10px; //нижние отступы в текстовом блоке 2 секции
-    //книга
-    --containerBook2sectWi: 120px; // контейнера с книгой 2 секции и книги ширина
-    //
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.855
-    ); // обложки книги 2 секции ширина
-    //-------------------------------
-    //----3блок------
-    --paddingSect3TopBot: 50px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 150px; //размер фото 3 секции ширина
-    --lineSect3Wi: 70%; //длинна линии 3 секция
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 60vw; //высота первого блока
+        //----------------------------
+        //------2блок------
+        //текст
+        --marginTextCont2sect: 10px; //нижние отступы в текстовом блоке 2 секции
+        //книга
+        --containerBook2sectWi: 120px; // контейнера с книгой 2 секции и книги ширина
+        //
+        --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855); // обложки книги 2 секции ширина
+        //-------------------------------
+        //----3блок------
+        --paddingSectBaseTopBot: 50px; //внутренний отступ 3 секции верх и низ
+        --photoSect3Wi: 150px; //размер фото 3 секции ширина
+        --lineSect3Wi: 70%; //длинна линии 3 секция
+    }
 }
 
 @media (max-width: 320px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 60vw; //высота первого блока
-    //--------------------------------------
-    //------2блок------
-    --section2PaddingTB: 90px; //внутренние отступы 2 секции сверху и снизу
-    //текст
-    --marginTextCont2sect: 5px; //нижние отступы в текстовом блоке 2 секции
-    //книга
-    --containerBook2sectWi: 80px; // контейнера с книгой 2 секции и книги ширина
-    //
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.872
-    ); // обложки книги 2 секции ширина
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 60vw; //высота первого блока
+        //--------------------------------------
+        //------2блок------
+        --marginTextCont2sect: 5px; //нижние отступы в текстовом блоке 2 секции
+        //книга
+        --containerBook2sectWi: 80px; // контейнера с книгой 2 секции и книги ширина
+        //
+        --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.872); // обложки книги 2 секции ширина
+    }
 }
 
 @media (max-width: 270px) {
-  :root {
-    //------1блок------
-    --firstBlockHe: 80vw; //высота первого блока
-    //----------------------------------------
-    //----3блок------
-    --paddingSect3TopBot: 40px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 100px; //размер фото 3 секции ширина
-    //----------------------------------------
-    //----4блок------
-    --sliderImgWi: 250px; //Ширина Изображения слайдера
-  }
+     :root {
+        //------1блок------
+        --firstBlockHe: 80vw; //высота первого блока
+        //----------------------------------------
+        //----3блок------
+        --paddingSectBaseTopBot: 40px; //внутренний отступ 3 секции верх и низ
+        --photoSect3Wi: 100px; //размер фото 3 секции ширина
+        //----------------------------------------
+        //----4блок------
+        --sliderImgWi: 250px; //Ширина Изображения слайдера
+    }
 }
 
 //----------------------------------------------

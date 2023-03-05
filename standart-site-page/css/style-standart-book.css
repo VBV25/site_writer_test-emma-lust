@@ -43,16 +43,14 @@ ul li {
 
 /*-----*/
 :root {
-  --fsMenuHeadBtn: 30px;
-  --fsMenuHead: 32px;
-  --fsH2: 56px;
-  --fsH3: 48px;
+  --fsH2: 48px;
+  --fsH3: 42px;
   --fsH4: 30px;
   --fsH5: 26px;
   --fsP: 22px;
   --fsPolicy: 12px;
   --contentWidh: 95vw;
-  --marginTopBtn: 100px;
+  --marginTopBtn: 70px;
   --btnSect2Wi: 300px;
   --btnSect2He: 50px;
   --titleMarginBottom: 80px;
@@ -135,19 +133,20 @@ h1 {
 
 @media (max-width: 1255px) {
   :root {
-    --fsH2: 46px; } }
+    --fsH2: 38px; } }
 
 @media (max-width: 1024px) {
   :root {
-    --fsH2: 40px;
+    --fsH2: 32px;
     --fsP: 20px;
     --fsPolicy: 9px;
-    --marginTopBtnSect2: 50px;
+    --marginTopBtn: 50px;
     --btnSect2Wi: 250px;
     --fs2sectTitle: 62px; } }
 
 @media (max-width: 840px) {
   :root {
+    --fsH2: 28px;
     --fs2sectTitle: 56px; } }
 
 @media (max-width: 770px) {
@@ -167,11 +166,12 @@ h1 {
     --fsH4: 26px;
     --fsP: 18px;
     --fsPolicy: 7px;
-    --fs2sectTitle: 52px; } }
+    --fs2sectTitle: 52px;
+    --marginTopBtn: 40px; } }
 
 @media (max-width: 495px) {
   :root {
-    --fsH2: 28px; } }
+    --fsH2: 24px; } }
 
 @media (max-width: 375px) {
   :root {
@@ -179,7 +179,6 @@ h1 {
     --fsH3: 38px;
     --fsH4: 22px;
     --fsP: 16px;
-    --marginTopBtnSect2: 40px;
     --titleMarginBottom: 30px;
     --fs2sectTitle: 42px; } }
 
@@ -199,8 +198,10 @@ h1 {
     --fsH2: 18px; } }
 
 :root {
-  --menuGapHead: 80px;
-  --logoHedHe: 100px; }
+  --menuGapHead: 60px;
+  --logoHedHe: 100px;
+  --fsMenuHeadBtn: 30px;
+  --fsMenuHead: 30px; }
 
 /*----HEADER-----*/
 .header {
@@ -283,26 +284,26 @@ h1 {
 
 @media (max-width: 1255px) {
   :root {
-    --fsMenuHead: 26px;
-    --menuGapHead: 40px;
+    --fsMenuHead: 24px;
+    --menuGapHead: 45px;
     --logoHedHe: 60px; } }
 
 @media (max-width: 1024px) {
   :root {
     --fsMenuHead: 20px;
-    --menuGapHead: 30px;
+    --menuGapHead: 23px;
     --logoHedHe: 50px; } }
 
 @media (max-width: 770px) {
   :root {
-    --fsMenuHead: 17px;
+    --fsMenuHead: 16px;
     --menuGapHead: 20px;
     --logoHedHe: 40px; } }
 
 @media (max-width: 630px) {
   :root {
-    --fsMenuHead: 16px;
-    --menuGapHead: 30px;
+    --fsMenuHead: 15px;
+    --menuGapHead: 25px;
     --logoHedHe: 40px; }
   .header .container {
     margin: 0px;
@@ -345,7 +346,7 @@ h1 {
 
 @media (max-width: 530px) {
   :root {
-    --fsMenuHead: 18px;
+    --fsMenuHead: 17px;
     --logoHedHe: 40px; }
   .header__menu ul {
     display: -webkit-box;
@@ -361,16 +362,15 @@ h1 {
     height: max-content;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    row-gap: 20px; }
+    row-gap: 20px;
+    padding: 20px 0; }
     .header__menu ul .link {
       text-align: center;
       width: 90%; } }
 
 :root {
   --logoFootWi: 400px;
-  --logoFootHe: calc(
-    var(--logoFootWi) / 4
-  );
+  --logoFootHe: calc( var(--logoFootWi) / 4);
   --socialLogoWi: 60px; }
 
 /*---------------FOOTER-----------------*/
@@ -441,14 +441,40 @@ h1 {
     font-family: Georgia, sans-serif;
     margin-bottom: 10px; }
   .footer__developed {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     font-size: calc(var(--fsP) - 6px);
     font-weight: 300;
     line-height: calc(var(--fsP) * 1.5);
     color: #ffffff;
     font-style: normal;
-    font-family: Georgia, sans-serif; }
+    font-family: Georgia, sans-serif;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center; }
+    .footer__developed img {
+      width: 50px;
+      height: auto; }
     .footer__developed:hover {
       color: #e2c68e; }
+      .footer__developed:hover img {
+        -webkit-filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
+        filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%); }
   .footer__sotial-link-group {
     width: var(--logoFootWi);
     height: var(--logoFootHe);
