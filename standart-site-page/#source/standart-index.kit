@@ -33,7 +33,7 @@
 
 
     <!-- @import 'header.html' -->
-    <main>
+    <main class="main">
         <!--'1 СЕКЦИЯ'-->
         <section class="tagline">
             <h1>Emma Lust</h1>
@@ -141,15 +141,36 @@
                         </div>
                         <div class="biography__line"></div>
                         <div class="biography__title biography__title-2"></div>
-                        <div class="biography__text biography__text-2 ">Мои книги можно найти:<br> <span> <a
-                                    href="#">ЛитМаркет</a></span>, <span> <a href="#">Bookriver</a></span>, <span> <a
-                                    href="#">ЛитНет</a></span>, <span> <a href="#">Author.Today</a></span>, <span> <a
-                                    href="#">ЛитРес</a></span> и <span> <a href="#">ЛитГород</a></span>.
+                        <div class="biography__text biography__text-2 ">Мои книги можно найти:<br>
+                            <span>
+                                <a href="https://litmarket.ru/emma-last-p37209" target="_blank">ЛитМаркет</a>
+                            </span>,
+
+                            <span>
+                                <a href="https://bookriver.ru/author/emma-lust" target="_blank">Bookriver</a>
+                            </span>,
+
+                            <span>
+                                <a href="https://litnet.com/ru/emmanuel-last-u4514173" target="_blank">ЛитНет</a>
+                            </span> ,
+
+                            <span>
+                                <a href="#" target="_blank">Author.Today</a>
+                            </span>,
+
+                            <span>
+                                <a href="https://www.litres.ru/author/emmanuel-last/" target="_blank">ЛитРес</a>
+                            </span> и
+                            <span>
+                                <a href="https://litgorod.ru/user/my-books" target="_blank">ЛитГород</a>
+                            </span>.
                         </div>
 
-
-
-
+                        <div class="biography__text biography__text-2 ">Площадка для доната:<br>
+                            <span>
+                                <a href="https://boosty.to/emmalust" target="_blank">Boosty</a>
+                            </span>
+                        </div>
                     </div>
                     <div class="biography__btn content-btn"></div>
 
@@ -171,9 +192,9 @@
                     <!--'Слайды'-->
 
                     <!--'1'-->
-                    <div data-hash="slide-1" class="image-slider__slide swiper-slide">
+                    <div data-hash="slide-1" class="image-slider__slide swiper-slide">Романы
                         <!--'Контент внутри слайдера'-->
-                        <h4 class="slide-title">Романы</h4>
+
                         <a href="" class="image-slider__image">
                             <img src="img/romans.png" alt="ФОТО">
                         </a>
@@ -181,9 +202,9 @@
                     </div>
 
                     <!--'2'-->
-                    <div data-hash="slide-2" class="image-slider__slide swiper-slide">
+                    <div data-hash="slide-2" class="image-slider__slide swiper-slide">Фэнтези
                         <!--'Контент внутри слайдера'-->
-                        <h4 class="slide-title">Фэнтези</h4>
+
                         <a href="" class="image-slider__image">
                             <img src="img/fentasy.png" alt="ФОТО">
                         </a>
@@ -191,9 +212,9 @@
                     </div>
 
                     <!--'3'-->
-                    <div data-hash="slide-3" class="image-slider__slide swiper-slide">
+                    <div data-hash="slide-3" class="image-slider__slide swiper-slide">Фанфики
                         <!--'Контент внутри слайдера'-->
-                        <h4 class="slide-title">Фанфики</h4>
+
                         <a href="" class="image-slider__image">
                             <img src="img/fun.png" alt="ФОТО">
                         </a>
@@ -257,8 +278,12 @@
 
 
     </main>
+    <!--'----------------------------------'-->
     <!-- @import 'footer.html' -->
+    <!--'----------------------------------'-->
 
+
+    <!--'----------------------------------'-->
     <!--'-----ДОП ЭЛЕМЕНТЫ-----'-->
     <!--'прелоадер'-->
     <!-- @import 'preloader.html' -->
@@ -266,9 +291,16 @@
     <!--кнопк прокрутки-->
     <!-- @import 'up-btn.html' -->
 
-    <!--'ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ'-->
+    <!--'ФОРМА ОТПРАВКИ ПОПАП'-->
     <!-- @import 'elements-additional.html' -->
 
+    <!--'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап'-->
+    <!-- @import 'policy.html' -->
+    <!-- @import 'terms-use.html' -->
+    <!--'----------------------------------'-->
+
+
+    <!--'----------------------------------'-->
     <!--Java Script-->
 
     <!--'SWIPER'-->
@@ -277,6 +309,9 @@
 
     <!--'Смена контента'-->
     <script src="js/content-replacement/content-replacement.js"></script>
+
+    <!--'открытие попапов политики конфиденциальности и пользовательского соглашения'-->
+    <script src="js/script-popup-policy-terms-use.js"></script>
 </body>
 
 </html>

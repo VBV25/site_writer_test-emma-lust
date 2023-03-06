@@ -14,6 +14,8 @@
 @import 'style-elements-additional';
 //preloader
 @import 'preloader';
+// ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
+@import 'policy';
 //-
 //-------------------общие стили----------------
 body {
@@ -104,7 +106,7 @@ h1 {
     @include wiHe($he: var(--firstBlockHe));
     //background-color: $DarkRedColor;
     //padding: var(--firstBlockPaddingTB) 0;
-    @include bgImg($bgImSize: 100% 100%);
+    @include bgImg($bgImSize: 105% auto);
     background-image: url('../img/first-sect-bg2.jpg');
     //стили обертки с контентом
     &__wrapper {
@@ -156,11 +158,12 @@ h1 {
 //-------630-PX-----------
 @media (max-width: 630px) {
     .tagline {
+        @include bgImg($bgImSize: 100% 100%);
         &__wrapper {
             @include flCent;
             &::after {
                 @include bgImg($bgImSize: var(--bgWondowWi) auto, $bgPosition: center);
-                opacity: 0.15;
+                opacity: 0.3;
             }
         }
         &__title {
@@ -735,8 +738,9 @@ h1 {
         &__slide {
             @include flCent;
             flex-direction: column;
+            @include fontSizeH4($color: $DarkRedColor);
             .slide-title {
-                @include fontSizeH4($color: $emeraldDarkColor);
+                @include fontSizeH4($color: $DarkRedColor);
             }
         }
         //изображения в слайдах
@@ -752,9 +756,8 @@ h1 {
         .swiper-slide-prev {
             opacity: 0.7;
         }
-        .swiper-slide-active:hover>.slide-title {
-            @include textBorderSmokeColor;
-            color: $blackColor;
+        .swiper-slide-active:hover {
+            @include fontSizeH4( $fontSize: calc(var(--fsH4) + 4px), $color: $blackColor);
         }
     }
 }
@@ -796,10 +799,6 @@ h1 {
     }
     .swiper-button-prev::after,
     .swiper-button-next::after {
-        @include textBorderWhite;
-    }
-    .swiper-button-prev:hover::after,
-    .swiper-button-next:hover::after {
         @include textBorderWhite;
     }
 }

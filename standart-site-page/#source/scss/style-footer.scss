@@ -1,5 +1,8 @@
 //--------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----
 :root {
+    --fsPolicy: 10px; //политика конфиденциальности
+    //
+    //
     --logoFootWi: 400px; //расстояние между пунктами меню в хедер
     --logoFootHe: calc( var(--logoFootWi) / 4); //высота логотипа хедера(ширина автоматическая)
     --socialLogoWi: 60px; //размер иконок соц сети
@@ -92,11 +95,17 @@
             filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%) contrast(85%);
         }
     }
-    &__policy {
+    &__policy-wrapper {
         width: 95%;
         font-size: var(--fsPolicy);
         color: $darkGrayColor;
         margin: 50px auto;
+        span a {
+            color: $grayColor;
+            &:hover {
+                color: $smokeColor;
+            }
+        }
     }
 }
 
@@ -135,6 +144,8 @@
 //-------1024-PX-----------
 @media (max-width: 1024px) {
      :root {
+        --fsPolicy: 8px; //политика конфиденциальности
+        //---------------------------
         --logoFootWi: 250px; //логотип фуутер
         --socialLogoWi: 42px; //размер иконок соц сети
     }
@@ -180,9 +191,21 @@
 
 //
 //
+//-------770-PX-----------
+@media (max-width: 770px) {
+     :root {
+        //шрифты
+        --fsPolicy: 7px; //политика конфиденциальности
+    }
+}
+
+//
+//
 //-------630-PX-----------
 @media (max-width: 630px) {
      :root {
+        --fsPolicy: 6px; //политика конфиденциальности
+        //------------------------------
         --logoFootWi: 350px; //логотип фуутер
     }
 }

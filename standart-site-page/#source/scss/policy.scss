@@ -1,0 +1,135 @@
+.popupt {
+    @include wiHe($he: 100vh);
+    @include leTo;
+    @include flCent;
+    z-index: 250;
+    position: fixed;
+    background-color: $blackColorOpacity;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+    &__body {
+        @include flCent;
+        @include leTo;
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        padding: 50px 10px;
+    }
+    &__content {
+        background-color: $skinColor;
+        color: $blackColor;
+        max-width: 800px;
+        padding: 30px;
+        position: relative;
+        opacity: 0;
+        transition: all 0.8s ease 0s;
+        transform: translate(0px, -1000%);
+    }
+    &__close {
+        z-index: 250;
+        @include fontSizeH4;
+        @include riTo(10px, 3%);
+        position: fixed;
+        color: $redLightColor;
+        text-decoration: none;
+        padding: 0 5px;
+        border-radius: 5px;
+        background-color: $sandColor;
+    }
+    &__title {
+        @include fontSizeH3;
+        margin: 0px 0px 1em 0px;
+        text-align: center;
+    }
+    &__subtitle {
+        @include fontSizeH4;
+        text-align: center;
+    }
+    &__text {
+        @include fontSizeP;
+        ul {
+            width: 80%;
+            margin: auto;
+            li {
+                list-style: inherit;
+            }
+            ol {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.popupt.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popupt.open .popupt__content {
+    opacity: 1;
+    transform: translate(0px, 0%);
+}
+
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//
+//
+//
+//-------1255-PX-----------
+@media (max-width: 600px) {
+    .popupt {
+        &__title {
+            @include fontSizeH3($fontSize: calc(var(--fsH3) - 10px));
+        }
+        &__subtitle {
+            @include fontSizeH4($fontSize: calc(var(--fsH4) - 6px));
+        }
+        &__text {
+            @include fontSizeP($fontSize: calc(var(--fsP) - 2px));
+        }
+    }
+}
+
+//
+//-------470-PX-----------
+@media (max-width: 470px) {
+    .popupt {
+        &__title {
+            @include fontSizeH3($fontSize: calc(var(--fsH3) - 20px));
+        }
+        &__subtitle {
+            @include fontSizeH4($fontSize: calc(var(--fsH4) - 10px));
+        }
+        &__text {
+            @include fontSizeP($fontSize: calc(var(--fsP) - 4px));
+        }
+    }
+}
+
+//
+//-------320-PX-----------
+@media (max-width: 320px) {
+    .popupt {
+        &__title {
+            @include fontSizeH4($fontSize: calc(var(--fsH4) - 5px));
+        }
+        &__subtitle {
+            @include fontSizeH4($fontSize: calc(var(--fsH4) - 5px));
+        }
+        &__text {
+            @include fontSizeP($fontSize: calc(var(--fsP) - 2px));
+        }
+    }
+}
+
+//
+//-------247-PX-----------
+@media (max-width: 247px) {
+    .popupt {
+        &__content {
+            padding: 15px;
+        }
+    }
+}

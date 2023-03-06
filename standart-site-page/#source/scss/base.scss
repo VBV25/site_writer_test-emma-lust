@@ -8,6 +8,7 @@ $grayColor: #808080;
 $smokeColor: #cccccc;
 $whiteColor: #ffffff;
 $redColor: red;
+$redLightColor: rgb(255, 90, 90);
 //
 $emeraldColor: #253229;
 $emeraldDarkColor: #1d241f;
@@ -33,7 +34,6 @@ sans-serif;
     --fsH4: 30px; //Заголовки h4
     --fsH5: 26px; //Заголовки h5
     --fsP: 22px; //текст и блоки P
-    --fsPolicy: 12px; //политика конфиденциальности
     //----------------------------------------------------
     //----------------------------------------------------
     //----контент общий
@@ -217,6 +217,11 @@ h1 {
 .lock {
     overflow: hidden;
 }
+
+
+/*body.lock {
+    overflow: hidden;
+}*/
 
 .not-visible {
     display: none;
