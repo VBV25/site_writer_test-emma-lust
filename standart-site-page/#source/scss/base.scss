@@ -14,252 +14,315 @@ $emeraldColor: #253229;
 $emeraldDarkColor: #1d241f;
 $emeraldDarkColor2: #041308;
 $DarkRedColor: #240e04;
+$DarkRedColor2: #160603;
 $yellowBrownColor: #885a34;
 $sandColor: #fff3d2;
 $skinColor: #e2c68e;
 //
 //----------
 //-шрифты-
-$fontFamily1: Georgia,
-sans-serif;
-$fontFamily2: LobsterRegular,
-MarckScriptRegular,
-PacificoRegular,
-sans-serif;
+$fontFamily1: Georgia, sans-serif;
+$fontFamily2: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
 //-------------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----------------------------------------
 :root {
-    //--------размеры шрифтов
-    --fsH2: 48px; //заголовки h2
-    --fsH3: 42px; //Заголовки h3
-    --fsH4: 30px; //Заголовки h4
-    --fsH5: 26px; //Заголовки h5
-    --fsP: 22px; //текст и блоки P
-    //----------------------------------------------------
-    //----------------------------------------------------
-    //----контент общий
-    --contentWidh: 95vw; //блок контента
-    //кнопка
-    --marginTopBtn: 70px; //внешний отступ кнопки
-    --btnSect2Wi: 300px; //кнопка  ширина
-    --btnSect2He: 50px; //кнопка  высота
-    //
-    --titleMarginBottom: 80px; //отступ нижний заголовка блока
-    --fs2sectTitle: 72px; //размер шрифта заголовка блока
-    //----------------------------------------------------
-    //----------------------------------------------------
+  //--------размеры шрифтов
+  --fsH2: 48px; //заголовки h2
+  --fsH3: 42px; //Заголовки h3
+  --fsH4: 30px; //Заголовки h4
+  --fsH5: 26px; //Заголовки h5
+  --fsP: 22px; //текст и блоки P
+  //----------------------------------------------------
+  //----------------------------------------------------
+  //----контент общий
+  --contentWidh: 95vw; //блок контента
+  //кнопка
+  --marginTopBtn: 70px; //внешний отступ кнопки
+  --btnSect2Wi: 300px; //кнопка  ширина
+  --btnSect2He: 50px; //кнопка  высота
+  //
+  --titleMarginBottom: 80px; //отступ нижний заголовка блока
+  --fs2sectTitle: 72px; //размер шрифта заголовка блока
+  //----------------------------------------------------
+  //----------------------------------------------------
 }
 
 //-----------------------------------------------миксины----------------------------------------------
 //ширина и высота элемента
 @mixin wiHe($wi: 100%, $he: 100%) {
-    width: $wi;
-    height: $he;
+  width: $wi;
+  height: $he;
 }
 
 //позиционирование
 @mixin leTo($top: 0, $left: 0) {
-    top: $top;
-    left: $left;
+  top: $top;
+  left: $left;
 }
 
 @mixin riTo($top: 0, $right: 0) {
-    top: $top;
-    right: $right;
+  top: $top;
+  right: $right;
 }
 
 @mixin riBo($bottom: 0, $right: 0) {
-    bottom: $bottom;
-    right: $right;
+  bottom: $bottom;
+  right: $right;
 }
 
 @mixin leBo($bottom: 0, $left: 0) {
-    bottom: $bottom;
-    left: $left;
+  bottom: $bottom;
+  left: $left;
 }
 
 //вставка изображения как фона(без ссылки на изображение)
 @mixin bgImg($bgImSize: 100% 100%, $bgPosition: center, $bgRepeat: no-repeat) {
-    background-size: $bgImSize;
-    background-position: $bgPosition;
-    background-repeat: $bgRepeat;
+  background-size: $bgImSize;
+  background-position: $bgPosition;
+  background-repeat: $bgRepeat;
 }
 
 //флекс элемент по центру
 @mixin flCent($jusCon: center, $alIt: center) {
-    display: flex;
-    justify-content: $jusCon;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $jusCon;
+  align-items: $alIt;
 }
 
 //флекс элемент слева снизу
 @mixin flStartCen($jusCon: start, $alIt: center) {
-    display: flex;
-    justify-content: $jusCon;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $jusCon;
+  align-items: $alIt;
 }
 
 //флекс элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin flexSpBeCent($jusCon: space-between, $alIt: center) {
-    display: flex;
-    justify-content: $jusCon;
-    align-items: $alIt;
+  display: flex;
+  justify-content: $jusCon;
+  align-items: $alIt;
 }
 
 //грид элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin gridSpBeCent($jusCon: space-between, $alIt: center) {
-    display: grid;
-    justify-content: $jusCon;
-    align-items: $alIt;
+  display: grid;
+  justify-content: $jusCon;
+  align-items: $alIt;
 }
 
 //грид центр
 @mixin gridCent($jusCon: center, $alIt: center) {
-    display: grid;
-    justify-content: $jusCon;
-    align-items: $alIt;
+  display: grid;
+  justify-content: $jusCon;
+  align-items: $alIt;
 }
 
 //обводка текста
 @mixin textBorderWhite {
-    text-shadow: -0 -2px 2px $whiteColor, 0 -2px 2px $whiteColor, -0 2px 2px $whiteColor, 0 2px 2px $whiteColor, -2px -0 2px $whiteColor, 2px -0 2px $whiteColor, -2px 0 2px $whiteColor, 2px 0 2px $whiteColor, -2px -2px 2px $whiteColor, 2px -2px 2px $whiteColor, -2px 2px 2px $whiteColor, 2px 2px 2px $whiteColor, -2px -2px 2px $whiteColor, 2px -2px 2px $whiteColor, -2px 2px 2px $whiteColor, 2px 2px 2px $whiteColor;
+  text-shadow: -0 -2px 2px $whiteColor, 0 -2px 2px $whiteColor,
+    -0 2px 2px $whiteColor, 0 2px 2px $whiteColor, -2px -0 2px $whiteColor,
+    2px -0 2px $whiteColor, -2px 0 2px $whiteColor, 2px 0 2px $whiteColor,
+    -2px -2px 2px $whiteColor, 2px -2px 2px $whiteColor,
+    -2px 2px 2px $whiteColor, 2px 2px 2px $whiteColor, -2px -2px 2px $whiteColor,
+    2px -2px 2px $whiteColor, -2px 2px 2px $whiteColor, 2px 2px 2px $whiteColor;
 }
 
 @mixin textBorderSmokeColor {
-    text-shadow: -0 -1px 1px $smokeColor, 0 -1px 1px $smokeColor, -0 1px 1px $smokeColor, 0 1px 1px $smokeColor, -1px -0 1px $smokeColor, 1px -0 1px $smokeColor, -1px 0 1px $smokeColor, 1px 0 1px $smokeColor, -1px -1px 1px $smokeColor, 1px -1px 1px $smokeColor, -1px 1px 1px $smokeColor, 1px 1px 1px $smokeColor, -1px -1px 1px $smokeColor, 1px -1px 1px $smokeColor, -1px 1px 1px $smokeColor, 1px 1px 1px $smokeColor;
+  text-shadow: -0 -1px 1px $smokeColor, 0 -1px 1px $smokeColor,
+    -0 1px 1px $smokeColor, 0 1px 1px $smokeColor, -1px -0 1px $smokeColor,
+    1px -0 1px $smokeColor, -1px 0 1px $smokeColor, 1px 0 1px $smokeColor,
+    -1px -1px 1px $smokeColor, 1px -1px 1px $smokeColor,
+    -1px 1px 1px $smokeColor, 1px 1px 1px $smokeColor, -1px -1px 1px $smokeColor,
+    1px -1px 1px $smokeColor, -1px 1px 1px $smokeColor, 1px 1px 1px $smokeColor;
 }
 
 @mixin textBorderGold {
-    text-shadow: -0 -1px 1px $skinColor, 0 -1px 1px $skinColor, -0 1px 1px $skinColor, 0 1px 1px $skinColor, -1px -0 1px $skinColor, 1px -0 1px $skinColor, -1px 0 1px $skinColor, 1px 0 1px $skinColor, -1px -1px 1px $skinColor, 1px -1px 1px $skinColor, -1px 1px 1px $skinColor, 1px 1px 1px $skinColor, -1px -1px 1px $skinColor, 1px -1px 1px $skinColor, -1px 1px 1px $skinColor, 1px 1px 1px $skinColor;
+  text-shadow: -0 -1px 1px $skinColor, 0 -1px 1px $skinColor,
+    -0 1px 1px $skinColor, 0 1px 1px $skinColor, -1px -0 1px $skinColor,
+    1px -0 1px $skinColor, -1px 0 1px $skinColor, 1px 0 1px $skinColor,
+    -1px -1px 1px $skinColor, 1px -1px 1px $skinColor, -1px 1px 1px $skinColor,
+    1px 1px 1px $skinColor, -1px -1px 1px $skinColor, 1px -1px 1px $skinColor,
+    -1px 1px 1px $skinColor, 1px 1px 1px $skinColor;
 }
 
 @mixin textBorderBlack {
-    text-shadow: -0 -1px 1px $blackColor, 0 -1px 1px $blackColor, -0 1px 1px $blackColor, 0 1px 1px $blackColor, -1px -0 1px $blackColor, 1px -0 1px $blackColor, -1px 0 1px $blackColor, 1px 0 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor;
+  text-shadow: -0 -1px 1px $blackColor, 0 -1px 1px $blackColor,
+    -0 1px 1px $blackColor, 0 1px 1px $blackColor, -1px -0 1px $blackColor,
+    1px -0 1px $blackColor, -1px 0 1px $blackColor, 1px 0 1px $blackColor,
+    -1px -1px 1px $blackColor, 1px -1px 1px $blackColor,
+    -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, -1px -1px 1px $blackColor,
+    1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor;
 }
 
 @mixin textBorderBlacGoldkMix {
-    text-shadow: -0 -1px 1px $blackColor, 0 -1px 1px $blackColor, -0 1px 1px $blackColor, 0 1px 1px $blackColor, -1px -0 1px $blackColor, 1px -0 1px $blackColor, -1px 0 1px $blackColor, 1px 0 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, -1px -1px 1px $blackColor, 1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, //
+  text-shadow: -0 -1px 1px $blackColor, 0 -1px 1px $blackColor,
+    -0 1px 1px $blackColor, 0 1px 1px $blackColor, -1px -0 1px $blackColor,
+    1px -0 1px $blackColor, -1px 0 1px $blackColor, 1px 0 1px $blackColor,
+    -1px -1px 1px $blackColor, 1px -1px 1px $blackColor,
+    -1px 1px 1px $blackColor, 1px 1px 1px $blackColor, -1px -1px 1px $blackColor,
+    1px -1px 1px $blackColor, -1px 1px 1px $blackColor, 1px 1px 1px $blackColor,
     //
-    -0 -2px 2px $skinColor, 0 -2px 2px $skinColor, -0 2px 2px $skinColor, 0 2px 2px $skinColor, -2px -0 2px $skinColor, 2px -0 2px $skinColor, -2px 0 2px $skinColor, 2px 0 2px $skinColor, -2px -2px 2px $skinColor, 2px -2px 2px $skinColor, -2px 2px 2px $skinColor, 2px 2px 2px $skinColor, -2px -2px 2px $skinColor, 2px -2px 2px $skinColor, -2px 2px 2px $skinColor, 2px 2px 2px $skinColor;
+    //
+    -0 -2px 2px $skinColor,
+    0 -2px 2px $skinColor, -0 2px 2px $skinColor, 0 2px 2px $skinColor,
+    -2px -0 2px $skinColor, 2px -0 2px $skinColor, -2px 0 2px $skinColor,
+    2px 0 2px $skinColor, -2px -2px 2px $skinColor, 2px -2px 2px $skinColor,
+    -2px 2px 2px $skinColor, 2px 2px 2px $skinColor, -2px -2px 2px $skinColor,
+    2px -2px 2px $skinColor, -2px 2px 2px $skinColor, 2px 2px 2px $skinColor;
 }
 
 //параметры шрифтов
-@mixin fontSizeBase( $fs: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor, $fontFamily: $fontFamily1) {
-    font-size: $fs;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeBase(
+  $fs: 16px,
+  $fWe: 400,
+  $liHe: 24px,
+  $color: $whiteColor,
+  $fontFamily: $fontFamily1
+) {
+  font-size: $fs;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
-@mixin fontSizeP( $fWe: 300, $liHe: calc(var(--fsP) * 1.5), $color: $blackColor, $fontFamily: $fontFamily1, $fontSize: var(--fsP)) {
-    font-size: $fontSize;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeP(
+  $fWe: 300,
+  $liHe: calc(var(--fsP) * 1.5),
+  $color: $blackColor,
+  $fontFamily: $fontFamily1,
+  $fontSize: var(--fsP)
+) {
+  font-size: $fontSize;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
-@mixin fontSizeH5( $fWe: 300, $liHe: calc(var(--fsH5) * 1.5), $color: $blackColor, $fontFamily: $fontFamily1, $fontSize: var(--fsH5)) {
-    font-size: $fontSize;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeH5(
+  $fWe: 300,
+  $liHe: calc(var(--fsH5) * 1.5),
+  $color: $blackColor,
+  $fontFamily: $fontFamily1,
+  $fontSize: var(--fsH5)
+) {
+  font-size: $fontSize;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
-@mixin fontSizeH4( $fWe: 600, $liHe: calc(var(--fsH4) * 1.5), $color: $blackColor, $fontFamily: $fontFamily1, $fontSize: var(--fsH4)) {
-    font-size: $fontSize;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeH4(
+  $fWe: 600,
+  $liHe: calc(var(--fsH4) * 1.5),
+  $color: $blackColor,
+  $fontFamily: $fontFamily1,
+  $fontSize: var(--fsH4)
+) {
+  font-size: $fontSize;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
-@mixin fontSizeH3( $fWe: 600, $liHe: calc(var(--fsH3) * 1.5), $color: $blackColor, $fontFamily: $fontFamily1, $fontSize: var(--fsH3)) {
-    font-size: $fontSize;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeH3(
+  $fWe: 600,
+  $liHe: calc(var(--fsH3) * 1.5),
+  $color: $blackColor,
+  $fontFamily: $fontFamily1,
+  $fontSize: var(--fsH3)
+) {
+  font-size: $fontSize;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
-@mixin fontSizeH2( $fWe: 600, $liHe: calc(var(--fsH2) * 1.5), $color: $whiteColor, $fsH2: var(--fsH2), $fontFamily: $fontFamily1) {
-    font-size: $fsH2;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily;
+@mixin fontSizeH2(
+  $fWe: 600,
+  $liHe: calc(var(--fsH2) * 1.5),
+  $color: $whiteColor,
+  $fsH2: var(--fsH2),
+  $fontFamily: $fontFamily1
+) {
+  font-size: $fsH2;
+  font-weight: $fWe;
+  line-height: $liHe;
+  color: $color;
+  font-style: normal;
+  font-family: $fontFamily;
 }
 
 //----------------------------------------------------------------------------------------------------
 //-------------------общие стили----------------
 body {
-    background: $emeraldDarkColor2;
-    position: relative;
+  background: $emeraldDarkColor2;
+  position: relative;
 }
 
 h1 {
-    @include leTo;
-    @include wiHe(1px, 1px);
-    position: absolute;
-    display: block;
-    overflow: hidden;
-    font-size: 1px !important;
+  @include leTo;
+  @include wiHe(1px, 1px);
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-size: 1px !important;
 }
 
 //стиль блокировки прокрутки
 .lock {
-    overflow: hidden;
+  overflow: hidden;
 }
-
 
 /*body.lock {
     overflow: hidden;
 }*/
 
 .not-visible {
-    display: none;
+  display: none;
 }
 
 //стилизация кнопок перехода
 .content-btn {
+  @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtn);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: $grayColor;
+  border-radius: 10px;
+  &::after {
+    @include fontSizeH5($color: $whiteColor);
     @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-    z-index: 4;
-    position: relative;
-    left: 50%;
-    margin-top: var(--marginTopBtn);
-    margin-left: calc(var(--btnSect2Wi) / -2);
-    background-color: $grayColor;
+    @include leTo(-4px);
+    @include flCent;
+    z-index: 5;
+    position: absolute;
+    background-color: $DarkRedColor;
     border-radius: 10px;
-    &::after {
-        @include fontSizeH5($color: $whiteColor);
-        @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
-        @include leTo(-4px);
-        @include flCent;
-        z-index: 5;
-        position: absolute;
-        background-color: $DarkRedColor;
-        border-radius: 10px;
-    }
-    &:hover::after {
-        color: $skinColor;
-    }
-    &:active::after {
-        @include leTo(0);
-    }
+  }
+  &:hover::after {
+    color: $skinColor;
+  }
+  &:active::after {
+    @include leTo(0);
+  }
 }
 
 //стилизация заголовков каждого блока
 .base-title {
-    z-index: 5;
-    @include wiHe($he: max-content);
-    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldDarkColor);
-    margin-bottom: var(--titleMarginBottom);
-    text-align: center;
+  z-index: 5;
+  @include wiHe($he: max-content);
+  @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldDarkColor);
+  margin-bottom: var(--titleMarginBottom);
+  text-align: center;
 }

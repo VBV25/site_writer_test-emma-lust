@@ -1255,9 +1255,9 @@ h1 {
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  -webkit-transition: all 0.8s ease 0s;
-  -o-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s; }
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
   .popupt__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1281,9 +1281,9 @@ h1 {
     padding: 30px;
     position: relative;
     opacity: 0;
-    -webkit-transition: all 0.8s ease 0s;
-    -o-transition: all 0.8s ease 0s;
-    transition: all 0.8s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
     -webkit-transform: translate(0px, -1000%);
     -ms-transform: translate(0px, -1000%);
     transform: translate(0px, -1000%); }
@@ -1344,7 +1344,10 @@ h1 {
   opacity: 1;
   -webkit-transform: translate(0px, 0%);
   -ms-transform: translate(0px, 0%);
-  transform: translate(0px, 0%); }
+  transform: translate(0px, 0%);
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
 
 @media (max-width: 600px) {
   .popupt__title {
@@ -1633,9 +1636,15 @@ h1 {
   --marginTextCont2sect: 30px;
   --rigtBookShift: 50px;
   --containerBook2sectWi: 323px;
-  --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
-  --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
-  --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
+  --containerBook2sectHe: calc(
+    var(--containerBook2sectWi) * 1.51
+  );
+  --coverBook2sectWi: calc(
+    var(--containerBook2sectWi) * 0.8669
+  );
+  --coverBook2sectHe: calc(
+    var(--coverBook2sectWi) * 1.7
+  ); }
 
 .in-work,
 .release {
@@ -2450,7 +2459,9 @@ h1 {
   :root {
     --firstBlockHe: 57vw;
     --containerBook2sectWi: 200px;
-    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855); } }
+    --coverBook2sectWi: calc(
+      var(--containerBook2sectWi) * 0.855
+    ); } }
 
 @media (max-width: 495px) {
   :root {
@@ -2463,7 +2474,9 @@ h1 {
     --firstBlockHe: 60vw;
     --marginTextCont2sect: 10px;
     --containerBook2sectWi: 120px;
-    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855);
+    --coverBook2sectWi: calc(
+      var(--containerBook2sectWi) * 0.855
+    );
     --paddingSectBaseTopBot: 50px;
     --photoSect3Wi: 150px;
     --lineSect3Wi: 70%; } }
@@ -2473,7 +2486,9 @@ h1 {
     --firstBlockHe: 60vw;
     --marginTextCont2sect: 5px;
     --containerBook2sectWi: 80px;
-    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.872); } }
+    --coverBook2sectWi: calc(
+      var(--containerBook2sectWi) * 0.872
+    ); } }
 
 @media (max-width: 270px) {
   :root {
