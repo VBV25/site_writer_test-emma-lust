@@ -215,13 +215,23 @@ main {
   }
   .text-container {
     &__title {
-      @include fontSizeH4($color: $blackColor);
+      @include fontSizeH5(
+        $fontSize: calc(var(--fsH5) + 5px),
+        $color: $blackColor
+      );
       text-transform: uppercase;
       margin: 10px auto;
       text-align: center;
     }
     &__subtitle {
       @include fontSizeH5($color: $blackColor);
+      text-align: center;
+    }
+    &__subtitle-year {
+      @include fontSizeH5(
+        $fontSize: calc(var(--fsH5) - 3px),
+        $color: $blackColor
+      );
       text-align: center;
     }
     ul {
@@ -267,10 +277,11 @@ main {
 
 //
 //-------930-PX-----------
-@media (max-width: 930px) {
+
+/*@media (max-width: 930px) {
   .bibliography-block {
   }
-}
+}*/
 
 //
 //-------850-PX-----------
@@ -296,6 +307,60 @@ main {
 }
 
 //
+//-------650-PX-----------
+@media (max-width: 650px) {
+  .bibliography-block {
+    &__base-title {
+      font-size: calc(var(--fs2sectTitle) - 10px);
+    }
+    &__bg-title {
+      //вензеля вензеля по углам
+      &::before {
+        left: 5px;
+      }
+      &::after {
+        right: 5px;
+      }
+      //Вспомогательная линия с вензелями по углам снизу
+      .line-auxiliary {
+        &::before {
+          left: 5px;
+        }
+        &::after {
+          right: 5px;
+        }
+      }
+    }
+  }
+}
+
+//
+//-------420-PX-----------
+@media (max-width: 420px) {
+  .bibliography-block {
+    &__base-title {
+      font-size: calc(var(--fs2sectTitle) - 15px);
+    }
+    &__bg-title {
+      padding: 40px 0;
+      &::before,
+      &::after {
+        width: 100px;
+        height: 100px;
+      }
+      //Вспомогательная линия с вензелями по углам снизу
+      .line-auxiliary {
+        &::before,
+        &::after {
+          width: 100px;
+          height: 100px;
+          bottom: -40px;
+        }
+      }
+    }
+  }
+}
+
 //
 //-------370-PX-----------
 @media (max-width: 370px) {

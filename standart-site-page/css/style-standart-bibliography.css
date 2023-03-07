@@ -1796,9 +1796,9 @@ main {
     height: max-content;
     margin: auto; }
   .bibliography-block .text-container__title {
-    font-size: var(--fsH4);
-    font-weight: 600;
-    line-height: calc(var(--fsH4) * 1.5);
+    font-size: calc(var(--fsH5) + 5px);
+    font-weight: 300;
+    line-height: calc(var(--fsH5) * 1.5);
     color: #000000;
     font-style: normal;
     font-family: Georgia, sans-serif;
@@ -1807,6 +1807,14 @@ main {
     text-align: center; }
   .bibliography-block .text-container__subtitle {
     font-size: var(--fsH5);
+    font-weight: 300;
+    line-height: calc(var(--fsH5) * 1.5);
+    color: #000000;
+    font-style: normal;
+    font-family: Georgia, sans-serif;
+    text-align: center; }
+  .bibliography-block .text-container__subtitle-year {
+    font-size: calc(var(--fsH5) - 3px);
     font-weight: 300;
     line-height: calc(var(--fsH5) * 1.5);
     color: #000000;
@@ -1847,6 +1855,10 @@ main {
     }
   }*/ }
 
+/*@media (max-width: 930px) {
+  .bibliography-block {
+  }
+}*/
 @media (max-width: 850px) {
   main {
     padding: 0; }
@@ -1864,6 +1876,31 @@ main {
     }
 
   }*/ }
+
+@media (max-width: 650px) {
+  .bibliography-block__base-title {
+    font-size: calc(var(--fs2sectTitle) - 10px); }
+  .bibliography-block__bg-title::before {
+    left: 5px; }
+  .bibliography-block__bg-title::after {
+    right: 5px; }
+  .bibliography-block__bg-title .line-auxiliary::before {
+    left: 5px; }
+  .bibliography-block__bg-title .line-auxiliary::after {
+    right: 5px; } }
+
+@media (max-width: 420px) {
+  .bibliography-block__base-title {
+    font-size: calc(var(--fs2sectTitle) - 15px); }
+  .bibliography-block__bg-title {
+    padding: 40px 0; }
+    .bibliography-block__bg-title::before, .bibliography-block__bg-title::after {
+      width: 100px;
+      height: 100px; }
+    .bibliography-block__bg-title .line-auxiliary::before, .bibliography-block__bg-title .line-auxiliary::after {
+      width: 100px;
+      height: 100px;
+      bottom: -40px; } }
 
 @media (max-width: 370px) {
   /*.bibliography-block {
