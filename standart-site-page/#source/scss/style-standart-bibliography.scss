@@ -265,23 +265,7 @@ main {
     --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
     /*---------*/
   }
-  /*
-  .bibliography-block {
-    //--Заголовок и фон ЛИСТ БУМАГИ-
-    //фон лист бумаги
-    &__bg-title {
-      padding-top: calc(var(--topTitleBg) * -1.4);
-    }
-  }*/
 }
-
-//
-//-------930-PX-----------
-
-/*@media (max-width: 930px) {
-  .bibliography-block {
-  }
-}*/
 
 //
 //-------850-PX-----------
@@ -294,16 +278,6 @@ main {
     --titleBgWi: 96%; //ширина блока фона с листом бумаги и заголовка
     /*---------*/
   }
-  /*
-  .bibliography-block {
-    //стили всего блока
-    min-height: 100%;
-    //стили обертки с контентом
-    &__wrapper {
-      padding-top: 80px;
-    }
-
-  }*/
 }
 
 //
@@ -359,23 +333,6 @@ main {
       }
     }
   }
-}
-
-//
-//-------370-PX-----------
-@media (max-width: 370px) {
-  /*.bibliography-block {
-    //стили обертки с контентом
-    &__wrapper {
-      padding-top: 50px;
-    }
-    //--Заголовок и фон ЛИСТ БУМАГИ--
-    //фон лист бумаги
-    &__bg-title {
-      @include wiHe(var(--titleBgWi), 102%);
-      padding-top: calc(var(--topTitleBg) * -1.4);
-    }
-  }*/
 }
 
 //-----------------------------
