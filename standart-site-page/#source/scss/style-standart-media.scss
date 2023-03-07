@@ -1,0 +1,408 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+// медиа адаптив из размерных переменных ОБЩИЙ
+@import 'base-media-variables';
+//хедер
+@import 'style-header';
+//футер
+@import 'style-footer';
+//стрелка вверх
+@import 'up-btn';
+//POPUP
+@import 'style-elements-additional';
+//preloader
+@import 'preloader';
+// ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
+@import 'policy';
+//
+//ПЕРВАЯ СЕКЦИЯ
+@import 'tagline-writer-photo';
+//--------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//-----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
+//----МЕДИА----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
+//-------1024-PX-----------
+@media (max-width: 1024px) {
+  :root {
+    --fsH4: 26px; //Заголовки h4
+    --fsP: 23px; //Заголовки P
+  }
+}
+
+//-------770-PX-----------
+@media (max-width: 770px) {
+  :root {
+    --fsH4: 22px; //Заголовки h4
+    --fsP: 19px; //Заголовки P
+  }
+}
+
+//-------490-PX-----------
+@media (max-width: 495px) {
+  :root {
+    --fsH4: 16px; //Заголовки h4
+    --fsP: 12px; //Заголовки P
+  }
+}
+
+//-------375-PX-----------
+@media (max-width: 375px) {
+  :root {
+    --fsH4: 13px; //Заголовки h4
+    --fsP: 11px; //Заголовки P
+  }
+}
+
+//-------260-PX-----------
+@media (max-width: 260px) {
+  :root {
+    --fsH4: 11px; //Заголовки h4
+    --fsP: 10px; //Заголовки P
+  }
+}
+
+//
+//
+//
+//
+//
+//
+main {
+  overflow: hidden;
+}
+
+//
+//
+//
+//
+//
+//
+//-----------------------------------------------
+//
+//
+//
+//
+//
+//-------------ПЕРВАЯ-СЕКЦИЯ--------------------
+//--добавляется через импорт
+.main-media-page {
+  .tagline-writer-photo {
+    background-image: url('../img/first-sect-bg2.jpg') !important;
+  }
+}
+
+//
+//
+//
+//
+//
+//----------------ВТОРАЯ-СЕКЦИЯ---------------------
+:root {
+  //-!!!---2-БЛОК---!!!-
+  --block2He: max-content; //высота 2 блока
+  --wrapper2SectPaddingButtom: -50px; //нижний отступ нижних вензелей
+  --titleBgWi: 78%; //ширина блока фона с листом бумаги
+  --topTitleBg: -30px; //Смещение Листа бумаги вверх
+  /*---------*/
+  //---размеры видео
+  --videoWi: 50vw; //ширина видео окна
+  --videoHe: calc(var(--videoWi) / 1.778);
+}
+
+.media-block {
+  //стили всего блока
+  @include wiHe($he: var(--block2He));
+  min-height: 100%;
+  padding: 0;
+  background-color: $DarkRedColor2;
+  //стили обертки с контентом
+  &__wrapper {
+    @include wiHe;
+    @include flCent;
+    flex-direction: column;
+    z-index: 10;
+    position: relative;
+    color: white;
+  }
+  /*--Заголовок и фон ЛИСТ БУМАГИ--*/
+  //фон лист бумаги
+  &__bg-title {
+    @include wiHe(var(--titleBgWi), max-content);
+    top: var(--topTitleBg);
+    margin: auto;
+    background-color: $skinColor;
+    position: relative;
+    border-radius: 10px;
+    padding: 70px 0;
+    //вензеля вензеля по углам
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-image: url('../img/corner1.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+    }
+    &::before {
+      top: 0;
+      left: 20px;
+    }
+    &::after {
+      top: 0;
+      right: 20px;
+      transform: scale(-1, 1);
+    }
+    //Вспомогательная линия с вензелями по углам снизу
+    .line-auxiliary {
+      @include wiHe(100%, 2px);
+      position: relative;
+      margin: auto;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: url('../img/corner1.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+      &::before {
+        bottom: var(--wrapper2SectPaddingButtom);
+        left: 20px;
+        transform: scale(1, -1);
+      }
+      &::after {
+        bottom: var(--wrapper2SectPaddingButtom);
+        right: 20px;
+        transform: scale(-1, -1);
+      }
+    }
+  }
+  /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
+  &__line {
+    position: relative;
+    z-index: 21;
+    @include wiHe(65%, max-content);
+    margin: 25px auto 25px;
+    img {
+      @include wiHe(100%, auto);
+    }
+  }
+  /*----*/
+  //
+  //
+  //
+  //
+  /*----КОНТЕНТ--*/
+  //общий заголовок блока
+  &__base-title {
+    margin-bottom: 0px;
+  }
+  //контейнер с видео
+  &__video-container {
+    @include wiHe(85%, max-content);
+    @include flCent;
+    margin: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+  //контейнер с сылками
+  &__link-container {
+    @include wiHe(85%, max-content);
+    @include flCent;
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+  }
+  //мини разделительная линия
+  &__line-mini {
+    position: relative;
+    z-index: 21;
+    @include wiHe(40%, max-content);
+    margin: 15px auto;
+    img {
+      @include wiHe(100%, auto);
+    }
+  }
+  /*--БЛОК С ВИДЕО--*/
+  .video-container {
+    //заголовок видео
+    &__title {
+      @include fontSizeH4($color: $blackColor);
+      margin: 0px auto 15px;
+      text-align: center;
+    }
+    &__video {
+      @include wiHe(var(--videoWi), var(--videoHe));
+      display: block;
+      margin: auto;
+    }
+  }
+  //
+  //
+  /*--БЛОК С ССЫЛКАМИ--*/
+  .link-container {
+    position: relative;
+    z-index: 25;
+    //заголовок ссылок
+    &__title {
+      @include fontSizeH4(
+        $fontSize: calc(var(--fsH4) + 5px),
+        $color: $emeraldColor
+      );
+      text-align: center;
+    }
+    &__subtitle {
+      @include fontSizeH4(
+        $fontSize: calc(var(--fsH4) - 5px),
+        $color: $blackColor
+      );
+      text-align: center;
+    }
+    &__link-group {
+      @include wiHe($he: max-content);
+      @include flexSpBeCent($jusCon: space-around);
+      flex-wrap: wrap;
+      margin: 0 auto 20px;
+      column-gap: 5%;
+      row-gap: 15px;
+      .link {
+        @include textBorderSmokeColor;
+        @include fontSizeP(
+          $fWe: 800,
+          $color: $blackColor,
+          $fontSize: calc(var(--fsP))
+        );
+        border-bottom: 2px solid $blackColor;
+        &:hover {
+          @include textBorderBlack;
+          color: $whiteColor;
+          border-bottom: 2px solid $whiteColor;
+        }
+      }
+    }
+  }
+}
+
+/*----контейнер с ОПИСАНИЕМ КНИГИ--*/
+
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------1170-PX-----------
+@media (max-width: 1170px) {
+  :root {
+    //-!!!---2-БЛОК---!!!-
+    --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
+    /*---------*/
+  }
+}
+
+//
+//-------850-PX-----------
+@media (max-width: 850px) {
+  main {
+    padding: 0;
+  }
+  :root {
+    --topTitleBg: -10px; //Смещение Листа бумаги вверх
+    --titleBgWi: 96%; //ширина блока фона с листом бумаги и заголовка
+    /*---------*/
+  }
+}
+
+//
+//-------650-PX-----------
+@media (max-width: 650px) {
+  :root {
+    //---размеры видео
+    --videoWi: 80vw; //ширина видео окна
+  }
+  .media-block {
+    &__base-title {
+      font-size: calc(var(--fs2sectTitle) - 10px);
+    }
+    &__bg-title {
+      //вензеля вензеля по углам
+      &::before {
+        left: 5px;
+      }
+      &::after {
+        right: 5px;
+      }
+      //Вспомогательная линия с вензелями по углам снизу
+      .line-auxiliary {
+        &::before {
+          left: 5px;
+        }
+        &::after {
+          right: 5px;
+        }
+      }
+    }
+    &__video-container {
+      gap: 5px;
+    }
+    //мини разделительная линия
+    &__line-mini {
+      margin: 5px auto;
+    }
+  }
+}
+
+//
+//-------420-PX-----------
+@media (max-width: 420px) {
+  .media-block {
+    &__base-title {
+      font-size: calc(var(--fs2sectTitle) - 15px);
+    }
+    &__bg-title {
+      padding: 40px 0;
+      &::before,
+      &::after {
+        width: 100px;
+        height: 100px;
+      }
+      //Вспомогательная линия с вензелями по углам снизу
+      .line-auxiliary {
+        &::before,
+        &::after {
+          width: 100px;
+          height: 100px;
+          bottom: -40px;
+        }
+      }
+    }
+  }
+}
+
+//-----------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//---------ПОПАПЫ-И-ДОП-ЭЛЕМЕНТЫ-------
+//

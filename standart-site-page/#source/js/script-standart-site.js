@@ -3,11 +3,20 @@ $(document).ready(function () {
   //
 
   if (location.toString().indexOf('standart-book') !== -1) {
-    $('.header__link ').removeClass('active-menu');
-    $('.link-book ').addClass('active-menu');
+    $('.header__link').removeClass('active-menu');
+    $('.link-book').addClass('active-menu');
+  } else if (location.toString().indexOf('standart-fun') !== -1) {
+    $('.header__link').removeClass('active-menu');
+    $('.link-fun').addClass('active-menu');
   } else if (location.toString().indexOf('standart-bibliography') !== -1) {
-    $('.header__link ').removeClass('active-menu');
-    $('.link-bibliography ').addClass('active-menu');
+    $('.header__link').removeClass('active-menu');
+    $('.link-bibliography').addClass('active-menu');
+  } else if (location.toString().indexOf('standart-media') !== -1) {
+    $('.header__link').removeClass('active-menu');
+    $('.link-media').addClass('active-menu');
+  } else if (location.toString().indexOf('standart-contacts') !== -1) {
+    $('.header__link').removeClass('active-menu');
+    $('.link-contacts').addClass('active-menu');
   }
   //
   //
