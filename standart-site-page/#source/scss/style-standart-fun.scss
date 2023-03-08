@@ -106,23 +106,24 @@ main {
   --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
   --topTitleBg: -30px; //Смещение Листа бумаги вверх
   --marginTopBtn: 30px; //внешний отступ кнопки
+  --topBaseTitleMarg: 20px; //верхний отступ общего заголовка
   /*---------*/
   //-----------книга-----------
-  --rigtBookShift: 20px; //отступ книги от правого края
-  --containerBook2sectWi: 223px; // контейнера с книгой 2 секции и книги ширина
-  --containerBook2sectHe: calc(
-    var(--containerBook2sectWi) * 1.51
+  --rigtfunShift: 20px; //отступ книги от правого края
+  --containerfun2sectWi: 223px; // контейнера с книгой 2 секции и книги ширина
+  --containerfun2sectHe: calc(
+    var(--containerfun2sectWi) * 1.51
   ); //486px; контенера с книгой 2 секции и книги высота
-  --coverBook2sectWi: calc(
-    var(--containerBook2sectWi) * 0.8669
+  --coverfun2sectWi: calc(
+    var(--containerfun2sectWi) * 0.8669
   ); //280px обложки книги 2 секции ширина
-  --coverBook2sectHe: calc(
-    var(--coverBook2sectWi) * 1.7
+  --coverfun2sectHe: calc(
+    var(--coverfun2sectWi) * 1.7
   ); //475px обложки книги 2 секции высота
   //-----------------------------------
 }
 
-.book-block {
+.fun-block {
   //стили всего блока
   @include wiHe($he: var(--block2He));
   min-height: 100%;
@@ -135,7 +136,6 @@ main {
     z-index: 10;
     position: relative;
     color: white;
-    padding-top: 110px;
     padding-bottom: var(--wrapper2SectPaddingButtom);
   }
   /*--Заголовок и фон ЛИСТ БУМАГИ--*/
@@ -175,6 +175,17 @@ main {
     }
   }
   /*----*/
+  /*----ЗАГОЛОВОК----*/
+  &__base-title {
+    @include wiHe(80%, max-content);
+    @include fontSizeH2(
+      $fsH2: calc(var(--fs2sectTitle) - 10px),
+      $color: $emeraldDarkColor
+    );
+    margin: 0 auto 10px;
+    margin-top: var(--topBaseTitleMarg) !important;
+  }
+  /*---*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
   &__container {
     @include wiHe($he: max-content);
@@ -191,7 +202,7 @@ main {
     text-align: center;
   }
   //блок с книгой
-  &__book {
+  &__fun {
     @include wiHe(var(--titleBgWi));
     padding: 20px 2vw;
     overflow: hidden;
@@ -261,7 +272,7 @@ main {
 
 /*----контейнер с ОПИСАНИЕМ КНИГИ--*/
 
-.book {
+.fun {
   @include flCent($jusCon: space-around);
   &__text-container {
     @include wiHe(60%);
@@ -269,14 +280,14 @@ main {
   //ЛЕЙБЛ НОВИНКА
   &__new {
     border: 1px solid red;
+    @include wiHe(30%, max-content);
     @include flCent;
     @include fontSizeH4($color: $redColor);
     @include textBorderSmokeColor;
+    margin: 15px auto;
     text-align: center;
-    position: absolute;
+    position: static;
     height: 100%;
-    top: 0;
-    left: 10px;
   }
   //
   //-----заголовок книги
@@ -309,13 +320,13 @@ main {
     flex-direction: column;
   }
   &__photo {
-    @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
+    @include wiHe(var(--containerfun2sectWi), var(--containerfun2sectHe));
     position: relative;
     top: -15px;
-    right: var(--rigtBookShift);
+    right: var(--rigtfunShift);
     //тень за книгой
     &::after {
-      @include wiHe(var(--containerBook2sectWi), var(--containerBook2sectHe));
+      @include wiHe(var(--containerfun2sectWi), var(--containerfun2sectHe));
       @include leTo(34%, 11%);
       content: '';
       position: absolute;
@@ -326,7 +337,7 @@ main {
     }
   }
   &__cover {
-    @include wiHe(var(--coverBook2sectWi), var(--coverBook2sectHe));
+    @include wiHe(var(--coverfun2sectWi), var(--coverfun2sectHe));
     @include leTo;
     z-index: 5;
     position: absolute;
@@ -363,11 +374,11 @@ main {
     --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
     /*---------*/
   }
-  .book-block {
+  .fun-block {
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/
     //фон лист бумаги
     &__bg-title {
-      padding-top: calc(var(--topTitleBg) * -1.4);
+      padding-top: 0;
     }
   }
 }
@@ -378,27 +389,36 @@ main {
   :root {
     //-!!!---2-БЛОК---!!!-
     //-----------книга-----------
-    --rigtBookShift: 0px; //отступ книги от правого края
-    --containerBook2sectWi: 103px; // контейнера с книгой 2 секции и книги ширина
-    --containerBook2sectHe: calc(
-      var(--containerBook2sectWi) * 1.51
+    --rigtfunShift: 0px; //отступ книги от правого края
+    --containerfun2sectWi: 103px; // контейнера с книгой 2 секции и книги ширина
+    --containerfun2sectHe: calc(
+      var(--containerfun2sectWi) * 1.51
     ); //486px; контенера с книгой 2 секции и книги высота
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.8669
+    --coverfun2sectWi: calc(
+      var(--containerfun2sectWi) * 0.8669
     ); //280px обложки книги 2 секции ширина
-    --coverBook2sectHe: calc(
-      var(--coverBook2sectWi) * 1.7
+    --coverfun2sectHe: calc(
+      var(--coverfun2sectWi) * 1.7
     ); //475px обложки книги 2 секции высота
     //-----------------------------------
   }
-  .book-block {
+  .fun-block {
+    /*----ЗАГОЛОВОК----*/
+    &__base-title {
+      @include fontSizeH2(
+        $fsH2: calc(var(--fs2sectTitle) - 15px),
+        $color: $emeraldDarkColor
+      );
+      margin-top: 15px;
+    }
+    /*---*/
     //------жанр и дата релиза---
     &__genre,
     &__data {
       @include fontSizeP($fontSize: calc(var(--fsP) - 3px), $color: $skinColor);
     }
   }
-  .book {
+  .fun {
     @include flCent;
     flex-direction: column;
     &__text-container {
@@ -441,15 +461,13 @@ main {
   :root {
     --topTitleBg: -10px; //Смещение Листа бумаги вверх
     --titleBgWi: 96%; //ширина блока фона с листом бумаги и заголовка
+    --topBaseTitleMarg: 35px; //верхний отступ общего заголовка
     /*---------*/
   }
-  .book-block {
+  .fun-block {
     //стили всего блока
     min-height: 100%;
     //стили обертки с контентом
-    &__wrapper {
-      padding-top: 80px;
-    }
     /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
     &__container {
       @include wiHe(90%, max-content);
@@ -466,13 +484,13 @@ main {
       order: 2;
     }
     //блок с книгой
-    &__book {
+    &__fun {
       padding: 20px 3vw;
       order: 1;
     }
     /*----*/
   }
-  .book {
+  .fun {
     /*--контейнер с ФОТО книги и ссылками--*/
     &__photo-container {
       gap: 15vw;
@@ -483,14 +501,16 @@ main {
 //
 //-------650-PX-----------
 @media (max-width: 650px) {
-  .book-block {
+  :root {
+    --topBaseTitleMarg: 15px; //верхний отступ общего заголовка
+  }
+  .fun-block {
     &__bg-title-wrap {
       //вензеля вензеля по углам
       &::before,
       &::after {
         width: 100px;
         height: 100px;
-        top: -14px;
       }
       &::before {
         left: 5px;
@@ -520,19 +540,15 @@ main {
 //
 //-------370-PX-----------
 @media (max-width: 370px) {
-  .book-block {
+  .fun-block {
     //стили обертки с контентом
-    &__wrapper {
-      padding-top: 50px;
-    }
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/
     //фон лист бумаги
     &__bg-title {
       @include wiHe(var(--titleBgWi), 102%);
-      padding-top: calc(var(--topTitleBg) * -1.4);
     }
   }
-  .book {
+  .fun {
     //ЛЕЙБЛ НОВИНКА
     &__new {
       border: 1px solid red;
@@ -594,7 +610,7 @@ main {
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
 
-.new-book {
+.new-fun {
   order: 1;
 }
 

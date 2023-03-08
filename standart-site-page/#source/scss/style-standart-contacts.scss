@@ -98,12 +98,6 @@ main {
 //
 //-------------ПЕРВАЯ-СЕКЦИЯ--------------------
 //--добавляется через импорт
-.main-media-page {
-  .tagline-writer-photo {
-    background-image: url('../img/first-sect-bg2.jpg') !important;
-  }
-}
-
 //
 //
 //
@@ -118,16 +112,14 @@ main {
   --topTitleBg: -30px; //Смещение Листа бумаги вверх
   /*---------*/
   //---размеры видео
-  --videoWi: 50vw; //ширина видео окна
-  --videoHe: calc(var(--videoWi) / 1.778);
 }
 
-.media-block {
+.contacts-block {
   //стили всего блока
   @include wiHe($he: var(--block2He));
   min-height: 100%;
   padding: 0;
-  background-color: $DarkRedColor2;
+  background-color: $emeraldDarkColor2;
   //стили обертки с контентом
   &__wrapper {
     @include wiHe;
@@ -206,56 +198,6 @@ main {
       @include wiHe(100%, auto);
     }
   }
-  /*----*/
-  //
-  //
-  //
-  //
-  /*----КОНТЕНТ--*/
-  //общий заголовок блока
-  &__base-title {
-    margin-bottom: 0px;
-  }
-  //подзаголовки
-  &__subtitle {
-    @include wiHe(80%, max-content);
-    @include fontSizeH4(
-      $fontSize: calc(var(--fsH4) + 4px),
-      $color: $blackColor
-    );
-    margin: 25px auto 5px;
-    text-align: center;
-  }
-  //текст
-  &__text {
-    @include wiHe(80%, max-content);
-    @include fontSizeP($fontSize: calc(var(--fsP) + 4px), $color: $blackColor);
-    margin: 0 auto 20px;
-    text-align: center;
-    a {
-      color: $blackColor;
-      &:hover {
-        @include textBorderBlack;
-        color: $whiteColor;
-      }
-    }
-  }
-  //контейнер с видео
-  &__video-container {
-    @include wiHe(85%, max-content);
-    @include flCent;
-    margin: auto;
-    flex-direction: column;
-    gap: 20px;
-  }
-  //контейнер с сылками
-  &__link-container {
-    @include wiHe(85%, max-content);
-    @include flCent;
-    flex-direction: column;
-    margin: auto;
-    gap: 10px;
-  }
   //мини разделительная линия
   &__line-mini {
     position: relative;
@@ -266,61 +208,38 @@ main {
       @include wiHe(100%, auto);
     }
   }
-  /*--БЛОК С ВИДЕО--*/
-  .video-container {
-    //заголовок видео
-    &__title {
-      @include fontSizeH4($color: $blackColor);
-      margin: 0px auto 15px;
-      text-align: center;
-    }
-    &__video {
-      @include wiHe(var(--videoWi), var(--videoHe));
-      display: block;
-      margin: auto;
-    }
+  /*----*/
+  //
+  //
+  //
+  //
+  /*----КОНТЕНТ--*/
+  //общий заголовок блока
+  &__base-title {
+    margin-bottom: 0px;
+    color: $emeraldColor;
   }
-  //
-  //
-  /*--БЛОК С ССЫЛКАМИ--*/
-  .link-container {
-    position: relative;
-    z-index: 25;
-    //заголовок ссылок
-    &__title {
-      @include fontSizeH4(
-        $fontSize: calc(var(--fsH4) + 5px),
-        $color: $blackColor
-      );
-      text-align: center;
-    }
-    &__subtitle {
-      @include fontSizeH4(
-        $fontSize: calc(var(--fsH4) - 5px),
-        $color: $emeraldColor
-      );
-      text-align: center;
-    }
-    &__link-group {
-      @include wiHe($he: max-content);
-      @include flexSpBeCent($jusCon: space-around);
-      flex-wrap: wrap;
-      margin: 0 auto 20px;
-      column-gap: 5%;
-      row-gap: 15px;
-      .link {
-        @include textBorderSmokeColor;
-        @include fontSizeP(
-          $fWe: 800,
-          $color: $blackColor,
-          $fontSize: calc(var(--fsP))
-        );
-        border-bottom: 2px solid $blackColor;
-        &:hover {
-          @include textBorderBlack;
-          color: $whiteColor;
-          border-bottom: 2px solid $whiteColor;
-        }
+  //подзаголовки
+  &__subtitle {
+    @include wiHe(80%, max-content);
+    @include fontSizeH4(
+      $fontSize: calc(var(--fsH4) + 4px),
+      $color: $emeraldColor
+    );
+    margin: 25px auto 5px;
+    text-align: center;
+  }
+  //текст
+  &__text {
+    @include wiHe(80%, max-content);
+    @include fontSizeP($fontSize: calc(var(--fsP) + 4px), $color: $blackColor);
+    margin: auto;
+    text-align: center;
+    a {
+      color: $blackColor;
+      &:hover {
+        @include textBorderBlacGoldkMix;
+        color: $whiteColor;
       }
     }
   }
@@ -355,11 +274,7 @@ main {
 //
 //-------650-PX-----------
 @media (max-width: 650px) {
-  :root {
-    //---размеры видео
-    --videoWi: 80vw; //ширина видео окна
-  }
-  .media-block {
+  .contacts-block {
     &__base-title {
       font-size: calc(var(--fs2sectTitle) - 10px);
     }
@@ -394,7 +309,7 @@ main {
 //
 //-------420-PX-----------
 @media (max-width: 420px) {
-  .media-block {
+  .contacts-block {
     &__base-title {
       font-size: calc(var(--fs2sectTitle) - 5px);
     }

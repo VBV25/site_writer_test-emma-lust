@@ -1689,9 +1689,15 @@ main {
   /*---------*/
   --rigtBookShift: 20px;
   --containerBook2sectWi: 223px;
-  --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
-  --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
-  --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
+  --containerBook2sectHe: calc(
+    var(--containerBook2sectWi) * 1.51
+  );
+  --coverBook2sectWi: calc(
+    var(--containerBook2sectWi) * 0.8669
+  );
+  --coverBook2sectHe: calc(
+    var(--coverBook2sectWi) * 1.7
+  ); }
 
 .book-block {
   width: 100%;
@@ -1833,7 +1839,8 @@ main {
     line-height: calc(var(--fsP) * 1.5);
     color: #000000;
     font-style: normal;
-    font-family: Georgia, sans-serif; }
+    font-family: Georgia, sans-serif;
+    text-align: center; }
     .book-block__link:hover {
       text-shadow: 0 -1px 1px #000000, 0 -1px 1px #000000, 0 1px 1px #000000, 0 1px 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
       color: #ffffff; }
@@ -2008,9 +2015,15 @@ main {
   :root {
     --rigtBookShift: 0px;
     --containerBook2sectWi: 103px;
-    --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
-    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
-    --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
+    --containerBook2sectHe: calc(
+      var(--containerBook2sectWi) * 1.51
+    );
+    --coverBook2sectWi: calc(
+      var(--containerBook2sectWi) * 0.8669
+    );
+    --coverBook2sectHe: calc(
+      var(--coverBook2sectWi) * 1.7
+    ); }
   .book-block__genre, .book-block__data {
     font-size: calc(var(--fsP) - 3px);
     font-weight: 300;
@@ -2087,7 +2100,7 @@ main {
     .book-block__wrapper {
       padding-top: 80px; }
     .book-block__container {
-      width: 100%;
+      width: 90%;
       height: -webkit-max-content;
       height: -moz-max-content;
       height: max-content;
@@ -2104,7 +2117,8 @@ main {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
-      gap: 5px; }
+      gap: 5px;
+      margin: auto; }
     .book-block__genre, .book-block__data {
       width: 100%;
       height: -webkit-max-content;
@@ -2129,6 +2143,23 @@ main {
     .book__photo-container {
       gap: 15vw; } }
 
+@media (max-width: 650px) {
+  .book-block__bg-title-wrap::before, .book-block__bg-title-wrap::after {
+    width: 100px;
+    height: 100px;
+    top: -14px; }
+  .book-block__bg-title-wrap::before {
+    left: 5px; }
+  .book-block__bg-title-wrap::after {
+    right: 5px; }
+  .book-block .line-auxiliary::before, .book-block .line-auxiliary::after {
+    width: 100px;
+    height: 100px; }
+  .book-block .line-auxiliary::before {
+    left: 5px; }
+  .book-block .line-auxiliary::after {
+    right: 5px; } }
+
 @media (max-width: 370px) {
   .book-block {
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/ }
@@ -2140,6 +2171,24 @@ main {
       padding-top: calc(var(--topTitleBg) * -1.4); }
   .book {
     /*--контейнер с ФОТО книги и ссылками--*/ }
+    .book__new {
+      border: 1px solid red;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 50%;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: max-content;
+      margin: 10px auto 3px;
+      position: static;
+      padding: 3px; }
     .book__photo-container {
       width: 100%;
       height: -webkit-max-content;
@@ -2156,10 +2205,10 @@ main {
       -ms-flex-order: 1;
       order: 1; }
       .book__photo::after {
-        top: 34%;
-        left: 5%;
-        -webkit-box-shadow: 20px -70px 50px 50px #000000ec;
-        box-shadow: 20px -70px 50px 50px #000000ec; }
+        top: 37%;
+        left: 12%;
+        -webkit-box-shadow: 20px -70px 20px 25px #000000ec;
+        box-shadow: 20px -70px 20px 25px #000000ec; }
     .book__cover {
       -webkit-transform: matrix(1.15, 0.2, 0, 1, 1.5, 3) rotateY(30deg);
       transform: matrix(1.15, 0.2, 0, 1, 1.5, 3) rotateY(30deg); }
