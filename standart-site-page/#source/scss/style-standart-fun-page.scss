@@ -1,0 +1,188 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+// медиа адаптив из размерных переменных ОБЩИЙ
+@import 'base-media-variables';
+//хедер
+@import 'style-header';
+//футер
+@import 'style-footer';
+//стрелка вверх
+@import 'up-btn';
+//POPUP
+@import 'style-elements-additional';
+//preloader
+@import 'preloader';
+// ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
+@import 'policy';
+//
+//
+//
+//
+//
+//
+//-----ОБЩИЕ----
+body {
+  max-height: max-content;
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+main {
+  @include wiHe($he: 150vh);
+  @include bgImg;
+  background-image: url('../../pages/fun-page-source/fun-new/3.jpg');
+  overflow: hidden;
+}
+
+//
+//
+//
+//
+//
+//
+//-----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
+//
+//
+//
+//
+//
+//
+//-----Первая секция-----
+.first-sect {
+  border: 2px solid red;
+  @include wiHe(100%, 600px);
+  @include flCent;
+  @include bgImg;
+  background-image: url('../../pages/fun-page-source/fun-new/1.png');
+  &__wrapper {
+    border: 2px solid rgb(43, 255, 0);
+    @include wiHe(100%, max-content);
+    @include flCent;
+  }
+  &__base-title {
+    border: 2px solid red;
+    @include fontSizeH2(
+      $fsH2: calc(var(--fs2sectTitle) + 20px),
+      $color: $skinColor
+    );
+    @include textBorderBlack;
+    margin: 0;
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//-----Вторая секция--------Слайдер-----------
+:root {
+  //--------4блок---------
+  --sliderImgWi: 500px; //Ширина Изображения слайдера
+}
+
+.wrapper-slider {
+  border: 2px solid red;
+  @include wiHe(70%, 100%);
+  @include bgImg;
+  background-image: url('../img/paper.jpg');
+  z-index: 50;
+  position: relative;
+  top: -50px;
+  margin: auto;
+  padding: var(--paddingSectBaseTopBot) 0;
+  min-height: 100%;
+  background-color: $sandColor;
+  border-radius: 10px;
+  .image-slider {
+    @include wiHe(var(--contentWidh), max-content);
+    padding: 0px 0px 70px 0px;
+    //слайд
+    &__slide {
+      @include flCent;
+      flex-direction: column;
+      @include fontSizeH4($color: $DarkRedColor);
+      .slide-title {
+        @include fontSizeH4($color: $DarkRedColor);
+      }
+    }
+    //изображения в слайдах
+    &__image {
+      text-align: center;
+      min-width: var(--sliderImgWi) !important;
+      img {
+        max-width: 100%;
+      }
+    }
+    //Сдайды не активные
+    .swiper-slide-next,
+    .swiper-slide-prev {
+      opacity: 0.7;
+    }
+    .swiper-slide-active:hover {
+      @include fontSizeH4(
+        $fontSize: calc(var(--fsH4) + 4px),
+        $color: $blackColor
+      );
+    }
+  }
+}
+
+/*стрелки*/
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: $emeraldColor;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: $DarkRedColor;
+  @include textBorderSmokeColor;
+}
+
+/*БУЛЛЕТЫ*/
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px !important;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: $emeraldColor;
+}
+
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------840-PX-----------
+@media (max-width: 840px) {
+  .wrapper-slider .image-slider {
+    padding: 0px 0px 30px 0px;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @include textBorderWhite;
+  }
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
