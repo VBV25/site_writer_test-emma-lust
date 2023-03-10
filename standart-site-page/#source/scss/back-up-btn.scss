@@ -1,0 +1,33 @@
+/*-----кнопка прокрутки------*/
+
+.back-up-btn {
+  z-index: 100;
+  position: fixed;
+  padding: 5px 10px;
+  @include wiHe(max-content, max-content);
+  @include leBo(20px, 10px);
+  @include fontSizeP($fontSize: 12px, $color: $whiteColor);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $emeraldDarkColor;
+  border-radius: 10px;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    color: $skinColor;
+  }
+}
+
+//----------------------------------------------------------------
+//-------------------------МЕДИА ЗАПРОСЫ--------------------------
+//----------------------------------------------------------------
+//
+//
+//----------------------------------------------------------------
+//-----------------------------770 PX-----------------------------
+//----------------------------------------------------------------
+@media (max-width: 350px) {
+  .back-up-btn {
+    @include fontSizeP($fontSize: 9px, $color: $whiteColor);
+  }
+}

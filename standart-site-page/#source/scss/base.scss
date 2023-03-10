@@ -287,7 +287,7 @@ h1 {
 }*/
 
 .not-visible {
-  display: none;
+  display: none !important;
 }
 
 //стилизация кнопок перехода
@@ -326,3 +326,35 @@ h1 {
   margin-bottom: var(--titleMarginBottom);
   text-align: center;
 }
+
+/*-------ЛЕЙБЛ НОВИНКИ (NEW)-------------*/
+
+.book {
+  //ЛЕЙБЛ НОВИНКА
+  &__new {
+    border: 1px solid red;
+    @include wiHe(50%);
+    @include flCent;
+    @include fontSizeH4($color: $redColor);
+    @include textBorderSmokeColor;
+    text-align: center;
+    margin: 15px auto 5px;
+  }
+}
+
+//-------370-PX-----------
+@media (max-width: 370px) {
+  .book {
+    //ЛЕЙБЛ НОВИНКА
+    &__new {
+      border: 1px solid red;
+      @include flCent;
+      @include wiHe(50%, max-content);
+      margin: 10px auto 3px;
+      position: static;
+      padding: 3px;
+    }
+  }
+}
+
+/*------------------------------------------*/

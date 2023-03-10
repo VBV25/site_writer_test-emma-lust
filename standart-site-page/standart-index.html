@@ -19,8 +19,6 @@
     <!--'основные скрипты'-->
     <script src="js/script-standart-site.js"></script>
     <script src="js/validation-standart-site.js"></script>
-    <!--'скрипт замены контента'-->
-    <script src="js/content-replacement/content-replacement.js"></script>
     <!---------------------------------------------->
 
     <!---------------'FAVICON'---------------------->
@@ -87,18 +85,19 @@
         <!--'----------------------------------'-->
 
         <!--'2 СЕКЦИЯ'-->
-        <section class="in-work">
+        <!--'МЕНЯЕМ КОНТЕНТ ЧЕРЕЗ JS INDEX-CONTENT-REPLACEMENT.js'-->
+        <section class="release">
             <!--'РЕЛИЗ'-->
             <h2 class="
             release__base-title base-title 
            ">Релиз</h2>
             <div class="release__wrapper">
                 <div class="release__text-container">
-                    <div class="release__title">Tinder</div>
-                    <div class="release__subtitle">История не одного знакомства</div>
-                    <div class="release__text">Лика хотела "долго и счастливо", крепкую семью и детей, а муж - отношения
-                        без обязательств на стороне (и склеить еe подругу на Тиндер). Ни то, ни другое не выгорело и она
-                        осталась одна. Но не потеряла веру в себя. И в любовь! Пусть
+                    <div class="release__title" id="release__title">Tinder</div>
+                    <div class="release__subtitle" id="release__subtitle">История не одного знакомства</div>
+                    <div class="release__text" id="release__text">Лика хотела "долго и счастливо", крепкую семью и
+                        детей, а муж - отношения без обязательств на стороне (и склеить еe подругу на Тиндер). Ни то, ни
+                        другое не выгорело и она осталась одна. Но не потеряла веру в себя. И в любовь! Пусть
                         скептики говорят, что на сайтах знакомств ловить нечего, Лика знает, кто ищет - тот всегда
                         найдет! И эта история посвящается всем "лягушкам", которых ей пришлось перецеловать, прежде чем
                         найти своего принца. Ее история не одного
@@ -107,9 +106,12 @@
 
                 </div>
                 <div class="release__book-container">
+                    <!--'ОБЛОЖКА'-->
                     <div class="release__cover">
-                        <img src="img/cover/new-cover.jpg" alt="Book">
+                        <img src="../pages-img/book-page-source/1cover-release-book/1.jpg" alt="Book"
+                            id="release__cover">
                     </div>
+                    <!--'--------------'-->
                     <div class="release__book">
                         <img src="img/book.png" alt="Book">
                     </div>
@@ -117,35 +119,44 @@
             </div>
             <!--''-->
             <!--'ССЫЛКИ НА КНИГУ'-->
-
             <div class="release__subtitle-link">Приобрести книгу</div>
             <div class="release__link-group">
 
-                <a href="https://litmarket.ru/books/tinder-istoriya-ne-odnogo-znakomstva" class="release__link"
-                    target="_blank">Ссылка на
-                    ЛитМаркет</a>
-                <a href="https://bookriver.ru/book/emma-lust-tinder-istoriya-ne-odnogo-znakomstva" class="release__link"
-                    target="_blank">Ссылка
-                    на Bookriver</a>
+                <!--'1 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-1">Ссылка 1</a>
+                <!--'2 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-2">Ссылка 2</a>
+                <!--'3 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-3">Ссылка 3</a>
+                <!--'4 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-4">Ссылка 4</a>
+                <!--'5 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-5">Ссылка 5</a>
+                <!--'6 ссылка'-->
+                <a href="#" class="release__link not-visible" target="_blank" id="release__link-6">Ссылка 6</a>
 
 
             </div>
-            <!--''-->
+            <!--'---------------------'-->
+
             <!--''-->
             <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
             <div class="in-work__line">
                 <img src="img/line.png" alt="line">
             </div>
             <!--''-->
+            <!--''-->
+
+
             <!--'В РАБОТЕ'-->
             <h2 class="in-work__base-title base-title">В работе</h2>
             <div class="in-work__wrapper">
                 <div class="in-work__text-container">
-                    <div class="in-work__title">Tinder</div>
-                    <div class="in-work__subtitle">История не одного знакомства</div>
-                    <div class="in-work__text">Лика хотела "долго и счастливо", крепкую семью и детей, а муж - отношения
-                        без обязательств на стороне (и склеить еe подругу на Тиндер). Ни то, ни другое не выгорело и она
-                        осталась одна. Но не потеряла веру в себя. И в любовь! Пусть
+                    <div class="in-work__title" id="in-work__title">Tinder</div>
+                    <div class="in-work__subtitle" id="in-work__subtitle">История не одного знакомства</div>
+                    <div class="in-work__text" id="in-work__text">Лика хотела "долго и счастливо", крепкую семью и
+                        детей, а муж - отношения без обязательств на стороне (и склеить еe подругу на Тиндер). Ни то, ни
+                        другое не выгорело и она осталась одна. Но не потеряла веру в себя. И в любовь! Пусть
                         скептики говорят, что на сайтах знакомств ловить нечего, Лика знает, кто ищет - тот всегда
                         найдет! И эта история посвящается всем "лягушкам", которых ей пришлось перецеловать, прежде чем
                         найти своего принца. Ее история не одного
@@ -154,14 +165,38 @@
                     <div class="in-work__btn content-btn not-visible"></div>
                 </div>
                 <div class="in-work__book-container">
+                    <!--'ОБЛОЖКА'-->
                     <div class="in-work__cover">
-                        <img src="img/cover/new-cover.jpg" alt="Book">
+                        <img src="../pages-img/book-page-source/1cover-in-work-book/1.jpg" alt="Book"
+                            id="in-work__cover">
                     </div>
+                    <!--'------'-->
                     <div class="in-work__book">
                         <img src="img/book.png" alt="Book">
                     </div>
                 </div>
             </div>
+            <!--'ССЫЛКИ НА КНИГУ'-->
+            <div class="in-work__subtitle-link">Приобрести книгу</div>
+            <div class="in-work__link-group">
+
+                <!--'1 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-1">Ссылка 1</a>
+                <!--'2 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-2">Ссылка 2</a>
+                <!--'3 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-3">Ссылка 3</a>
+                <!--'4 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-4">Ссылка 4</a>
+                <!--'5 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-5">Ссылка 5</a>
+                <!--'6 ссылка'-->
+                <a href="#" class="in-work__link not-visible" target="_blank" id="in-work__link-6">Ссылка 6</a>
+
+
+            </div>
+            <!--'---------------------'-->
+            <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
             <div class=" line-auxiliary"></div>
         </section>
         <!--'----------------------------------'-->
@@ -981,7 +1016,7 @@
     <script src="js/swiper.js"></script>
 
     <!--'Смена контента'-->
-    <script src="js/content-replacement/content-replacement.js"></script>
+    <script src="js/content-replacement/index-content-replacement.js"></script>
 
     <!--'открытие попапов политики конфиденциальности и пользовательского соглашения'-->
     <script src="js/script-popup-policy-terms-use.js"></script>

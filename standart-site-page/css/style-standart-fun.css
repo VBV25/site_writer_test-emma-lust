@@ -76,7 +76,7 @@ h1 {
     overflow: hidden;
 }*/
 .not-visible {
-  display: none; }
+  display: none !important; }
 
 .content-btn {
   width: var(--btnSect2Wi);
@@ -133,6 +133,51 @@ h1 {
   margin-bottom: var(--titleMarginBottom);
   text-align: center; }
 
+/*-------ЛЕЙБЛ НОВИНКИ (NEW)-------------*/
+.book__new {
+  border: 1px solid red;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: var(--fsH4);
+  font-weight: 600;
+  line-height: calc(var(--fsH4) * 1.5);
+  color: red;
+  font-style: normal;
+  font-family: Georgia, sans-serif;
+  text-shadow: 0 -1px 1px #cccccc, 0 -1px 1px #cccccc, 0 1px 1px #cccccc, 0 1px 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc;
+  text-align: center;
+  margin: 15px auto 5px; }
+
+@media (max-width: 370px) {
+  .book__new {
+    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 50%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 10px auto 3px;
+    position: static;
+    padding: 3px; } }
+
+/*------------------------------------------*/
 @media (max-width: 1255px) {
   :root {
     --fsH2: 38px; } }
@@ -648,9 +693,9 @@ h1 {
     padding-bottom: 12px;
     background-color: #1d241f;
     border-radius: 10px;
-    -webkit-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s; }
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s; }
   .up-btn__img {
     width: 50px;
     height: 50px; }
@@ -1738,6 +1783,7 @@ main {
     top: var(--topTitleBg);
     left: 50%;
     margin-left: calc(var(--titleBgWi) / -2);
+    z-index: 1;
     background-color: #e2c68e;
     position: absolute;
     border-radius: 10px; }
@@ -1862,6 +1908,7 @@ main {
   .fun-block .line-auxiliary {
     width: var(--titleBgWi);
     height: 2px;
+    z-index: 10;
     position: relative;
     margin: auto; }
     .fun-block .line-auxiliary::before, .fun-block .line-auxiliary::after {
@@ -1887,6 +1934,10 @@ main {
       transform: scale(-1, -1); }
 
 /*----контейнер с ОПИСАНИЕМ КНИГИ--*/
+.fun-book-position {
+  z-index: 10;
+  position: relative; }
+
 .fun {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1925,7 +1976,6 @@ main {
     text-shadow: 0 -1px 1px #cccccc, 0 -1px 1px #cccccc, 0 1px 1px #cccccc, 0 1px 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc;
     margin: 15px auto;
     text-align: center;
-    position: static;
     height: 100%; }
   .fun__title {
     position: relative;
@@ -2202,22 +2252,11 @@ main {
   .fun {
     /*--контейнер с ФОТО книги и ссылками--*/ }
     .fun__new {
-      border: 1px solid red;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
       width: 50%;
       height: -webkit-max-content;
       height: -moz-max-content;
       height: max-content;
       margin: 10px auto 3px;
-      position: static;
       padding: 3px; }
     .fun__photo-container {
       width: 100%;
@@ -2250,34 +2289,31 @@ main {
       gap: 2px; } }
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
-.new-fun {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1; }
+.fun-book-position {
+  -webkit-box-ordinal-group: 11;
+  -ms-flex-order: 10;
+  order: 10; }
 
-.tinder {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2; }
-
-.women {
-  -webkit-box-ordinal-group: 5;
-  -ms-flex-order: 4;
-  order: 4; }
-
-.stream {
+/*--*/
+.new-book3 {
   -webkit-box-ordinal-group: 4;
   -ms-flex-order: 3;
   order: 3; }
 
-.demon {
-  -webkit-box-ordinal-group: 6;
-  -ms-flex-order: 5;
-  order: 5; }
+.new-book2 {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2; }
 
+.new-book {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1; }
+
+/*--*/
 .line-auxiliary {
-  -webkit-box-ordinal-group: 1001;
-  -ms-flex-order: 1000;
-  order: 1000; }
+  -webkit-box-ordinal-group: 10000001;
+  -ms-flex-order: 10000000;
+  order: 10000000; }
 
 /*----*/

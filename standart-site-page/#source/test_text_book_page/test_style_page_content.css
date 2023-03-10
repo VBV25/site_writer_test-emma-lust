@@ -1,0 +1,203 @@
+@font-face {
+    font-family: LobsterRegular;
+    src: url('../fonts/Lobster-Regular.ttf') format("truetype");
+    src: url('../fonts/Lobster-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Lobster-Regular.ttf') format("woff");
+    src: url('../fonts/Lobster-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: MarckScriptRegular;
+    src: url('../fonts/MarckScript-Regular.ttf') format("truetype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/MarckScript-Regular.ttf') format("woff");
+    src: url('../fonts/MarckScript-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: PacificoRegular;
+    src: url('../fonts/Pacifico-Regular.ttf') format("truetype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("embedded-opentype");
+    src: url('../fonts/Pacifico-Regular.ttf') format("woff");
+    src: url('../fonts/Pacifico-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: RubikRegular;
+    src: url('../fonts/Rubik-Regular.ttf') format("truetype");
+    src: url('../fonts/Rubik-Regular.ttf')format("embedded-opentype");
+    src: url('../fonts/Rubik-Regular.ttf') format("woff");
+    src: url('../fonts/Rubik-Regular.ttf');
+    font-style: normal;
+    font-weight: normal
+}
+
+
+/*-----*/
+
+html {
+    border: 2px solid red;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+    /* transform: rotate(90deg);
+    position: relative;
+    right: 16.8%;
+    top: 12.5%;
+    width: 133.5%;
+    height: 75.2%;*/
+}
+
+
+/*-----*/
+
+
+/*----общие---*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
+}
+
+.open_book_wrapper_test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.test {
+    width: 10%;
+    height: 10%;
+    margin: 10%;
+    font-size: 200%;
+}
+
+.page {
+    z-index: 51;
+    position: relative;
+    left: 10%;
+    top: 2%;
+    width: 475px !important;
+    height: 750px !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /*padding: ;*/
+    /*border: 0px solid yellow;*/
+    box-sizing: content-box;
+}
+
+.page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.page_book_btn_wrapper {
+    display: block;
+    position: absolute;
+    z-index: 200;
+    width: 102px !important;
+    height: 102px !important;
+    /*background-color: rgb(93, 7, 7);*/
+}
+
+.page_book_btn_wrapper_1_1 {
+    top: -5px;
+    right: -5px;
+}
+
+.page_book_btn_wrapper_1_2 {
+    bottom: -5px;
+    right: -5px;
+}
+
+.page_book_btn_wrapper_2_1 {
+    z-index: 20;
+    top: -5px;
+    left: -5px;
+}
+
+.page_book_btn_wrapper_2_2 {
+    z-index: 20;
+    bottom: 0px;
+    left: -5px;
+}
+
+
+/*лейблы навигации на страницах кроме 1 и 2 страницы*/
+
+.btn_book_page_nav {
+    display: block;
+    width: 100px !important;
+    height: 40px !important;
+    padding: 8px 5px;
+    top: 50px;
+    /*z-index: 200;*/
+    text-align: center;
+    position: absolute;
+    color: black;
+    background-color: rgb(142, 142, 142);
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.btn_book_page_nav_next {
+    right: 3px;
+    text-align: end;
+}
+
+.btn_book_page_nav_back {
+    left: 5px;
+}
+
+.page {
+    background-image: url("../pages/paper_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*все страницы*/
+
+.list_heading {
+    position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 5%;
+    left: 26%;
+    text-align: center;
+    font-size: 250%;
+    text-transform: uppercase;
+    border: 2px solid red;
+}
+
+.list_text {
+    font-size: 250%;
+    position: absolute;
+    width: 90%;
+    height: 79.4%;
+    top: 15%;
+    left: 5%;
+    border: 2px solid red;
+}

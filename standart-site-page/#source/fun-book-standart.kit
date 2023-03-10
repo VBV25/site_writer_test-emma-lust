@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!----------------'Стили'----------------------->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <!--'основные стили'-->
+
+  <link rel="stylesheet" href="css/style-standart-fun-book.css" />
+  <!---------------------------------------------->
+
+  <!---------------'Скрипты'---------------------->
+  <!--'библиотеки'-->
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/jquery.maskedinput.min.js"></script>
+  <!--'основные скрипты'-->
+  <script src="js/script-standart-site.js"></script>
+  <script src="js/validation-standart-site.js"></script>
+
+  <!---------------------------------------------->
+
+  <!---------------'FAVICON'---------------------->
+  <link type="image/x-icon" href="img/icon.png" rel="icon">
+  <!---------------------------------------------->
+  <title>Emma Lust</title>
+</head>
+
+<body>
+
+  <body class="lock">
+    <!-- @import 'header.html' -->
+    <h1>Emma Lust</h1>
+    <main class="main main-book-page">
+
+      <!--'----------------------------------'-->
+      <!--'1 СЕКЦИЯ'-->
+      <section class="first-sect">
+        <div class="first-sect__wrapper">
+          <div class="first-sect__img-wrapper">
+            <img src="../pages-img/fun-page-source/1.png" alt="Фон" id="imgFunSect1">
+          </div>
+          <h2 class="first-sect__base-title base-title" id="fun-name-book">Фанфик 1</h2>
+        </div>
+      </section>
+      <!--'----------------------------------'-->
+
+      <!--'----------------------------------'-->
+      <!--'2 СЕКЦИЯ'-->
+      <section class="slider">
+
+        <div class="slider__wrapper">
+          <!--'Стрелки управления'-->
+          <div class="button-arrow swiper-button-prev"></div>
+          <!--''-->
+
+          <!--'СЛАЙДЕР'-->
+
+          <div class="text-slider swiper-container">
+            <!--'Обязатеьная оболчка'-->
+            <div class="text-slider__wrapper swiper-wrapper" id="swiper-wrapper">
+              <!--'Слайды'-->
+              <!-- @import 'fun-book-content.html' -->
+              <!--'конец слайдов'-->
+            </div>
+            <!--'пагинация'-->
+            <div class="swiper-pagination"></div>
+            <!--'Полоса прокрутки'-->
+            <div class="swiper-scrollbar"></div>
+            <!--''-->
+          </div>
+          <!--''-->
+          <!--'Стрелки управления'-->
+          <div class="button-arrow swiper-button-next"></div>
+        </div>
+      </section>
+      <!--'----------------------------------'-->
+    </main>
+    <!--'----------------------------------'-->
+    <!-- @import 'footer.html' -->
+    <!--'----------------------------------'-->
+
+
+    <!--'----------------------------------'-->
+    <!--'-----ДОП ЭЛЕМЕНТЫ-----'-->
+    <!--'прелоадер'-->
+    <!-- @import 'preloader.html' -->
+
+    <!--кнопка прокрутки вверх-->
+    <!-- @import 'up-btn.html' -->
+
+    <!--кнопка возврата к фанфикам-->
+    <!-- @import 'back-up-btn.html' -->
+
+    <!--'ФОРМА ОТПРАВКИ ПОПАП'-->
+    <!-- @import 'elements-additional.html' -->
+
+    <!--'ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап'-->
+    <!-- @import 'policy.html' -->
+    <!-- @import 'terms-use.html' -->
+    <!--'----------------------------------'-->
+
+
+    <!--'----------------------------------'-->
+    <!--Java Script-->
+
+
+    <!--'Определение какой ФАНФИК открыт чтобы сменить контент под него'-->
+    <!--'Смена контента определение какая страница активна чтобы подгрузить нужный скрипт'-->
+    <script src="js/content-replacement/fun-book-content/fun-content-replacement.js"></script>
+    <!--'----------------------------------'-->
+
+
+    <!--'SWIPER'-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swiper-fun.js"></script>
+    <!--'----------------------------------'-->
+
+    <!--'открытие попапов политики конфиденциальности и пользовательского соглашения'-->
+    <script src="js/script-popup-policy-terms-use.js"></script>
+  </body>
+
+</html>

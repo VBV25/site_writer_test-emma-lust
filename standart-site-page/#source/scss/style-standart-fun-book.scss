@@ -1,0 +1,322 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+// медиа адаптив из размерных переменных ОБЩИЙ
+@import 'base-media-variables';
+//хедер
+@import 'style-header';
+//футер
+@import 'style-footer';
+//стрелка вверх
+@import 'up-btn';
+//POPUP
+@import 'style-elements-additional';
+//preloader
+@import 'preloader';
+// ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
+@import 'policy';
+//кнопка назад
+@import 'back-up-btn';
+//
+//
+//
+//
+//
+//
+//-----ОБЩИЕ----
+body {
+  max-height: max-content;
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+main {
+  @include wiHe($he: max-content);
+  @include bgImg;
+  background-image: url('../../pages-img/fun-page-source/3.jpg');
+  overflow: hidden;
+}
+
+//
+//
+//
+//
+//
+//
+//-----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
+//
+//
+//
+//
+//
+//
+//-----Первая секция-----
+.first-sect {
+  @include wiHe(100%, max-content);
+  @include flCent;
+  &__wrapper {
+    @include wiHe(100%, max-content);
+    @include flCent;
+  }
+  &__img-wrapper {
+    img {
+      max-height: 50vh;
+      min-height: 30vh;
+      @include wiHe(100vw, auto);
+    }
+  }
+  &__base-title {
+    @include wiHe(90%, max-content);
+    @include fontSizeH2(
+      $fsH2: calc(var(--fs2sectTitle) + 15px),
+      $liHe: calc(var(--fsH2) * 1.5 + 30px),
+      $color: $skinColor
+    );
+    @include textBorderBlack;
+    @include flCent;
+    position: absolute;
+    margin: 0;
+  }
+}
+
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------1240-PX-----------
+@media (max-width: 1240px) {
+  .first-sect {
+    &__base-title {
+      @include fontSizeH2(
+        $fsH2: calc(var(--fs2sectTitle) + 7px),
+        $liHe: calc(var(--fsH2) * 1.5 + 20px),
+        $color: $skinColor
+      );
+    }
+  }
+}
+
+//
+//-------670-PX-----------
+@media (max-width: 670px) {
+  .first-sect {
+    &__img-wrapper {
+      overflow: hidden;
+      @include flCent;
+      img {
+        @include wiHe(auto, 200px);
+      }
+    }
+    &__base-title {
+      @include fontSizeH2(
+        $fsH2: calc(var(--fs2sectTitle) - 10px),
+        $liHe: calc(var(--fsH2) * 1.5 + 20px),
+        $color: $skinColor
+      );
+    }
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//---------------Вторая секция-------
+//------------------Слайдер-----------
+:root {
+  --widthSliderBlock: 70%; //Ширина блока со слайдером(листа бумаги с текстом)
+  --paddingSectBaseTopBot: 50px; //верхний и нижний внутренний отступ 2секции
+}
+
+.slider {
+  @include wiHe(var(--widthSliderBlock), max-content);
+  @include bgImg;
+  background-image: url('../img/paper.jpg');
+  background-color: $sandColor;
+  z-index: 20;
+  position: relative;
+  top: -30px;
+  min-height: 100%;
+  margin: auto;
+  padding: var(--paddingSectBaseTopBot) 10px;
+  border-radius: 10px;
+  &__wrapper {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__chapter {
+    @include wiHe($he: max-content);
+    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldColor);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .text-slider {
+    height: max-content;
+    //слайд
+    &__slide {
+      padding: 0 3px;
+      .slide-title {
+        @include fontSizeH4($color: $emeraldColor);
+        text-align: center;
+        margin: 10px;
+        text-transform: uppercase;
+        &__subtitle {
+          text-transform: lowercase !important;
+        }
+      }
+      .slide-text {
+        @include wiHe(99%, max-content);
+        @include fontSizeP($color: $blackColor);
+      }
+    }
+    //Сдайды не активные
+    .swiper-slide-next,
+    .swiper-slide-prev {
+      opacity: 0.7;
+    }
+  }
+}
+
+/*стрелки*/
+
+.button-arrow {
+  position: sticky !important;
+  top: 45vh;
+  bottom: 45vh;
+  margin: 10px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  top: 100px;
+  color: $emeraldColor;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: $DarkRedColor;
+  @include textBorderSmokeColor;
+}
+
+/*ПАГИНАЦИЯ*/
+
+.swiper-pagination {
+  position: static !important;
+  margin-top: 10px !important;
+  @include fontSizeP($color: $blackColor);
+}
+
+/*--СКРОЛЛ--*/
+
+.swiper-scrollbar {
+  position: static !important;
+  margin-top: 15px !important;
+  width: 85%;
+  margin: auto;
+  height: 13px !important;
+  opacity: 0.8;
+}
+
+.swiper-scrollbar-drag {
+  cursor: pointer;
+  background-color: $emeraldColor;
+}
+
+/*------ЯКОРЯ-------*/
+
+.fun-book {
+  &__anchors-group {
+    @include wiHe(1px, 1px);
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+//
+//---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
+//-------1250-PX-----------
+@media (max-width: 1250px) {
+  :root {
+    --widthSliderBlock: 95%; //Ширина блока со слайдером(листа бумаги с текстом)
+  }
+}
+
+//-------840-PX-----------
+@media (max-width: 840px) {
+  :root {
+    --widthSliderBlock: 98%; //Ширина блока со слайдером(листа бумаги с текстом)
+    --paddingSectBaseTopBot: 25px; //верхний и нижний внутренний отступ 2секции
+    --titleMarginBottom: 30px; //отступ нижний заголовка блока
+  }
+  .slider {
+    padding: var(--paddingSectBaseTopBot) 0px;
+  }
+  .wrapper-slider .text-slider {
+    padding: 0px 0px 30px 0px;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @include textBorderWhite;
+  }
+}
+
+//
+//-------670-PX-----------
+@media (max-width: 670px) {
+  :root {
+    --widthSliderBlock: 100%; //Ширина блока со слайдером(листа бумаги с текстом)
+    --titleMarginBottom: 15px; //отступ нижний заголовка блока
+    --fs2sectTitle: 35px; //размер шрифта заголовка блока
+    //
+  }
+  .slider {
+    top: 0px;
+    border-radius: 0;
+    .text-slider {
+      //слайд
+      &__slide {
+        padding: 0px 7px;
+        .slide-title {
+          @include fontSizeH4(
+            $fontSize: calc(var(--fsH4) - 5px),
+            $color: $emeraldColor
+          );
+          margin: 0;
+        }
+        .slide-text {
+          @include wiHe(100%, max-content);
+          @include fontSizeP($color: $blackColor);
+        }
+      }
+    }
+  }
+  //стрелки
+  .button-arrow {
+    margin: 4px;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 25px !important;
+  }
+}
+
+//----------------------------------------------
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//

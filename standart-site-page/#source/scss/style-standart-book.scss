@@ -266,18 +266,6 @@ main {
   &__text-container {
     @include wiHe(60%);
   }
-  //ЛЕЙБЛ НОВИНКА
-  &__new {
-    border: 1px solid red;
-    @include flCent;
-    @include fontSizeH4($color: $redColor);
-    @include textBorderSmokeColor;
-    text-align: center;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 10px;
-  }
   //
   //-----заголовок книги
   &__title {
@@ -333,11 +321,7 @@ main {
     //
     clip-path: polygon(0% 19%, 100% 0%, 100% 100%, 0% 100%);
     transform-origin: right;
-    transform: matrix(1.15, 0.2, 0, 1, 4, 6) rotateY(30deg);
-    /*
-       
-        
-        //rotateY(30deg) skew(10deg, 0deg);*/
+    transform: matrix(1.15, 0.2, 0, 1, 3, 5) rotateY(30deg);
     img {
       @include wiHe;
     }
@@ -533,15 +517,6 @@ main {
     }
   }
   .book {
-    //ЛЕЙБЛ НОВИНКА
-    &__new {
-      border: 1px solid red;
-      @include flCent;
-      @include wiHe(50%, max-content);
-      margin: 10px auto 3px;
-      position: static;
-      padding: 3px;
-    }
     /*--контейнер с ФОТО книги и ссылками--*/
     &__photo-container {
       @include wiHe(100%, max-content);
@@ -570,52 +545,85 @@ main {
 }
 
 //-----------------------------
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//---------ПОПАПЫ-И-ДОП-ЭЛЕМЕНТЫ-------
-//
-//-----------------------------
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
+
+/*--*/
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
 
 .new-book {
-  order: 1;
+  order: 1 !important;
+}
+
+.new-book2 {
+  order: 2 !important;
 }
 
 .tinder {
-  order: 2;
-}
-
-.women {
-  order: 4;
-}
-
-.stream {
-  order: 3;
-}
-
-.demon {
   order: 5;
 }
 
+.women {
+  order: 6;
+}
+
+.stream {
+  order: 7;
+}
+
+.demon {
+  order: 8;
+}
+
 .line-auxiliary {
-  order: 1000;
+  order: 100000;
 }
 
 /*----*/

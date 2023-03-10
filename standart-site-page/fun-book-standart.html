@@ -2,31 +2,35 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!----------------'Стили'----------------------->
-    <!--'основные стили'-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!----------------'Стили'----------------------->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <!--'основные стили'-->
 
-    <link rel="stylesheet" href="css/style-standart-book.css" />
-    <!---------------------------------------------->
+  <link rel="stylesheet" href="css/style-standart-fun-book.css" />
+  <!---------------------------------------------->
 
-    <!---------------'Скрипты'---------------------->
-    <!--'библиотеки'-->
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/jquery.maskedinput.min.js"></script>
-    <!--'основные скрипты'-->
-    <script src="js/script-standart-site.js"></script>
-    <script src="js/validation-standart-site.js"></script>
-    <!---------------------------------------------->
+  <!---------------'Скрипты'---------------------->
+  <!--'библиотеки'-->
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/jquery.maskedinput.min.js"></script>
+  <!--'основные скрипты'-->
+  <script src="js/script-standart-site.js"></script>
+  <script src="js/validation-standart-site.js"></script>
 
-    <!---------------'FAVICON'---------------------->
-    <link type="image/x-icon" href="img/icon.png" rel="icon">
-    <!---------------------------------------------->
-    <title>Emma Lust</title>
+  <!---------------------------------------------->
+
+  <!---------------'FAVICON'---------------------->
+  <link type="image/x-icon" href="img/icon.png" rel="icon">
+  <!---------------------------------------------->
+  <title>Emma Lust</title>
 </head>
 
-<body class="lock">
+<body>
+
+  <body class="lock">
     <header id="header" class="header ">
     <!--<div class="per"></div>-->
     <div class="container">
@@ -67,527 +71,126 @@
 </header>
     <h1>Emma Lust</h1>
     <main class="main main-book-page">
-        <!--'1 СЕКЦИЯ'-->
-        <section class="tagline-writer-photo">
 
-    <div class="tagline-writer-photo__wrapper">
-        <div class="tagline-writer-photo__container">
-            <div class="tagline-writer-photo__title">
-                <img src="img/EL_white.png" alt="Emma Lust">
-            </div>
-            <div class="tagline-writer-photo__text-wrapper">
-                <p> Пишу от большой любви к языку и смыслам</p>
-            </div>
+      <!--'----------------------------------'-->
+      <!--'1 СЕКЦИЯ'-->
+      <section class="first-sect">
+        <div class="first-sect__wrapper">
+          <div class="first-sect__img-wrapper">
+            <img src="../pages-img/fun-page-source/1.png" alt="Фон" id="imgFunSect1">
+          </div>
+          <h2 class="first-sect__base-title base-title" id="fun-name-book">Фанфик 1</h2>
         </div>
+      </section>
+      <!--'----------------------------------'-->
 
-    </div>
-</section>
-        <!--'----------------------------------'-->
+      <!--'----------------------------------'-->
+      <!--'2 СЕКЦИЯ'-->
+      <section class="slider">
 
-        <!--'2 СЕКЦИЯ'-->
-        <section class="book-block">
-            <div class="book-block__wrapper">
-                <div class="book-block__bg-title">
-                    <div class="book-block__bg-title-wrap">
-                        <h2 class="book-block__base-title base-title">Книги</h2>
+        <div class="slider__wrapper">
+          <!--'Стрелки управления'-->
+          <div class="button-arrow swiper-button-prev"></div>
+          <!--''-->
 
-                    </div>
-                </div>
-                <div class="book-block__line start-line">
+          <!--'СЛАЙДЕР'-->
 
-    <img src="img/line.png" alt="line">
+          <div class="text-slider swiper-container">
+            <!--'Обязатеьная оболчка'-->
+            <div class="text-slider__wrapper swiper-wrapper" id="swiper-wrapper">
+              <!--'Слайды'-->
+              <!--'----------------'-->
+<!--'ЯКОРЯ'-->
+<div class="fun-book__anchors-group">
+  <div class="fun-book__anchors" id="fun-1"></div>
+  <div class="fun-book__anchors" id="fun-2"></div>
+  <div class="fun-book__anchors" id="fun-3"></div>
+  <div class="fun-book__anchors" id="fun-4"></div>
+  <div class="fun-book__anchors" id="fun-5"></div>
+</div>
+<!--'----------------'-->
 
+<!--'----------------'-->
+<!--'Слайды'-->
+<!--'1 страница книги'-->
+<div class=" text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-1">Глава 1</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 1</h4>
+  <p class="slide-text" id="textPage-1">Если нет текста, включите в настройках Java Script</p>
 </div>
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-
-
-<!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
-<!--'-------------------Tinder-------------'-->
-<div class="tinder new-book new-book2">
-    <div class="book-block__container">
-
-        <!--'ЖАНР'-->
-        <!--'!!!!!!!!!!!!!'-->
-        <div class="book-block__genre novel">Жанр: Роман</div>
-        <!--'!!!!!!!!!!!!!'-->
-
-        <!--''-->
-        <div class="book-block__book book">
-            <div class="book__text-container">
-
-                <!--'ЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__title" id="book__title">Tinder</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'ПОДЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__subtitle">История не одного знакомства</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'БЛОК С ТЕКСТОМ'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__text">Если вы думаете, что сайты знакомств - это пошло, вы правы. Там нет понятия
-                    субординации, вам могут без предупреждения прислать пикантное фото и потребовать сделать что-нибудь
-                    непристойное в ответ. Но статистика - упрямая штука и, как
-                    минимум, каждый третий человек в мире хотя бы однажды знакомился с кем-то онлайн. 57% пользователей
-                    просто обманывают, скрывая свое настоящее имя, семейное положение или социальный статус. 48% людей
-                    пользуются сайтами знакомств из
-                    интереса. 25% пользователей смело раскрывают свое настоящее имя в онлайне, а каждый десятый
-                    рассказывает о своем месте проживания. И только 13% ищут серьезные отношения, при этом одного из...
-                </div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <div class="book__btn content-btn not-visible"></div>
-            </div>
-            <div class="book__photo-container">
-                <div class="book__photo">
-                    <!--'!!!!!!!!!!!!!'-->
-                    <!--'ОБЛОЖКА'-->
-                    <!--'ПРАВКА-ОБЛОЖКИ-'-->
-                    <!--'изменить-имя-изображения- и путь-к-изображению -tinder.jpg и папку ---/tinder/'------->
-                    <div class="book__cover">
-                        <img src="../pages-img/book-page-source/tinder/tinder.jpg" alt="Book">
-                    </div>
-                    <!--'!!!!!!!!!!!!!'-->
-
-                    <!--'КАРТИНКА КНИГИ'-->
-                    <div class="book__body">
-                        <img src="img/book.png" alt="Book">
-                    </div>
-                    <!--''-->
-                </div>
-            </div>
-        </div>
-
-        <!--'!!!!!!!!!!!!!'-->
-        <!--'ДАТА РЕЛИЗА'-->
-        <div class="book-block__data">Релиз: 12.12.2023</div>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-
-    <!--'!!!!!!!!!!!!!'-->
-    <!--'ССЫЛКИ НА СТОРОННИЕ РЕСУРСЫ'-->
-    <div class="book-block__link-group ">
-        <a href="https://litmarket.ru/books/tinder-istoriya-ne-odnogo-znakomstva" class="book-block__link"
-            target="_blank">Ссылка на
-            ЛитМаркет</a>
-        <a href="https://bookriver.ru/book/emma-lust-tinder-istoriya-ne-odnogo-znakomstva" class="book-block__link"
-            target="_blank">Ссылка
-            на Bookriver</a>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-    <!--''-->
-    <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
-    <div class="book-block__line">
-        <img src="img/line.png" alt="line">
-    </div>
+<!--'2 страница книги'-->
+<div class=" text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-2">Глава 2</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 2</h4>
+  <p class="slide-text" id="textPage-2">Если нет текста, включите в настройках Java Script</p>
 </div>
-<!--'-----КОНЕЦ-БЛОКА-КОПИРОВАНИЯ-----'-->
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-
-
-
-<!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
-<!--'------------------МОЯ ЖЕНЩИНА------------'-->
-<div class=" women">
-    <div class="book-block__container ">
-        <!--'ЖАНР'-->
-        <!--'!!!!!!!!!!!!!'-->
-        <div class="book-block__genre novel">Жанр: Роман</div>
-        <!--'!!!!!!!!!!!!!'-->
-
-        <!--''-->
-        <div class="book-block__book book">
-            <div class="book__text-container">
-                <!--'ЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__title" id="book__title">Моя женщина</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'ПОДЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__subtitle"></div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'БЛОК С ТЕКСТОМ'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__text">Муж бросил Веру на пороге старости, да так, что стыдно кому-либо рассказать. Но
-                    не даром говорят, что там где одна дверь закрывается, непременно открывается другая. И для Веры
-                    найдется своя гавань, пусть совершенно не похожая на ту, к
-                    которой она привыкла.
-                </div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <div class="book__btn content-btn not-visible"></div>
-            </div>
-            <div class="book__photo-container">
-                <div class="book__photo">
-
-                    <!--'!!!!!!!!!!!!!'-->
-                    <!--'ОБЛОЖКА'-->
-                    <!--'ПРАВКА-ОБЛОЖКИ-'-->
-                    <!--'изменить-имя-изображения- и путь-к-изображению -tinder.jpg и папку ---/tinder/'------->
-                    <div class="book__cover">
-                        <img src="../pages-img/book-page-source/my-woman/my_woman.jpg" alt="Book">
-                    </div>
-                    <!--'!!!!!!!!!!!!!'-->
-
-                    <!--'КАРТИНКА КНИГИ'-->
-                    <div class="book__body">
-                        <img src="img/book.png" alt="Book">
-                    </div>
-                    <!--''-->
-                </div>
-            </div>
-        </div>
-        <!--'!!!!!!!!!!!!!'-->
-        <!--'ДАТА РЕЛИЗА'-->
-        <div class="book-block__data">Релиз: 12.12.2023</div>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-
-    <!--'!!!!!!!!!!!!!'-->
-    <!--'ССЫЛКИ НА СТОРОННИЕ РЕСУРСЫ'-->
-    <div class="book-block__link-group">
-        <a href="https://litmarket.ru/books/moya-zhenshchina" class="book-block__link" target="_blank">Ссылка
-            ЛитМаркет</a>
-        <a href="https://bookriver.ru/book/emma-lust-moya-zhenschina" class="book-block__link" target="_blank">Ссылка на
-            Bookriver</a>
-        <a href="https://www.litres.ru/emmanuel-last/moya-zhenschina/" class="book-block__link" target="_blank">Ссылка
-            на
-            Литрес</a>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-    <!--''-->
-    <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
-    <div class="book-block__line">
-        <img src="img/line.png" alt="line">
-    </div>
+<!--'3 страница книги'-->
+<div class="text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-3">Глава 3</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 3</h4>
+  <p class="slide-text" id="textPage-3">Если нет текста, включите в настройках Java Script</p>
 </div>
-<!--'-----КОНЕЦ-БЛОКА-КОПИРОВАНИЯ-----'-->
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-
-
-
-<!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
-<!--'------------------Твой личный демон------------'-->
-<div class="demon">
-    <div class="book-block__container ">
-        <!--'ЖАНР'-->
-        <!--'!!!!!!!!!!!!!'-->
-        <div class="book-block__genre novel">Жанр: Роман</div>
-        <!--'!!!!!!!!!!!!!'-->
-
-        <!--''-->
-        <div class="book-block__book book">
-            <div class="book__text-container">
-                <!--'ЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__title" id="book__title">Твой личный демон</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'ПОДЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__subtitle"></div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'БЛОК С ТЕКСТОМ'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__text">Привет, меня зовут Варя и я нимфоманка. А еще у меня есть сестра-близнец Катя.
-                    Не похожи? Ну, так кто же виноват, что мне достался неуемный сексуальный аппетит и полное отсутствие
-                    вторичных половых признаков, а ей шикарное тело и фригидность,
-                    которую и золотым жезлом Мидаса не излечить? Мама, говорите? Так она нас бросила много лет назад!
-                    Папа? Ну, тут спорить не берусь ибо в глаза его не видела. А что до Демонов, то я бы не советовала
-                    попадаться им на глаза. Говорят, они
-                    едят девственниц на завтрак. Мы с Катькой случайно зацепили одного и там такое началось, вам лучше и
-                    не знать!..
-                </div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <div class="book__btn content-btn not-visible"></div>
-            </div>
-            <div class="book__photo-container">
-                <div class="book__photo">
-
-                    <!--'!!!!!!!!!!!!!'-->
-                    <!--'ОБЛОЖКА'-->
-                    <!--'ПРАВКА-ОБЛОЖКИ-'-->
-                    <!--'изменить-имя-изображения- и путь-к-изображению -tinder.jpg и папку ---/tinder/'------->
-                    <div class="book__cover">
-                        <img src="../pages-img/book-page-source/demon/demon.jpg" alt="Book">
-                    </div>
-                    <!--'!!!!!!!!!!!!!'-->
-
-                    <!--'КАРТИНКА КНИГИ'-->
-                    <div class="book__body">
-                        <img src="img/book.png" alt="Book">
-                    </div>
-                    <!--''-->
-                </div>
-            </div>
-        </div>
-        <!--'!!!!!!!!!!!!!'-->
-        <!--'ДАТА РЕЛИЗА'-->
-        <div class="book-block__data">Релиз: 12.12.2023</div>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-
-    <!--'!!!!!!!!!!!!!'-->
-    <!--'ССЫЛКИ НА СТОРОННИЕ РЕСУРСЫ'-->
-    <div class="book-block__link-group">
-        <a href="https://litmarket.ru/books/tvoy-lichnyy-demon" class="book-block__link" target="_blank">Ссылка на
-            ЛитМаркет</a>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-    <!--''-->
-    <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
-    <div class="book-block__line">
-        <img src="img/line.png" alt="line">
-    </div>
+<!--'4 страница книги'-->
+<div class="text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-4">Глава 4</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 4</h4>
+  <p class="slide-text" id="textPage-4">Если нет текста, включите в настройках Java Script</p>
 </div>
-<!--'-----КОНЕЦ-БЛОКА-КОПИРОВАНИЯ-----'-->
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-
-
-
-<!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
-<!--'------------------Графиня на стриме------------'-->
-<div class="stream ">
-    <div class="book-block__container ">
-        <!--'ЖАНР'-->
-        <!--'!!!!!!!!!!!!!'-->
-        <div class="book-block__genre novel">Жанр: Роман</div>
-        <!--'!!!!!!!!!!!!!'-->
-
-        <!--''-->
-        <div class="book-block__book book">
-            <div class="book__text-container">
-                <!--'ЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__title" id="book__title">Графиня на стриме</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'ПОДЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__subtitle"></div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'БЛОК С ТЕКСТОМ'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__text">Лиза не видит своей жизни без Интернета и предел ее мечтаний - это сто тысяч
-                    подписчиков да побольше лайков с комментариями. Но однажды случай забрасывает ее в мир, где вместо
-                    Интернета только звездное небо над головой, комментаторам нельзя
-                    верить на слово, а поклонник, он же подписчик, только один - да и тот норовит уволочь под венец. И
-                    Лизе придется выбирать, что важнее - новенький Iphone или простое человеческое счастье.
-                </div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <div class="book__btn content-btn not-visible"></div>
-            </div>
-            <div class="book__photo-container">
-                <div class="book__photo">
-
-                    <!--'!!!!!!!!!!!!!'-->
-                    <!--'ОБЛОЖКА'-->
-                    <!--'ПРАВКА-ОБЛОЖКИ-'-->
-                    <!--'изменить-имя-изображения- и путь-к-изображению -tinder.jpg и папку ---/tinder/'------->
-                    <div class="book__cover">
-                        <img src="../pages-img/book-page-source/stream/stream.jpg" alt="Book">
-                    </div>
-                    <!--'!!!!!!!!!!!!!'-->
-
-                    <!--'КАРТИНКА КНИГИ'-->
-                    <div class="book__body">
-                        <img src="img/book.png" alt="Book">
-                    </div>
-                    <!--''-->
-                </div>
-            </div>
-        </div>
-        <!--'!!!!!!!!!!!!!'-->
-        <!--'ДАТА РЕЛИЗА'-->
-        <div class="book-block__data">Релиз: 12.12.2023</div>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-
-    <!--'!!!!!!!!!!!!!'-->
-    <!--'ССЫЛКИ НА СТОРОННИЕ РЕСУРСЫ'-->
-    <div class="book-block__link-group">
-        <a href="https://litmarket.ru/books/grafinya-na-strime" class="book-block__link" target="_blank">Ссылка на
-            ЛитМаркет</a>
-        <a href="https://bookriver.ru/book/emma-lust-grafinya-na-strime" class="book-block__link" target="_blank">Ссылка
-            на
-            Bookriver</a>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-    <!--''-->
-    <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
-    <div class="book-block__line">
-        <img src="img/line.png" alt="line">
-    </div>
+<!--'5 страница книги'-->
+<div class="text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-5">Глава 5</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 5</h4>
+  <p class="slide-text" id="textPage-5">Если нет текста, включите в настройках Java Script</p>
 </div>
-<!--'-----КОНЕЦ-БЛОКА-КОПИРОВАНИЯ-----'-->
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-
-
-
-<!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
-<!--'------------------ЗОЙКА------------'-->
-<div class="zoika new-book ">
-    <div class="book-block__container ">
-        <!--'ЖАНР'-->
-        <!--'!!!!!!!!!!!!!'-->
-        <div class="book-block__genre novel">Жанр: Роман</div>
-        <!--'!!!!!!!!!!!!!'-->
-
-        <!--''-->
-        <div class="book-block__book book">
-            <div class="book__text-container">
-                <!--'ЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__title" id="book__title">Зойка</div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'ПОДЗАГОЛОВОК'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__subtitle"></div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <!--'БЛОК С ТЕКСТОМ'-->
-                <!--'!!!!!!!!!!!!!'-->
-                <div class="book__text">Тихое детство Зойки закончилось, когда она с семьей в начале 60-х переехала из
-                    районного центра в большой город, и пришедшая следом Юность принесла с собой счастье первой любви
-                    под горьким соусом разочарования.Тогда ей пришлось повзрослеть,
-                    ведь только Зрелости под силу вынести груз ошибок прошлого. <br> Это история одной яркой жизни,
-                    которую уже не повернуть вспять. <br> Ее история.
-                </div>
-                <!--'!!!!!!!!!!!!!'-->
-
-                <div class="book__btn content-btn not-visible"></div>
-            </div>
-            <div class="book__photo-container">
-                <div class="book__photo">
-
-                    <!--'!!!!!!!!!!!!!'-->
-                    <!--'ОБЛОЖКА'-->
-                    <!--'ПРАВКА-ОБЛОЖКИ-'-->
-                    <!--'изменить-имя-изображения- и путь-к-изображению -tinder.jpg и папку ---/tinder/'------->
-                    <div class="book__cover">
-                        <img src="../pages-img/book-page-source/zoika/1.jpg" alt="Book">
-                    </div>
-                    <!--'!!!!!!!!!!!!!'-->
-
-                    <!--'КАРТИНКА КНИГИ'-->
-                    <div class="book__body">
-                        <img src="img/book.png" alt="Book">
-                    </div>
-                    <!--''-->
-                </div>
-            </div>
-        </div>
-        <!--'!!!!!!!!!!!!!'-->
-        <!--'ДАТА РЕЛИЗА'-->
-        <div class="book-block__data">Релиз: 12.12.2023</div>
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-
-    <!--'!!!!!!!!!!!!!'-->
-    <!--'ССЫЛКИ НА СТОРОННИЕ РЕСУРСЫ'-->
-    <div class="book-block__link-group">
-        <a href="https://litmarket.ru/books/zoyka" class="book-block__link" target="_blank">Ссылка на
-            ЛитМаркет</a>
-
-    </div>
-    <!--'!!!!!!!!!!!!!'-->
-
-    <!--''-->
-    <!--''-->
-    <!--'---РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ----'-->
-    <div class="book-block__line">
-        <img src="img/line.png" alt="line">
-    </div>
+<!--'6 страница книги'-->
+<div class="text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-6">Глава 6</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 6</h4>
+  <p class="slide-text" id="textPage-6">Если нет текста, включите в настройках Java Script</p>
 </div>
-<!--'-----КОНЕЦ-БЛОКА-КОПИРОВАНИЯ-----'-->
 
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
+<!--'7 страница книги'-->
+<div class="text-slider__slide swiper-slide ">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-7">Глава 7</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 7</h4>
+  <p class="slide-text" id="textPage-7">Если нет текста, включите в настройках Java Script</p>
+</div>
 
+<!--'8 страница книги'-->
+<div class="text-slider__slide swiper-slide " id="slide-8">
+  <h2 class="slider__chapter chapter not-visible" id="chapterPage-8">Глава 8</h2>
+  <!--'Контент внутри слайдера'-->
+  <h4 class="slide-title slide-title__subtitle">страница 8</h4>
+  <p class="slide-text" id="textPage-8">Если нет текста, включите в настройках Java Script</p>
+</div>
 
-
-
-
-
-
-
-<!--'----ДОБАВЛЯТЬ-БЛОКИ-ВЫШЕ-ЭТОЙ-СТРОКИ---'-->
-<!--'Разделит.Линия-ПОСЛЕ-КАЖДОГО-БЛОКА----'-->
-<!--'----------------------------------------'-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<!--''-->
-<div class=" line-auxiliary"></div>
-
+<!--'и т.д.'-->
+              <!--'конец слайдов'-->
             </div>
-        </section>
-        <!--'----------------------------------'-->
-
+            <!--'пагинация'-->
+            <div class="swiper-pagination"></div>
+            <!--'Полоса прокрутки'-->
+            <div class="swiper-scrollbar"></div>
+            <!--''-->
+          </div>
+          <!--''-->
+          <!--'Стрелки управления'-->
+          <div class="button-arrow swiper-button-next"></div>
+        </div>
+      </section>
+      <!--'----------------------------------'-->
     </main>
     <!--'----------------------------------'-->
     <footer id="footer" class="footer ">
@@ -634,13 +237,16 @@
   <div class="preloader__loader"></div>
 </section>
 
-    <!--кнопк прокрутки-->
+    <!--кнопка прокрутки вверх-->
     <div class="up-btn" id="back-top">
   <a class="up-btn__wrapper" href="#top">
     <img class="up-btn__img" src="img/arrow_up.svg">
     <div class="up-btn__text">Вверх</div>
   </a>
 </div>
+
+    <!--кнопка возврата к фанфикам-->
+    <a class="back-up-btn" id="back-up" href="../standart-fun.html">Фанфики</a>
 
     <!--'ФОРМА ОТПРАВКИ ПОПАП'-->
     <!--POP-UP-question-->
@@ -1235,11 +841,20 @@
     <!--'----------------------------------'-->
     <!--Java Script-->
 
-    <!--'Смена контента'-->
-    <script src="js/content-replacement/book-list-page-content-replacement.js"></script>
+
+    <!--'Определение какой ФАНФИК открыт чтобы сменить контент под него'-->
+    <!--'Смена контента определение какая страница активна чтобы подгрузить нужный скрипт'-->
+    <script src="js/content-replacement/fun-book-content/fun-content-replacement.js"></script>
+    <!--'----------------------------------'-->
+
+
+    <!--'SWIPER'-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swiper-fun.js"></script>
+    <!--'----------------------------------'-->
 
     <!--'открытие попапов политики конфиденциальности и пользовательского соглашения'-->
     <script src="js/script-popup-policy-terms-use.js"></script>
-</body>
+  </body>
 
 </html>

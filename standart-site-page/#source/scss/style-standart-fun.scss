@@ -144,6 +144,7 @@ main {
     @include wiHe(var(--titleBgWi), 120%);
     @include leTo(var(--topTitleBg), 50%);
     margin-left: calc(var(--titleBgWi) / -2);
+    z-index: 1;
     background-color: $skinColor;
     position: absolute;
     border-radius: 10px;
@@ -244,6 +245,7 @@ main {
   //Вспомогательная линия с вензелями по углам снизу
   .line-auxiliary {
     @include wiHe(var(--titleBgWi), 2px);
+    z-index: 10;
     position: relative;
     margin: auto;
     &::before,
@@ -272,6 +274,11 @@ main {
 
 /*----контейнер с ОПИСАНИЕМ КНИГИ--*/
 
+.fun-book-position {
+  z-index: 10;
+  position: relative;
+}
+
 .fun {
   @include flCent($jusCon: space-around);
   &__text-container {
@@ -286,7 +293,6 @@ main {
     @include textBorderSmokeColor;
     margin: 15px auto;
     text-align: center;
-    position: static;
     height: 100%;
   }
   //
@@ -552,11 +558,8 @@ main {
   .fun {
     //ЛЕЙБЛ НОВИНКА
     &__new {
-      border: 1px solid red;
-      @include flCent;
       @include wiHe(50%, max-content);
       margin: 10px auto 3px;
-      position: static;
       padding: 3px;
     }
     /*--контейнер с ФОТО книги и ссылками--*/
@@ -611,28 +614,28 @@ main {
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
 
-.new-fun {
-  order: 1;
+.fun-book-position {
+  order: 10;
 }
 
-.tinder {
-  order: 2;
-}
+/*--*/
 
-.women {
-  order: 4;
-}
-
-.stream {
+.new-book3 {
   order: 3;
 }
 
-.demon {
-  order: 5;
+.new-book2 {
+  order: 2;
 }
 
+.new-book {
+  order: 1;
+}
+
+/*--*/
+
 .line-auxiliary {
-  order: 1000;
+  order: 10000000;
 }
 
 /*----*/

@@ -76,7 +76,7 @@ h1 {
     overflow: hidden;
 }*/
 .not-visible {
-  display: none; }
+  display: none !important; }
 
 .content-btn {
   width: var(--btnSect2Wi);
@@ -133,6 +133,51 @@ h1 {
   margin-bottom: var(--titleMarginBottom);
   text-align: center; }
 
+/*-------ЛЕЙБЛ НОВИНКИ (NEW)-------------*/
+.book__new {
+  border: 1px solid red;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: var(--fsH4);
+  font-weight: 600;
+  line-height: calc(var(--fsH4) * 1.5);
+  color: red;
+  font-style: normal;
+  font-family: Georgia, sans-serif;
+  text-shadow: 0 -1px 1px #cccccc, 0 -1px 1px #cccccc, 0 1px 1px #cccccc, 0 1px 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc;
+  text-align: center;
+  margin: 15px auto 5px; }
+
+@media (max-width: 370px) {
+  .book__new {
+    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 50%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 10px auto 3px;
+    position: static;
+    padding: 3px; } }
+
+/*------------------------------------------*/
 @media (max-width: 1255px) {
   :root {
     --fsH2: 38px; } }
@@ -648,9 +693,9 @@ h1 {
     padding-bottom: 12px;
     background-color: #1d241f;
     border-radius: 10px;
-    -webkit-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s; }
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s; }
   .up-btn__img {
     width: 50px;
     height: 50px; }
@@ -1658,25 +1703,7 @@ h1 {
   overflow: hidden;
   background-color: #fff3d2;
   /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
-  /*----*/
-  /*&::after,
-    &::before {
-        @include wiHe; //($he: max-content);
-        @include leTo;
-        content: '';
-        position: absolute;
-    }
-    //фон лист бумаги
-    &::after {
-        @include bgImg($bgImSize: auto 100%, $bgPosition: center);
-        z-index: 1;
-        background-image: url('../img/sepia-list-bg.png');
-    }
-    //фон цвет
-    &::before {
-        z-index: -1;
-        background-color: $DarkRedColor;
-    }*/ }
+  /*----*/ }
   .in-work::before, .in-work::after,
   .in-work .line-auxiliary::before,
   .in-work .line-auxiliary::after,
@@ -1909,7 +1936,7 @@ h1 {
     flex-direction: column; }
   .in-work__text-container,
   .release__text-container {
-    width: 90%;
+    width: 85%;
     height: 100%;
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -1921,7 +1948,7 @@ h1 {
     -ms-flex-order: 1;
     order: 1; } }
 
-@media (max-width: 530px) {
+@media (max-width: 590px) {
   .in-work::before, .in-work::after,
   .in-work .line-auxiliary::before,
   .in-work .line-auxiliary::after,
@@ -1992,11 +2019,11 @@ h1 {
     transform: matrix(1.15, 0.2, 0, 1, 0, 1.5) rotateY(30deg); } }
 
 :root {
-  --photoSect3Wi: 300px;
+  --photoSect3Wi: 500px;
   --marginLeftPhotoSect3: 80px;
   --bgPhotoSect3Wi: calc(var(--photoSect3Wi) * 1.5);
   --bgPhotoSect3He: calc(var(--photoSect3Wi) * 1.65);
-  --lineSect3Wi: 300px; }
+  --lineSect3Wi: 50%; }
 
 .biography {
   width: 100%;
@@ -2070,20 +2097,7 @@ h1 {
     height: -moz-max-content;
     height: max-content;
     -webkit-filter: sepia(50%);
-    filter: sepia(50%);
-    /*
-    &::after {
-      @include wiHe(var(--bgPhotoSect3Wi), var(--bgPhotoSect3He));
-      @include leTo(
-        -30px,
-        calc(var(--photoSect3Wi) / -3.5)
-      ); //calc(var( --bgPhotoSect3Hei)/-1.5)
-      @include bgImg;
-      z-index: -1;
-      content: '';
-      position: absolute;
-      background-image: url('../img/bg-photo.png');
-    }*/ }
+    filter: sepia(50%); }
     .biography__photo img {
       width: var(--photoSect3Wi);
       height: auto; }
@@ -2126,7 +2140,7 @@ h1 {
     width: var(--lineSect3Wi);
     height: 4px;
     background-color: #e2c68e;
-    margin: 20px 0; }
+    margin: 20px auto; }
   .biography__btn {
     -ms-grid-row: 9;
     -ms-grid-column: 1;
@@ -2169,7 +2183,16 @@ h1 {
     height: -moz-max-content;
     height: max-content; }
   .biography__photo {
-    margin-bottom: calc(var(--photoSect3Wi) / 4); }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: calc(var(--photoSect3Wi) / 8); }
   .biography__text-container {
     width: 90vw;
     height: -webkit-max-content;
@@ -2417,7 +2440,8 @@ h1 {
 @media (max-width: 1430px) {
   :root {
     --emmalustWi: 600px;
-    --taglineTextWi: 100%; } }
+    --taglineTextWi: 100%;
+    --photoSect3Wi: 400px; } }
 
 @media (max-width: 1255px) {
   :root {
@@ -2434,10 +2458,12 @@ h1 {
     --emmalustWi: 50vw;
     --marginTextCont2sect: 15px;
     --containerBook2sectWi: 280px;
+    --photoSect3Wi: 350px;
     --sliderImgWi: 350px; } }
 
 @media (max-width: 840px) {
   :root {
+    --photoSect3Wi: 300px;
     --sliderImgWi: 450px; } }
 
 @media (max-width: 770px) {
@@ -2445,7 +2471,7 @@ h1 {
     --emmalustWi: 47vw;
     --containerBook2sectWi: 250px;
     --paddingSectBaseTopBot: 70px;
-    --photoSect3Wi: 240px;
+    --photoSect3Wi: 60%;
     --marginLeftPhotoSect3: 60px;
     --lineSect3Wi: 200px; } }
 
@@ -2478,7 +2504,7 @@ h1 {
       var(--containerBook2sectWi) * 0.855
     );
     --paddingSectBaseTopBot: 50px;
-    --photoSect3Wi: 150px;
+    --photoSect3Wi: 250px;
     --lineSect3Wi: 70%; } }
 
 @media (max-width: 320px) {
@@ -2494,5 +2520,5 @@ h1 {
   :root {
     --firstBlockHe: 80vw;
     --paddingSectBaseTopBot: 40px;
-    --photoSect3Wi: 100px;
+    --photoSect3Wi: 190px;
     --sliderImgWi: 250px; } }

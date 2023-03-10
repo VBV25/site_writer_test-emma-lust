@@ -271,25 +271,6 @@ h1 {
     }
   }
   /*----*/
-  //фоны
-  /*&::after,
-    &::before {
-        @include wiHe; //($he: max-content);
-        @include leTo;
-        content: '';
-        position: absolute;
-    }
-    //фон лист бумаги
-    &::after {
-        @include bgImg($bgImSize: auto 100%, $bgPosition: center);
-        z-index: 1;
-        background-image: url('../img/sepia-list-bg.png');
-    }
-    //фон цвет
-    &::before {
-        z-index: -1;
-        background-color: $DarkRedColor;
-    }*/
   //----Заголовок блока
   &__base-title {
     position: relative;
@@ -420,7 +401,7 @@ h1 {
     }
     //-------контейнер с текстовыми блоками
     &__text-container {
-      @include wiHe(90%);
+      @include wiHe(85%);
       order: 2;
     }
     //---тексты--
@@ -433,8 +414,8 @@ h1 {
 }
 
 //
-//-------530-PX-----------
-@media (max-width: 530px) {
+//-------590-PX-----------
+@media (max-width: 590px) {
   .in-work,
   .release {
     //вензеля вверху по углам
@@ -536,12 +517,12 @@ h1 {
 //----------------ТРЕТЬЯ-СЕКЦИЯ--------------------
 :root {
   //--------3блок-------
-  --photoSect3Wi: 300px; //размер фото 3 секции ширина
+  --photoSect3Wi: 500px; //размер фото 3 секции ширина
   --marginLeftPhotoSect3: 80px; //отступ фото левый внешний 3 секция
   --bgPhotoSect3Wi: calc(var(--photoSect3Wi) * 1.5); //фон Фото ширина 3 секц
   --bgPhotoSect3He: calc(var(--photoSect3Wi) * 1.65); //Фон фото 3 секц высота
   //текст
-  --lineSect3Wi: 300px; //длинна линии 3 секция
+  --lineSect3Wi: 50%; //длинна линии 3 секция
   //----------------------------------
 }
 
@@ -587,19 +568,6 @@ h1 {
     img {
       @include wiHe(var(--photoSect3Wi), auto);
     }
-    /*
-    &::after {
-      @include wiHe(var(--bgPhotoSect3Wi), var(--bgPhotoSect3He));
-      @include leTo(
-        -30px,
-        calc(var(--photoSect3Wi) / -3.5)
-      ); //calc(var( --bgPhotoSect3Hei)/-1.5)
-      @include bgImg;
-      z-index: -1;
-      content: '';
-      position: absolute;
-      background-image: url('../img/bg-photo.png');
-    }*/
   }
   //контейнер с текстом
   &__text-container {
@@ -635,7 +603,7 @@ h1 {
   &__line {
     @include wiHe(var(--lineSect3Wi), 4px);
     background-color: $skinColor;
-    margin: 20px 0;
+    margin: 20px auto;
   }
   //-------кнопка перехода
   &__btn {
@@ -665,7 +633,8 @@ h1 {
       @include wiHe(90vw, max-content);
     }
     &__photo {
-      margin-bottom: calc(var(--photoSect3Wi) / 4);
+      @include flCent;
+      margin-bottom: calc(var(--photoSect3Wi) / 8);
     }
     //контейнер с текстом
     &__text-container {
@@ -916,6 +885,8 @@ h1 {
     //------1блок
     --emmalustWi: 600px; //Ширина надписи Emma Lust
     --taglineTextWi: 100%; //Ширина текста слогана
+    //------3блок
+    --photoSect3Wi: 400px; //размер фото 3 секции ширина
   }
 }
 
@@ -944,6 +915,8 @@ h1 {
     //книга
     --containerBook2sectWi: 280px; // контейнера с книгой 2 секции и книги ширина
     //------------------------------------
+    //------3блок
+    --photoSect3Wi: 350px; //размер фото 3 секции ширина
     //----4блок------
     --sliderImgWi: 350px; //Ширина Изображения слайдера
   }
@@ -951,6 +924,8 @@ h1 {
 
 @media (max-width: 840px) {
   :root {
+    //------3блок
+    --photoSect3Wi: 300px; //размер фото 3 секции ширина
     //----4блок------
     --sliderImgWi: 450px; //Ширина Изображения слайдера
   }
@@ -967,7 +942,7 @@ h1 {
     //---------------------------------------
     //----3блок------
     --paddingSectBaseTopBot: 70px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 240px; //размер фото 3 секции ширина
+    --photoSect3Wi: 60%; //размер фото 3 секции ширина
     --marginLeftPhotoSect3: 60px; //отступ фото левый внешний 3 секция
     --lineSect3Wi: 200px; //длинна линии 3 секция
   }
@@ -1026,7 +1001,7 @@ h1 {
     //-------------------------------
     //----3блок------
     --paddingSectBaseTopBot: 50px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 150px; //размер фото 3 секции ширина
+    --photoSect3Wi: 250px; //размер фото 3 секции ширина
     --lineSect3Wi: 70%; //длинна линии 3 секция
   }
 }
@@ -1054,7 +1029,7 @@ h1 {
     //----------------------------------------
     //----3блок------
     --paddingSectBaseTopBot: 40px; //внутренний отступ 3 секции верх и низ
-    --photoSect3Wi: 100px; //размер фото 3 секции ширина
+    --photoSect3Wi: 190px; //размер фото 3 секции ширина
     //----------------------------------------
     //----4блок------
     --sliderImgWi: 250px; //Ширина Изображения слайдера
