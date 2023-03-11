@@ -18,6 +18,7 @@ $DarkRedColor2: #160603;
 $yellowBrownColor: #885a34;
 $sandColor: #fff3d2;
 $skinColor: #e2c68e;
+$skinColorOpacity: #e2c68ed1;
 //
 //----------
 //-шрифты-
@@ -261,8 +262,16 @@ $fontFamily2: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
   font-family: $fontFamily;
 }
 
-//----------------------------------------------------------------------------------------------------
-//-------------------общие стили----------------
+//--------------------------------------------------
+//
+//
+//
+//
+//
+//
+
+/*-------------общие стили--------------*/
+
 body {
   background: $emeraldDarkColor2;
   position: relative;
@@ -277,7 +286,19 @@ h1 {
   font-size: 1px !important;
 }
 
-//стиль блокировки прокрутки
+/*------ЯКОРЯ-------*/
+
+.anchors-group {
+  @include wiHe(1px, 1px);
+  @include leTo;
+  z-index: -100;
+  border: 10px solid red;
+  position: absolute;
+  opacity: 0;
+}
+
+/*-----стиль блокировки прокрутки-----*/
+
 .lock {
   overflow: hidden;
 }
@@ -286,11 +307,14 @@ h1 {
     overflow: hidden;
 }*/
 
+/*-----СТИЛЬ СКРЫТИЯ-----*/
+
 .not-visible {
   display: none !important;
 }
 
-//стилизация кнопок перехода
+/*-----стилизация кнопок перехода-----*/
+
 .content-btn {
   @include wiHe(var(--btnSect2Wi), var(--btnSect2He));
   z-index: 4;
@@ -318,7 +342,8 @@ h1 {
   }
 }
 
-//стилизация заголовков каждого блока
+/*-----стилизация заголовков каждого блока-----*/
+
 .base-title {
   z-index: 5;
   @include wiHe($he: max-content);
@@ -342,7 +367,7 @@ h1 {
   }
 }
 
-//-------370-PX-----------
+//--370-PX--
 @media (max-width: 370px) {
   .book {
     //ЛЕЙБЛ НОВИНКА

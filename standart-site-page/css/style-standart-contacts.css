@@ -55,6 +55,7 @@ ul li {
   --titleMarginBottom: 80px;
   --fs2sectTitle: 72px; }
 
+/*-------------общие стили--------------*/
 body {
   background: #041308;
   position: relative; }
@@ -69,15 +70,29 @@ h1 {
   overflow: hidden;
   font-size: 1px !important; }
 
+/*------ЯКОРЯ-------*/
+.anchors-group {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  border: 10px solid red;
+  position: absolute;
+  opacity: 0; }
+
+/*-----стиль блокировки прокрутки-----*/
 .lock {
   overflow: hidden; }
 
 /*body.lock {
     overflow: hidden;
 }*/
+/*-----СТИЛЬ СКРЫТИЯ-----*/
 .not-visible {
   display: none !important; }
 
+/*-----стилизация кнопок перехода-----*/
 .content-btn {
   width: var(--btnSect2Wi);
   height: var(--btnSect2He);
@@ -118,6 +133,7 @@ h1 {
     top: 0;
     left: 0; }
 
+/*-----стилизация заголовков каждого блока-----*/
 .base-title {
   z-index: 5;
   width: 100%;
@@ -1375,7 +1391,10 @@ h1 {
     line-height: calc(var(--fsP) * 1.5);
     color: #000000;
     font-style: normal;
-    font-family: Georgia, sans-serif; }
+    font-family: Georgia, sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
     .popupt__text ul {
       width: 80%;
       margin: auto; }

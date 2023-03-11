@@ -17,6 +17,7 @@
     <script src="../js/jquery.maskedinput.min.js"></script>
     <!--'основные скрипты'-->
     <script src="js/script-standart-site.js"></script>
+    <script src="js/filter-script.js"></script>
     <script src="js/validation-standart-site.js"></script>
     <!---------------------------------------------->
 
@@ -27,6 +28,14 @@
 </head>
 
 <body class="lock">
+    <!--'ЯКОРЯ ДЛЯ ОТОБРАЖЕНИЯ КНИГ ПРИ ПЕРЕХОДЕ С ГЛАВНОЙ СТРАНИЦЫ ИЗ СЛАЙДЕРА'-->
+    <div class="anchors-group">
+        <div class="anchors-group__anchors" id="anchor-novels"></div>
+        <div class="anchors-group__anchors" id="anchor-fantasy"></div>
+    </div>
+    <!--'----------------'-->
+
+    <!--'-----HEADER-----'-->
     <header id="header" class="header ">
     <!--<div class="per"></div>-->
     <div class="container">
@@ -65,6 +74,8 @@
 
     </div>
 </header>
+    <!--'----------------'-->
+
     <h1>Emma Lust</h1>
     <main class="main main-book-page">
         <!--'1 СЕКЦИЯ'-->
@@ -93,6 +104,44 @@
 
                     </div>
                 </div>
+                <!--ФИЛЬТР-->
+<div class=" filters">
+  <!-------РОМАНЫ------->
+  <div class="filters__btn novels">
+    <input type="checkbox" name="novels-filter" id="novels-filter" class="separate-filter" />
+    <label for="novels-filter" class="filters__checkbox">Романы</label>
+  </div>
+  <!------------------->
+
+  <!-------Фэнтнзи------->
+  <div class="filters__btn fantasy">
+    <input type="checkbox" name="fantasy-filter" id="fantasy-filter" class="separate-filter" />
+    <label for="fantasy-filter" class="filters__checkbox">Фэнтези</label>
+  </div>
+  <!------------------->
+
+  <!-------Фанфики------->
+  <div class="filters__btn fun">
+    <input type="checkbox" name="fun-filter" id="fun-filter" class="separate-filter" />
+    <label for="fun-filter" class="filters__checkbox">Фанфики</label>
+  </div>
+  <!------------------->
+
+  <!------Рассказы------>
+  <div class="filters__btn stories">
+    <input type="checkbox" name="stories-filter" id="stories-filter" class="separate-filter" />
+    <label for="stories-filter" class="filters__checkbox">Рассказы</label>
+  </div>
+  <!------------------->
+
+  <!-------Все--------->
+  <div class="filters__btn all">
+    <input type="checkbox" name="all-filter" id="all-filter" checked disabled />
+    <label for="all-filter" class="filters__checkbox">Все</label>
+  </div>
+  <!------------------->
+
+</div>
                 <div class="book-block__line start-line">
 
     <img src="img/line.png" alt="line">
@@ -113,7 +162,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'-------------------Tinder-------------'-->
-<div class="tinder new-book new-book2 position-list">
+<div class=" new-book new-book2 novels-filter tinder position-list all-filter">
     <div class="book-block__container">
 
         <!--'ЖАНР'-->
@@ -208,7 +257,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------МОЯ ЖЕНЩИНА------------'-->
-<div class=" women position-list">
+<div class="novels-filter women position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->
@@ -298,7 +347,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------Твой личный демон------------'-->
-<div class="demon position-list">
+<div class="novels-filter demon position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->
@@ -387,7 +436,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------Графиня на стриме------------'-->
-<div class="stream position-list">
+<div class="novels-filter stream position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->
@@ -474,7 +523,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------Второй шанс------------'-->
-<div class="second-chance position-list">
+<div class=" novels-filter second-chance position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->
@@ -559,7 +608,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------Причиняя любовь------------'-->
-<div class="causing-love position-list">
+<div class="novels-filter causing-love position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->
@@ -645,7 +694,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'------------------ЗОЙКА------------'-->
-<div class="zoika new-book  position-list">
+<div class="novels-filter zoika new-book  position-list all-filter">
     <div class="book-block__container ">
         <!--'ЖАНР'-->
         <!--'!!!!!!!!!!!!!'-->

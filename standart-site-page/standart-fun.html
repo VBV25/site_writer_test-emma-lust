@@ -17,6 +17,7 @@
     <script src="../js/jquery.maskedinput.min.js"></script>
     <!--'основные скрипты'-->
     <script src="js/script-standart-site.js"></script>
+    <script src="js/filter-script.js"></script>
     <script src="js/validation-standart-site.js"></script>
 
     <!---------------------------------------------->
@@ -28,6 +29,14 @@
 </head>
 
 <body class="lock">
+    <!--'ЯКОРЯ ДЛЯ ОТОБРАЖЕНИЯ КНИГ ПРИ ПЕРЕХОДЕ С ГЛАВНОЙ СТРАНИЦЫ ИЗ СЛАЙДЕРА'-->
+    <div class="anchors-group">
+        <div class="anchors-group__anchors" id="anchor-fun"></div>
+        <div class="anchors-group__anchors" id="anchor-stories"></div>
+    </div>
+    <!--'----------------'-->
+
+    <!--'-----HEADER-----'-->
     <header id="header" class="header ">
     <!--<div class="per"></div>-->
     <div class="container">
@@ -66,6 +75,8 @@
 
     </div>
 </header>
+    <!--'----------------'-->
+
     <h1>Emma Lust</h1>
     <main class="main main-fun-page">
         <!--'1 СЕКЦИЯ'-->
@@ -95,31 +106,43 @@
                 </div>
                 <h2 class="fun-block__base-title base-title">Фанфики и рассказы</h2>
                 <!--ФИЛЬТР-->
-<!-------Фанфики------->
-<div class="fun-block__filters filters">
-  <div class="filters__btn">
+<div class=" filters">
+  <!-------РОМАНЫ------->
+  <div class="filters__btn novels">
+    <input type="checkbox" name="novels-filter" id="novels-filter" class="separate-filter" />
+    <label for="novels-filter" class="filters__checkbox">Романы</label>
+  </div>
+  <!------------------->
+
+  <!-------Фэнтнзи------->
+  <div class="filters__btn fantasy">
+    <input type="checkbox" name="fantasy-filter" id="fantasy-filter" class="separate-filter" />
+    <label for="fantasy-filter" class="filters__checkbox">Фэнтези</label>
+  </div>
+  <!------------------->
+
+  <!-------Фанфики------->
+  <div class="filters__btn fun">
     <input type="checkbox" name="fun-filter" id="fun-filter" class="separate-filter" />
     <label for="fun-filter" class="filters__checkbox">Фанфики</label>
   </div>
   <!------------------->
 
   <!------Рассказы------>
-  <div class="filters__btn">
+  <div class="filters__btn stories">
     <input type="checkbox" name="stories-filter" id="stories-filter" class="separate-filter" />
     <label for="stories-filter" class="filters__checkbox">Рассказы</label>
   </div>
   <!------------------->
 
   <!-------Все--------->
-  <div class="filters__btn">
+  <div class="filters__btn all">
     <input type="checkbox" name="all-filter" id="all-filter" checked disabled />
     <label for="all-filter" class="filters__checkbox">Все</label>
   </div>
   <!------------------->
 
 </div>
-
-<!--'data-toggle="all"-----class="visually-hidden filters__input filters__input-checkbox filters__close" '-->
                 <div class="fun-block__line start-line">
   <img src="img/line.png" alt="line">
 </div>
@@ -168,7 +191,7 @@
         <!--'!!!!!!!!!!!!!'-->
         <!--'кнопка открытия'-->
         <!--'ПРАВКА-ССЫЛКИ-название-после-#'-->
-        <a href="fun-book-standart.html#fun-1" class="fun__btn content-btn "></a>
+        <a href="fun-book-standart.html#fun-1-book" class="fun__btn content-btn "></a>
         <!--'!!!!!!!!!!!!!'-->
         <!--'--------'-->
 
@@ -271,7 +294,7 @@
         <!--'!!!!!!!!!!!!!'-->
         <!--'кнопка открытия'-->
         <!--'ПРАВКА-ССЫЛКИ-название-после-#'-->
-        <a href="fun-book-standart.html#fun-2" class="fun__btn content-btn "></a>
+        <a href="fun-book-standart.html#fun-2-book" class="fun__btn content-btn "></a>
         <!--'!!!!!!!!!!!!!'-->
         <!--'--------'-->
 
@@ -372,7 +395,7 @@
         <!--'!!!!!!!!!!!!!'-->
         <!--'кнопка открытия'-->
         <!--'ПРАВКА-ССЫЛКИ-название-после-#'-->
-        <a href="fun-book-standart.html#fun-3" class="fun__btn content-btn "></a>
+        <a href="fun-book-standart.html#fun-3-book" class="fun__btn content-btn "></a>
         <!--'!!!!!!!!!!!!!'-->
         <!--'--------'-->
 
@@ -473,7 +496,7 @@
         <!--'!!!!!!!!!!!!!'-->
         <!--'кнопка открытия'-->
         <!--'ПРАВКА-ССЫЛКИ-название-после-#'-->
-        <a href="fun-book-standart.html#fun-4" class="fun__btn content-btn "></a>
+        <a href="fun-book-standart.html#fun-4-book" class="fun__btn content-btn "></a>
         <!--'!!!!!!!!!!!!!'-->
         <!--'--------'-->
 
@@ -581,7 +604,7 @@
         <!--'!!!!!!!!!!!!!'-->
         <!--'кнопка открытия'-->
         <!--'ПРАВКА-ССЫЛКИ-название-после-#'-->
-        <a href="fun-book-standart.html#fun-5" class="fun__btn content-btn "></a>
+        <a href="fun-book-standart.html#fun-5-book" class="fun__btn content-btn "></a>
         <!--'!!!!!!!!!!!!!'-->
         <!--'--------'-->
 

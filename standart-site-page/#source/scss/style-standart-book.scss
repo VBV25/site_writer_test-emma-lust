@@ -16,6 +16,9 @@
 @import 'preloader';
 // ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
 @import 'policy';
+// ФИЛЬТР
+@import 'style-filter';
+//
 //
 //ПЕРВАЯ СЕКЦИЯ
 @import 'tagline-writer-photo';
@@ -174,6 +177,12 @@ main {
     }
   }
   /*----*/
+  /*-------ФИЛЬТР--------*/
+  .fun,
+  .stories {
+    display: none;
+  }
+  /*-----------------------*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
   &__container {
     @include wiHe($he: max-content);
@@ -283,6 +292,7 @@ main {
   &__text {
     @include fontSizeP($color: $blackColor);
     text-align: start;
+    hyphens: auto;
   }
   //---кнопка перехода к книге
   &__btn {

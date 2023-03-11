@@ -160,7 +160,7 @@ main {
     height: max-content;
     //слайд
     &__slide {
-      padding: 0 3px;
+      padding: 0 6px;
       .slide-title {
         @include fontSizeH4($color: $emeraldColor);
         text-align: center;
@@ -173,6 +173,7 @@ main {
       .slide-text {
         @include wiHe(99%, max-content);
         @include fontSizeP($color: $blackColor);
+        hyphens: auto;
       }
     }
     //Сдайды не активные
@@ -245,16 +246,6 @@ main {
   background-color: $emeraldColor;
 }
 
-/*------ЯКОРЯ-------*/
-
-.fun-book {
-  &__anchors-group {
-    @include wiHe(1px, 1px);
-    position: absolute;
-    opacity: 0;
-  }
-}
-
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------1250-PX-----------
@@ -272,7 +263,7 @@ main {
     --titleMarginBottom: 30px; //отступ нижний заголовка блока
   }
   .slider {
-    padding: var(--paddingSectBaseTopBot) 0px;
+    padding: var(--paddingSectBaseTopBot) 15px;
   }
   .wrapper-slider .text-slider {
     padding: 0px 0px 30px 0px;

@@ -49,6 +49,7 @@
   }
   &__text {
     @include fontSizeP;
+    hyphens: auto;
     ul {
       width: 80%;
       margin: auto;

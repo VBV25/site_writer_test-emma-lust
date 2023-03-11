@@ -17,6 +17,7 @@
     <script src="../js/jquery.maskedinput.min.js"></script>
     <!--'основные скрипты'-->
     <script src="js/script-standart-site.js"></script>
+    <script src="js/filter-script.js"></script>
     <script src="js/validation-standart-site.js"></script>
     <!---------------------------------------------->
 
@@ -27,7 +28,17 @@
 </head>
 
 <body class="lock">
+    <!--'ЯКОРЯ ДЛЯ ОТОБРАЖЕНИЯ КНИГ ПРИ ПЕРЕХОДЕ С ГЛАВНОЙ СТРАНИЦЫ ИЗ СЛАЙДЕРА'-->
+    <div class="anchors-group">
+        <div class="anchors-group__anchors" id="anchor-novels"></div>
+        <div class="anchors-group__anchors" id="anchor-fantasy"></div>
+    </div>
+    <!--'----------------'-->
+
+    <!--'-----HEADER-----'-->
     <!-- @import 'header.html' -->
+    <!--'----------------'-->
+
     <h1>Emma Lust</h1>
     <main class="main main-book-page">
         <!--'1 СЕКЦИЯ'-->
@@ -43,6 +54,7 @@
 
                     </div>
                 </div>
+                <!-- @import 'filter.html' -->
                 <!-- @import 'page-book__book-block.html' -->
 
             </div>

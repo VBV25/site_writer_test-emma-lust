@@ -193,11 +193,9 @@ main {
   }
   /*---*/
   /*-------ФИЛЬТР--------*/
-  &____filters {
-    border: 2px solid red;
-    @include wiHe(600px, max-content);
-    z-index: 120;
-    position: relative;
+  .novels,
+  .fantasy {
+    display: none;
   }
   /*-----------------------*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
@@ -326,6 +324,7 @@ main {
   &__text {
     @include fontSizeP($color: $blackColor);
     text-align: start;
+    hyphens: auto;
   }
   //---кнопка перехода к книге
   &__btn {

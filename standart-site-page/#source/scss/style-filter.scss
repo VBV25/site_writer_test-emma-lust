@@ -20,7 +20,8 @@
     border-radius: 10px;
     opacity: 0.5;
     &:hover {
-      box-shadow: 0 0 20px $grayColor;
+      box-shadow: 0 0 20px $blackColor;
+      color: $whiteColor;
     }
   }
   //отключаем стандартный значек чекбокса
@@ -31,6 +32,21 @@
   input:checked ~ .filters__checkbox {
     opacity: 1;
     color: $whiteColor;
+  }
+  //если  кнопка фильтрации DISABLED
+  input:disabled ~ .filters__checkbox {
+    opacity: 0.4;
+    background-color: $darkGrayColor;
+    color: $emeraldDarkColor;
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+  //если  кнопка фильтрации DISABLED CHECKED
+  input:checked:disabled ~ .filters__checkbox {
+    opacity: 1;
+    color: $whiteColor;
+    background-color: $emeraldColor;
   }
 }
 

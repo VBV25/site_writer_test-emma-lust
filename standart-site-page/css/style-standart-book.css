@@ -55,6 +55,7 @@ ul li {
   --titleMarginBottom: 80px;
   --fs2sectTitle: 72px; }
 
+/*-------------общие стили--------------*/
 body {
   background: #041308;
   position: relative; }
@@ -69,15 +70,29 @@ h1 {
   overflow: hidden;
   font-size: 1px !important; }
 
+/*------ЯКОРЯ-------*/
+.anchors-group {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  border: 10px solid red;
+  position: absolute;
+  opacity: 0; }
+
+/*-----стиль блокировки прокрутки-----*/
 .lock {
   overflow: hidden; }
 
 /*body.lock {
     overflow: hidden;
 }*/
+/*-----СТИЛЬ СКРЫТИЯ-----*/
 .not-visible {
   display: none !important; }
 
+/*-----стилизация кнопок перехода-----*/
 .content-btn {
   width: var(--btnSect2Wi);
   height: var(--btnSect2He);
@@ -118,6 +133,7 @@ h1 {
     top: 0;
     left: 0; }
 
+/*-----стилизация заголовков каждого блока-----*/
 .base-title {
   z-index: 5;
   width: 100%;
@@ -1375,7 +1391,10 @@ h1 {
     line-height: calc(var(--fsP) * 1.5);
     color: #000000;
     font-style: normal;
-    font-family: Georgia, sans-serif; }
+    font-family: Georgia, sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
     .popupt__text ul {
       width: 80%;
       margin: auto; }
@@ -1470,6 +1489,101 @@ h1 {
 @media (max-width: 247px) {
   .popupt__content {
     padding: 15px; } }
+
+.filters {
+  width: 40vw;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+  margin: 10px auto 25px; }
+  .filters__btn {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 150px;
+    flex-basis: 150px;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content; }
+  .filters__checkbox {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: calc(var(--fsP) + 2px);
+    font-weight: 300;
+    line-height: calc(var(--fsP) * 1.5);
+    color: #e2c68e;
+    font-style: normal;
+    font-family: Georgia, sans-serif;
+    padding: 2px 15px;
+    background-color: #253229;
+    border-radius: 10px;
+    opacity: 0.5; }
+    .filters__checkbox:hover {
+      -webkit-box-shadow: 0 0 20px #000000;
+      box-shadow: 0 0 20px #000000;
+      color: #ffffff; }
+  .filters input {
+    display: none; }
+  .filters input:checked ~ .filters__checkbox {
+    opacity: 1;
+    color: #ffffff; }
+  .filters input:disabled ~ .filters__checkbox {
+    opacity: 0.4;
+    background-color: #646464;
+    color: #1d241f; }
+    .filters input:disabled ~ .filters__checkbox:hover {
+      -webkit-box-shadow: unset;
+      box-shadow: unset; }
+  .filters input:checked:disabled ~ .filters__checkbox {
+    opacity: 1;
+    color: #ffffff;
+    background-color: #253229; }
+
+.all-filter {
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  opacity: 0; }
+
+.fun-filter {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
+
+.separate-filter {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
+
+.new-book {
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
 
 :root {
   --bgWondowWi: 520px;
@@ -1757,6 +1871,8 @@ main {
   padding: 0;
   /*--Заголовок и фон ЛИСТ БУМАГИ--*/
   /*----*/
+  /*-------ФИЛЬТР--------*/
+  /*-----------------------*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
   /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
   /*----*/ }
@@ -1817,6 +1933,9 @@ main {
       transform: scale(-1, 1); }
     .book-block__bg-title-wrap .base-title {
       margin-bottom: 10px; }
+  .book-block .fun,
+  .book-block .stories {
+    display: none; }
   .book-block__container {
     width: 100%;
     height: -webkit-max-content;
@@ -1967,7 +2086,10 @@ main {
     color: #000000;
     font-style: normal;
     font-family: Georgia, sans-serif;
-    text-align: start; }
+    text-align: start;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .book__btn::after {
     content: 'Перейти к книге'; }
   .book__photo-container {

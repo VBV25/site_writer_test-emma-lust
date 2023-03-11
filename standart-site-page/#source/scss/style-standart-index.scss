@@ -225,9 +225,25 @@ h1 {
   @include wiHe($he: max-content);
   z-index: 1;
   position: relative;
-  padding: var(--paddingSectBaseTopBot) 0px;
   overflow: hidden;
-  background-color: $skinColor;
+  //обертка контента секции для настройки фона
+  .release-content-block-wrapper {
+    padding: var(--paddingSectBaseTopBot) 0px;
+    background-color: $skinColorOpacity;
+    z-index: 10;
+    position: relative;
+  }
+  //фон картинка
+  .bg-wrapper {
+    z-index: -2;
+    @include wiHe;
+    @include leTo;
+    @include bgImg($bgImSize: 100% 100%);
+    background-image: url('../img/first-sect-bg3.jpg');
+    position: absolute;
+  }
+  ///
+  ///
   //вензеля вверху по углам
   &::before,
   &::after,
@@ -235,6 +251,7 @@ h1 {
   .line-auxiliary::after {
     @include wiHe(200px, 200px);
     @include bgImg;
+    z-index: 20;
     content: '';
     position: absolute;
     background-image: url('../img/corner1.svg');
@@ -314,6 +331,7 @@ h1 {
   &__text {
     @include fontSizeP($color: $blackColor);
     text-align: start;
+    hyphens: auto;
   }
   //-------кнопка перехода
   &__btn {
@@ -530,9 +548,11 @@ h1 {
 
 .biography {
   @include wiHe($he: max-content);
+  @include bgImg($bgImSize: 100% 100%);
+  background-image: url('../img/first-sect-bg1.jpg');
   position: relative;
   padding: var(--paddingSectBaseTopBot) 0;
-  background-color: $emeraldDarkColor;
+  //background-color: $emeraldDarkColor;
   overflow: hidden;
   //-----обертка блока
   &__wrapper {
@@ -586,6 +606,7 @@ h1 {
   //текст
   &__text {
     @include fontSizeP($color: $whiteColor);
+    hyphens: auto;
     a {
       color: $skinColor;
       &:hover {
@@ -614,6 +635,8 @@ h1 {
     background-color: $skinColor;
     &::after {
       content: 'Библиография';
+      color: $sandColor;
+      background-color: $darkGrayColor;
     }
   }
 }
@@ -683,9 +706,30 @@ h1 {
 }
 
 .wrapper-slider {
-  padding: var(--paddingSectBaseTopBot) 0;
+  //padding: var(--paddingSectBaseTopBot) 0;
   min-height: 100%;
-  background-color: $skinColor;
+  position: relative;
+  //
+  /*---------ДЛЯ ФОНА-----*/
+  //обертка контента секции для настройки фона
+  .slider-content-block-wrapper {
+    padding: var(--paddingSectBaseTopBot) 0px;
+    background-color: $skinColorOpacity;
+    z-index: 10;
+    position: relative;
+  }
+  //фон картинка
+  .bg-wrapper {
+    z-index: -2;
+    @include wiHe;
+    @include leTo;
+    @include bgImg($bgImSize: 100% 100%);
+    background-image: url('../img/first-sect-bg3.jpg');
+    position: absolute;
+  }
+  /*--------------*/
+  //
+  /*--*/
   .image-slider {
     @include wiHe(var(--contentWidh), max-content);
     padding: 0px 0px 70px 0px;
@@ -775,7 +819,9 @@ h1 {
 .blog {
   padding: var(--paddingSectBaseTopBot) 0;
   min-height: 100%;
-  background-color: $DarkRedColor;
+  @include bgImg($bgImSize: 100% 100%);
+  background-image: url('../img/first-sect-bg2.jpg');
+  //background-color: $DarkRedColor;
   //общий блок
   //обертка всего контента
   &__wrapper {
@@ -825,8 +871,11 @@ h1 {
   //текст поста
   &__text {
     display: flex;
+    align-items: center;
     @include fontSizeP($fontSize: calc(var(--fsP) * 1.1));
     min-height: 50%;
+    flex-grow: 1;
+    hyphens: auto;
   }
   //дата поста
   &__data {

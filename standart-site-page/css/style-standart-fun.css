@@ -55,6 +55,7 @@ ul li {
   --titleMarginBottom: 80px;
   --fs2sectTitle: 72px; }
 
+/*-------------общие стили--------------*/
 body {
   background: #041308;
   position: relative; }
@@ -69,15 +70,29 @@ h1 {
   overflow: hidden;
   font-size: 1px !important; }
 
+/*------ЯКОРЯ-------*/
+.anchors-group {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  border: 10px solid red;
+  position: absolute;
+  opacity: 0; }
+
+/*-----стиль блокировки прокрутки-----*/
 .lock {
   overflow: hidden; }
 
 /*body.lock {
     overflow: hidden;
 }*/
+/*-----СТИЛЬ СКРЫТИЯ-----*/
 .not-visible {
   display: none !important; }
 
+/*-----стилизация кнопок перехода-----*/
 .content-btn {
   width: var(--btnSect2Wi);
   height: var(--btnSect2He);
@@ -118,6 +133,7 @@ h1 {
     top: 0;
     left: 0; }
 
+/*-----стилизация заголовков каждого блока-----*/
 .base-title {
   z-index: 5;
   width: 100%;
@@ -1375,7 +1391,10 @@ h1 {
     line-height: calc(var(--fsP) * 1.5);
     color: #000000;
     font-style: normal;
-    font-family: Georgia, sans-serif; }
+    font-family: Georgia, sans-serif;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
     .popupt__text ul {
       width: 80%;
       margin: auto; }
@@ -1523,13 +1542,25 @@ h1 {
     border-radius: 10px;
     opacity: 0.5; }
     .filters__checkbox:hover {
-      -webkit-box-shadow: 0 0 20px #808080;
-      box-shadow: 0 0 20px #808080; }
+      -webkit-box-shadow: 0 0 20px #000000;
+      box-shadow: 0 0 20px #000000;
+      color: #ffffff; }
   .filters input {
     display: none; }
   .filters input:checked ~ .filters__checkbox {
     opacity: 1;
     color: #ffffff; }
+  .filters input:disabled ~ .filters__checkbox {
+    opacity: 0.4;
+    background-color: #646464;
+    color: #1d241f; }
+    .filters input:disabled ~ .filters__checkbox:hover {
+      -webkit-box-shadow: unset;
+      box-shadow: unset; }
+  .filters input:checked:disabled ~ .filters__checkbox {
+    opacity: 1;
+    color: #ffffff;
+    background-color: #253229; }
 
 .all-filter {
   -webkit-transition: all 0.5s ease 0s;
@@ -1919,14 +1950,9 @@ main {
     font-style: normal;
     font-family: Georgia, sans-serif;
     margin: 0 auto 25px; }
-  .fun-block____filters {
-    border: 2px solid red;
-    width: 600px;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-    z-index: 120;
-    position: relative; }
+  .fun-block .novels,
+  .fun-block .fantasy {
+    display: none; }
   .fun-block__container {
     width: 100%;
     height: -webkit-max-content;
@@ -2107,7 +2133,10 @@ main {
     color: #000000;
     font-style: normal;
     font-family: Georgia, sans-serif;
-    text-align: start; }
+    text-align: start;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .fun__btn {
     display: -webkit-box;
     display: -ms-flexbox;

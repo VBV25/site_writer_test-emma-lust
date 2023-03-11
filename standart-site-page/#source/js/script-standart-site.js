@@ -1,20 +1,36 @@
 $(document).ready(function () {
   //---------ВЫДЕЛЕНИЕ ПУНКТА МЕНЮ ИСХОДЯ ИЗ АДРЕСНОЙ СТРОКИ НА КОТОРОЙ СЕЙЧАС НАХОДИМСЯ-------
-  //
 
+  //КНИГИ
   if (location.toString().indexOf('standart-book') !== -1) {
     $('.header__link').removeClass('active-menu');
     $('.link-book').addClass('active-menu');
-  } else if (location.toString().indexOf('standart-fun') !== -1) {
+  }
+
+  //ФАНФИКИ
+  else if (location.toString().indexOf('standart-fun') !== -1) {
     $('.header__link').removeClass('active-menu');
     $('.link-fun').addClass('active-menu');
-  } else if (location.toString().indexOf('standart-bibliography') !== -1) {
+  }
+  //отдельные фанфики
+  else if (location.toString().indexOf('fun-book-standart') !== -1) {
+    $('.header__link').removeClass('active-menu');
+  }
+
+  //БИБЛИОГРАФИЯ
+  else if (location.toString().indexOf('standart-bibliography') !== -1) {
     $('.header__link').removeClass('active-menu');
     $('.link-bibliography').addClass('active-menu');
-  } else if (location.toString().indexOf('standart-media') !== -1) {
+  }
+
+  //МЕДИА
+  else if (location.toString().indexOf('standart-media') !== -1) {
     $('.header__link').removeClass('active-menu');
     $('.link-media').addClass('active-menu');
-  } else if (location.toString().indexOf('standart-contacts') !== -1) {
+  }
+
+  //КОНТАКТЫ
+  else if (location.toString().indexOf('standart-contacts') !== -1) {
     $('.header__link').removeClass('active-menu');
     $('.link-contacts').addClass('active-menu');
   }
@@ -106,115 +122,6 @@ $(document).ready(function () {
   //
   //
   //
-  /*---------ФИЛЬТР КНИГ-------------*/
-  /*-- НА СТРАНИЦЕ Фанфики и рассказы---*/
-  //ИЗНАЧАЛЬНО ОТОБРАЖАЕМ ВСЕ КНИГИ
-  if ($('#all-filter').is(':checked')) {
-    console.log('все');
-    $('.all-filter').css({ display: 'block', opacity: '1' });
-  }
-  //-------ОТОБРАЖЕНИЕ НУЖНЫХ КНИГ-------
-  //------- при клике на кнопки-------
-
-  //при клике на кнопку жанра
-  $('.separate-filter').click(function () {
-    //разрешаем кликать на кнопку ВСЕ
-    $('#all-filter').prop('disabled', false);
-    //плавно прозрачностью скрываем все книги
-    $('.all-filter').css({ opacity: '0', transition: 'all 0.5s ease 0s' });
-    //убираем скрытые книги из списка
-    setTimeout(function () {
-      $('.all-filter').css({ display: 'none' });
-    }, 600);
-    //выполняем дальнейший код с задержкой для плавного отображения
-
-    //проверяем активна ли хоть какая то кнопка жанра
-    //если активна
-    if ($('.separate-filter').is(':checked')) {
-      //снимаем активность с кнопки ВСЕ
-      $('#all-filter').prop('checked', false);
-
-      setTimeout(function () {
-        //делаем проверку активности кнопок жанров
-
-        //если активна кнопка ФАНФИКИ
-        $('.separate-filter').ready(function () {
-          if ($('#fun-filter').is(':checked')) {
-            //добавляем книги
-            $('.fun-filter').css({ display: 'block' });
-            //убираем прозрачность у книг
-            setTimeout(function () {
-              $('.fun-filter').css({ opacity: '1' });
-            }, 500);
-            console.log('фанфики');
-            return false;
-          }
-        });
-
-        //если активна кнопка РАССКАЗЫ
-        $('.separate-filter').ready(function () {
-          if ($('#stories-filter').is(':checked')) {
-            //добавляем книги
-            $('.stories-filter').css({ display: 'block' });
-            //убираем прозрачность у книг
-            setTimeout(function () {
-              $('.stories-filter').css({ opacity: '1' });
-            }, 500);
-            console.log('рассказы');
-            return false;
-          }
-        });
-      }, 700);
-    }
-    //
-    else {
-      //Активируем кнопку ВСЕ
-      $('#all-filter').prop('checked', true);
-      // запрещаем повторное нажатие на кнопку ВСЕ
-      $('#all-filter').prop('disabled', true);
-      //добавляем книги
-      $('.all-filter').css({ display: 'block' });
-      //убираем прозрачность у книг
-      setTimeout(function () {
-        $('.all-filter').css({ opacity: '1' });
-      }, 500);
-      console.log('все');
-    }
-  });
-
-  //
-  //
-  //
-  //
-  /*-------ОТОБРАЖЕНИЕ ВСЕХ КНИГ--------*/
-  //------при клике на кнопку ВСЕ------
-
-  $('#all-filter').click(function () {
-    setTimeout(function () {
-      $('.all-filter').css({ display: 'none' });
-    }, 500);
-    $('.all-filter').css({ opacity: '0' });
-    //если внопка ВСЕ активна запрещаем повторное нажатие на нее
-    $('#all-filter').prop('disabled', true);
-    //деактивируем кнопки жанров
-    $('.separate-filter').prop('checked', false);
-    //если кнопка все активна отображаем все книги
-    setTimeout(function () {
-      if ($('#all-filter').is(':checked')) {
-        //добавляем книги
-        $('.all-filter').css({ display: 'block' });
-        //убираем прозрачность у книг
-
-        setTimeout(function () {
-          $('.all-filter').css({ opacity: '1' });
-        }, 600);
-
-        console.log('нажал на все');
-      }
-    }, 500);
-  });
-
-  /*----------------------------------------*/
 
   //
   //
