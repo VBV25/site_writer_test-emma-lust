@@ -89,13 +89,18 @@
       <section class="slider">
 
         <div class="slider__wrapper">
-          <!--'Стрелки управления'-->
-          <div class="button-arrow swiper-button-prev"></div>
+
+
           <!--''-->
 
           <!--'СЛАЙДЕР'-->
 
           <div class="text-slider swiper-container">
+            <!--'Стрелки управления'-->
+            <div class="arrow-group">
+              <div class=" arrow-top  swiper-button-prev"></div>
+              <div class=" arrow-top swiper-button-next"></div>
+            </div>
             <!--'Обязатеьная оболчка'-->
             <div class="text-slider__wrapper swiper-wrapper" id="swiper-wrapper">
               <!--'Слайды'-->
@@ -178,20 +183,29 @@
 
 <!--'и т.д.'-->
               <!--'конец слайдов'-->
+
+            </div>
+            <!--'Стрелки управления'-->
+            <div class="arrow-group">
+              <div class=" arrow-bottom  swiper-button-prev"></div>
+              <div class=" arrow-bottom swiper-button-next"></div>
             </div>
             <!--'пагинация'-->
             <div class="swiper-pagination"></div>
             <!--'Полоса прокрутки'-->
             <div class="swiper-scrollbar"></div>
+
+
             <!--''-->
           </div>
           <!--''-->
-          <!--'Стрелки управления'-->
-          <div class="button-arrow swiper-button-next"></div>
+
         </div>
+
       </section>
       <!--'----------------------------------'-->
     </main>
+
     <!--'----------------------------------'-->
     <footer id="footer" class="footer ">
     <div class="footer__row">
@@ -208,9 +222,12 @@
         </div>
         <div class="footer__sotial-link-group">
 
-            <a href="#" target="_blank" class="footer__link footer__ig"></a>
-            <a href="#" target="_blank" class="footer__link footer__vk"></a>
-            <a href="#" target="_blank" class="footer__link footer__yt"></a>
+            <a href="https://instagram.com/emmalust_offisial" target="_blank" class="footer__link footer__ig"></a>
+            <a href="https://vk.com/emmalust" target="_blank" class="footer__link footer__vk"></a>
+            <a href="https://www.youtube.com/@emma_lust" target="_blank" class="footer__link footer__yt"></a>
+            <a href="https://t.me/emmalust" target="_blank" class="footer__link footer__tg"></a>
+
+
         </div>
     </div>
     <div class="footer__policy-wrapper">При использовании данного сайта, вы подтверждаете, что ознакомились с <span><a
@@ -246,7 +263,7 @@
 </div>
 
     <!--кнопка возврата к фанфикам-->
-    <a class="back-up-btn" id="back-up" href="../standart-fun.html">Фанфики</a>
+    <a class="back-up-btn" id="back-up" href="standart-fun.html">Фанфики</a>
 
     <!--'ФОРМА ОТПРАВКИ ПОПАП'-->
     <!--POP-UP-question-->
@@ -295,7 +312,8 @@
           <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input">
           <label for="formAgreement" class="checkbox__label">
             <span>Я даю свое согласие на обработку
-              персональных данных в соответствии с <a href="#">Условиями</a>*
+              персональных данных в соответствии с <a href="#popupt_policy" class="popupt-link">Политикой
+                конфиденциальности</a>*
             </span>
           </label>
         </div>

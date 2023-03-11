@@ -16,6 +16,9 @@
 @import 'preloader';
 // ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
 @import 'policy';
+// ФИЛЬТР
+@import 'style-filter';
+//
 //
 //ПЕРВАЯ СЕКЦИЯ
 @import 'tagline-writer-photo';
@@ -58,7 +61,7 @@
 //-------375-PX-----------
 @media (max-width: 375px) {
   :root {
-    --fsH4: 13px; //Заголовки h4
+    --fsH4: 14px; //Заголовки h4
   }
 }
 
@@ -106,7 +109,8 @@ main {
   --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
   --topTitleBg: -30px; //Смещение Листа бумаги вверх
   --marginTopBtn: 30px; //внешний отступ кнопки
-  --topBaseTitleMarg: 20px; //верхний отступ общего заголовка
+  --topBaseTitleMarg: 20px; //верхний отступ общего
+  --topTitlePadding: 70px; //верхний отступ заголовка заголовка
   /*---------*/
   //-----------книга-----------
   --rigtfunShift: 20px; //отступ книги от правого края
@@ -132,10 +136,12 @@ main {
   &__wrapper {
     @include wiHe;
     @include flCent;
+    min-height: 120vh;
     flex-direction: column;
     z-index: 10;
     position: relative;
     color: white;
+    padding-top: calc(var(--topTitlePadding) + var(--topTitleBg));
     padding-bottom: var(--wrapper2SectPaddingButtom);
   }
   /*--Заголовок и фон ЛИСТ БУМАГИ--*/
@@ -144,7 +150,7 @@ main {
     @include wiHe(var(--titleBgWi), 120%);
     @include leTo(var(--topTitleBg), 50%);
     margin-left: calc(var(--titleBgWi) / -2);
-    z-index: 1;
+    z-index: -1;
     background-color: $skinColor;
     position: absolute;
     border-radius: 10px;
@@ -153,7 +159,7 @@ main {
   &__bg-title-wrap {
     @include wiHe;
     position: relative;
-    padding-top: calc(var(--topTitleBg) * -1);
+    padding-top: var(--topTitlePadding);
     &::before,
     &::after {
       content: '';
@@ -183,10 +189,17 @@ main {
       $fsH2: calc(var(--fs2sectTitle) - 10px),
       $color: $emeraldDarkColor
     );
-    margin: 0 auto 10px;
-    margin-top: var(--topBaseTitleMarg) !important;
+    margin: 0 auto 25px;
   }
   /*---*/
+  /*-------ФИЛЬТР--------*/
+  &____filters {
+    border: 2px solid red;
+    @include wiHe(600px, max-content);
+    z-index: 120;
+    position: relative;
+  }
+  /*-----------------------*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
   &__container {
     @include wiHe($he: max-content);
@@ -206,6 +219,7 @@ main {
   &__fun {
     @include wiHe(var(--titleBgWi));
     padding: 20px 2vw;
+    margin: 0 2px;
     overflow: hidden;
   }
   /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
@@ -213,7 +227,7 @@ main {
     position: relative;
     z-index: 21;
     @include wiHe(60%, max-content);
-    margin: auto;
+    margin: 0 auto;
     img {
       @include wiHe(100%, auto);
     }
@@ -248,6 +262,7 @@ main {
     z-index: 10;
     position: relative;
     margin: auto;
+    margin-bottom: 0;
     &::before,
     &::after {
       content: '';
@@ -416,7 +431,6 @@ main {
         $fsH2: calc(var(--fs2sectTitle) - 15px),
         $color: $emeraldDarkColor
       );
-      margin-top: 15px;
     }
     /*---*/
     //------жанр и дата релиза---
@@ -509,7 +523,7 @@ main {
 //-------650-PX-----------
 @media (max-width: 650px) {
   :root {
-    --topBaseTitleMarg: 15px; //верхний отступ общего заголовка
+    --topTitlePadding: 40px;
   }
   .fun-block {
     &__bg-title-wrap {
@@ -547,9 +561,19 @@ main {
 //
 //-------370-PX-----------
 @media (max-width: 370px) {
+  :root {
+    --topTitleBg: -2px; //Смещение Листа бумаги вверх
+  }
   .fun-block {
     //стили обертки с контентом
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/
+    /*----ЗАГОЛОВОК----*/
+    &__base-title {
+      @include fontSizeH2(
+        $fsH2: var(--fs2sectTitle),
+        $color: $emeraldDarkColor
+      );
+    }
     //фон лист бумаги
     &__bg-title {
       @include wiHe(var(--titleBgWi), 102%);
@@ -589,6 +613,18 @@ main {
   }
 }
 
+@media (max-width: 240px) {
+  .fun-block {
+    /*----ЗАГОЛОВОК----*/
+    &__base-title {
+      @include fontSizeH2(
+        $fsH2: calc(var(--fs2sectTitle) - 8px),
+        $color: $emeraldDarkColor
+      );
+    }
+  }
+}
+
 //-----------------------------
 //
 //
@@ -611,10 +647,11 @@ main {
 //
 //
 //
+//
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
 
-.fun-book-position {
+.book-position {
   order: 10;
 }
 

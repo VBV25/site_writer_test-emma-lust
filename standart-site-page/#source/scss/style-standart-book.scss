@@ -34,13 +34,6 @@
 //
 //-----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
 //----МЕДИА----ПЕРЕМЕННЫЕ-ROOT-ОБЩИЕ-----
-//-------1024-PX-----------
-@media (max-width: 1024px) {
-  :root {
-    --fsH4: 26px; //Заголовки h4
-  }
-}
-
 //-------770-PX-----------
 @media (max-width: 770px) {
   :root {
@@ -106,6 +99,7 @@ main {
   --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
   --topTitleBg: -30px; //Смещение Листа бумаги вверх
   --marginTopBtn: 30px; //внешний отступ кнопки
+  --topTitlePadding: 70px; //верхний отступ заголовка
   /*---------*/
   //-----------книга-----------
   --rigtBookShift: 20px; //отступ книги от правого края
@@ -131,11 +125,12 @@ main {
   &__wrapper {
     @include wiHe;
     @include flCent;
+    min-height: 120vh;
     flex-direction: column;
     z-index: 10;
     position: relative;
     color: white;
-    padding-top: 110px;
+    padding-top: calc(var(--topTitlePadding) + var(--fs2sectTitle) - 10px);
     padding-bottom: var(--wrapper2SectPaddingButtom);
   }
   /*--Заголовок и фон ЛИСТ БУМАГИ--*/
@@ -144,6 +139,7 @@ main {
     @include wiHe(var(--titleBgWi), 120%);
     @include leTo(var(--topTitleBg), 50%);
     margin-left: calc(var(--titleBgWi) / -2);
+    z-index: -1;
     background-color: $skinColor;
     position: absolute;
     border-radius: 10px;
@@ -152,7 +148,7 @@ main {
   &__bg-title-wrap {
     @include wiHe;
     position: relative;
-    padding-top: calc(var(--topTitleBg) * -1);
+    padding-top: var(--topTitlePadding);
     &::before,
     &::after {
       content: '';
@@ -172,6 +168,9 @@ main {
       top: 0;
       right: 20px;
       transform: scale(-1, 1);
+    }
+    .base-title {
+      margin-bottom: 10px;
     }
   }
   /*----*/
@@ -194,6 +193,7 @@ main {
   &__book {
     @include wiHe(var(--titleBgWi));
     padding: 20px 2vw;
+    margin: 0 2px;
     overflow: hidden;
   }
   /*----РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ--*/
@@ -201,7 +201,7 @@ main {
     position: relative;
     z-index: 21;
     @include wiHe(60%, max-content);
-    margin: auto;
+    margin: 0 auto;
     img {
       @include wiHe(100%, auto);
     }
@@ -235,6 +235,7 @@ main {
     @include wiHe(var(--titleBgWi), 2px);
     position: relative;
     margin: auto;
+    margin-bottom: 0;
     &::before,
     &::after {
       content: '';
@@ -339,24 +340,17 @@ main {
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
-//-------1170-PX-----------
-@media (max-width: 1170px) {
-  :root {
-    //-!!!---2-БЛОК---!!!-
-    //  --topTitleBg: -80px; //Смещение Листа бумаги вверх
-    --titleBgWi: 78%; //ширина блока фона с листом бумаги и заголовка
-    /*---------*/
-  }
+//
+//-------1255-PX-----------
+@media (max-width: 1255px) {
   .book-block {
-    /*--Заголовок и фон ЛИСТ БУМАГИ--*/
-    //фон лист бумаги
-    &__bg-title {
-      padding-top: calc(var(--topTitleBg) * -1.4);
+    //стили обертки с контентом
+    &__wrapper {
+      padding-top: calc(var(--topTitlePadding) + var(--fs2sectTitle) - 15px);
     }
   }
 }
 
-//
 //-------930-PX-----------
 @media (max-width: 930px) {
   :root {
@@ -429,11 +423,11 @@ main {
   }
   .book-block {
     //стили всего блока
+    &__wrapper {
+      padding-top: calc(var(--topTitlePadding) + var(--fs2sectTitle));
+    }
     min-height: 100%;
     //стили обертки с контентом
-    &__wrapper {
-      padding-top: 80px;
-    }
     /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
     &__container {
       @include wiHe(90%, max-content);
@@ -467,6 +461,9 @@ main {
 //
 //-------650-PX-----------
 @media (max-width: 650px) {
+  :root {
+    --topTitlePadding: 40px;
+  }
   .book-block {
     &__bg-title-wrap {
       //вензеля вензеля по углам
@@ -474,7 +471,7 @@ main {
       &::after {
         width: 100px;
         height: 100px;
-        top: -14px;
+        top: 0px;
       }
       &::before {
         left: 5px;
@@ -501,19 +498,14 @@ main {
 }
 
 //
-//
 //-------370-PX-----------
 @media (max-width: 370px) {
   .book-block {
     //стили обертки с контентом
-    &__wrapper {
-      padding-top: 50px;
-    }
     /*--Заголовок и фон ЛИСТ БУМАГИ--*/
     //фон лист бумаги
     &__bg-title {
       @include wiHe(var(--titleBgWi), 102%);
-      padding-top: calc(var(--topTitleBg) * -1.4);
     }
   }
   .book {
@@ -597,6 +589,10 @@ main {
 /*--*/
 
 /*------ПОРЯДОК ОТОБРАЖЕНИЯ КНИГ----*/
+
+.position-list {
+  order: 10;
+}
 
 .new-book {
   order: 1 !important;

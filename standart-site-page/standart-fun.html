@@ -18,8 +18,7 @@
     <!--'основные скрипты'-->
     <script src="js/script-standart-site.js"></script>
     <script src="js/validation-standart-site.js"></script>
-    <!--'скрипт замены контента'-->
-    <script src="js/content-replacement/content-replacement.js"></script>
+
     <!---------------------------------------------->
 
     <!---------------'FAVICON'---------------------->
@@ -95,6 +94,32 @@
                     </div>
                 </div>
                 <h2 class="fun-block__base-title base-title">Фанфики и рассказы</h2>
+                <!--ФИЛЬТР-->
+<!-------Фанфики------->
+<div class="fun-block__filters filters">
+  <div class="filters__btn">
+    <input type="checkbox" name="fun-filter" id="fun-filter" class="separate-filter" />
+    <label for="fun-filter" class="filters__checkbox">Фанфики</label>
+  </div>
+  <!------------------->
+
+  <!------Рассказы------>
+  <div class="filters__btn">
+    <input type="checkbox" name="stories-filter" id="stories-filter" class="separate-filter" />
+    <label for="stories-filter" class="filters__checkbox">Рассказы</label>
+  </div>
+  <!------------------->
+
+  <!-------Все--------->
+  <div class="filters__btn">
+    <input type="checkbox" name="all-filter" id="all-filter" checked disabled />
+    <label for="all-filter" class="filters__checkbox">Все</label>
+  </div>
+  <!------------------->
+
+</div>
+
+<!--'data-toggle="all"-----class="visually-hidden filters__input filters__input-checkbox filters__close" '-->
                 <div class="fun-block__line start-line">
   <img src="img/line.png" alt="line">
 </div>
@@ -110,7 +135,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-КОПИРОВАНИЯ-----'-->
 <!--'---ФАНФИК 1---'-->
-<div class="fun-1 fun-book-position">
+<div class="fun-1 stories-filter book-position all-filter">
   <div class="fun-block__container ">
     <!--'ЖАНР'-->
     <!--'!!!!!!!!!!!!!'-->
@@ -210,7 +235,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-ДОБАВЛЕНИЯ-----'-->
 <!--'---ФАНФИК 2---'-->
-<div class="fun-2 fun-book-position">
+<div class="fun-2 fun-filter book-position all-filter">
   <div class="fun-block__container ">
 
     <!--'ЖАНР'-->
@@ -311,7 +336,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-ДОБАВЛЕНИЯ-----'-->
 <!--'---ФАНФИК 3---'-->
-<div class="fun-3 fun-book-position">
+<div class="fun-3 stories-filter book-position all-filter">
   <div class="fun-block__container ">
 
     <!--'ЖАНР'-->
@@ -412,7 +437,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-ДОБАВЛЕНИЯ-----'-->
 <!--'---ФАНФИК 4---'-->
-<div class="fun-4 fun-book-position">
+<div class="fun-4 fun-filter book-position all-filter">
   <div class="fun-block__container ">
 
     <!--'ЖАНР'-->
@@ -517,7 +542,7 @@
 
 <!--'-----НАЧАЛО-БЛОКА-ДОБАВЛЕНИЯ-----'-->
 <!--'---ФАНФИК 5---'-->
-<div class="new-book fun-5 fun-book-position">
+<div class="new-book fun-5 fun-filter book-position all-filter">
   <!--'!!!!!!!!!!'-->
 
   <!--'!!!!!!!!!!'-->
@@ -661,9 +686,12 @@
         </div>
         <div class="footer__sotial-link-group">
 
-            <a href="#" target="_blank" class="footer__link footer__ig"></a>
-            <a href="#" target="_blank" class="footer__link footer__vk"></a>
-            <a href="#" target="_blank" class="footer__link footer__yt"></a>
+            <a href="https://instagram.com/emmalust_offisial" target="_blank" class="footer__link footer__ig"></a>
+            <a href="https://vk.com/emmalust" target="_blank" class="footer__link footer__vk"></a>
+            <a href="https://www.youtube.com/@emma_lust" target="_blank" class="footer__link footer__yt"></a>
+            <a href="https://t.me/emmalust" target="_blank" class="footer__link footer__tg"></a>
+
+
         </div>
     </div>
     <div class="footer__policy-wrapper">При использовании данного сайта, вы подтверждаете, что ознакомились с <span><a
@@ -745,7 +773,8 @@
           <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input">
           <label for="formAgreement" class="checkbox__label">
             <span>Я даю свое согласие на обработку
-              персональных данных в соответствии с <a href="#">Условиями</a>*
+              персональных данных в соответствии с <a href="#popupt_policy" class="popupt-link">Политикой
+                конфиденциальности</a>*
             </span>
           </label>
         </div>
@@ -1290,9 +1319,6 @@
 
     <!--'----------------------------------'-->
     <!--Java Script-->
-
-    <!--'Смена контента'-->
-    <script src="js/content-replacement/book-list-page-content-replacement.js"></script>
 
     <!--'открытие попапов политики конфиденциальности и пользовательского соглашения'-->
     <script src="js/script-popup-policy-terms-use.js"></script>

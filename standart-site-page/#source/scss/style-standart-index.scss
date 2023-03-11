@@ -143,12 +143,14 @@ h1 {
     @include flCent;
     img {
       @include wiHe(var(--emmalustWi), auto);
+      filter: sepia(30%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+        contrast(85%);
     }
   }
   //текст слогана
   &__text {
     @include wiHe(var(--taglineTextWi), max-content);
-    @include fontSizeH2;
+    @include fontSizeH2($color: $skinColor);
     text-align: center;
   }
 }
@@ -225,7 +227,7 @@ h1 {
   position: relative;
   padding: var(--paddingSectBaseTopBot) 0px;
   overflow: hidden;
-  background-color: $sandColor;
+  background-color: $skinColor;
   //вензеля вверху по углам
   &::before,
   &::after,
@@ -683,7 +685,7 @@ h1 {
 .wrapper-slider {
   padding: var(--paddingSectBaseTopBot) 0;
   min-height: 100%;
-  background-color: $sandColor;
+  background-color: $skinColor;
   .image-slider {
     @include wiHe(var(--contentWidh), max-content);
     padding: 0px 0px 70px 0px;

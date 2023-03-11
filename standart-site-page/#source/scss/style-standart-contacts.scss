@@ -107,9 +107,10 @@ main {
 :root {
   //-!!!---2-БЛОК---!!!-
   --block2He: max-content; //высота 2 блока
-  --wrapper2SectPaddingButtom: -50px; //нижний отступ нижних вензелей
+  --wrapper2SectPaddingButtom: 0px; //нижний отступ нижних вензелей
   --titleBgWi: 78%; //ширина блока фона с листом бумаги
   --topTitleBg: -30px; //Смещение Листа бумаги вверх
+  --paddingTopBotContent: 70px; //отступ вверху и внизу  у блока с контентом
   /*---------*/
   //---размеры видео
 }
@@ -138,7 +139,7 @@ main {
     background-color: $skinColor;
     position: relative;
     border-radius: 10px;
-    padding: 70px 0;
+    padding: var(--paddingTopBotContent) 0;
     //вензеля вензеля по углам
     &::before,
     &::after {
@@ -165,6 +166,7 @@ main {
       @include wiHe(100%, 2px);
       position: relative;
       margin: auto;
+      bottom: calc(-1 * var(--paddingTopBotContent));
       &::before,
       &::after {
         content: '';
@@ -233,7 +235,7 @@ main {
   &__text {
     @include wiHe(80%, max-content);
     @include fontSizeP($fontSize: calc(var(--fsP) + 4px), $color: $blackColor);
-    margin: auto;
+    margin: 0 auto 20px;
     text-align: center;
     a {
       color: $blackColor;
@@ -274,6 +276,9 @@ main {
 //
 //-------650-PX-----------
 @media (max-width: 650px) {
+  :root {
+    --paddingTopBotContent: 40px;
+  }
   .contacts-block {
     &__base-title {
       font-size: calc(var(--fs2sectTitle) - 10px);
@@ -281,9 +286,11 @@ main {
     &__bg-title {
       //вензеля вензеля по углам
       &::before {
+        top: -5px;
         left: 5px;
       }
       &::after {
+        top: -5px;
         right: 5px;
       }
       //Вспомогательная линия с вензелями по углам снизу
@@ -314,9 +321,9 @@ main {
       font-size: calc(var(--fs2sectTitle) - 5px);
     }
     &__bg-title {
-      padding: 40px 0;
       &::before,
       &::after {
+        top: 0px;
         width: 100px;
         height: 100px;
       }
@@ -326,7 +333,7 @@ main {
         &::after {
           width: 100px;
           height: 100px;
-          bottom: -40px;
+          bottom: 0px;
         }
       }
     }

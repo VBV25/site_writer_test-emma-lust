@@ -237,8 +237,14 @@ main {
       &:hover {
         @include textBorderBlack;
         color: $whiteColor;
+        border-bottom: 1ps solid $blackColor;
       }
     }
+  }
+  //ссылки соцсети
+  &__link-social {
+    display: block;
+    margin: 10px 20px;
   }
   //контейнер с видео
   &__video-container {

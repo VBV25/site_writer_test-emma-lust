@@ -39,10 +39,8 @@ $(document).ready(function () {
   //
   //
   //
-  /*скролл страницы вверх*/
-  //скрыть кнопку в верхней части страницы)
+  /*------скролл страницы вверх-----*/
   $('#back-top').hide();
-
   $(function () {
     $(window).scroll(function () {
       if ($(this).scrollTop() > 100) {
@@ -51,7 +49,6 @@ $(document).ready(function () {
         $('#back-top').fadeOut();
       }
     });
-
     $('#back-top a').click(function () {
       $('body,html').animate({ scrollTop: 0 }, 1200);
       return false;
@@ -92,9 +89,138 @@ $(document).ready(function () {
       }, 200);
     }
   });
+  /*------------------------------------------*/
+  //
+  //
+  //
+  //
+  //
+  //
+  /*---------РАБОТА С КНИГАМИ-------*/
+  //ДОБАВЛЯЕМ ЛЕЙБЛ ЧТО ЭТО НОВЯ КНИГА ЭЛЕМЕНТАМ С КЛАССОМ new-book
+  $('.new-book')
+    .find('#book__title')
+    .before('<div class="book__new">NEW</div>');
+  //
+  //
+  //
+  //
+  //
+  /*---------ФИЛЬТР КНИГ-------------*/
+  /*-- НА СТРАНИЦЕ Фанфики и рассказы---*/
+  //ИЗНАЧАЛЬНО ОТОБРАЖАЕМ ВСЕ КНИГИ
+  if ($('#all-filter').is(':checked')) {
+    console.log('все');
+    $('.all-filter').css({ display: 'block', opacity: '1' });
+  }
+  //-------ОТОБРАЖЕНИЕ НУЖНЫХ КНИГ-------
+  //------- при клике на кнопки-------
+
+  //при клике на кнопку жанра
+  $('.separate-filter').click(function () {
+    //разрешаем кликать на кнопку ВСЕ
+    $('#all-filter').prop('disabled', false);
+    //плавно прозрачностью скрываем все книги
+    $('.all-filter').css({ opacity: '0', transition: 'all 0.5s ease 0s' });
+    //убираем скрытые книги из списка
+    setTimeout(function () {
+      $('.all-filter').css({ display: 'none' });
+    }, 600);
+    //выполняем дальнейший код с задержкой для плавного отображения
+
+    //проверяем активна ли хоть какая то кнопка жанра
+    //если активна
+    if ($('.separate-filter').is(':checked')) {
+      //снимаем активность с кнопки ВСЕ
+      $('#all-filter').prop('checked', false);
+
+      setTimeout(function () {
+        //делаем проверку активности кнопок жанров
+
+        //если активна кнопка ФАНФИКИ
+        $('.separate-filter').ready(function () {
+          if ($('#fun-filter').is(':checked')) {
+            //добавляем книги
+            $('.fun-filter').css({ display: 'block' });
+            //убираем прозрачность у книг
+            setTimeout(function () {
+              $('.fun-filter').css({ opacity: '1' });
+            }, 500);
+            console.log('фанфики');
+            return false;
+          }
+        });
+
+        //если активна кнопка РАССКАЗЫ
+        $('.separate-filter').ready(function () {
+          if ($('#stories-filter').is(':checked')) {
+            //добавляем книги
+            $('.stories-filter').css({ display: 'block' });
+            //убираем прозрачность у книг
+            setTimeout(function () {
+              $('.stories-filter').css({ opacity: '1' });
+            }, 500);
+            console.log('рассказы');
+            return false;
+          }
+        });
+      }, 700);
+    }
+    //
+    else {
+      //Активируем кнопку ВСЕ
+      $('#all-filter').prop('checked', true);
+      // запрещаем повторное нажатие на кнопку ВСЕ
+      $('#all-filter').prop('disabled', true);
+      //добавляем книги
+      $('.all-filter').css({ display: 'block' });
+      //убираем прозрачность у книг
+      setTimeout(function () {
+        $('.all-filter').css({ opacity: '1' });
+      }, 500);
+      console.log('все');
+    }
+  });
 
   //
   //
   //
-  //-----попап Политика конфиденциальности
+  //
+  /*-------ОТОБРАЖЕНИЕ ВСЕХ КНИГ--------*/
+  //------при клике на кнопку ВСЕ------
+
+  $('#all-filter').click(function () {
+    setTimeout(function () {
+      $('.all-filter').css({ display: 'none' });
+    }, 500);
+    $('.all-filter').css({ opacity: '0' });
+    //если внопка ВСЕ активна запрещаем повторное нажатие на нее
+    $('#all-filter').prop('disabled', true);
+    //деактивируем кнопки жанров
+    $('.separate-filter').prop('checked', false);
+    //если кнопка все активна отображаем все книги
+    setTimeout(function () {
+      if ($('#all-filter').is(':checked')) {
+        //добавляем книги
+        $('.all-filter').css({ display: 'block' });
+        //убираем прозрачность у книг
+
+        setTimeout(function () {
+          $('.all-filter').css({ opacity: '1' });
+        }, 600);
+
+        console.log('нажал на все');
+      }
+    }, 500);
+  });
+
+  /*----------------------------------------*/
+
+  //
+  //
+  //
+  /*-----попап Политика конфиденциальности---*/
+  //
+  //
+  /*----------------------------------------*/
 });
