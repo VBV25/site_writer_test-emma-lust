@@ -193,6 +193,22 @@ h1 {
     position: static;
     padding: 3px; } }
 
+/*---стилизация текста в книгах для чтения ---*/
+.textCenter {
+  text-align: center; }
+
+.textEnd {
+  text-align: end; }
+
+.textBold {
+  font-weight: bold !important; }
+
+.textItalics {
+  font-style: italic !important; }
+
+pre {
+  display: inline; }
+
 /*------------------------------------------*/
 @media (max-width: 1255px) {
   :root {
