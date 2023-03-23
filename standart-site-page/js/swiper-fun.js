@@ -80,6 +80,8 @@ new Swiper('.text-slider', {
   //--------------------------------------
   //--------------------------------------
   //--------РАБОТА-СО-СЛАЙДАМИ------------
+  //АВТО ВЫСОТА (слайдер подстраивается по каждое изображение)
+  autoHeight: true,
 
   //КОЛИЧЕСТВО СЛАЙДОВ ДЛЯ ПОКАЗА
   slidesPerView: 1, //для значения авто добавляем стили в CSS
@@ -475,38 +477,38 @@ minRatio: 1,
   //--------ДЛЯ ЛЮДЕЙ С ОГРАНИЧЕННЫМИ ВОЗМОЖНОСТЯМИ
   //Доступность
   /*
-                                                                              a11y: {
-                                                                                  //включить/отключить
-                                                                                  enabled: true,
-                                                                                  //сообщения
-                                                                                  prevSlideMassage: 'Previos slide',
-                                                                                  nextSlideMassage: 'Next slide',
-                                                                                  firstSlideMassage: 'This is the First slide',
-                                                                                  lastSlideMassage: 'This is the Last slide',
-                                                                                  paginationBulletMessage: 'Go to slide {{index}}',
-                                                                                  notificationClass: 'swiper-notification',
-                                                                                  containerMessage: '',
-                                                                                  containerRoleDescriptionMessage: '',
-                                                                                  itemRoleDescriptionMessage: '',
-                                                                                  //и т.д.
-                                                                              },
-                                                                              */
+                                                                                a11y: {
+                                                                                    //включить/отключить
+                                                                                    enabled: true,
+                                                                                    //сообщения
+                                                                                    prevSlideMassage: 'Previos slide',
+                                                                                    nextSlideMassage: 'Next slide',
+                                                                                    firstSlideMassage: 'This is the First slide',
+                                                                                    lastSlideMassage: 'This is the Last slide',
+                                                                                    paginationBulletMessage: 'Go to slide {{index}}',
+                                                                                    notificationClass: 'swiper-notification',
+                                                                                    containerMessage: '',
+                                                                                    containerRoleDescriptionMessage: '',
+                                                                                    itemRoleDescriptionMessage: '',
+                                                                                    //и т.д.
+                                                                                },
+                                                                                */
   //
   //
   //
   //-----------------СОБЫТИЯ--------
   /*
-                                                                              on: {
-                                                                                  //событие инициализации
-                                                                                  init: function() {
-                                                                                      console.log('Слайдер запущен');
-                                                                                  },
-                                                                                  //событие смены слайда
-                                                                                  slideChange: function() {
-                                                                                      console.log('Слайд переключен');
-                                                                                  },
-                                                                              },
-                                                                              */
+                                                                                on: {
+                                                                                    //событие инициализации
+                                                                                    init: function() {
+                                                                                        console.log('Слайдер запущен');
+                                                                                    },
+                                                                                    //событие смены слайда
+                                                                                    slideChange: function() {
+                                                                                        console.log('Слайд переключен');
+                                                                                    },
+                                                                                },
+                                                                                */
   //
   /*--------------------------------------------*/
   /*--------------------------------------------*/

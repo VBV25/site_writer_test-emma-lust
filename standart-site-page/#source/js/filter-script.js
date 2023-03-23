@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('#all-filter').prop('disabled', false);
     //Добавляем checked соответствующей кнопке
     $('#fun-filter').prop('checked', true);
-    console.log('111');
+
     //
     //Скрываем все книги
     $('.all-filter').css({ display: 'none', opacity: '0' });
@@ -68,7 +68,7 @@ $(document).ready(function () {
     $('#all-filter').prop('disabled', false);
     //Добавляем checked соответствующей кнопке
     $('#stories-filter').prop('checked', true);
-    console.log('111');
+
     //
     //Скрываем все книги
     $('.all-filter').css({ display: 'none', opacity: '0' });
@@ -83,7 +83,6 @@ $(document).ready(function () {
     //Добавляем checked  кнопке ВСЕ
     $('#all-filter').prop('checked', true);
     $('.all-filter').css({ display: 'block', opacity: '1' });
-    console.log('111');
   }
   //
 
