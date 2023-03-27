@@ -68,3 +68,24 @@
 .new-book {
   transition: all 0.5s ease 0s;
 }
+
+/*-------ФИЛЬТР--------*/
+
+/*------ПОРЯДОК ОТОБРАЖЕНИЯ ----*/
+
+.filters__btn {
+  order: 1;
+}
+
+.cycle {
+  order: 9990;
+}
+
+.disabled {
+  display: none;
+  order: 10000;
+}
+
+.all {
+  order: 1000000;
+}

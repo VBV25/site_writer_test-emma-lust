@@ -1601,6 +1601,29 @@ pre {
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s; }
 
+/*-------ФИЛЬТР--------*/
+/*------ПОРЯДОК ОТОБРАЖЕНИЯ ----*/
+.filters__btn {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1; }
+
+.cycle {
+  -webkit-box-ordinal-group: 9991;
+  -ms-flex-order: 9990;
+  order: 9990; }
+
+.disabled {
+  display: none;
+  -webkit-box-ordinal-group: 10001;
+  -ms-flex-order: 10000;
+  order: 10000; }
+
+.all {
+  -webkit-box-ordinal-group: 1000001;
+  -ms-flex-order: 1000000;
+  order: 1000000; }
+
 :root {
   --bgWondowWi: 520px;
   --firstBlockHe: 700px;

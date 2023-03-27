@@ -127,13 +127,7 @@ $(document).ready(function () {
   //
   //
   /*-----ФИЛЬТР---*/
-  //ПОЛУЧАЕМ данные из адресной строки и делем ее на переменные
-  var urlPage = document.location.href;
-  var textUrlPage = urlPage.split('/').pop();
-  console.log(textUrlPage);
-  if (textUrlPage == 'standart-fun.html') {
-    $('#novels-filter').prop('disabled', true);
-  }
+
   //
   //
   /*----------------------------------------*/
