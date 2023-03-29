@@ -27,7 +27,7 @@ $commentReserv\r\n \r\n \r\n";
 
 
 if (mail(
-  "ychoba.boec92.92@yandex.ru",
+  "4soulmade@gmail.com",
   $subject,
   $headers
 
