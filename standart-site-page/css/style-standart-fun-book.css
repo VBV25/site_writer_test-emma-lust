@@ -1570,7 +1570,7 @@ main {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../../pages-img/fun-page-source/3.jpg");
+  background-image: url("../../pages-img/fun-page-source/4.jpg");
   overflow: hidden; }
 
 .first-sect {
@@ -1603,9 +1603,9 @@ main {
     -ms-flex-align: center;
     align-items: center; }
   .first-sect__img-wrapper img {
-    max-height: 50vh;
+    max-height: 70vh;
     min-height: 30vh;
-    width: 100vw;
+    width: 95vw;
     height: auto; }
   .first-sect__base-title, .first-sect__base-subtitle {
     width: 90%;

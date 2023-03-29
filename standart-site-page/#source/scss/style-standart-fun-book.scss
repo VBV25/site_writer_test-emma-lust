@@ -26,20 +26,20 @@
 //
 //-----ОБЩИЕ----
 body {
-  max-height: max-content;
-  min-height: 100vh;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
+    max-height: max-content;
+    min-height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 main {
-  @include wiHe($he: max-content);
-  @include bgImg;
-  background-image: url('../../pages-img/fun-page-source/3.jpg');
-  overflow: hidden;
+    @include wiHe($he: max-content);
+    @include bgImg;
+    background-image: url('../../pages-img/fun-page-source/4.jpg');
+    overflow: hidden;
 }
 
 //
@@ -57,129 +57,98 @@ main {
 //
 //-----Первая секция-----
 .first-sect {
-  @include wiHe(100%, max-content);
-  @include flCent;
-  position: relative;
-  &__wrapper {
-    @include wiHe(100%, max-content);
+    @include wiHe(100%,
+    max-content);
     @include flCent;
-  }
-  &__img-wrapper {
-    img {
-      max-height: 50vh;
-      min-height: 30vh;
-      @include wiHe(100vw, auto);
+    position: relative;
+    &__wrapper {
+        @include wiHe(100%,
+        max-content);
+        @include flCent;
     }
-  }
-  &__base-title,
-  &__base-subtitle {
-    @include wiHe(90%, max-content);
-    @include fontSizeH2(
-      $fsH2: calc(var(--fs2sectTitle) + 15px),
-      $liHe: calc(var(--fsH2) * 1.5 + 10px),
-      $color: $skinColor
-    );
-    @include textBorderBlack;
-    @include flCent;
-    position: absolute;
-  }
-  &__base-title {
-    top: 35%;
-    margin-top: calc((var(--fs2sectTitle) + 80px) / -2);
-  }
-  &__base-subtitle {
-    bottom: 70px;
-    margin-bottom: 0 !important;
-    @include fontSizeH2(
-      $fsH2: calc(var(--fs2sectTitle) - 27px),
-      $liHe: calc(var(--fsH2) * 1.6),
-      $color: $skinColor
-    );
-  }
+    &__img-wrapper {
+        img {
+            max-height: 70vh;
+            min-height: 30vh;
+            @include wiHe(95vw,
+            auto);
+        }
+    }
+    &__base-title,
+    &__base-subtitle {
+        @include wiHe(90%,
+        max-content);
+        @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) + 15px), $liHe: calc(var(--fsH2) * 1.5 + 10px), $color: $skinColor);
+        @include textBorderBlack;
+        @include flCent;
+        position: absolute;
+    }
+    &__base-title {
+        top: 35%;
+        margin-top: calc((var(--fs2sectTitle) + 80px) / -2);
+    }
+    &__base-subtitle {
+        bottom: 70px;
+        margin-bottom: 0 !important;
+        @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 27px), $liHe: calc(var(--fsH2) * 1.6), $color: $skinColor);
+    }
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------1240-PX-----------
 @media (max-width: 1240px) {
-  .first-sect {
-    &__base-title {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) + 7px),
-        $liHe: calc(var(--fsH2) * 1.5 + 20px),
-        $color: $skinColor
-      );
+    .first-sect {
+        &__base-title {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) + 7px), $liHe: calc(var(--fsH2) * 1.5 + 20px), $color: $skinColor);
+        }
     }
-  }
 }
 
 //
 //-------900-PX-----------
 @media (max-width: 900px) {
-  .first-sect {
-    &__base-title {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 5px),
-        $liHe: calc(var(--fsH2) * 1.5 + 15px),
-        $color: $skinColor
-      );
+    .first-sect {
+        &__base-title {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 5px), $liHe: calc(var(--fsH2) * 1.5 + 15px), $color: $skinColor);
+        }
+        &__base-subtitle {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 25px), $liHe: calc(var(--fsH2) * 1.5 + 1px), $color: $skinColor);
+        }
     }
-    &__base-subtitle {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 25px),
-        $liHe: calc(var(--fsH2) * 1.5 + 1px),
-        $color: $skinColor
-      );
-    }
-  }
 }
 
 //-------670-PX-----------
 @media (max-width: 670px) {
-  .first-sect {
-    &__img-wrapper {
-      overflow: hidden;
-      @include flCent;
-      img {
-        @include wiHe(auto, 200px);
-      }
+    .first-sect {
+        &__img-wrapper {
+            overflow: hidden;
+            @include flCent;
+            img {
+                @include wiHe(auto,
+                200px);
+            }
+        }
+        &__base-title {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 0px), $liHe: calc(var(--fsH2) * 1.5 + 15px), $color: $skinColor);
+        }
+        &__base-subtitle {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 15px), $liHe: calc(var(--fsH2) * 1.5 + 1px), $color: $skinColor);
+            bottom: 40px;
+        }
     }
-    &__base-title {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 0px),
-        $liHe: calc(var(--fsH2) * 1.5 + 15px),
-        $color: $skinColor
-      );
-    }
-    &__base-subtitle {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 15px),
-        $liHe: calc(var(--fsH2) * 1.5 + 1px),
-        $color: $skinColor
-      );
-      bottom: 40px;
-    }
-  }
 }
 
 //-------400-PX-----------
 @media (max-width: 400px) {
-  .first-sect {
-    &__base-title {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 5px),
-        $liHe: calc(var(--fsH2) * 1.5 + 10px),
-        $color: $skinColor
-      );
+    .first-sect {
+        &__base-title {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 5px), $liHe: calc(var(--fsH2) * 1.5 + 10px), $color: $skinColor);
+        }
+        &__base-subtitle {
+            @include fontSizeH2( $fsH2: calc(var(--fs2sectTitle) - 17px), $liHe: calc(var(--fsH2) * 1.5 + 1px), $color: $skinColor);
+        }
     }
-    &__base-subtitle {
-      @include fontSizeH2(
-        $fsH2: calc(var(--fs2sectTitle) - 17px),
-        $liHe: calc(var(--fsH2) * 1.5 + 1px),
-        $color: $skinColor
-      );
-    }
-  }
 }
 
 //
@@ -191,210 +160,214 @@ main {
 //---------------Вторая секция-------
 //------------------Слайдер-----------
 :root {
-  --widthSliderBlock: 70%; //Ширина блока со слайдером(листа бумаги с текстом)
-  --paddingSectBaseTopBot: 50px; //верхний и нижний внутренний отступ 2секции
+    --widthSliderBlock: 70%; //Ширина блока со слайдером(листа бумаги с текстом)
+    --paddingSectBaseTopBot: 50px; //верхний и нижний внутренний отступ 2секции
 }
 
 .slider {
-  @include wiHe(var(--widthSliderBlock), max-content);
-  @include bgImg;
-  background-image: url('../img/paper.jpg');
-  background-color: $sandColor;
-  z-index: 20;
-  position: relative !important;
-  top: -30px;
-  min-height: 100%;
-  margin: auto;
-  padding: var(--paddingSectBaseTopBot) 30px;
-  border-radius: 10px;
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 30px !important;
-  }
-  &__chapter {
-    @include wiHe($he: max-content);
-    @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldColor);
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  .text-slider {
-    height: max-content;
-    //слайд
-    &__slide {
-      padding: 0 6px;
-      .slide-title {
-        @include fontSizeH4($color: $emeraldColor);
+    @include wiHe(var(--widthSliderBlock),
+    max-content);
+    @include bgImg;
+    background-image: url('../img/paper.jpg');
+    background-color: $sandColor;
+    z-index: 20;
+    position: relative !important;
+    top: -30px;
+    min-height: 100%;
+    margin: auto;
+    padding: var(--paddingSectBaseTopBot) 30px;
+    border-radius: 10px;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px !important;
+    }
+    &__chapter {
+        @include wiHe($he: max-content);
+        @include fontSizeH2($fsH2: var(--fs2sectTitle), $color: $emeraldColor);
+        margin-bottom: 10px;
         text-align: center;
-        margin: 10px;
-        text-transform: uppercase;
-        &__subtitle {
-          margin: 0 auto 40px;
-          text-transform: lowercase !important;
+    }
+    .text-slider {
+        height: max-content;
+        //слайд
+        &__slide {
+            padding: 0 6px;
+            .slide-title {
+                @include fontSizeH4($color: $emeraldColor);
+                text-align: center;
+                margin: 10px;
+                text-transform: uppercase;
+                &__subtitle {
+                    margin: 0 auto 40px;
+                    text-transform: lowercase !important;
+                }
+            }
+            .slide-text {
+                @include wiHe(99%,
+                max-content);
+                @include fontSizeP($color: $blackColor);
+                hyphens: auto;
+            }
         }
-      }
-      .slide-text {
-        @include wiHe(99%, max-content);
-        @include fontSizeP($color: $blackColor);
-        hyphens: auto;
-      }
+        //Сдайды не активные
+        .swiper-slide-next,
+        .swiper-slide-prev {
+            opacity: 0.7;
+        }
     }
-    //Сдайды не активные
-    .swiper-slide-next,
-    .swiper-slide-prev {
-      opacity: 0.7;
-    }
-  }
 }
+
 
 /*стрелки*/
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  color: $emeraldColor;
-  font-size: 50px;
-  font-weight: bold;
+    color: $emeraldColor;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .arrow-group {
-  width: 100%;
-  height: 1px;
-  position: relative;
+    width: 100%;
+    height: 1px;
+    position: relative;
 }
 
 .arrow-top {
-  margin: 0 auto 10px;
-  position: absolute !important;
-  top: 0px !important;
+    margin: 0 auto 10px;
+    position: absolute !important;
+    top: 0px !important;
 }
 
 .arrow-bottom {
-  margin: 10px;
-  position: absolute !important;
-  top: 0px !important;
+    margin: 10px;
+    position: absolute !important;
+    top: 0px !important;
 }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  z-index: 50;
+    z-index: 50;
 }
 
 .swiper-button-prev:hover::after,
 .swiper-button-next:hover::after {
-  color: $DarkRedColor;
-  @include textBorderSmokeColor;
+    color: $DarkRedColor;
+    @include textBorderSmokeColor;
 }
+
 
 /*ПАГИНАЦИЯ*/
 
 .swiper-pagination {
-  position: static !important;
-  margin-top: 15px !important;
-  @include fontSizeP($color: $blackColor);
+    position: static !important;
+    margin-top: 15px !important;
+    @include fontSizeP($color: $blackColor);
 }
+
 
 /*--СКРОЛЛ--*/
 
 .swiper-scrollbar {
-  position: static !important;
-  margin-top: 20px !important;
-  width: 85%;
-  margin: auto;
-  height: 13px !important;
-  opacity: 0.8;
+    position: static !important;
+    margin-top: 20px !important;
+    width: 85%;
+    margin: auto;
+    height: 13px !important;
+    opacity: 0.8;
 }
 
 .swiper-scrollbar-drag {
-  cursor: pointer;
-  background-color: $emeraldColor;
+    cursor: pointer;
+    background-color: $emeraldColor;
 }
 
 //кнопка перемещения вверх страницы
 #btn-slide-up {
-  @include wiHe(max-content, max-content);
-  @include fontSizeP($color: $skinColor);
-  display: block;
-  margin: 30px auto 0;
-  padding: 5px 25px;
-  background-color: $emeraldColor;
-  border-radius: 5px;
+    @include wiHe(max-content,
+    max-content);
+    @include fontSizeP($color: $skinColor);
+    display: block;
+    margin: 30px auto 0;
+    padding: 5px 25px;
+    background-color: $emeraldColor;
+    border-radius: 5px;
 }
 
 //
 //---------!!!!!!-----МЕДИА ЗАПРОСЫ----!!!!!-------
 //-------1250-PX-----------
 @media (max-width: 1250px) {
-  :root {
-    --widthSliderBlock: 95%; //Ширина блока со слайдером(листа бумаги с текстом)
-  }
+     :root {
+        --widthSliderBlock: 95%; //Ширина блока со слайдером(листа бумаги с текстом)
+    }
 }
 
 //-------840-PX-----------
 @media (max-width: 840px) {
-  :root {
-    --widthSliderBlock: 98%; //Ширина блока со слайдером(листа бумаги с текстом)
-    --paddingSectBaseTopBot: 25px; //верхний и нижний внутренний отступ 2секции
-    --titleMarginBottom: 30px; //отступ нижний заголовка блока
-  }
-  .slider {
-    padding: var(--paddingSectBaseTopBot) 15px;
-  }
-  .wrapper-slider .text-slider {
-    padding: 0px 0px 30px 0px;
-  }
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    @include textBorderWhite;
-  }
+     :root {
+        --widthSliderBlock: 98%; //Ширина блока со слайдером(листа бумаги с текстом)
+        --paddingSectBaseTopBot: 25px; //верхний и нижний внутренний отступ 2секции
+        --titleMarginBottom: 30px; //отступ нижний заголовка блока
+    }
+    .slider {
+        padding: var(--paddingSectBaseTopBot) 15px;
+    }
+    .wrapper-slider .text-slider {
+        padding: 0px 0px 30px 0px;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        @include textBorderWhite;
+    }
 }
 
 //
 //-------670-PX-----------
 @media (max-width: 670px) {
-  :root {
-    --widthSliderBlock: 100%; //Ширина блока со слайдером(листа бумаги с текстом)
-    --titleMarginBottom: 15px; //отступ нижний заголовка блока
-    --fs2sectTitle: 35px; //размер шрифта заголовка блока
-    //
-  }
-  .slider {
-    top: 0px;
-    border-radius: 0;
-    .text-slider {
-      //слайд
-      &__slide {
-        padding: 0px 7px;
-        .slide-title {
-          @include fontSizeH4(
-            $fontSize: calc(var(--fsH4) - 5px),
-            $color: $emeraldColor
-          );
-          // margin: 0;
-        }
-        .slide-text {
-          @include wiHe(100%, max-content);
-          @include fontSizeP($color: $blackColor);
-        }
-      }
+     :root {
+        --widthSliderBlock: 100%; //Ширина блока со слайдером(листа бумаги с текстом)
+        --titleMarginBottom: 15px; //отступ нижний заголовка блока
+        --fs2sectTitle: 35px; //размер шрифта заголовка блока
+        //
     }
-  }
-  //стрелки
-  .button-arrow {
-    margin: 4px;
-  }
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    font-size: 25px !important;
-  }
+    .slider {
+        top: 0px;
+        border-radius: 0;
+        .text-slider {
+            //слайд
+            &__slide {
+                padding: 0px 7px;
+                .slide-title {
+                    @include fontSizeH4( $fontSize: calc(var(--fsH4) - 5px), $color: $emeraldColor);
+                    // margin: 0;
+                }
+                .slide-text {
+                    @include wiHe(100%,
+                    max-content);
+                    @include fontSizeP($color: $blackColor);
+                }
+            }
+        }
+    }
+    //стрелки
+    .button-arrow {
+        margin: 4px;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 25px !important;
+    }
 }
 
 //
 //-------400-PX-----------
 @media (max-width: 400px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    margin: 10px 0;
-  }
+    .swiper-button-prev,
+    .swiper-button-next {
+        margin: 10px 0;
+    }
 }
 
 //----------------------------------------------

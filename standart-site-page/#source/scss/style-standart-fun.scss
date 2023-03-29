@@ -195,7 +195,7 @@ main {
   /*-----------------------*/
   /*--КОНТЕЙНЕР С КОНТЕНТОМ КНИГ--*/
   &__container {
-    @include wiHe($he: max-content);
+    @include wiHe(98vw, $he: max-content);
     @include flexSpBeCent($jusCon: space-around);
     z-index: 20;
     position: relative;

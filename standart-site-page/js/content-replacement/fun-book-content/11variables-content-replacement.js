@@ -6,36 +6,36 @@ var urlSearchVariables = urlSearchVariablesAll.split('#');
 
 //проходим  циклом и присваиваем значение в переменную
 for (let i = 0; i < urlSearchVariables.length; i++) {
-  var urlVariables = urlSearchVariables[i];
+    var urlVariables = urlSearchVariables[i];
 }
 
 /*-----скролим страницу вверх при переключении слайдов----*/
 //
 
 function slideTextUp() {
-  //Определяем высоту первой секции
-  const firstSectHeight = document.getElementById('first-sect').offsetHeight;
-  //Скролим вверх на начало страницы слайда(с отступом сверху на высоту первой секции)
-  window.scrollTo({
-    top: firstSectHeight,
-    behavior: 'smooth',
-  });
+    //Определяем высоту первой секции
+    const firstSectHeight = document.getElementById('first-sect').offsetHeight;
+    //Скролим вверх на начало страницы слайда(с отступом сверху на высоту первой секции)
+    window.scrollTo({
+        top: firstSectHeight,
+        behavior: 'smooth',
+    });
 }
 
 //-----при клике на стрелки------
 //кликаем на элемент(любой)
 
-this.addEventListener('click', function () {
-  //если этот элемент имеет атрибут data-action='swiper-btn'
-  if (this.event.target.dataset.action == 'swiper-btn') {
-    slideTextUp();
-  }
+this.addEventListener('click', function() {
+    //если этот элемент имеет атрибут data-action='swiper-btn'
+    if (this.event.target.dataset.action == 'swiper-btn') {
+        slideTextUp();
+    }
 });
 
 //----при клике на принудительную кнопку если слайд перелистан через свайп----
 const btnSlideTop = document.getElementById('btn-slide-up');
-btnSlideTop.addEventListener('click', function () {
-  slideTextUp();
+btnSlideTop.addEventListener('click', function() {
+    slideTextUp();
 });
 
 /*----------------------------------------------*/
@@ -61,7 +61,8 @@ btnSlideTop.addEventListener('click', function () {
 
 //---------------------------------------
 //-----ПЕРЕМЕНЫЕ ДЛЯ СМЕНЫ В НИХ КОНТЕНТА-----
-
+//фон страницы картинка
+const bgImgMain = document.getElementById('main');
 //Изображение в первой секции
 const imgFunSect1 = document.getElementById('imgFunSect1');
 //НАЗВАНИЕ произведения
