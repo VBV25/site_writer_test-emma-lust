@@ -1,0 +1,63 @@
+<?xml version="1.0" enconding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+ <!--ГЛАВНАЯ РАСПРЕДЕЛИТЕЛЬНАЯ СТРАНИЦА-->
+  <url>
+    <loc>http://emma-lust.ru/index.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>1</priority>
+  </url>
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<!--СТАНДАРТНАЯ ВЕРСИЯ САЙТА-->
+
+ <!--главная страница стандартной версии-->
+  <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-index.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <!--книги стандартной версии-->
+   <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-book.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+ 
+<!--фанфики стандартной версии-->
+  <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-fun.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+<!--медиа стандартной версии-->
+  <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-media.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+<!--библиография стандартной версии-->
+   <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-bibliography.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+<!--Контакты стандартной версии-->
+ <url>
+    <loc>http://emma-lust.ru/standart-site-page/standart-contacts.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<!--ИНТЕРАКТИВНАЯ ВЕРСИЯ САЙТА-->
+ <url>
+    <loc>http://emma-lust.ru/interactive-site-page/interactive-index.html</loc>
+    <lastmod>2023-02-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+</urlset>

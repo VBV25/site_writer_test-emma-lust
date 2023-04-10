@@ -222,50 +222,23 @@ $(document).ready(function () {
   /*-------- АКТИВНОСТЬ КНОПОК ЕСЛИ НА СТРАНИЦЕ ЕСТЬ КНИГИ НУЖНОГО ЖАНРА ИЛИ НЕТ------*/
 
   //создаем переменную с книгами жанра Романы
-  var novelsFunPageBook =
-    document.getElementsByClassName('novels-filter').length;
+  var novelsPageBook = document.getElementsByClassName('novels-filter').length;
 
   //создаем переменную с книгами жанра ФЭНТЕЗИ
-  var fantasyFunPageBook =
+  var fantasyPageBook =
     document.getElementsByClassName('fantasy-filter').length;
 
   //-----------------------
-
-  //---ПОЛУЧАЕМ данные из адресной строки и делем ее на переменные--
-  var urlPageFilterBook = document.location.href;
-  var textUrlPageFilterBook = urlPageFilterBook.split('/').pop();
-  console.log(textUrlPageFilterBook);
-
-  /*----------ПРОВЕРКА-НА-СТРАНИЦЕ-РАССКАЗЫ------------*/
-  if (textUrlPageFilterBook == 'standart-fun.html') {
-    //отключаем кнопку фильтра РОМАНЫ
-    if (novelsFunPageBook === 0) {
-      $('#novels-filter').prop('disabled', true);
-      $('#lable-novels-filter').addClass('disabled');
-      console.log('нет романов на странице');
-    }
-    //отключаем кнопку фильтра ФЭНТЕЗИ
-    if (fantasyFunPageBook === 0) {
-      $('#fantasy-filter').prop('disabled', true);
-      $('#lable-fantasy-filter').addClass('disabled');
-      console.log('нет ФЭНТЕЗИ на странице');
-    }
-  } else if (textUrlPageFilterBook == 'standart-book.html') {
-  /*--------------------------------------*/
-
-  /*----------ПРОВЕРКА-НА-СТРАНИЦЕ-КНИГИ------------*/
-    //отключаем кнопку фильтра РОМАНЫ
-    if (novelsFunPageBook === 0) {
-      $('#novels-filter').prop('disabled', true);
-      $('#lable-novels-filter').addClass('disabled');
-      console.log('нет романов на странице');
-    }
-    //отключаем кнопку фильтра ФЭНТЕЗИ
-    if (fantasyFunPageBook === 0) {
-      $('#fantasy-filter').prop('disabled', true);
-      $('#lable-fantasy-filter').addClass('disabled');
-      console.log('нет ФЭНТЕЗИ на странице');
-    }
+  //отключаем кнопку фильтра РОМАНЫ
+  if (novelsPageBook === 0) {
+    $('#novels-filter').prop('disabled', true);
+    $('#lable-novels-filter').addClass('disabled');
+    console.log('нет романов на странице');
   }
-  /*--------------------------------------*/
+  //отключаем кнопку фильтра ФЭНТЕЗИ
+  if (fantasyPageBook === 0) {
+    $('#fantasy-filter').prop('disabled', true);
+    $('#lable-fantasy-filter').addClass('disabled');
+    console.log('нет ФЭНТЕЗИ на странице');
+  }
 });
