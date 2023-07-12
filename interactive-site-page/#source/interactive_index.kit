@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--библиотеки-->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="js/lib/modernizr.2.5.3.min.js"></script>
+    <!--скрипты страницы-->
+    <script src="js/interactive-index.js"></script>
+    <script src="js/index_form.js"></script>
+
+    <!--Стили-->
+    <link rel="stylesheet" href="css/style-fonts.css" />
+    <link rel="stylesheet" href="css/style-interactive-index.css" />
+    <link rel="stylesheet" href="css/style_btn_book.css" />
+
+
+
+    <title>Название сайта и лого</title>
+
+<body id="body">
+
+    <!--ПРЕЛОАДЕР-->
+    <!--'@import preloader.html'-->
+    <!---->
+
+    <!--'HEADER'-->
+    <!--@import header.html-->
+    <!---->
+
+    <!--main-->
+    <main class="main">
+
+        <!--'ПРЕДМЕТЫ И МЕБЕЛЬ В КОМНАТЕ'-->
+        <section class="room">
+
+            <!--'--------------------------------'-->
+
+            <!--ШКАФЫ-->
+            <div class="room__closet closest-left">
+                <img src="img/closet.png" alt="closet" />
+            </div>
+            <div class="room__closet closest-right">
+                <img src="img/closet.png" alt="closet_right" />
+            </div>
+            <!--табличка на шкафу-->
+            <div class="note note_left">
+                <p class="note_text">Все <br />книги</p>
+            </div>
+            <div class="note note_right">
+                <p class="note_text">Mini <br>книги</p>
+            </div>
+
+            <!--'--------------------------------'-->
+
+            <!--КРЕСЛА-->
+            <div class="room__chair chair-left">
+                <img src="img/chair.png" alt="chair_left" />
+            </div>
+            <div class="room__chair chair-right">
+                <img src="img/chair.png" alt="chair_right" />
+            </div>
+
+            <!--Стол-->
+            <div class="room__table">
+                <img src="img/table.png" alt="tablet" />
+            </div>
+
+
+
+            <!--'--------------------------------'-->
+
+            <!--КАМИН-->
+            <div class="room__fireplace">
+                <img src="img/fireplace-bg.png" alt="fireplace" />
+            </div>
+
+            <!--ОГОНЬ в камине-->
+            <div class="room__fire">
+                <img src="img/fire.gif" alt="fire" />
+            </div>
+
+            <!--РЕШЕТКА камина-->
+            <div class="room__fireplace-lattice">
+                <img src="img/fireplace.png" alt="fireplace" />
+            </div>
+
+            <!--'--------------------------------'-->
+
+            <!--КАРТИНЫ-->
+            <div class="room__painting painting-1"></div>
+            <div class="room__painting painting-2"></div>
+
+            <!--КАРТА на камине-->
+            <div class="room__map-wrapper">
+                <div class="room__map"></div>
+            </div>
+
+            <!--СТАТУЭТКА на камине-->
+            <div class="room__statuette-wrapper">
+                <div class="room__statuette"></div>
+            </div>
+
+            <!--КОРАБЛЬ на камине-->
+            <div class="room__vessel-wrapper">
+                <div class="room__vessel"></div>
+            </div>
+
+            <!--'--------------------------------'-->
+
+            <!--КНИГА-на-кресле-->
+
+            <div class=" room__book-new-chair-wrapper" style="display: none;">
+                <p class="room__book-new-label">
+                    Новая <br /> книга
+                </p>
+                <div class="room__book-new-body">
+                    <div class="btn-book-spine btn-book-spine-new"></div>
+                    <div class="btn-book-cover btn-book-cover-new"></div>
+                </div>
+            </div>
+
+            <!--'--------------------------------'-->
+
+            <!--ПИСЬМО-на-столе-->
+            <!--@import envelope-in-table.html-->
+
+
+            <!--'--------------------------------'-->
+
+            <!--ЛИСТ-БУМАГИ-на-столе-->
+            <!--@import paper-in-table.html-->
+
+            <!--'--------------------------------'-->
+
+
+            <!--'--------------------------------'-->
+            <!--'---ВСПЛЫВАЮЩИЕ-ОКНА---'-->
+
+
+
+
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+            <!--открытые книги-->
+
+
+            <!--ОТКРЫВАЕМ ШКАФ С КНИГАМИ-->
+            <div class="open_closet_wrapper" style="display: none;">
+                <div class="open_closet_bg_right"></div>
+                <div class="open_closet_bg">
+                    <button type="button" class="exit_btn exit_btn_closet">назад</button>
+
+                </div>
+
+
+                <!--открытые книги-->
+                <!--открытые книги-->
+                <!--книга 1-->
+                <div class="book_btn_wrapper">
+                    <!--Кнопки книги-->
+                    <!--Кнопки книги 1-->
+                    <div class=" book_in_closet book_1_btn">
+                        <div class="btn_book_spine btn_book_spine_1"></div>
+                        <div class="btn_book_cover btn_book_cover_1"></div>
+                    </div>
+                    <!--Кнопки книги 2-->
+                    <div class="book_in_closet book_2_btn">
+                        <div class="btn_book_spine btn_book_spine_2"></div>
+                        <div class="btn_book_cover btn_book_cover_2"></div>
+                    </div>
+                    <!--Кнопки книги 3-->
+                    <div class="book_in_closet book_3_btn">
+                        <div class="btn_book_spine btn_book_spine_3"></div>
+                        <div class="btn_book_cover btn_book_cover_3"></div>
+                    </div>
+                    <!--Кнопки книги 4-->
+                    <div class="book_in_closet book_4_btn">
+                        <div class="btn_book_spine btn_book_spine_4"></div>
+                        <div class="btn_book_cover btn_book_cover_4"></div>
+                    </div>
+                    <!--Кнопки книги 5-->
+                    <div class="book_in_closet book_5_btn">
+                        <div class="btn_book_spine btn_book_spine_5"></div>
+                        <div class="btn_book_cover btn_book_cover_5"></div>
+                    </div>
+                    <!--Кнопки книги 6-->
+                    <div class="book_in_closet book_6_btn">
+                        <div class="btn_book_spine btn_book_spine_6"></div>
+                        <div class="btn_book_cover btn_book_cover_6"></div>
+                    </div>
+                    <!--Кнопки книги 7-->
+                    <div class="book_in_closet book_7_btn">
+                        <div class="btn_book_spine btn_book_spine_7"></div>
+                        <div class="btn_book_cover btn_book_cover_7"></div>
+                    </div>
+                    <!--Кнопки книги 8-->
+                    <div class="book_in_closet book_8_btn">
+                        <div class="btn_book_spine btn_book_spine_8"></div>
+                        <div class="btn_book_cover btn_book_cover_8"></div>
+                    </div>
+                    <!--Кнопки книги 9-->
+                    <!--<div class="book_in_closet book_9_btn">
+                            <div class="btn_book_spine btn_book_spine_9"></div>
+                            <div class="btn_book_cover btn_book_cover_9"></div>
+                        </div>-->
+                    <!---->
+                </div>
+            </div>
+
+
+
+
+
+
+        </section>
+        <!---->
+
+        <!--КНИГА-->
+        <div class="open_book_wrapper all_class_not_active ">
+
+            <!--<div class="open_book_wrapper all_class_not_active ">-->
+            <!--обложка-->
+            <button class="cover_book_front_btn">Вернуться <br> к выбору книг</button>
+
+            <div class="cover_card ">
+                <div class="cover_book_front">
+                </div>
+                <div class="cover_book_back"></div>
+            </div>
+
+            <!--</div>-->
+            <!--листы книги-->
+            <div class="open_book flipbook-viewport">
+
+                <div class="container ">
+                    <!--область случайного клика для отображения кнопки на стороне-->
+
+
+
+                    <!--<button class='btn_close_book'>Вернуться <br> к выбору книг</button>-->
+                    <div class="flipbook">
+
+                        <!--1-->
+                        <div class="page page_1">
+                            <!--на странице вверху и внизу создаем две области при клике на которые будет появляться кнопка закрытия книги(только на первой и второй странице) исключаем появление кнопки при клике на пустую область книги-->
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
+                                <!--ЛЕЙБЛ навигации на странице -->
+                                <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
+                            </div>
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1
+                                 page_book_btn_wrapper_1_2"></div>
+                            <!---->
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_1_author">emma lust</p>
+                            <div class="list_1_title_wrapper">
+                                <p class="list_1_genre"></p>
+                                <p class="list_1_title"></p>
+                            </div>
+                            <p class="list_1_year"></p>
+                        </div>
+                        <!--2-->
+                        <div class="page page_2">
+                            <!--Вставляем обложку книги цветную-->
+                            <div class="img_cover_el"></div>
+                            <!--Вставляем через js ссылки на книги-->
+                            <div class="book_open_href ">
+                                <a class="book_href_1" href="#" target="_blank"></a>
+                                <a class="book_href_2" href="#" target="_blank"> </a>
+                                <a class="book_href_3" href="#" target="_blank"> </a>
+                            </div>
+                            <!--ниже области на странице при клике на которые отображается кнопка закрытия-->
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_2  page_book_btn_wrapper_2_1">
+                                <div class='btn_book_page_nav  btn_book_page_nav_2'> Назад </div>
+                            </div>
+                            <div class="page_book_btn_wrapper page_book_btn_wrapper_2  page_book_btn_wrapper_2_2"></div>
+                        </div>
+                        <!--3-->
+                        <div class="page page_3">
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
+                                <!--ЛЕЙБЛ навигации на странице -->
+                                <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
+                            </div>
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1
+                                 page_book_btn_wrapper_1_2"></div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_3_heading"></p>
+                            <p class="list_text list_3_text"></p>
+                        </div>
+                        <!--4-->
+                        <div class="page page_4">
+                            <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_4_heading"></p>
+                            <p class="list_text list_4_text"></p>
+                        </div>
+                        <!--5-->
+                        <div class="page page_5">
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
+                                <!--ЛЕЙБЛ навигации на странице -->
+                                <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
+
+                                <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1
+                                 page_book_btn_wrapper_1_2"></div>
+
+
+                            </div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_5_heading"></p>
+                            <p class="list_text list_5_text"></p>
+                        </div>
+                        <!--6-->
+                        <div class="page page_6">
+                            <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_6_heading"></p>
+                            <p class="list_text list_6_text"></p>
+                        </div>
+                        <!--7-->
+                        <div class="page page_7">
+                            <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1   page_book_btn_wrapper_1_1">
+                                <!--ЛЕЙБЛ навигации на странице -->
+                                <div class='btn_book_page_nav btn_book_page_nav_1'>Вперед</div>
+
+                                <div class="page_book_btn_wrapper 
+                                page_book_btn_wrapper_1
+                                 page_book_btn_wrapper_1_2"></div>
+
+
+                            </div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_7_heading"></p>
+                            <p class="list_text list_7_text"></p>
+                        </div>
+                        <!--8-->
+                        <div class="page page_8">
+                            <div class='btn_book_page_nav btn_book_page_nav_back btn_book_page_nav_2'>Назад</div>
+                            <!--делаем блоки для вноса контента на странице-->
+                            <p class="list_heading list_8_heading"></p>
+                            <p class="list_text list_8_text"></p>
+                        </div>
+
+                        <!--последняя не заполняемая-->
+                        <div class="page page_past">
+                            <div class="page_past_logo"></div>
+                            <div class='btn_book_page_nav btn_book_page_nav_next btn_book_page_nav_2'>Конец</div>
+                        </div>
+                    </div>
+                    <div class="section_close_cover_btn"></div>
+
+                </div>
+            </div>
+            <!--КОНЕЦ книги-->
+        </div>
+
+        <!--КОНВЕРТ-->
+        <section class="envelope_wrapper ">
+            <button type="button" class="exit_btn exit_btn_envelope">назад</button>
+            <div class="envelope">
+                <div class="envelope_body_back">
+                    <img src="img/envelope_2.png" alt="top">
+
+                </div>
+                <div class="envelope_top">
+                    <img src="img/envelope_3.png" alt="top">
+
+                </div>
+                <div class="envelope_paper">
+
+                    <div class="envelope_form_wrapper">
+                        <p> ПОДАРОК</p>
+                        <button class=" envelope_paper_btn" type="button">ОТПРАВИТЬ</button>
+                    </div>
+
+
+                </div>
+                <div class="envelope_body">
+                    <img src="img/envelope_1.png" alt="top">
+
+                </div>
+                <div class="envelope_print">
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+
+
+
+
+    <!--листаем книгу-->
+
+
+    <!---->
+    <!---->
+    <!--ОСНОВНОЙ ФАЙЛ С ПЕРЕМЕННЫМИ-->
+    <!--в константу контент файла 1 вносим количество всех страниц для дальнейшего сравнения чтобы показать или скрыть кнопку закрытия книги-->
+    <script src="js/book_js/book_open_and_content_1.js"></script>
+    <!---->
+
+    <!---->
+    <script src="js/book_js/book_open_and_content_new.js"></script>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <script src="js/book_js/book_open_animate.js"></script>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <script src="js/book_js/book_script.js"></script>
+    <!---->
+    <!---->
+    <!---->
+
+
+
+
+</html>

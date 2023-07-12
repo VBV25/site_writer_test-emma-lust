@@ -1,0 +1,791 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+// медиа адаптив из размерных переменных ОБЩИЙ
+@import 'base-media-variables';
+//хедер
+@import 'style-header';
+//POPUP
+@import 'style-elements-additional';
+//preloader
+@import 'preloader';
+// ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ попап>
+@import 'policy';
+//-
+//-------------------общие стили----------------
+html,
+body {
+  @include wiHe(100vw, 100vh);
+  @include leTo;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: $DarkRedColor;
+  margin: 0;
+  padding: 0;
+  font-family: $fontFamilyGeorgia;
+}
+
+.all_class_not_active {
+  display: none;
+}
+
+.all_class_active_block {
+  display: block;
+}
+
+a {
+  color: $whiteColor;
+}
+
+main {
+  @include wiHe(100vw 100vh);
+}
+
+/*-------ПЕРЕМЕННЫЕ------*/
+
+/*-----MAIN--блок контент---*/
+
+//-----ОСНОВНЫЕ-ПРЕДМЕТЫ-В-СТАРТОВОЙ КОМНАТЕ----
+//--
+//--
+//-------САМА-КОМНАТА-с МЕБЕЛЬЮ-и-ПРЕДМЕТАМИ-------
+//--
+.room {
+  @include wiHe;
+  @include bgImg($bgImSize: 100vw 100vh, $bgPosition: start);
+  @include flCent;
+  border: 2px solid red;
+  position: relative;
+  background-image: url('../img/bg_room_2.jpg');
+  //--
+  //--
+  //--
+  //--
+  //----ШКАФЫ-----
+  &__closet {
+    @include wiHe(max-content, max-content);
+    position: absolute;
+    display: block;
+    filter: brightness(80%);
+    img {
+      @include wiHe(28vw, 70vh);
+      box-shadow: 0 0 20px 2px $blackColor;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 20px 5px $skinColor;
+    }
+    &:hover::before {
+      font-weight: bold !important;
+    }
+    /*--таблички-*/
+    &::before {
+      @include bgImg;
+      @include wiHe(37%, 7%);
+      @include flCent;
+      @include leTo(30%, 6%);
+      @include fontSizeH5;
+      position: absolute;
+      background-image: url('../img/tablet.png');
+      //color: black;
+      text-align: center;
+      filter: brightness(110%) !important;
+    }
+  }
+  .closest-right {
+    @include riBo(22vh, 0);
+    &::before {
+      content: 'Рассказы';
+    }
+  }
+  .closest-left {
+    @include leBo(22vh, 0);
+    transform: scale(-1, 1);
+    &::before {
+      content: 'Книги';
+      transform: scale(-1, 1);
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //-------------КАМИН----------------
+  &__fireplace {
+    @include wiHe(max-content, max-content);
+    bottom: 27vh;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    img {
+      @include wiHe(30vw, 25vh);
+      filter: brightness(55%);
+    }
+  }
+  //--огонь-в-камине--
+  &__fire {
+    @include wiHe(max-content, max-content);
+    z-index: 6;
+    position: absolute;
+    bottom: 31vh;
+    img {
+      @include wiHe(12vw, 10vh);
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+      filter: brightness(85%);
+    }
+  }
+  //--решеткка-камина--
+  &__fireplace-lattice {
+    @include wiHe(max-content, max-content);
+    z-index: 7;
+    position: absolute;
+    bottom: 30vh;
+    img {
+      @include wiHe(16vw, 7vh);
+      filter: brightness(55%);
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //------СТОЛ------
+  &__table {
+    @include wiHe(max-content, max-content);
+    z-index: 9;
+    position: absolute;
+    bottom: 8vh;
+    img {
+      @include wiHe(25vw, 26vh);
+    }
+    //--тени--
+    &::before {
+      @include bgImg;
+      @include wiHe(40vw, 15vh);
+      z-index: -1;
+      bottom: -8vh;
+      left: -8vw;
+      content: '';
+      position: absolute;
+      background-image: url('../img/tabel_shadow.png');
+      animation: move2 10s infinite linear;
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //------СТУЛЬЯ------
+  &__chair {
+    @include wiHe(max-content, max-content);
+    z-index: 8;
+    position: absolute;
+    bottom: 9vh;
+    img {
+      @include wiHe(22vw, 43vh);
+    }
+    //--тени--
+    &::before {
+      @include bgImg;
+      @include wiHe(31vw, 25vh);
+      z-index: -1;
+      bottom: -12vh;
+      left: -9vw;
+      content: '';
+      position: absolute;
+      background-image: url('../img/chair_shadow.png');
+      animation: move 10s infinite linear;
+    }
+  }
+  .chair-left {
+    margin-left: -45vw;
+  }
+  .chair-right {
+    margin-right: -45vw;
+    transform: scale(-1, 1);
+  }
+  //--
+  //--
+  //--
+  //--
+  //------КАРТИНЫ-------
+  &__painting {
+    @include wiHe(10vw, 15vh);
+    @include bgImg;
+    z-index: 8;
+    top: 18vh;
+    position: absolute;
+  }
+  .painting-1 {
+    background-image: url('../img/painting_1.jpg');
+    margin-left: -13vw;
+    box-shadow: -12px -8px 40px rgb(0, 0, 0);
+  }
+  .painting-2 {
+    background-image: url('../img/painting_2.jpg');
+    margin-right: -13vw;
+    box-shadow: 12px -8px 40px rgb(0, 0, 0);
+  }
+  //--
+  //--
+  //--
+  //--
+  //------КАРТА-------
+  &__map {
+    @include wiHe(10vw, 11vh);
+    @include riTo(37.4vh, 44vw);
+    @include bgImg;
+    position: absolute;
+    z-index: 9;
+    background-image: url('../img/map.jpg');
+    transform: rotateX(30deg) skewX(2.5deg);
+    box-shadow: 10px -5px 30px rgba(0, 0, 0, 0.752);
+    filter: brightness(70%);
+    &::before {
+      @include fontSizeH5($color: $whiteColor);
+      @include textBorderBlack2px;
+      content: 'Соглашение';
+      position: absolute;
+      top: -4vh;
+      margin-left: 1.2vw;
+    }
+    &:hover {
+      cursor: pointer;
+      filter: sepia(100%);
+      @include textBorderBlackGoldkMix;
+    }
+    &:hover::before {
+      @include textBorderBlackGoldkMix;
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //------СТАТУЭТКА-------
+  &__statuette {
+    @include wiHe(3.5vw, 9vh);
+    @include riTo(38.6vh, 37.5vw);
+    @include bgImg;
+    position: absolute;
+    z-index: 9;
+    background-image: url('../img/statuette.png');
+    &::before {
+      @include fontSizeH5($color: $whiteColor);
+      @include textBorderBlack2px;
+      content: 'Медиа';
+      position: absolute;
+      top: -4vh;
+      margin-left: -0.4vw;
+    }
+    &:hover {
+      cursor: pointer;
+      filter: sepia(100%);
+      @include textBorderBlackGoldkMix;
+    }
+    &:hover::before {
+      @include textBorderBlackGoldkMix;
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //------КОРАБЛЬ-------
+  &__vessel {
+    @include wiHe(10vw, 11vh);
+    @include leTo(36.6vh, 35vw);
+    @include bgImg;
+    position: absolute;
+    z-index: 9;
+    position: absolute;
+    background-image: url('../img/vessel.png');
+    &::before {
+      @include fontSizeH5($color: $whiteColor);
+      @include textBorderBlack2px;
+      content: 'Библиография';
+      position: absolute;
+      top: -3vh;
+      margin-left: 0.3vw;
+    }
+    &:hover {
+      cursor: pointer;
+      filter: sepia(100%);
+      @include textBorderBlackGoldkMix;
+    }
+    &:hover::before {
+      @include textBorderBlackGoldkMix;
+    }
+  }
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //--
+  //-----------ЛИСТОК-НА-СТОЛЕ-------
+  &__contacts-paper-wrapper {
+    @include wiHe(max-content, max-content);
+    @include flCent;
+    flex-direction: column;
+    z-index: 9;
+    position: absolute;
+    bottom: 24.5vh;
+    margin-left: -11vw;
+    color: $whiteColor;
+  }
+  &__contacts-paper-label {
+    @include fontSizeH5($color: $whiteColor);
+    @include textBorderBlack2px;
+    position: absolute;
+    top: 0vh;
+    text-align: center;
+  }
+  &__contacts-paper-body {
+    @include wiHe(5vw, 12vh);
+    @include bgImg;
+    border: 2px solid rgb(0, 0, 0);
+    background-image: url('../img/paper.png');
+    display: block;
+    padding: 0;
+    transition: transform 1.5s ease 0s;
+    transform: rotateX(80deg) rotateZ(14deg);
+    /* matrix(0.8, 0, -1, 0.5, 0, 0);*/
+    &:hover {
+      box-shadow: 0px 10px 30px 1px $sandColor;
+      cursor: pointer;
+    }
+  }
+  &__contacts-paper-content {
+    @include wiHe;
+    font-size: 50%;
+    color: $blackColor;
+  }
+  //--ПРИ НАВЕДЕНИИ--
+  &__contacts-paper-wrapper:hover &__contacts-paper-label {
+    @include textBorderBlackGoldkMix;
+  }
+  //--
+  //--
+  //--
+  //--
+  //-----------КОНВЕРТ-НА-СТОЛЕ-------
+  &__envelope-wrapper {
+    @include wiHe(max-content, max-content);
+    @include flCent;
+    flex-direction: column;
+    z-index: 9;
+    position: absolute;
+    bottom: 24.5vh;
+    margin-right: -12vw;
+    color: $whiteColor;
+  }
+  &__envelope-label {
+    @include fontSizeH5($color: $whiteColor);
+    @include textBorderBlack2px;
+    position: absolute;
+    top: -2.5vh;
+    text-align: center;
+  }
+  &__envelope-body {
+    @include wiHe(5vw, 12vh);
+    @include bgImg;
+    border: 2px solid rgb(0, 0, 0);
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 1.5s ease 0s;
+    transform: rotateX(82deg) rotateZ(-15deg);
+    background-image: url('../img/envelope_table_2.png');
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 10px 30px 1px $sandColor;
+    }
+  }
+  //--ПРИ НАВЕДЕНИИ-выделяем лейбл-
+  &__envelope-wrapper:hover &__envelope-label {
+    @include textBorderBlackGoldkMix;
+  }
+  //--
+  //--
+  //--
+  //--
+  //-----------КНИГА-НА-КРЕСЛЕ-------
+  //--
+  //--
+  //--
+  //--
+}
+
+/*письмо на столе*/
+
+.envelope_label {
+  position: absolute;
+  display: block;
+  width: max-content;
+  height: max-content;
+  color: white;
+  text-align: center;
+  font-size: 150%;
+  right: 38%;
+  top: 66.5%;
+  text-shadow: -0 -3px 0 #000000, 0 -3px 0 #000000, -0 3px 0 #000000,
+    0 3px 0 #000000, -3px -0 0 #000000, 3px -0 0 #000000, -3px 0 0 #000000,
+    3px 0 0 #000000, -1px -3px 0 #000000, 1px -3px 0 #000000, -1px 3px 0 #000000,
+    1px 3px 0 #000000, -3px -1px 0 #000000, 3px -1px 0 #000000,
+    -3px 1px 0 #000000, 3px 1px 0 #000000, -2px -3px 0 #000000,
+    2px -3px 0 #000000, -2px 3px 0 #000000, 2px 3px 0 #000000,
+    -3px -2px 0 #000000, 3px -2px 0 #000000, -3px 2px 0 #000000,
+    3px 2px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000,
+    -3px 3px 0 #000000, 3px 3px 0 #000000, -3px -3px 0 #000000,
+    3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
+  display: none;
+}
+
+.envelope_room_table {
+  position: absolute;
+  display: block;
+  top: 63.5%;
+  right: 40%;
+  width: 5%;
+  height: 15%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  /* box-shadow: 0 0 70px 70px red*/
+  display: none;
+}
+
+.envelope_room_table:hover {
+  box-shadow: 0px 10px 50px 6px rgb(255, 91, 3);
+}
+
+.envelope_room_table_open {
+  z-index: 200;
+  top: unset;
+  bottom: 1.5%;
+  right: 25%;
+  width: 50%;
+  height: 65%;
+  box-shadow: unset !important;
+  transform: rotateX(0deg) rotateZ(0deg);
+  display: none;
+}
+
+.envelope_room_table_open:hover {
+  box-shadow: unset !important;
+  display: none;
+}
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*------------------------------------*/
+
+/*новая книга на кресле и обложка*/
+
+.new_book_label {
+  position: absolute;
+  display: block;
+  width: max-content;
+  height: max-content;
+  color: white;
+  text-align: center;
+  font-size: 150%;
+  top: 51%;
+  right: 24%;
+  display: none;
+  text-shadow: -0 -3px 0 #000000, 0 -3px 0 #000000, -0 3px 0 #000000,
+    0 3px 0 #000000, -3px -0 0 #000000, 3px -0 0 #000000, -3px 0 0 #000000,
+    3px 0 0 #000000, -1px -3px 0 #000000, 1px -3px 0 #000000, -1px 3px 0 #000000,
+    1px 3px 0 #000000, -3px -1px 0 #000000, 3px -1px 0 #000000,
+    -3px 1px 0 #000000, 3px 1px 0 #000000, -2px -3px 0 #000000,
+    2px -3px 0 #000000, -2px 3px 0 #000000, 2px 3px 0 #000000,
+    -3px -2px 0 #000000, 3px -2px 0 #000000, -3px 2px 0 #000000,
+    3px 2px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000,
+    -3px 3px 0 #000000, 3px 3px 0 #000000, -3px -3px 0 #000000,
+    3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
+}
+
+/**/
+
+.book_new {
+  z-index: 100;
+  box-sizing: border-box;
+  width: 8%;
+  height: 10%;
+  display: flex;
+  position: absolute;
+  top: 58%;
+  right: 21%;
+  margin-left: 0px;
+  margin-top: 0px;
+  transition: 1.5s;
+  background-size: 50% 100%;
+  transform: rotateY(65deg) rotateX(10deg);
+  box-shadow: 5px 20px 30px 10px rgb(30, 30, 30);
+  /*border: 1px solid red;*/
+  display: none;
+}
+
+.btn_book_spine_new {
+  position: absolute;
+  left: 0%;
+  padding: 0 5%;
+  width: 90%;
+  height: 100%;
+  background-image: url('../pages/book_new/spin_2_mini.png');
+  background-size: 100% 100%;
+  transition: 1.7s;
+  display: none;
+}
+
+.btn_book_cover_new {
+  position: absolute;
+  width: 80%;
+  margin-left: 10%;
+  height: 99.2%;
+  left: 10%;
+  bottom: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.854);
+  border-radius: 2px;
+  /*transform: rotateY(-40deg);*/
+  background-image: url('../pages/book_new/my_woman_2_mini.jpg');
+  background-size: 100% 100%;
+  box-shadow: -25px 5px 60px 20px rgba(0, 0, 0, 0.823) inset !important;
+  transition: 2s;
+  display: none;
+}
+
+/**/
+
+.book_new:hover {
+  box-shadow: 5px 10px 50px -5px rgb(255, 91, 3);
+}
+
+.book_new_focus {
+  width: 590px;
+  height: 782px;
+  top: 50%;
+  left: 50%;
+  margin-left: -70px;
+  margin-top: -445px;
+  transition: 2s;
+  background-size: 50% 100%;
+  transform: rotateY(0deg) rotateX(0deg);
+  box-shadow: unset !important;
+  display: none;
+}
+
+.book_new_focus .btn_book_spine_new {
+  transform: rotateY(90deg);
+  transition: 2s;
+  left: -10%;
+}
+
+.book_new_focus .btn_book_cover_new {
+  left: 0%;
+  transition: 2s;
+  width: 85%;
+  box-shadow: 5px 5px 10px 5px black;
+}
+
+/*-----------------------------------------*/
+
+/*открываем шкаф*/
+
+.open_closet_wrapper {
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 101;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.open_closet_bg {
+  box-sizing: border-box;
+  width: 50%;
+  height: 98%;
+  margin: 0.5% auto;
+  background-image: url('../img/closet_open_2.png');
+  background-size: 100% 100%;
+  display: none;
+}
+
+/*боковина шкафа*/
+
+.open_closet_bg_right {
+  z-index: 51;
+  box-sizing: border-box;
+  width: 7.5%;
+  height: 98%;
+  position: absolute;
+  top: 1.5%;
+  left: 67.5%;
+  background-image: url('../img/closet_open_2_right.png');
+  background-size: 100% 100%;
+  /* border: 1px solid red*/
+  display: none;
+}
+
+/*---*/
+
+.exit_btn {
+  position: absolute;
+  right: 10%;
+  top: 10.5%;
+  width: max-content;
+  height: max-content;
+  padding: 0.2% 2%;
+  font-size: 170%;
+  font-family: LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
+  background-color: rgba(58, 58, 58, 0.248);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  display: none;
+}
+
+.exit_btn:hover {
+  color: rgb(162, 15, 15);
+  border: 1px solid rgb(162, 15, 15);
+}
+
+.tablet {
+  width: max-content;
+  height: max-content;
+  padding: 0.2% 2%;
+  position: absolute;
+  left: 46.5%;
+  background-image: url('../img/tablet.png');
+  background-size: 100% 100%;
+  color: black;
+  text-align: center;
+  font-size: 120%;
+  display: none;
+}
+
+.tablet_1 {
+  top: 10.5%;
+}
+
+.tablet_2 {
+  top: 32%;
+}
+
+.tablet_3 {
+  top: 53%;
+}
+
+.tablet_4 {
+  top: 73.5%;
+}
+
+.chair_shadow_img,
+.tabel_shadow_img,
+.book_img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.tabel_shadow {
+  width: 34.3%;
+  height: 18%;
+  position: absolute;
+  right: 32%;
+  bottom: 0;
+  animation: move2 10s infinite linear;
+  display: none;
+}
+
+/*test*/
+
+//-----------------------
+//-----------------------
+//-----------------------
+//-----------------------
+//--------keyframes-----------
+//движение тени кресла
+@keyframes move {
+  0% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+  25% {
+    transform: skewX(5deg);
+    transform-origin: top;
+  }
+  50% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+  75% {
+    transform: skewX(-5deg);
+    transform-origin: top;
+  }
+  100% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+}
+
+//движение тени стола
+@keyframes move2 {
+  0% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+  25% {
+    transform: skewX(1.5deg);
+    transform-origin: top;
+  }
+  50% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+  75% {
+    transform: skewX(-1.5deg);
+    transform-origin: top;
+  }
+  100% {
+    transform: skewX(0deg);
+    transform-origin: top;
+  }
+}
+
+/*-------ОТКРЫТИЕ-ВСПЛЫВАЮЩИХ-ОКОН-ПРИ-КЛИКЕ-----*/
+
+//--------ЛИСТ-БУМАГИ-НА-СТОЛЕ------
+@import 'paper-in-table-active';
+//--------Конверт-БУМАГИ-НА-СТОЛЕ------
+@import 'envelope-in-table-active';

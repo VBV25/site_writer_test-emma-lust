@@ -1,0 +1,169 @@
+@charset "UTF-8";
+:root {
+  --fsH2: 48px;
+  --fsH3: 42px;
+  --fsH4: 30px;
+  --fsH5: 26px;
+  --fsP: 22px;
+  --contentWidh: 95vw;
+  --marginTopBtn: 70px;
+  --btnSect2Wi: 300px;
+  --btnSect2He: 50px;
+  --titleMarginBottom: 80px;
+  --fs2sectTitle: 72px; }
+
+/*-------------общие стили--------------*/
+body {
+  background: #041308;
+  position: relative; }
+
+h1 {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  font-size: 1px !important; }
+
+/*------ЯКОРЯ-------*/
+.anchors-group {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  border: 10px solid red;
+  position: absolute;
+  opacity: 0; }
+
+/*-----стиль блокировки прокрутки-----*/
+.lock {
+  overflow: hidden; }
+
+/*body.lock {
+    overflow: hidden;
+}*/
+/*-----СТИЛЬ СКРЫТИЯ-----*/
+.not-visible {
+  display: none !important; }
+
+/*-----стилизация кнопок перехода-----*/
+.content-btn {
+  width: var(--btnSect2Wi);
+  height: var(--btnSect2He);
+  z-index: 4;
+  position: relative;
+  left: 50%;
+  margin-top: var(--marginTopBtn);
+  margin-left: calc(var(--btnSect2Wi) / -2);
+  background-color: #808080;
+  border-radius: 10px; }
+  .content-btn::after {
+    font-size: var(--fsH5);
+    font-weight: 300;
+    line-height: calc(var(--fsH5) * 1.5);
+    color: #ffffff;
+    font-style: normal;
+    font-family: Georgia, sans-serif;
+    width: var(--btnSect2Wi);
+    height: var(--btnSect2He);
+    top: -4px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    background-color: #240e04;
+    border-radius: 10px; }
+  .content-btn:hover::after {
+    color: #e2c68e; }
+  .content-btn:active::after {
+    top: 0;
+    left: 0; }
+
+/*-----стилизация заголовков каждого блока-----*/
+.base-title {
+  z-index: 5;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: var(--fs2sectTitle);
+  font-weight: 600;
+  line-height: calc(var(--fsH2) * 1.5);
+  color: #1d241f;
+  font-style: normal;
+  font-family: Georgia, sans-serif;
+  margin-bottom: var(--titleMarginBottom);
+  text-align: center; }
+
+/*-------ЛЕЙБЛ НОВИНКИ (NEW)-------------*/
+.book__new {
+  border: 1px solid red;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: var(--fsH4);
+  font-weight: 600;
+  line-height: calc(var(--fsH4) * 1.5);
+  color: red;
+  font-style: normal;
+  font-family: Georgia, sans-serif;
+  text-shadow: 0 -1px 1px #cccccc, 0 -1px 1px #cccccc, 0 1px 1px #cccccc, 0 1px 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px 0 1px #cccccc, 1px 0 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc, -1px -1px 1px #cccccc, 1px -1px 1px #cccccc, -1px 1px 1px #cccccc, 1px 1px 1px #cccccc;
+  text-align: center;
+  margin: 15px auto 5px; }
+
+@media (max-width: 370px) {
+  .book__new {
+    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 50%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 10px auto 3px;
+    position: static;
+    padding: 3px; } }
+
+/*---стилизация текста в книгах для чтения ---*/
+.textCenter {
+  text-align: center; }
+
+.textEnd {
+  text-align: end; }
+
+.textBold {
+  font-weight: bold !important; }
+
+.textItalics {
+  font-style: italic !important; }
+
+pre {
+  display: inline; }
+
+/*------------------------------------------*/

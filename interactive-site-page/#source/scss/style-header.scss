@@ -1,0 +1,42 @@
+/*------HEADER-----------*/
+
+.header {
+  @include wiHe($he: max-content);
+  @include leTo;
+  @include fontSizeH4;
+  @include flexSpBeCent;
+  @include bgImg;
+  position: absolute;
+  z-index: 10;
+  padding: 5px 50px;
+  color: $whiteColor;
+  text-align: center;
+  background-image: url('../img/header_bg.jpg');
+  //ссылка на стандартную версию сайта и Форма обратной связи
+  &__btn-standart-page,
+  &__call-form {
+    @include textBorderBlack2px;
+    &:hover {
+      color: $skinColor;
+    }
+  }
+  //ссылка на выбор версии сайта
+  &__logo {
+    @include wiHe(32vw, 19vh);
+    @include bgImg;
+    @include flCent;
+    @include leTo(-2.5vh, 34vw);
+    z-index: 11;
+    position: absolute;
+    background-image: url('../img/tablet_2.png');
+    img {
+      width: 70%;
+      height: 45%;
+      margin-top: 5%;
+      &:hover {
+        filter: sepia(26%) saturate(3521%) hue-rotate(321deg) brightness(95%)
+          contrast(85%);
+      }
+    }
+  }
+}

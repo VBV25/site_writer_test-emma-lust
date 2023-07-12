@@ -1727,15 +1727,9 @@ h1 {
   --marginTextCont2sect: 30px;
   --rigtBookShift: 50px;
   --containerBook2sectWi: 323px;
-  --containerBook2sectHe: calc(
-    var(--containerBook2sectWi) * 1.51
-  );
-  --coverBook2sectWi: calc(
-    var(--containerBook2sectWi) * 0.8669
-  );
-  --coverBook2sectHe: calc(
-    var(--coverBook2sectWi) * 1.7
-  ); }
+  --containerBook2sectHe: calc( var(--containerBook2sectWi) * 1.51);
+  --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.8669);
+  --coverBook2sectHe: calc( var(--coverBook2sectWi) * 1.7); }
 
 .in-work,
 .release {
@@ -2457,7 +2451,7 @@ h1 {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     position: relative;
-    background-image: url("../../img/paper.jpg");
+    background-image: url("../img/paper.jpg");
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2465,16 +2459,22 @@ h1 {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 350px;
     width: 25vw;
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
+    max-width: 450px;
+    height: 450px;
     margin: 0px 10px 70px 10px;
     padding: 25px 15px 80px 35px;
     border-radius: 2px 7px 7px 2px;
     -webkit-box-shadow: 0px 0 40px 10px #000000;
     box-shadow: 0px 0 40px 10px #000000; }
+
+.post__text::-webkit-scrollbar {
+  width: 8px; }
+
+.post__text::-webkit-scrollbar-thumb {
+  background-color: #253229;
+  border-radius: 10px; }
 
 .post__title {
   height: -webkit-max-content;
@@ -2493,22 +2493,20 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   font-size: calc(var(--fsP) * 1.1);
   font-weight: 300;
   line-height: calc(var(--fsP) * 1.5);
   color: #000000;
   font-style: normal;
   font-family: Georgia, sans-serif;
-  min-height: 50%;
+  max-height: 350px;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-  hyphens: auto; }
+  hyphens: auto;
+  overflow-y: scroll; }
 
 .post__data {
   position: absolute;
@@ -2525,21 +2523,30 @@ h1 {
   font-family: Georgia, sans-serif;
   text-align: end; }
 
-@media (max-width: 1250px) {
+@media (max-width: 1330px) {
   .blog__post {
-    width: 35vw; }
-  .post-3 {
-    width: 55vw; } }
+    min-width: 350px;
+    width: 40vw;
+    max-width: 850px;
+    height: 350px;
+    margin: 0px 10px 30px 10px; } }
 
-@media (max-width: 700px) {
+@media (max-width: 950px) {
+  .post__text::-webkit-scrollbar {
+    width: 4px; }
+  .post__text::-webkit-scrollbar-thumb {
+    background-color: #253229;
+    border-radius: 10px; }
   .blog__post {
     min-width: 120px;
     width: 90%;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    height: 350px;
     margin: 0px 20px 30px 20px;
-    padding: 20px 15px 80px 15px; } }
+    padding: 20px 10px 80px 25px; }
+  /*
+    .post-3 {
+        width: 55vw;
+    }*/ }
 
 @media (max-width: 1430px) {
   :root {
@@ -2589,9 +2596,7 @@ h1 {
   :root {
     --firstBlockHe: 57vw;
     --containerBook2sectWi: 200px;
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.855
-    ); } }
+    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855); } }
 
 @media (max-width: 495px) {
   :root {
@@ -2604,9 +2609,7 @@ h1 {
     --firstBlockHe: 60vw;
     --marginTextCont2sect: 10px;
     --containerBook2sectWi: 120px;
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.855
-    );
+    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.855);
     --paddingSectBaseTopBot: 50px;
     --photoSect3Wi: 250px;
     --lineSect3Wi: 70%; } }
@@ -2616,9 +2619,7 @@ h1 {
     --firstBlockHe: 60vw;
     --marginTextCont2sect: 5px;
     --containerBook2sectWi: 80px;
-    --coverBook2sectWi: calc(
-      var(--containerBook2sectWi) * 0.872
-    ); } }
+    --coverBook2sectWi: calc( var(--containerBook2sectWi) * 0.872); } }
 
 @media (max-width: 270px) {
   :root {
