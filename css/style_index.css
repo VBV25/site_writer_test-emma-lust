@@ -1,28 +1,28 @@
     /*Обнуление стилей*/
-    
+
     html,
     body {
         width: 100%;
         height: 100%;
     }
-    
+
     * {
         padding: 0;
         margin: 0;
         border: 0;
         box-sizing: border-box;
     }
-    
+
     *::after,
     *::before {
         box-sizing: border-box;
     }
-    
-     :focus,
-     :active {
+
+    :focus,
+    :active {
         outline: none;
     }
-    
+
     a,
     a:hover,
     a:visited,
@@ -30,9 +30,10 @@
     a:focus {
         text-decoration: none;
     }
+
     /*-----*/
-    
-     :root {
+
+    :root {
         --main-font-1: LobsterRegular;
         --main-font-2: MarckScriptRegular;
         --main-font-3: PacificoRegular;
@@ -72,25 +73,27 @@
         --imgLinkWi: 350px;
         --imgLinkHe: 210px;
     }
+
     /*общие*/
-    
+
     * {
         font-family: Georgia, LobsterRegular, MarckScriptRegular, PacificoRegular, sans-serif;
     }
-    
+
     body {
         background-color: black;
     }
-    
+
     h1 {
         display: none;
     }
-    
+
     a {
         text-decoration: none;
     }
+
     /*прочее*/
-    
+
     .wrapper {
         box-sizing: border-box;
         position: relative;
@@ -103,7 +106,7 @@
         align-content: space-around;
         padding: var(--padWrapperTB) var(--padWrapperLR);
     }
-    
+
     .wrapper::after {
         z-index: 0;
         content: '';
@@ -119,39 +122,40 @@
         background-position: center;
         opacity: 0.12;
     }
-    
+
     .text-wrapper {
         z-index: 100;
         position: relative;
         width: 100%;
         height: max-content;
     }
-    
+
     .text-wrapper h2 {
         margin-bottom: var(--margBotH2);
         font-size: var(--fsH2);
         font-weight: var(--fwH2);
     }
-    
+
     .text-name {
         margin-bottom: var(--margBotH3);
         font-size: var(--fsH3);
         font-weight: var(--fwH3);
     }
-    
+
     .text-content {
         margin-bottom: var(--margBotP);
         font-size: var(--fsP);
         font-weight: var(--fwP);
     }
-    
+
     .text-content {
         z-index: 100;
         position: relative;
         margin-top: 20px;
     }
+
     /*блоки выбора версии сайта*/
-    
+
     .version-wrapper {
         z-index: 100;
         position: relative;
@@ -160,11 +164,11 @@
         display: flex;
         justify-content: space-between;
     }
-    
+
     .container {
         width: 48%;
     }
-    
+
     .container h4 {
         display: flex;
         justify-content: center;
@@ -174,14 +178,14 @@
         font-size: var(--fsH4);
         font-weight: var(--fwH4);
     }
-    
+
     .container h5 {
         height: var(--heightVersionH5);
         margin-bottom: var(--margBotH5);
         font-size: var(--fsH5);
         font-weight: var(--fwH5);
     }
-    
+
     .link {
         display: block;
         color: white;
@@ -195,37 +199,48 @@
         /**/
         text-shadow: -0 -3px 0 #000000, 0 -3px 0 #000000, -0 3px 0 #000000, 0 3px 0 #000000, -3px -0 0 #000000, 3px -0 0 #000000, -3px 0 0 #000000, 3px 0 0 #000000, -1px -3px 0 #000000, 1px -3px 0 #000000, -1px 3px 0 #000000, 1px 3px 0 #000000, -3px -1px 0 #000000, 3px -1px 0 #000000, -3px 1px 0 #000000, 3px 1px 0 #000000, -2px -3px 0 #000000, 2px -3px 0 #000000, -2px 3px 0 #000000, 2px 3px 0 #000000, -3px -2px 0 #000000, 3px -2px 0 #000000, -3px 2px 0 #000000, 3px 2px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000, -3px -3px 0 #000000, 3px -3px 0 #000000, -3px 3px 0 #000000, 3px 3px 0 #000000;
     }
-    
+
     .link:hover {
         box-shadow: 0 0 30px 2px rgba(255, 255, 255, 0.523);
     }
+
     /*---------------Стандартная версия-----------*/
-    
+
     .standart-link {
         background-image: url("../img/standart-version-site.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
+
     /*--------------------------------------------*/
     /*---------------Интерактивная версия-----------*/
-    
+
     .interactive-link {
         background-image: url("../img/bg_room_min.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        cursor: none;
+        opacity: 0.5;
+
     }
+
+    .interactive-link:hover {
+        box-shadow: 0 0 15px 10px rgb(0, 0, 0) inset;
+    }
+
     /*--------------------------------------------*/
     /*изображения в блоках*/
-    
+
     .img-version-site {
         width: 100%;
         height: auto;
     }
+
     /*--------------МЕДИА ЗАПРОСЫ-------------*/
-    
+
     @media screen and (orientation: portrait) {
         @media (max-width: 1260px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H2*/
                 --fsH2: 70px;
@@ -250,8 +265,9 @@
                 --imgLinkHe: 190px;
             }
         }
+
         @media (max-width:900px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H4*/
                 --fsH4: 34px;
@@ -269,8 +285,9 @@
                 --imgLinkHe: 150px;
             }
         }
+
         @media (max-width:780px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H2*/
                 --fsH2: 64px;
@@ -290,12 +307,15 @@
                 /*--высота текстового блока над ссылками H5--*/
                 --heightVersionH5: max-content;
             }
+
             .wrapper::after {
                 position: fixed;
             }
+
             .text-wrapper {
                 width: 100%;
             }
+
             .version-wrapper {
                 width: 100%;
                 flex-direction: column;
@@ -304,18 +324,22 @@
                 row-gap: 25px;
                 margin-top: 25px;
             }
+
             .container {
                 width: 100%;
             }
         }
+
         @media(max-width:700px) {
+
             html,
             body {
                 height: max-content;
             }
         }
+
         @media (max-width:630px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H2*/
                 --fsH2: 44px;
@@ -332,8 +356,9 @@
                 --margBotH4: 15px;
             }
         }
+
         @media (max-width:480px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H2*/
                 --fsH2: 34px;
@@ -349,21 +374,26 @@
                 --margBotH4: 10px;
                 --margBotP: 10px;
             }
+
             @media (max-height:1700px) {
+
                 html,
                 body {
                     height: 100%;
                 }
             }
+
             @media (max-height:890px) {
+
                 html,
                 body {
                     height: max-content;
                 }
             }
         }
+
         @media (max-width:380px) {
-             :root {
+            :root {
                 /*----шрифты----*/
                 /*H2*/
                 --fsH2: 32px;
@@ -381,6 +411,7 @@
                 --imgLinkHe: 100px;
             }
         }
+
         /* @media (max-width:250px) {
              :root {
                
@@ -392,13 +423,14 @@
             }
         }*/
     }
-    
+
     @media screen and (orientation: landscape) {
         .wrapper {
             align-content: space-between;
         }
+
         @media (max-height: 950px) {
-             :root {
+            :root {
                 --fsH2: 64px;
                 --fsH3: 48px;
                 --fsH4: 32px;
@@ -419,8 +451,9 @@
                 --heightVersionH5: max-content;
             }
         }
+
         @media (max-height:800px) {
-             :root {
+            :root {
                 --padWrapperTB: 50px;
                 --padWrapperLR: 20px;
                 --margBotH2: 20px;
@@ -432,27 +465,35 @@
                 --imgLinkHe: 130px;
             }
         }
+
         @media(max-width:700px) {
+
             html,
             body {
                 height: max-content;
             }
-             :root {
+
+            :root {
                 --padWrapperTB: 20px;
             }
+
             .wrapper::after {
                 position: fixed;
             }
         }
+
         @media (max-height:650px) {
+
             html,
             body {
                 height: max-content;
             }
+
             .wrapper::after {
                 position: fixed;
             }
-             :root {
+
+            :root {
                 --fsH2: 46px;
                 --fsH3: 32px;
                 --fsP: 20px;
@@ -469,19 +510,24 @@
                 --imgLinkHe: 150px;
             }
         }
+
         @media (max-height:420px) {
+
             html,
             body {
                 height: max-content;
             }
-             :root {
+
+            :root {
                 --padWrapperTB: 50px;
                 --heightVersionH4: max-content;
                 --heightVersionH5: max-content;
             }
+
             .text-wrapper {
                 width: 100%;
             }
+
             .version-wrapper {
                 width: 100%;
                 flex-direction: column;
@@ -490,6 +536,7 @@
                 row-gap: 40px;
                 margin-top: 40px;
             }
+
             .container {
                 width: 100%;
             }
